@@ -21,6 +21,11 @@ function App() {
     return altMatch ? altMatch[1] : null;
   }
 
+  function getYouTubeThumbnail(url) {
+    const ytId = getYouTubeId(url);
+    return ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
+  }
+
   return (
     <div className="eb-main">
       <header className="eb-header">
@@ -43,6 +48,7 @@ function App() {
           <div className="eb-work-list">
             {works.map((work, idx) => {
               const ytId = getYouTubeId(work.url);
+              const thumbnail = getYouTubeThumbnail(work.url);
               return (
                 <React.Fragment key={idx}>
                   <a
@@ -54,8 +60,16 @@ function App() {
                     onMouseLeave={() => setPreviewUrl(null)}
                     onFocus={() => ytId && setPreviewUrl(ytId)}
                     onBlur={() => setPreviewUrl(null)}
+                    style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
                   >
-                    {work.title}
+                    {thumbnail && (
+                      <img
+                        src={thumbnail}
+                        alt={work.title + ' thumbnail'}
+                        style={{ width: 80, height: 45, objectFit: 'cover', borderRadius: 6, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
+                      />
+                    )}
+                    <span>{work.title}</span>
                   </a>
                   {previewUrl && ytId && previewUrl === ytId && (
                     <div className="yt-preview">
