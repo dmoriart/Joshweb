@@ -2,6 +2,9 @@
   command   = "npm run build"
   publish   = "build"
 
+[build.environment]
+  NODE_VERSION = "20.11.1"
+
 [dev]
   command   = "npm start"
   port      = 8888
