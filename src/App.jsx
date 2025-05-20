@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 const works = [
-  { title: 'Stick n poke live', url: '#' },
+  { title: 'Stick n poke live', url: 'https://www.youtube.com/watch?v=SEMPZSw37t4' },
   { title: 'next video', url: '#' },
   { title: 'THE HOLIDAY', url: '#' },
   { title: 'skateboarding', url: '#' },
