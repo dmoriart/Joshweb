@@ -10,6 +10,17 @@ const works = [
 ];
 
 function App() {
+  const [previewUrl, setPreviewUrl] = React.useState(null);
+
+  function getYouTubeId(url) {
+    // Match both youtube.com/watch?v= and youtu.be/ links
+    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    if (match && match[1]) return match[1];
+    // Also support full URLs with extra params
+    const altMatch = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    return altMatch ? altMatch[1] : null;
+  }
+
   return (
     <div className="eb-main">
       <header className="eb-header">
@@ -30,11 +41,38 @@ function App() {
         <section id="work" className="eb-work">
           <h2>My Work</h2>
           <div className="eb-work-list">
-            {works.map((work, idx) => (
-              <a key={idx} href={work.url} className="eb-work-item" target="_blank" rel="noopener noreferrer">
-                {work.title}
-              </a>
-            ))}
+            {works.map((work, idx) => {
+              const ytId = getYouTubeId(work.url);
+              return (
+                <React.Fragment key={idx}>
+                  <a
+                    href={work.url}
+                    className="eb-work-item"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => ytId && setPreviewUrl(ytId)}
+                    onMouseLeave={() => setPreviewUrl(null)}
+                    onFocus={() => ytId && setPreviewUrl(ytId)}
+                    onBlur={() => setPreviewUrl(null)}
+                  >
+                    {work.title}
+                  </a>
+                  {previewUrl && ytId && previewUrl === ytId && (
+                    <div className="yt-preview">
+                      <iframe
+                        width="360"
+                        height="203"
+                        src={`https://www.youtube.com/embed/${ytId}`}
+                        title="YouTube video preview"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         </section>
         <section id="contact" className="eb-contact">
