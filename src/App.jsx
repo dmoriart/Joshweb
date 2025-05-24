@@ -34,6 +34,25 @@ function App() {
         <Route path="/" element={
           <div className="eb-main">
             <header className="eb-header">
+              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
+              <h1>Josh Moriarty</h1>
+              <p className="eb-subtitle">Cinematographer</p>
+              <nav className="eb-nav">
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="/artwork" style={{ fontWeight: 500 }} onClick={e => { e.preventDefault(); window.history.pushState({}, '', '/artwork'); window.dispatchEvent(new PopStateEvent('popstate')); }}>Artwork</a>
+              </nav>
+            </header>
+            <main>
+              <section className="eb-about">
+                <p>
+                  <strong>Hi, I'm Josh Moriarty.</strong><br />
+                  I'm a student passionate about filmmaking and camera work, seeking work experience, internships, or assistant opportunities in Dublin/Wicklow.<br />
+                  <br />
+                  I have hands-on experience filming local events, including live gigs for bands and skateboarding competitions.<br />
+                  My main camera is the Sony PD170.
+                </p>
+              </section>
               <section className="eb-hero">
                 <div className="eb-hero-video-container" style={{ width: '100%', maxWidth: 900, margin: '0 auto', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.18)' }}>
                   <iframe
@@ -60,25 +79,6 @@ function App() {
                     </a>
                   </div>
                 </div>
-              </section>
-              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
-              <h1>Josh Moriarty</h1>
-              <p className="eb-subtitle">Cinematographer</p>
-              <nav className="eb-nav">
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
-                <a href="/artwork" style={{ fontWeight: 500 }} onClick={e => { e.preventDefault(); window.history.pushState({}, '', '/artwork'); window.dispatchEvent(new PopStateEvent('popstate')); }}>Artwork</a>
-              </nav>
-            </header>
-            <main>
-              <section className="eb-about">
-                <p>
-                  <strong>Hi, I'm Josh Moriarty.</strong><br />
-                  I'm a student passionate about filmmaking and camera work, seeking work experience, internships, or assistant opportunities in Dublin/Wicklow.<br />
-                  <br />
-                  I have hands-on experience filming local events, including live gigs for bands and skateboarding competitions.<br />
-                  My main camera is the Sony PD170.
-                </p>
               </section>
               <section id="work" className="eb-work">
                 <h2>My Work</h2>
