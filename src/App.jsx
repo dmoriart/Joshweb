@@ -40,7 +40,7 @@ function App() {
               <nav className="eb-nav">
                 <a href="#work">Work</a>
                 <a href="#contact">Contact</a>
-                <a href="/artwork" style={{ fontWeight: 500 }}>Artwork</a>
+                <a href="/artwork" style={{ fontWeight: 500 }} onClick={e => { e.preventDefault(); window.history.pushState({}, '', '/artwork'); window.dispatchEvent(new PopStateEvent('popstate')); }}>Artwork</a>
               </nav>
             </header>
             <main>
