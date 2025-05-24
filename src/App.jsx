@@ -34,6 +34,33 @@ function App() {
         <Route path="/" element={
           <div className="eb-main">
             <header className="eb-header">
+              <section className="eb-hero">
+                <div className="eb-hero-video-container" style={{ width: '100%', maxWidth: 900, margin: '0 auto', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.18)' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/SEMPZSw37t4?autoplay=1&mute=1&controls=0&loop=1&playlist=SEMPZSw37t4"
+                    title="Josh Moriarty Reel"
+                    width="100%"
+                    height="480"
+                    style={{ border: 0, width: '100%', minHeight: 320 }}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="eb-hero-content" style={{ textAlign: 'center', marginTop: 32 }}>
+                  <h1 style={{ fontSize: '2.8rem', fontWeight: 700, marginBottom: 12 }}>Meet Josh Moriarty: Camera Operator & Visual Artist</h1>
+                  <p style={{ fontSize: '1.3rem', color: '#444', marginBottom: 24 }}>
+                    Capturing stories and moments with a creative eye and technical precision.
+                  </p>
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: 24 }}>
+                    <a href="#work" className="eb-btn eb-btn-primary" style={{ padding: '0.9em 2.2em', fontSize: '1.1rem', borderRadius: 8, background: '#222', color: '#fff', textDecoration: 'none', fontWeight: 600, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}>
+                      View Portfolio
+                    </a>
+                    <a href="#contact" className="eb-btn eb-btn-secondary" style={{ padding: '0.9em 2.2em', fontSize: '1.1rem', borderRadius: 8, background: '#fff', color: '#222', textDecoration: 'none', fontWeight: 600, border: '2px solid #222' }}>
+                      Get in Touch
+                    </a>
+                  </div>
+                </div>
+              </section>
               <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
               <h1>Josh Moriarty</h1>
               <p className="eb-subtitle">Cinematographer</p>
