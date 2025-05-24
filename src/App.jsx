@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const works = [
   { title: 'Stick n poke live', url: 'https://www.youtube.com/watch?v=SEMPZSw37t4' },
-  { title: 'next video', url: '#' },
+  { title: 'Shoutout', url: 'https://www.youtube.com/watch?v=AidsPG4xpMk' },
   { title: 'THE HOLIDAY', url: '#' },
   { title: 'skateboarding', url: '#' },
   { title: 'and another', url: '#' },
@@ -33,28 +33,28 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div className="eb-main">
-            <header className="eb-header">
-              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
-              <h1>Josh Moriarty</h1>
-              <p className="eb-subtitle">Cinematographer</p>
-              <nav className="eb-nav">
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
-                <a href="/artwork" style={{ fontWeight: 500 }} onClick={e => { e.preventDefault(); window.history.pushState({}, '', '/artwork'); window.dispatchEvent(new PopStateEvent('popstate')); }}>Artwork</a>
+            <header className="eb-header" style={{ background: '#fff', borderBottom: '1px solid #ececec', paddingBottom: 16 }}>
+              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%', margin: '32px auto 12px', display: 'block', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
+              <h1 style={{ textAlign: 'center', fontWeight: 700, fontSize: '2.2rem', margin: 0, color: '#181818', letterSpacing: 0.5 }}>Josh Moriarty</h1>
+              <p className="eb-subtitle" style={{ textAlign: 'center', color: '#444', fontSize: '1.2rem', margin: '8px 0 0 0' }}>Cinematographer</p>
+              <nav className="eb-nav" style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 18 }}>
+                <a href="#work" style={{ color: '#222', textDecoration: 'none', fontWeight: 500 }}>Work</a>
+                <a href="#contact" style={{ color: '#222', textDecoration: 'none', fontWeight: 500 }}>Contact</a>
+                <a href="/artwork" style={{ fontWeight: 600, color: '#222', textDecoration: 'none' }} onClick={e => { e.preventDefault(); window.history.pushState({}, '', '/artwork'); window.dispatchEvent(new PopStateEvent('popstate')); }}>Artwork</a>
               </nav>
             </header>
             <main>
-              <section className="eb-about">
-                <p>
-                  <strong>Hi, I'm Josh Moriarty.</strong><br />
+              <section className="eb-about" style={{ maxWidth: 700, margin: '48px auto 32px', background: '#fafbfc', borderRadius: 12, boxShadow: '0 2px 12px rgba(0,0,0,0.04)', padding: '2.5rem 2rem' }}>
+                <p style={{ fontSize: '1.18rem', color: '#222', lineHeight: 1.7, margin: 0 }}>
+                  <strong style={{ fontSize: '1.25rem', color: '#181818' }}>Hi, I'm Josh Moriarty.</strong><br />
                   I'm a student passionate about filmmaking and camera work, seeking work experience, internships, or assistant opportunities in Dublin/Wicklow.<br />
                   <br />
                   I have hands-on experience filming local events, including live gigs for bands and skateboarding competitions.<br />
                   My main camera is the Sony PD170.
                 </p>
               </section>
-              <section className="eb-hero">
-                <div className="eb-hero-video-container" style={{ width: '100%', maxWidth: 900, margin: '0 auto', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.18)' }}>
+              <section className="eb-hero" style={{ background: '#f5f6fa', padding: '32px 0 48px', borderRadius: 16, margin: '0 auto 32px', maxWidth: 1100, boxShadow: '0 4px 32px rgba(0,0,0,0.06)' }}>
+                <div className="eb-hero-video-container" style={{ width: '100%', maxWidth: 900, margin: '0 auto', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.10)' }}>
                   <iframe
                     src="https://www.youtube.com/embed/SEMPZSw37t4?autoplay=1&mute=1&controls=0&loop=1&playlist=SEMPZSw37t4"
                     title="Josh Moriarty Reel"
@@ -66,8 +66,8 @@ function App() {
                   ></iframe>
                 </div>
                 <div className="eb-hero-content" style={{ textAlign: 'center', marginTop: 32 }}>
-                  <h1 style={{ fontSize: '2.8rem', fontWeight: 700, marginBottom: 12 }}>Meet Josh Moriarty: Camera Operator & Visual Artist</h1>
-                  <p style={{ fontSize: '1.3rem', color: '#444', marginBottom: 24 }}>
+                  <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: 12, color: '#181818' }}>Meet Josh Moriarty: Camera Operator & Visual Artist</h1>
+                  <p style={{ fontSize: '1.18rem', color: '#444', marginBottom: 24 }}>
                     Capturing stories and moments with a creative eye and technical precision.
                   </p>
                   <div style={{ display: 'flex', justifyContent: 'center', gap: 24 }}>
@@ -80,9 +80,9 @@ function App() {
                   </div>
                 </div>
               </section>
-              <section id="work" className="eb-work">
-                <h2>My Work</h2>
-                <div className="eb-work-list">
+              <section id="work" className="eb-work" style={{ maxWidth: 1100, margin: '0 auto 48px', padding: '0 1rem' }}>
+                <h2 style={{ fontWeight: 700, fontSize: '2rem', color: '#181818', marginBottom: 24, textAlign: 'center', letterSpacing: 0.2 }}>My Work</h2>
+                <div className="eb-work-list" style={{ display: 'flex', flexWrap: 'wrap', gap: 32, justifyContent: 'center' }}>
                   {works.map((work, idx) => {
                     const ytId = getYouTubeId(work.url);
                     const thumbnail = getYouTubeThumbnail(work.url);
@@ -126,8 +126,8 @@ function App() {
                   })}
                 </div>
               </section>
-              <section id="contact" className="eb-contact">
-                <h2>Contact</h2>
+              <section id="contact" className="eb-contact" style={{ maxWidth: 600, margin: '0 auto 48px', background: '#fafbfc', borderRadius: 12, boxShadow: '0 2px 12px rgba(0,0,0,0.04)', padding: '2.5rem 2rem' }}>
+                <h2 style={{ fontWeight: 700, fontSize: '2rem', color: '#181818', marginBottom: 24, textAlign: 'center', letterSpacing: 0.2 }}>Contact</h2>
                 <form className="eb-contact-form" onSubmit={async e => {
                   e.preventDefault();
                   const form = e.target;
@@ -160,10 +160,10 @@ function App() {
                 </form>
               </section>
             </main>
-            <footer className="eb-footer">
-              <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">Vimeo</a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <span>&copy; {new Date().getFullYear()} Josh Moriarty</span>
+            <footer className="eb-footer" style={{ background: '#181818', color: '#fff', padding: '2rem 0', textAlign: 'center', marginTop: 48 }}>
+              <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', margin: '0 18px', fontWeight: 500, textDecoration: 'underline' }}>Vimeo</a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', margin: '0 18px', fontWeight: 500, textDecoration: 'underline' }}>Instagram</a>
+              <span style={{ display: 'block', marginTop: 18, fontSize: '1.1rem', color: '#bbb' }}>&copy; {new Date().getFullYear()} Josh Moriarty</span>
             </footer>
           </div>
         } />
