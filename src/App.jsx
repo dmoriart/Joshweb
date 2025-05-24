@@ -40,7 +40,11 @@ function App() {
       <main>
         <section className="eb-about">
           <p>
-            Josh Moriarty is a passionate cinematographer with a keen eye for storytelling through visuals. With years of experience in film, commercial, and creative projects, Josh brings a unique perspective to every frame.
+            <strong>Hi, I'm Josh Moriarty.</strong><br />
+            I'm a student passionate about filmmaking and camera work, seeking work experience, internships, or assistant opportunities in Dublin/Wicklow.<br />
+            <br />
+            I have hands-on experience filming local events, including live gigs for bands and skateboarding competitions.<br />
+            My main camera is the Sony PD170.
           </p>
         </section>
         <section id="work" className="eb-work">
@@ -51,32 +55,30 @@ function App() {
               const thumbnail = getYouTubeThumbnail(work.url);
               return (
                 <React.Fragment key={idx}>
-                  <a
-                    href={work.url}
+                  <div
                     className="eb-work-item"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer' }}
+                    tabIndex={0}
                     onMouseEnter={() => ytId && setPreviewUrl(ytId)}
                     onMouseLeave={() => setPreviewUrl(null)}
                     onFocus={() => ytId && setPreviewUrl(ytId)}
                     onBlur={() => setPreviewUrl(null)}
-                    style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
                   >
                     {thumbnail && (
                       <img
                         src={thumbnail}
                         alt={work.title + ' thumbnail'}
-                        style={{ width: 80, height: 45, objectFit: 'cover', borderRadius: 6, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
+                        style={{ width: 140, height: 80, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
                       />
                     )}
                     <span>{work.title}</span>
-                  </a>
+                  </div>
                   {previewUrl && ytId && previewUrl === ytId && (
                     <div className="yt-preview">
                       <iframe
                         width="360"
                         height="203"
-                        src={`https://www.youtube.com/embed/${ytId}`}
+                        src={`https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1`}
                         title="YouTube video preview"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
