@@ -57,7 +57,7 @@ function App() {
                 <React.Fragment key={idx}>
                   <div
                     className="eb-work-item"
-                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer' }}
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 320, padding: '1rem 0', cursor: 'pointer' }}
                     tabIndex={0}
                     onMouseEnter={() => ytId && setPreviewUrl(ytId)}
                     onMouseLeave={() => setPreviewUrl(null)}
@@ -65,14 +65,14 @@ function App() {
                     onBlur={() => setPreviewUrl(null)}
                   >
                     {thumbnail && (
-                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <>
                         <img
                           src={thumbnail}
                           alt={work.title + ' thumbnail'}
-                          style={{ width: 260, height: 146, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+                          style={{ width: '100%', maxWidth: 320, height: 180, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
                         />
-                        <span style={{ marginTop: 8, fontWeight: 500, fontSize: '1.1rem', textAlign: 'center' }}>{work.title}</span>
-                      </div>
+                        <span style={{ marginTop: 16, fontWeight: 500, fontSize: '1.1rem', textAlign: 'center', width: '100%' }}>{work.title}</span>
+                      </>
                     )}
                   </div>
                   {previewUrl && ytId && previewUrl === ytId && (
