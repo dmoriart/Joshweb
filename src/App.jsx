@@ -90,20 +90,37 @@ function App() {
                       <React.Fragment key={idx}>
                         <div
                           className="eb-work-item"
-                          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 320, padding: '1rem 0', cursor: 'pointer' }}
+                          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 320, padding: '1rem 0', cursor: ytId ? 'pointer' : 'default' }}
                           tabIndex={0}
                           onMouseEnter={() => ytId && setPreviewUrl(ytId)}
                           onMouseLeave={() => setPreviewUrl(null)}
                           onFocus={() => ytId && setPreviewUrl(ytId)}
                           onBlur={() => setPreviewUrl(null)}
                         >
-                          {thumbnail && (
-                            <>
+                          {thumbnail && ytId ? (
+                            <a
+                              href={work.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                              tabIndex={-1}
+                            >
                               <img
                                 src={thumbnail}
                                 alt={work.title + ' thumbnail'}
                                 style={{ width: '100%', maxWidth: 320, height: 180, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
                               />
+                              <span style={{ marginTop: 16, fontWeight: 500, fontSize: '1.1rem', textAlign: 'center', width: '100%' }}>{work.title}</span>
+                            </a>
+                          ) : (
+                            <>
+                              {thumbnail && (
+                                <img
+                                  src={thumbnail}
+                                  alt={work.title + ' thumbnail'}
+                                  style={{ width: '100%', maxWidth: 320, height: 180, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+                                />
+                              )}
                               <span style={{ marginTop: 16, fontWeight: 500, fontSize: '1.1rem', textAlign: 'center', width: '100%' }}>{work.title}</span>
                             </>
                           )}
