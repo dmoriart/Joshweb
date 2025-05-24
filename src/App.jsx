@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={
           <div className="eb-main">
             <header className="eb-header">
-              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" />
+              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
               <h1>Josh Moriarty</h1>
               <p className="eb-subtitle">Cinematographer</p>
               <nav className="eb-nav">
