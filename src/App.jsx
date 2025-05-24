@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={
           <div className="eb-main">
             <header className="eb-header">
-              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
+              <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: '50%' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
               <h1>Josh Moriarty</h1>
               <p className="eb-subtitle">Cinematographer</p>
               <nav className="eb-nav">
@@ -110,7 +110,7 @@ function App() {
                     message: form[2].value
                   };
                   // Use Formspree for email forwarding
-                  const res = await fetch('https://formspree.io/f/xdoqzqzq', {
+                  const res = await fetch('https://formspree.io/f/xpwdgzej', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
