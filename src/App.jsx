@@ -65,13 +65,15 @@ function App() {
                     onBlur={() => setPreviewUrl(null)}
                   >
                     {thumbnail && (
-                      <img
-                        src={thumbnail}
-                        alt={work.title + ' thumbnail'}
-                        style={{ width: 140, height: 80, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
-                      />
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src={thumbnail}
+                          alt={work.title + ' thumbnail'}
+                          style={{ width: 260, height: 146, objectFit: 'cover', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+                        />
+                        <span style={{ marginTop: 8, fontWeight: 500, fontSize: '1.1rem', textAlign: 'center' }}>{work.title}</span>
+                      </div>
                     )}
-                    <span>{work.title}</span>
                   </div>
                   {previewUrl && ytId && previewUrl === ytId && (
                     <div className="yt-preview">
