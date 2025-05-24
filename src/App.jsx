@@ -36,7 +36,7 @@ function App() {
             <header className="eb-header" style={{ background: '#fff', borderBottom: '1px solid #ececec', paddingBottom: 16 }}>
               <img src="/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: 180, height: 180, objectFit: 'cover', borderRadius: '50%', margin: '32px auto 12px', display: 'block', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }} onError={(e) => { e.target.onerror = null; e.target.src = "/assets/IMG_2041.jpeg"; }} />
               <h1 style={{ textAlign: 'center', fontWeight: 700, fontSize: '2.2rem', margin: 0, color: '#181818', letterSpacing: 0.5 }}>Josh Moriarty</h1>
-              <p className="eb-subtitle" style={{ textAlign: 'center', color: '#444', fontSize: '1.2rem', margin: '8px 0 0 0' }}>Cinematographer</p>
+              <p className="eb-subtitle" style={{ textAlign: 'center', color: '#444', fontSize: '1.2rem', margin: '8px 0 0 0' }}>Camera Operator & Visual Artist</p>
               <nav className="eb-nav" style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 18 }}>
                 <a href="#work" style={{ color: '#222', textDecoration: 'none', fontWeight: 500 }}>Work</a>
                 <a href="#contact" style={{ color: '#222', textDecoration: 'none', fontWeight: 500 }}>Contact</a>
