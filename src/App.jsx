@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const works = [
   { title: 'Stick n poke live', url: 'https://www.youtube.com/watch?v=SEMPZSw37t4' },
   { title: 'Shoutout', url: 'https://www.youtube.com/watch?v=AidsPG4xpMk' },
-  { title: 'THE HOLIDAY', url: '#' },
+  { title: 'SoundCloud', url: 'https://www.youtube.com/watch?v=1aF9i1MaCsE' },
   { title: 'skateboarding', url: '#' },
   { title: 'and another', url: '#' },
 ];
