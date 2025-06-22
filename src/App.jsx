@@ -7,7 +7,7 @@ const works = [
   { title: 'Stick n poke live', url: 'https://www.youtube.com/watch?v=SEMPZSw37t4' },
   { title: 'Shoutout', url: 'https://www.youtube.com/watch?v=AidsPG4xpMk' },
   { title: 'SoundCloud', url: 'https://www.youtube.com/watch?v=1aF9i1MaCsE' },
-  { title: 'skateboarding', url: '#' },
+  { title: 'Soundcloud 2', url: 'https://www.youtube.com/watch?v=dsr27porhDA' },
   { title: 'and another', url: '#' },
 ];
 
