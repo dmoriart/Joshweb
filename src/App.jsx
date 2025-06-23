@@ -4,7 +4,7 @@ import Artwork from './Artwork';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const works = [
-  { title: 'Stick n poke live', url: 'https://www.youtube.com/watch?v=SEMPZSw37t4' },
+  { title: 'Stick n poke live in the Sound House', url: 'https://www.youtube.com/watch?v=iCS1T7Vsx5k' },
   { title: 'Shoutout', url: 'https://www.youtube.com/watch?v=AidsPG4xpMk' },
   { title: 'SoundCloud', url: 'https://www.youtube.com/watch?v=1aF9i1MaCsE' },
   { title: 'Soundcloud 2', url: 'https://www.youtube.com/watch?v=dsr27porhDA' },
