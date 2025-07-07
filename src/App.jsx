@@ -188,20 +188,24 @@ function App() {
                   </h1>
                   <div style={{
                     background: 'rgba(0,0,0,0.8)',
-                    border: '2px solid #00ff88',
+                    border: '2px solid #ff3300',
                     padding: '15px 30px',
                     display: 'inline-block',
                     transform: 'skew(-1deg)'
                   }}>
                     <p style={{
-                      fontFamily: "'Courier New', monospace",
+                      fontFamily: "'Arial Black', sans-serif",
                       fontSize: 'clamp(1rem, 3vw, 1.5rem)',
                       margin: 0,
-                      color: '#00ff88',
+                      color: '#ff3300',
                       fontWeight: 'bold',
-                      textShadow: '2px 2px 0px #000'
+                      textTransform: 'uppercase',
+                      textShadow: `
+                        2px 2px 0px #000,
+                        0 0 10px #ff3300
+                      `
                     }}>
-                      Films
+                      FILMS
                     </p>
                   </div>
                 </div>
