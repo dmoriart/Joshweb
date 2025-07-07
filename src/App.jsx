@@ -123,7 +123,7 @@ function App() {
               <section style={{
                 width: '100%',
                 height: '60vh',
-                backgroundImage: 'url(/IMG_0230.jpeg)',
+                backgroundImage: 'url(/IMG_0226.jpeg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -201,7 +201,7 @@ function App() {
                       fontWeight: 'bold',
                       textShadow: '2px 2px 0px #000'
                     }}>
-                      DV_TAPE_VIDEOGRAPHER | UNDERGROUND_SCENES | IRELAND
+                      Films
                     </p>
                   </div>
                 </div>
