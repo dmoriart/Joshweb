@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const works = [
   { 
-    title: 'STICK N POKE LIVE', 
-    url: 'https://www.youtube.com/watch?v=SEMPZSw37t4',
+    title: 'LOCKOUT AT SOUND HOUSE', 
+    url: 'https://youtu.be/GabbIXxuWKU',
     type: 'bands',
     venue: 'Sound House',
     description: 'Raw underground energy captured through analog grain. The chaos, the sweat, the real moments.',
@@ -263,13 +263,13 @@ function App() {
                   }}>
                     ◉ JOSH_MORIARTY.DV
                   </div>
-                  <div style={{ display: 'flex', gap: 'clamp(15px, 4vw, 30px)', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: 'clamp(15px, 4vw, 35px)', flexWrap: 'wrap' }}>
                     <a href="#reel" style={{ 
                       color: '#00ff88', 
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(14px, 3.5vw, 18px)',
+                      fontSize: 'clamp(16px, 4vw, 20px)',
                       textShadow: '1px 1px 0px #000'
                     }}>REEL</a>
                     <a href="#work" style={{ 
@@ -277,7 +277,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(14px, 3.5vw, 18px)',
+                      fontSize: 'clamp(16px, 4vw, 20px)',
                       textShadow: '1px 1px 0px #000'
                     }}>WORK</a>
                     <a href="#process" style={{ 
@@ -285,7 +285,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(14px, 3.5vw, 18px)',
+                      fontSize: 'clamp(16px, 4vw, 20px)',
                       textShadow: '1px 1px 0px #000'
                     }}>PROCESS</a>
                     <a href="#hire" style={{ 
@@ -293,7 +293,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(14px, 3.5vw, 18px)',
+                      fontSize: 'clamp(16px, 4vw, 20px)',
                       textShadow: '1px 1px 0px #000'
                     }}>HIRE_ME</a>
                   </div>
