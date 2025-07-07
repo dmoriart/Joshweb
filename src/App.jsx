@@ -65,7 +65,9 @@ function App() {
             color: '#f0f0f0', 
             fontFamily: "'Courier New', 'Consolas', monospace",
             minHeight: '100vh',
-            position: 'relative'
+            position: 'relative',
+            width: '100%',
+            overflowX: 'hidden'
           }}>
             {/* Grain overlay */}
             <div style={{
@@ -236,34 +238,38 @@ function App() {
                 background: 'rgba(13,13,13,0.95)', 
                 backdropFilter: 'blur(5px)',
                 zIndex: 1000,
-                padding: '15px 20px',
+                padding: '10px 15px',
                 borderBottom: '2px solid #ff3300',
-                boxShadow: '0 0 20px rgba(255,51,0,0.3)'
+                boxShadow: '0 0 20px rgba(255,51,0,0.3)',
+                overflowX: 'hidden'
               }}>
                 <div style={{ 
                   display: 'flex', 
                   justifyContent: 'space-between', 
                   alignItems: 'center', 
-                  maxWidth: 1400, 
-                  margin: '0 auto' 
+                  maxWidth: '100%', 
+                  margin: '0 auto',
+                  flexWrap: 'wrap',
+                  gap: '10px'
                 }}>
                   <div style={{ 
                     fontFamily: "'Arial Black', sans-serif", 
-                    fontSize: '18px', 
+                    fontSize: 'clamp(12px, 4vw, 18px)', 
                     color: '#ff3300',
                     textTransform: 'uppercase',
-                    letterSpacing: '2px',
-                    textShadow: '2px 2px 0px #000, 0 0 10px #ff3300'
+                    letterSpacing: '1px',
+                    textShadow: '2px 2px 0px #000, 0 0 10px #ff3300',
+                    flexShrink: 0
                   }}>
                     ◉ JOSH_MORIARTY.DV
                   </div>
-                  <div style={{ display: 'flex', gap: '30px' }}>
+                  <div style={{ display: 'flex', gap: 'clamp(10px, 3vw, 30px)', flexWrap: 'wrap' }}>
                     <a href="#reel" style={{ 
                       color: '#00ff88', 
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: '14px',
+                      fontSize: 'clamp(10px, 2.5vw, 14px)',
                       textShadow: '1px 1px 0px #000'
                     }}>REEL</a>
                     <a href="#work" style={{ 
@@ -271,7 +277,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: '14px',
+                      fontSize: 'clamp(10px, 2.5vw, 14px)',
                       textShadow: '1px 1px 0px #000'
                     }}>WORK</a>
                     <a href="#process" style={{ 
@@ -279,7 +285,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: '14px',
+                      fontSize: 'clamp(10px, 2.5vw, 14px)',
                       textShadow: '1px 1px 0px #000'
                     }}>PROCESS</a>
                     <a href="#hire" style={{ 
@@ -287,7 +293,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: '14px',
+                      fontSize: 'clamp(10px, 2.5vw, 14px)',
                       textShadow: '1px 1px 0px #000'
                     }}>HIRE_ME</a>
                   </div>
@@ -415,40 +421,47 @@ function App() {
                 {/* CTA Buttons */}
                 <div style={{ 
                   display: 'flex', 
-                  gap: '25px', 
+                  gap: 'clamp(15px, 4vw, 25px)', 
                   justifyContent: 'center', 
                   flexWrap: 'wrap',
-                  marginTop: '20px'
+                  marginTop: '20px',
+                  padding: '0 10px'
                 }}>
                   <a href="#work" style={{ 
-                    padding: '15px 30px', 
+                    padding: 'clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px)', 
                     background: '#ff3300', 
                     color: '#000', 
                     textDecoration: 'none', 
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
-                    fontSize: '16px',
+                    fontSize: 'clamp(12px, 3vw, 16px)',
                     border: '2px solid #ff3300',
                     transform: 'skew(-2deg)',
                     textShadow: 'none',
                     boxShadow: '5px 5px 0px #000',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    minWidth: 'max-content'
                   }}>
                     ► SEE_THE_WORK
                   </a>
                   <a href="#hire" style={{ 
-                    padding: '15px 30px', 
+                    padding: 'clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px)', 
                     background: 'transparent', 
                     color: '#00ff88', 
                     textDecoration: 'none', 
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
-                    fontSize: '16px',
+                    fontSize: 'clamp(12px, 3vw, 16px)',
                     border: '2px solid #00ff88',
                     transform: 'skew(-2deg)',
                     textShadow: '1px 1px 0px #000',
                     boxShadow: '5px 5px 0px rgba(0,255,136,0.3)',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    minWidth: 'max-content'
                   }}>
                     ◉ BOOK_NOW
                   </a>
@@ -472,7 +485,7 @@ function App() {
                   )
                 `
               }}>
-                <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+                <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 10px' }}>
                   
                   {/* Section Header */}
                   <div style={{ textAlign: 'center', marginBottom: '50px' }}>
@@ -535,9 +548,10 @@ function App() {
                   {/* Work Grid */}
                   <div style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-                    gap: '30px',
-                    marginBottom: '40px'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', 
+                    gap: 'clamp(15px, 3vw, 30px)',
+                    marginBottom: '40px',
+                    padding: '0 10px'
                   }}>
                     {filteredWorks.map((work, idx) => {
                       const ytId = getYouTubeId(work.url);
@@ -686,7 +700,7 @@ function App() {
                 borderTop: '3px solid #ff3300',
                 borderBottom: '3px solid #ff3300'
               }}>
-                <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+                <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 10px' }}>
                   
                   {/* Header */}
                   <h2 style={{ 
@@ -788,8 +802,9 @@ function App() {
                   {/* Services Grid */}
                   <div style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                    gap: '20px'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', 
+                    gap: 'clamp(15px, 3vw, 20px)',
+                    padding: '0 10px'
                   }}>
                     {[
                       { title: 'LIVE_BANDS_&_GIGS', icon: '♫' },
@@ -846,7 +861,7 @@ function App() {
                   )
                 `
               }}>
-                <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
+                <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', padding: '0 10px' }}>
                   
                   <h2 style={{ 
                     fontFamily: "'Arial Black', sans-serif", 
@@ -882,9 +897,11 @@ function App() {
                   <form style={{ 
                     display: 'flex', 
                     flexDirection: 'column', 
-                    gap: '20px',
-                    maxWidth: 600,
-                    margin: '0 auto'
+                    gap: 'clamp(15px, 3vw, 20px)',
+                    maxWidth: '100%',
+                    width: '100%',
+                    margin: '0 auto',
+                    padding: '0 10px'
                   }} onSubmit={async e => {
                     e.preventDefault();
                     const form = e.target;
@@ -999,7 +1016,7 @@ function App() {
                 textAlign: 'center',
                 borderTop: '3px solid #ff3300'
               }}>
-                <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+                <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 10px' }}>
                   
                   {/* Social Links */}
                   <div style={{ 
