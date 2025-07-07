@@ -254,7 +254,7 @@ function App() {
                 }}>
                   <div style={{ 
                     fontFamily: "'Arial Black', sans-serif", 
-                    fontSize: 'clamp(12px, 4vw, 18px)', 
+                    fontSize: 'clamp(16px, 5vw, 22px)', 
                     color: '#ff3300',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
@@ -263,13 +263,13 @@ function App() {
                   }}>
                     ◉ JOSH_MORIARTY.DV
                   </div>
-                  <div style={{ display: 'flex', gap: 'clamp(10px, 3vw, 30px)', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: 'clamp(15px, 4vw, 30px)', flexWrap: 'wrap' }}>
                     <a href="#reel" style={{ 
                       color: '#00ff88', 
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(10px, 2.5vw, 14px)',
+                      fontSize: 'clamp(14px, 3.5vw, 18px)',
                       textShadow: '1px 1px 0px #000'
                     }}>REEL</a>
                     <a href="#work" style={{ 
@@ -277,7 +277,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(10px, 2.5vw, 14px)',
+                      fontSize: 'clamp(14px, 3.5vw, 18px)',
                       textShadow: '1px 1px 0px #000'
                     }}>WORK</a>
                     <a href="#process" style={{ 
@@ -285,7 +285,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(10px, 2.5vw, 14px)',
+                      fontSize: 'clamp(14px, 3.5vw, 18px)',
                       textShadow: '1px 1px 0px #000'
                     }}>PROCESS</a>
                     <a href="#hire" style={{ 
@@ -293,7 +293,7 @@ function App() {
                       textDecoration: 'none', 
                       fontWeight: 'bold', 
                       textTransform: 'uppercase',
-                      fontSize: 'clamp(10px, 2.5vw, 14px)',
+                      fontSize: 'clamp(14px, 3.5vw, 18px)',
                       textShadow: '1px 1px 0px #000'
                     }}>HIRE_ME</a>
                   </div>
