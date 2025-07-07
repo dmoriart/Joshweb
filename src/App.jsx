@@ -87,7 +87,7 @@ function App() {
                 alignItems: 'center', 
                 maxWidth: '1400px', 
                 margin: '0 auto',
-                padding: '0 40px'
+                padding: '0 20px'
               }}>
                 <div style={{ 
                   fontFamily: "'Inter', sans-serif", 
@@ -98,7 +98,7 @@ function App() {
                 }}>
                   Josh Moriarty
                 </div>
-                <div style={{ display: 'flex', gap: '40px' }}>
+                <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                   <a href="#work" style={{ 
                     color: '#1a1a1a', 
                     textDecoration: 'none', 
@@ -158,7 +158,7 @@ function App() {
                 textAlign: 'center',
                 color: '#ffffff',
                 maxWidth: '800px',
-                padding: '0 40px'
+                padding: '0 20px'
               }}>
                 <h1 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -168,7 +168,7 @@ function App() {
                   letterSpacing: '-0.04em',
                   lineHeight: '0.9'
                 }}>
-                  Underground<br/>Filmmaker
+                  Josh Moriarty<br/>Films
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
@@ -216,7 +216,7 @@ function App() {
             <section id="work" style={{
               maxWidth: '1400px',
               margin: '0 auto',
-              padding: '120px 40px'
+              padding: '80px 20px'
             }}>
               {/* Section Title */}
               <div style={{
@@ -278,8 +278,8 @@ function App() {
               {/* Work Grid */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-                gap: '40px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '20px',
                 marginBottom: '80px'
               }}>
                 {filteredWorks.map((work, index) => (
@@ -386,7 +386,7 @@ function App() {
               <div style={{
                 background: '#1a1a1a',
                 borderRadius: '12px',
-                padding: '60px 40px',
+                padding: '40px 20px',
                 textAlign: 'center',
                 color: '#ffffff'
               }}>
@@ -428,7 +428,7 @@ function App() {
             {/* About Section */}
             <section id="about" style={{
               background: '#f5f5f5',
-              padding: '120px 40px'
+              padding: '80px 20px'
             }}>
               <div style={{
                 maxWidth: '1000px',
@@ -547,7 +547,7 @@ function App() {
             <section id="contact" style={{
               maxWidth: '800px',
               margin: '0 auto',
-              padding: '120px 40px'
+              padding: '80px 20px'
             }}>
               <div style={{
                 textAlign: 'center',
@@ -661,7 +661,7 @@ function App() {
             <footer style={{
               background: '#1a1a1a',
               color: '#ffffff',
-              padding: '60px 40px 40px',
+              padding: '40px 20px 20px',
               textAlign: 'center'
             }}>
               <div style={{
@@ -671,8 +671,9 @@ function App() {
                 <div style={{
                   display: 'flex',
                   justifyContent: 'center',
-                  gap: '40px',
-                  marginBottom: '40px'
+                  gap: '20px',
+                  marginBottom: '40px',
+                  flexWrap: 'wrap'
                 }}>
                   <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style={{
                     color: '#ffffff',

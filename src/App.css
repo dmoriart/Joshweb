@@ -1,0 +1,211 @@
+/* Modern, minimalist reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.jm-site {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure all sections don't overflow */
+section {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Modern typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Navigation hover effects */
+nav a:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px);
+}
+
+/* Smooth transitions for interactive elements */
+button, .work-card, .filter-button {
+  transition: all 0.2s ease;
+}
+
+/* Form focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1a1a1a !important;
+  box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1) !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Navigation responsive */
+  nav {
+    padding: 16px 0 !important;
+  }
+  
+  nav > div {
+    padding: 0 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  
+  nav > div > div:last-child {
+    gap: 24px !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  
+  /* Hero responsive */
+  section:first-of-type {
+    height: 80vh !important;
+    padding: 0 16px !important;
+  }
+  
+  /* Work section responsive */
+  #work {
+    padding: 60px 16px !important;
+  }
+  
+  /* Work grid responsive - single column on mobile */
+  #work > div:nth-child(3) {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* About section responsive */
+  #about > div {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  #about {
+    padding: 60px 16px !important;
+  }
+  
+  /* Contact section responsive */
+  #contact {
+    padding: 60px 16px !important;
+  }
+  
+  /* Footer responsive */
+  footer {
+    padding: 32px 16px 16px !important;
+  }
+  
+  footer > div > div {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  /* Featured reel responsive */
+  #work > div:nth-child(4) {
+    padding: 32px 16px !important;
+  }
+  
+  #work > div:nth-child(4) iframe {
+    height: 250px !important;
+  }
+  
+  /* Ensure hero content doesn't overflow */
+  section:first-of-type > div:nth-child(2) {
+    padding: 0 16px !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make filter buttons stack better on mobile */
+  #work > div:nth-child(2) {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  
+  #work > div:nth-child(2) button {
+    width: 200px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  nav > div {
+    padding: 0 12px !important;
+  }
+  
+  section:first-of-type {
+    height: 70vh !important;
+  }
+  
+  #work,
+  #about,
+  #contact {
+    padding: 40px 12px !important;
+  }
+  
+  footer {
+    padding: 24px 12px 12px !important;
+  }
+  
+  /* Smaller hero text on very small screens */
+  section:first-of-type h1 {
+    font-size: clamp(2rem, 10vw, 4rem) !important;
+  }
+  
+  /* Smaller work grid gap */
+  #work > div:nth-child(3) {
+    gap: 16px !important;
+  }
+  
+  /* Stack equipment info vertically on small screens */
+  #about > div > div:first-child > div:last-child {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}
+
+/* Hover effects for work cards - only on devices that support hover */
+@media (hover: hover) {
+  .work-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  nav {
+    display: none;
+  }
+  
+  section:first-of-type {
+    height: auto !important;
+    page-break-after: always;
+  }
+}
