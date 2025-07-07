@@ -685,7 +685,7 @@ function App() {
                   }}>
                     Instagram
                   </a>
-                  <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" style={{
+                  <a href="https://www.youtube.com/@joshmoriartyfilms/featured" target="_blank" rel="noopener noreferrer" style={{
                     color: '#ffffff',
                     textDecoration: 'none',
                     fontSize: '16px',
