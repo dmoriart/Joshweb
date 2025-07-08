@@ -5,8 +5,12 @@
  * Run this script to update the sitemap.xml file
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const DOMAIN = 'https://joshmoriartyfilms.ie';
 const TODAY = new Date().toISOString().split('T')[0];
