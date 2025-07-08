@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Google Search Console verification
-# Sitemap: https://joshmoriartyfilms.ie/sitemap.xml
+# Sitemap
+Sitemap: https://joshmoriartyfilms.ie/sitemap.xml
