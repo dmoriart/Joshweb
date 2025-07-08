@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Artwork from './Artwork';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useMetaTags, useCurrentSection } from './useMetaTags';
 
 const works = [
   { 
@@ -158,6 +159,10 @@ function App() {
   const [activeFilter, setActiveFilter] = React.useState('all');
   const [artworkFilter, setArtworkFilter] = React.useState('all');
   const [lightboxImage, setLightboxImage] = React.useState(null);
+  
+  // Dynamic meta tags based on current section
+  const currentSection = useCurrentSection();
+  useMetaTags(currentSection);
 
   function getYouTubeId(url) {
     const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
@@ -264,7 +269,7 @@ function App() {
             </nav>
 
             {/* Hero Section */}
-            <section style={{
+            <section id="home" style={{
               width: '100%',
               height: '100vh',
               position: 'relative',
