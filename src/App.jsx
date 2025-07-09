@@ -16,7 +16,7 @@ const works = [
   },
   { 
     title: 'DJ ORTEGA', 
-    url: 'https://youtu.be/qPzb5GKsq58',
+    url: 'https://youtu.be/VDjuqnk_Gqs',
     type: 'djs',
     venue: 'Wigwam',
     description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
