@@ -33,13 +33,13 @@ const works = [
     category: 'Club Set'
   },
   { 
-    title: 'UNDERGROUND SESSIONS', 
-    url: 'https://www.youtube.com/watch?v=dsr27porhDA',
+    title: 'DJ RHR', 
+    url: 'https://youtu.be/qPzb5GKsq58',
     type: 'djs',
-    venue: 'Warehouse',
-    description: 'Illegal raves and basement scenes.',
+    venue: 'Wigwam',
+    description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2024. This session captures the raw, underground vibe of Dublin\'s nightlife, featuring RHR\'s signature blend of pulsing house, techno, and dancefloor anthems.',
     year: '2024',
-    category: 'Underground'
+    category: 'DJ Session'
   },
 ];
 
