@@ -61,7 +61,7 @@ const artworks = [
     category: 'street',
     medium: 'Photography',
     year: '2025',
-    description: 'Raw street photography capturing underground culture'
+    description: 'Cartoon'
   },
   { 
     id: 2,
@@ -70,7 +70,7 @@ const artworks = [
     category: 'street',
     medium: 'Photography',
     year: '2025',
-    description: 'Late night urban exploration'
+    description: 'Cartoon'
   },
   { 
     id: 3,
@@ -79,7 +79,7 @@ const artworks = [
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
-    description: 'Digital manipulation of film photography'
+    description: 'Cartoon'
   },
   { 
     id: 4,
@@ -88,7 +88,7 @@ const artworks = [
     category: 'street',
     medium: 'Photography',
     year: '2025',
-    description: 'Urban landscape through DV tape aesthetic'
+    description: 'Cartoon'
   },
   { 
     id: 5,
@@ -97,7 +97,7 @@ const artworks = [
     category: 'graffiti',
     medium: 'Photography',
     year: '2025',
-    description: 'Documenting street art and underground culture'
+    description: 'Cartoon'
   },
   { 
     id: 6,
@@ -106,7 +106,7 @@ const artworks = [
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
-    description: 'Exploring grain and texture in digital medium'
+    description: 'Cartoon'
   },
   { 
     id: 7,
@@ -115,7 +115,7 @@ const artworks = [
     category: 'street',
     medium: 'Photography',
     year: '2025',
-    description: 'Capturing authentic moments in urban spaces'
+    description: 'Cartoon'
   },
   { 
     id: 8,
@@ -124,7 +124,7 @@ const artworks = [
     category: 'street',
     medium: 'Photography',
     year: '2025',
-    description: 'Nighttime urban photography'
+    description: 'Cartoon'
   },
   { 
     id: 9,
@@ -133,7 +133,7 @@ const artworks = [
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
-    description: 'Experimental digital composition'
+    description: 'Cartoon'
   },
   { 
     id: 10,
@@ -142,7 +142,7 @@ const artworks = [
     category: 'commissions',
     medium: 'Mixed Media',
     year: '2025',
-    description: 'Custom artwork for underground music collective'
+    description: 'Cartoon'
   },
   { 
     id: 11,
@@ -151,7 +151,7 @@ const artworks = [
     category: 'graffiti',
     medium: 'Photography',
     year: '2025',
-    description: 'Documentation of street art culture'
+    description: 'Cartoon'
   },
   { 
     id: 12,
@@ -160,7 +160,7 @@ const artworks = [
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
-    description: 'Exploring analog aesthetics in digital space'
+    description: 'Cartoon'
   }
 ];
 
@@ -638,7 +638,7 @@ function App() {
                       }}
                     >
                       {filter === 'all' ? 'All Work' : 
-                       filter === 'street' ? 'Street' :
+                       filter === 'street' ? 'Cartoon' :
                        filter === 'digital' ? 'Digital' :
                        filter === 'graffiti' ? 'Graffiti' :
                        'Commissions'}
