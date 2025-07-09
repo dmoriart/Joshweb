@@ -21,7 +21,7 @@ const works = [
     venue: 'Wigwam',
     description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
     year: '2025',
-    category: 'DJ Session'
+    category: 'DJ SET'
   },
   { 
     title: 'LOCKOUT AT SOUND HOUSE', 
@@ -48,7 +48,7 @@ const works = [
     venue: 'Wigwam',
     description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025. This session captures the raw, underground vibe of Dublin\'s nightlife, featuring RHR\'s signature blend of pulsing house, techno, and dancefloor anthems.',
     year: '2025',
-    category: 'DJ Session'
+    category: 'DJ SET'
   },
 ];
 
