@@ -934,7 +934,7 @@ function App() {
                     marginBottom: '32px',
                     lineHeight: '1.6'
                   }}>
-                    Every frame tells a story of late-night basement shows, illive band sessions, and the moments between songs that define a scene.
+                    Every frame tells a story of late-night basement shows, Live band sessions, and the moments between songs that define a scene.
                   </p>
                   <div style={{
                     display: 'flex',
