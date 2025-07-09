@@ -15,6 +15,15 @@ const works = [
     category: 'DJ Set'
   },
   { 
+    title: 'DJ ORTEGA', 
+    url: 'https://youtu.be/qPzb5GKsq58',
+    type: 'djs',
+    venue: 'Wigwam',
+    description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
+    year: '2025',
+    category: 'DJ Session'
+  },
+  { 
     title: 'LOCKOUT AT SOUND HOUSE', 
     url: 'https://youtu.be/GabbIXxuWKU',
     type: 'bands',
