@@ -6,6 +6,15 @@ import { useMetaTags, useCurrentSection } from './useMetaTags';
 
 const works = [
   { 
+    title: 'DJ ORTEGA', 
+    url: 'https://youtu.be/mo90B3F9Lkk',
+    type: 'djs',
+    venue: 'Wigwam',
+    description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2024.',
+    year: '2024',
+    category: 'DJ Set'
+  },
+  { 
     title: 'LOCKOUT AT SOUND HOUSE', 
     url: 'https://youtu.be/GabbIXxuWKU',
     type: 'bands',
@@ -22,15 +31,6 @@ const works = [
     description: 'Late night basement vibes captured on DV tape.',
     year: '2024',
     category: 'Club Set'
-  },
-  { 
-    title: 'BEHIND THE SOUND', 
-    url: 'https://www.youtube.com/watch?v=1aF9i1MaCsE',
-    type: 'bands',
-    venue: 'Rehearsal Space',
-    description: 'The real moments between tracks.',
-    year: '2024',
-    category: 'Documentary'
   },
   { 
     title: 'UNDERGROUND SESSIONS', 
