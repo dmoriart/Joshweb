@@ -10,8 +10,8 @@ const works = [
     url: 'https://youtu.be/mo90B3F9Lkk',
     type: 'djs',
     venue: 'Wigwam',
-    description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2024.',
-    year: '2024',
+    description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025.',
+    year: '2025',
     category: 'DJ Set'
   },
   { 
@@ -20,7 +20,7 @@ const works = [
     type: 'bands',
     venue: 'Sound House',
     description: 'Raw underground energy captured through analog grain.',
-    year: '2024',
+    year: '2025',
     category: 'Live Performance'
   },
   { 
@@ -29,7 +29,7 @@ const works = [
     type: 'djs',
     venue: 'Club Night',
     description: 'Late night basement vibes captured on DV tape.',
-    year: '2024',
+    year: '2025',
     category: 'Club Set'
   },
   { 
@@ -37,8 +37,8 @@ const works = [
     url: 'https://youtu.be/qPzb5GKsq58',
     type: 'djs',
     venue: 'Wigwam',
-    description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2024. This session captures the raw, underground vibe of Dublin\'s nightlife, featuring RHR\'s signature blend of pulsing house, techno, and dancefloor anthems.',
-    year: '2024',
+    description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025. This session captures the raw, underground vibe of Dublin\'s nightlife, featuring RHR\'s signature blend of pulsing house, techno, and dancefloor anthems.',
+    year: '2025',
     category: 'DJ Session'
   },
 ];
@@ -51,7 +51,7 @@ const artworks = [
     title: 'Urban Decay',
     category: 'street',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Raw street photography capturing underground culture'
   },
   { 
@@ -60,7 +60,7 @@ const artworks = [
     title: 'Night Vision',
     category: 'street',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Late night urban exploration'
   },
   { 
@@ -69,7 +69,7 @@ const artworks = [
     title: 'Analog Dreams',
     category: 'digital',
     medium: 'Digital Art',
-    year: '2024',
+    year: '2025',
     description: 'Digital manipulation of film photography'
   },
   { 
@@ -78,7 +78,7 @@ const artworks = [
     title: 'Concrete Jungle',
     category: 'street',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Urban landscape through DV tape aesthetic'
   },
   { 
@@ -87,7 +87,7 @@ const artworks = [
     title: 'Underground Scene',
     category: 'graffiti',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Documenting street art and underground culture'
   },
   { 
@@ -96,7 +96,7 @@ const artworks = [
     title: 'Texture Study',
     category: 'digital',
     medium: 'Digital Art',
-    year: '2024',
+    year: '2025',
     description: 'Exploring grain and texture in digital medium'
   },
   { 
@@ -105,7 +105,7 @@ const artworks = [
     title: 'Raw Energy',
     category: 'street',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Capturing authentic moments in urban spaces'
   },
   { 
@@ -114,7 +114,7 @@ const artworks = [
     title: 'City Lights',
     category: 'street',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Nighttime urban photography'
   },
   { 
@@ -123,7 +123,7 @@ const artworks = [
     title: 'Abstract Forms',
     category: 'digital',
     medium: 'Digital Art',
-    year: '2024',
+    year: '2025',
     description: 'Experimental digital composition'
   },
   { 
@@ -132,7 +132,7 @@ const artworks = [
     title: 'Commission Work',
     category: 'commissions',
     medium: 'Mixed Media',
-    year: '2024',
+    year: '2025',
     description: 'Custom artwork for underground music collective'
   },
   { 
@@ -141,7 +141,7 @@ const artworks = [
     title: 'Street Culture',
     category: 'graffiti',
     medium: 'Photography',
-    year: '2024',
+    year: '2025',
     description: 'Documentation of street art culture'
   },
   { 
@@ -150,7 +150,7 @@ const artworks = [
     title: 'Digital Grain',
     category: 'digital',
     medium: 'Digital Art',
-    year: '2024',
+    year: '2025',
     description: 'Exploring analog aesthetics in digital space'
   }
 ];
