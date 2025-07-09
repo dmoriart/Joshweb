@@ -1043,13 +1043,19 @@ function App() {
                 </p>
               </div>
 
-              <form style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '24px'
-              }}>
+              <form 
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '24px'
+                }}>
+                <input type="hidden" name="form-name" value="contact" />
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   required
                   style={{
@@ -1063,6 +1069,7 @@ function App() {
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
                   required
                   style={{
@@ -1075,6 +1082,7 @@ function App() {
                   }}
                 />
                 <select
+                  name="project-type"
                   required
                   style={{
                     padding: '16px 20px',
@@ -1093,6 +1101,7 @@ function App() {
                   <option value="other">Other</option>
                 </select>
                 <textarea
+                  name="message"
                   placeholder="Tell me about your project..."
                   required
                   rows="6"
