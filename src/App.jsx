@@ -604,7 +604,7 @@ function App() {
                     fontSize: '1.1rem',
                     color: '#666',
                     maxWidth: '600px',
-                    margin: '0 0 40px auto',
+                    margin: '0 auto 40px auto',
                     letterSpacing: '-0.01em'
                   }}>
                     Exploring visual narratives through photography, digital art, and mixed media
