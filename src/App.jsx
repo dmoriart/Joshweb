@@ -1043,6 +1043,49 @@ function App() {
                 </p>
               </div>
 
+              {/* Direct Email Option */}
+              <div style={{
+                textAlign: 'center',
+                marginBottom: '40px',
+                padding: '24px',
+                background: '#f8f8f8',
+                borderRadius: '8px',
+                border: '1px solid #e0e0e0'
+              }}>
+                <p style={{
+                  fontSize: '1rem',
+                  color: '#333',
+                  margin: '0 0 12px 0',
+                  fontWeight: '500'
+                }}>
+                  Prefer to email directly?
+                </p>
+                <a 
+                  href="mailto:joshmoriartyfilms@gmail.com"
+                  style={{
+                    fontSize: '1.1rem',
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    border: '2px solid #1a1a1a',
+                    padding: '12px 24px',
+                    borderRadius: '6px',
+                    display: 'inline-block',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#1a1a1a';
+                    e.target.style.color = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'transparent';
+                    e.target.style.color = '#1a1a1a';
+                  }}
+                >
+                  joshmoriartyfilms@gmail.com
+                </a>
+              </div>
+
               <form 
                 name="contact"
                 method="POST"
