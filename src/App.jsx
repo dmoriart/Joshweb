@@ -390,7 +390,7 @@ function App() {
                   margin: '0 auto',
                   letterSpacing: '-0.01em'
                 }}>
-                  A collection of underground performances, late-night sessions, and raw moments captured on DV tape
+                  A collection of live band performances, late-night sessions, and raw moments captured on DV tape
                 </p>
               </div>
 
