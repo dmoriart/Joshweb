@@ -1258,16 +1258,6 @@ function App() {
                   }}>
                     YouTube
                   </a>
-                  <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer" style={{
-                    color: '#ffffff',
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    opacity: 0.8,
-                    transition: 'opacity 0.2s ease'
-                  }}>
-                    Vimeo
-                  </a>
                 </div>
                 <p style={{
                   color: '#666',
