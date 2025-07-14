@@ -967,15 +967,6 @@ function App() {
                   }}>
                     Every frame tells a story—late-night basement shows, live sessions, and those moments between songs that truly define the scene.
                   </p>
-                  <p style={{
-                    fontSize: '1.1rem',
-                    color: '#333',
-                    marginBottom: '32px',
-                    lineHeight: '1.6',
-                    fontWeight: '500'
-                  }}>
-                    Available for work across Ireland.
-                  </p>
                   <div style={{
                     display: 'flex',
                     gap: '32px',
