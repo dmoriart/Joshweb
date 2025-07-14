@@ -918,8 +918,48 @@ function App() {
                     letterSpacing: '-0.03em',
                     lineHeight: '1.1'
                   }}>
-                    About the Process
+                    About the Cameraman
                   </h2>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#333',
+                    marginBottom: '24px',
+                    lineHeight: '1.6'
+                  }}>
+                    I'm Josh Moriarty, a young cameraman capturing live bands, DJs, and underground gigs across Ireland.
+                  </p>
+                  <div style={{
+                    marginBottom: '24px'
+                  }}>
+                    <p style={{
+                      fontSize: '1.1rem',
+                      color: '#333',
+                      margin: '0 0 16px 0',
+                      lineHeight: '1.6'
+                    }}>
+                      🎸 <strong>What I Film:</strong>
+                    </p>
+                    <ul style={{
+                      fontSize: '1rem',
+                      color: '#666',
+                      marginLeft: '32px',
+                      lineHeight: '1.8'
+                    }}>
+                      <li>Live Bands & Gigs</li>
+                      <li>DJ Sets & Club Nights</li>
+                      <li>Behind the Scenes</li>
+                      <li>Creative Promo Clips</li>
+                    </ul>
+                  </div>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#333',
+                    marginBottom: '32px',
+                    lineHeight: '1.6',
+                    fontWeight: '500'
+                  }}>
+                    Based in Wicklow. Available for work.
+                  </p>
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#666',
