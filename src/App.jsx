@@ -926,7 +926,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.6'
                   }}>
-                    I'm Josh Moriarty, a young cameraman capturing live bands, DJs, and underground gigs across Ireland.
+                    I'm Josh Moriarty, a cameraman based in Wicklow, capturing live bands, DJs, and underground gigs all over Ireland.
                   </p>
                   <div style={{
                     marginBottom: '24px'
@@ -937,7 +937,7 @@ function App() {
                       margin: '0 0 16px 0',
                       lineHeight: '1.6'
                     }}>
-                      🎸 <strong>What I Film:</strong>
+                      <strong>What I do:</strong>
                     </p>
                     <ul style={{
                       fontSize: '1rem',
@@ -945,20 +945,19 @@ function App() {
                       marginLeft: '32px',
                       lineHeight: '1.8'
                     }}>
-                      <li>Live Bands & Gigs</li>
-                      <li>DJ Sets & Club Nights</li>
-                      <li>Behind the Scenes</li>
-                      <li>Creative Promo Clips</li>
+                      <li>Live bands and gigs</li>
+                      <li>DJ sets and club nights</li>
+                      <li>Behind-the-scenes moments</li>
+                      <li>Creative promo clips</li>
                     </ul>
                   </div>
                   <p style={{
                     fontSize: '1.1rem',
-                    color: '#333',
-                    marginBottom: '32px',
-                    lineHeight: '1.6',
-                    fontWeight: '500'
+                    color: '#666',
+                    marginBottom: '24px',
+                    lineHeight: '1.6'
                   }}>
-                    Based in Wicklow. Available for work.
+                    I film the underground music scene through the authentic grain of DV tape, using a Sony PD170 to preserve the raw energy that gets lost in digital perfection.
                   </p>
                   <p style={{
                     fontSize: '1.1rem',
@@ -966,15 +965,16 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.6'
                   }}>
-                    I capture underground music scenes through the authentic grain of DV tape. Using a Sony PD170, I document the raw energy that digital perfection often sanitizes away.
+                    Every frame tells a story—late-night basement shows, live sessions, and those moments between songs that truly define the scene.
                   </p>
                   <p style={{
                     fontSize: '1.1rem',
-                    color: '#666',
+                    color: '#333',
                     marginBottom: '32px',
-                    lineHeight: '1.6'
+                    lineHeight: '1.6',
+                    fontWeight: '500'
                   }}>
-                    Every frame tells a story of late-night basement shows, Live band sessions, and the moments between songs that define a scene.
+                    Available for work across Ireland.
                   </p>
                   <div style={{
                     display: 'flex',
