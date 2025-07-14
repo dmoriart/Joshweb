@@ -1052,6 +1052,36 @@ function App() {
                   </p>
                 </div>
               </div>
+              
+              {/* Contact Info Section */}
+              <div style={{
+                background: '#f8f8f8',
+                borderRadius: '12px',
+                padding: '32px',
+                marginTop: '40px',
+                textAlign: 'center'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  fontSize: '1rem',
+                  color: '#333'
+                }}>
+                  <p style={{ margin: 0, lineHeight: '1.6' }}>
+                    🎬 Based in Wicklow. Available for work.
+                  </p>
+                  <p style={{ margin: 0, lineHeight: '1.6' }}>
+                    📧 Contact: <a href="mailto:JoshMoriartyFilms@gmail.com" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: '500' }}>JoshMoriartyFilms@gmail.com</a>
+                  </p>
+                  <p style={{ margin: 0, lineHeight: '1.6' }}>
+                    📍 Follow my work on Instagram: <a href="https://instagram.com/joshmoriartyfilms" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: '500' }}>@joshmoriartyfilms</a>
+                  </p>
+                  <p style={{ margin: 0, lineHeight: '1.6' }}>
+                    📍 Follow my work on Youtube: <a href="https://www.youtube.com/@joshmoriartyfilms/featured" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: '500' }}>@joshmoriartyfilms</a>
+                  </p>
+                </div>
+              </div>
             </section>
 
             {/* Contact Section */}
