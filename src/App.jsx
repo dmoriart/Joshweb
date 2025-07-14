@@ -918,7 +918,7 @@ function App() {
                     letterSpacing: '-0.03em',
                     lineHeight: '1.1'
                   }}>
-                    About the Cameraman
+                    About me
                   </h2>
                   <p style={{
                     fontSize: '1.1rem',
