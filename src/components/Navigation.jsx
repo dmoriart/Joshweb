@@ -67,6 +67,14 @@ function Navigation() {
                         transition: 'opacity 0.2s ease',
                         opacity: 0.8
                     }}>Artwork</a>
+                    <a href="#process" style={{
+                        color: '#1a1a1a',
+                        textDecoration: 'none',
+                        fontWeight: '500',
+                        fontSize: '16px',
+                        transition: 'opacity 0.2s ease',
+                        opacity: 0.8
+                    }}>Process</a>
                     <a href="#about" style={{
                         color: '#1a1a1a',
                         textDecoration: 'none',

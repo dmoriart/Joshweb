@@ -6,16 +6,22 @@ export const works = [
         venue: 'Wigwam',
         description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025.',
         year: '2025',
-        category: 'DJ Set'
+        category: 'DJ Set',
+        role: 'Videographer & Editor',
+        concept: 'To capture the frenetic energy of the crowd and the DJ\'s performance using rapid cuts and close-ups.',
+        criticalAnalysis: 'The use of DV tape added a necessary grit that complemented the underground techno sound, though low-light conditions challenged the autofocus.'
     },
     {
-        title: 'DJ ORTEGA',
+        title: 'DJ ORTEGA (ALT)',
         url: 'https://youtu.be/VDjuqnk_Gqs',
         type: 'djs',
         venue: 'Wigwam',
         description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
         year: '2025',
-        category: 'DJ SET'
+        category: 'DJ SET',
+        role: 'Camera Operator',
+        concept: 'Focusing on the interaction between the DJ and the equipment, highlighting the technical skill involved.',
+        criticalAnalysis: 'A more static approach allowed for a clearer view of the mixing process, providing a contrast to the high-energy crowd shots.'
     },
     {
         title: 'LOCKOUT AT SOUND HOUSE',
@@ -24,7 +30,10 @@ export const works = [
         venue: 'Sound House',
         description: 'Raw underground energy captured through analog grain.',
         year: '2025',
-        category: 'Live Performance'
+        category: 'Live Performance',
+        role: 'Director of Photography',
+        concept: 'Documenting the raw, unpolished nature of a live punk performance.',
+        criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience.'
     },
     {
         title: 'DJ SHOUTOUT',
@@ -33,16 +42,22 @@ export const works = [
         venue: 'Club Night',
         description: 'Late night basement vibes captured on DV tape.',
         year: '2025',
-        category: 'Club Set'
+        category: 'Club Set',
+        role: 'Videographer',
+        concept: 'Emphasizing the intimacy and atmosphere of a small, packed club venue.',
+        criticalAnalysis: 'The limited dynamic range of the PD170 was used to artistic effect, crushing blacks to isolate the subject in the strobe lights.'
     },
     {
         title: 'DJ RHR',
         url: 'https://youtu.be/qPzb5GKsq58',
         type: 'djs',
         venue: 'Wigwam',
-        description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025. This session captures the raw, underground vibe of Dublin\'s nightlife, featuring RHR\'s signature blend of pulsing house, techno, and dancefloor anthems.',
+        description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025.',
         year: '2025',
-        category: 'DJ SET'
+        category: 'DJ SET',
+        role: 'Editor',
+        concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
+        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact.'
     },
 ];
 

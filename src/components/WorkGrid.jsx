@@ -178,10 +178,31 @@ function WorkGrid() {
                                 alignItems: 'center',
                                 color: '#999',
                                 fontSize: '0.85rem',
-                                fontWeight: '500'
+                                fontWeight: '500',
+                                marginBottom: '20px'
                             }}>
                                 <span>{work.venue}</span>
                                 <span>{work.year}</span>
+                            </div>
+
+                            {/* Contextual Details */}
+                            <div style={{
+                                borderTop: '1px solid #eee',
+                                paddingTop: '16px',
+                                fontSize: '0.9rem'
+                            }}>
+                                <div style={{ marginBottom: '12px' }}>
+                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Role</span>
+                                    <span style={{ color: '#444' }}>{work.role}</span>
+                                </div>
+                                <div style={{ marginBottom: '12px' }}>
+                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Concept</span>
+                                    <span style={{ color: '#444' }}>{work.concept}</span>
+                                </div>
+                                <div>
+                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Critical Analysis</span>
+                                    <span style={{ color: '#444', fontStyle: 'italic' }}>"{work.criticalAnalysis}"</span>
+                                </div>
                             </div>
                         </div>
                     </div>

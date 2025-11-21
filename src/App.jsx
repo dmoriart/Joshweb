@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
+import Process from './components/Process';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
 
@@ -68,6 +69,8 @@ function App() {
               </div>
             </section>
 
+            <Process />
+
             {/* About Section */}
             <section id="about" style={{
               padding: '100px 20px',
@@ -119,16 +122,26 @@ function App() {
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
-                    marginBottom: '24px'
+                    marginBottom: '24px',
+                    lineHeight: '1.8'
                   }}>
-                    Specializing in capturing the raw energy of Dublin's underground music scene using authentic DV tape technology.
+                    Specializing in capturing the raw energy of Dublin's underground music scene using authentic DV tape technology. The Sony PD170 offers a unique, nostalgic aesthetic that digital cameras simply can't replicate.
                   </p>
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
-                    marginBottom: '30px'
+                    marginBottom: '24px',
+                    lineHeight: '1.8'
                   }}>
-                    The Sony PD170 offers a unique, nostalgic aesthetic that digital cameras simply can't replicate. It's about the texture, the grain, and the feeling of being there in the moment.
+                    I am inspired by the raw energy of 90s skate videos and the visual storytelling of Stacy Peralta and Craig Stecyk in the documentary <em>Dogtown and Z-Boys</em> (2001). My perspective on visual storytelling was further shaped by the animated depth of <em>Star Wars: The Clone Wars</em> and the practical effects mastery in <em>An American Werewolf in London</em>.
+                  </p>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#444',
+                    marginBottom: '30px',
+                    lineHeight: '1.8'
+                  }}>
+                    While I love the DV tape aesthetic, I am eager to expand my technical knowledge in lighting, sound design, and narrative direction to tell even more compelling stories.
                   </p>
                   <div style={{
                     display: 'flex',
