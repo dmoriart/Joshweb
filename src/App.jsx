@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
 
 const works = [
-  { 
-    title: 'DJ ORTEGA', 
+  {
+    title: 'DJ ORTEGA',
     url: 'https://youtu.be/mo90B3F9Lkk',
     type: 'djs',
     venue: 'Wigwam',
@@ -14,8 +14,8 @@ const works = [
     year: '2025',
     category: 'DJ Set'
   },
-  { 
-    title: 'DJ ORTEGA', 
+  {
+    title: 'DJ ORTEGA',
     url: 'https://youtu.be/VDjuqnk_Gqs',
     type: 'djs',
     venue: 'Wigwam',
@@ -23,8 +23,8 @@ const works = [
     year: '2025',
     category: 'DJ SET'
   },
-  { 
-    title: 'LOCKOUT AT SOUND HOUSE', 
+  {
+    title: 'LOCKOUT AT SOUND HOUSE',
     url: 'https://youtu.be/GabbIXxuWKU',
     type: 'bands',
     venue: 'Sound House',
@@ -32,8 +32,8 @@ const works = [
     year: '2025',
     category: 'Live Performance'
   },
-  { 
-    title: 'DJ SHOUTOUT', 
+  {
+    title: 'DJ SHOUTOUT',
     url: 'https://www.youtube.com/watch?v=AidsPG4xpMk',
     type: 'djs',
     venue: 'Club Night',
@@ -41,8 +41,8 @@ const works = [
     year: '2025',
     category: 'Club Set'
   },
-  { 
-    title: 'DJ RHR', 
+  {
+    title: 'DJ RHR',
     url: 'https://youtu.be/qPzb5GKsq58',
     type: 'djs',
     venue: 'Wigwam',
@@ -54,108 +54,108 @@ const works = [
 
 // Artwork data with categories
 const artworks = [
-  { 
+  {
     id: 1,
-    src: '/IMG_2041.jpeg',
+    src: '/images/photography/IMG_2041.jpeg',
     title: 'Urban Decay',
     category: 'street',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 2,
-    src: '/IMG_2042.jpeg',
+    src: '/images/photography/IMG_2042.jpeg',
     title: 'Night Vision',
     category: 'street',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 3,
-    src: '/IMG_2043.jpeg',
+    src: '/images/photography/IMG_2043.jpeg',
     title: 'Analog Dreams',
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 4,
-    src: '/IMG_2044.jpeg',
+    src: '/images/photography/IMG_2044.jpeg',
     title: 'Concrete Jungle',
     category: 'street',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 5,
-    src: '/IMG_2045.jpeg',
+    src: '/images/photography/IMG_2045.jpeg',
     title: 'Underground Scene',
     category: 'graffiti',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 6,
-    src: '/IMG_2046.jpeg',
+    src: '/images/photography/IMG_2046.jpeg',
     title: 'Texture Study',
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 7,
-    src: '/IMG_2242.jpeg',
+    src: '/images/photography/IMG_2242.jpeg',
     title: 'Raw Energy',
     category: 'street',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 8,
-    src: '/IMG_2243.jpeg',
+    src: '/images/photography/IMG_2243.jpeg',
     title: 'City Lights',
     category: 'street',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 9,
-    src: '/IMG_2244.jpeg',
+    src: '/images/photography/IMG_2244.jpeg',
     title: 'Abstract Forms',
     category: 'digital',
     medium: 'Digital Art',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 10,
-    src: '/195f3920-7b0c-4d7b-8023-dd6ec17c01ff.jpeg',
+    src: '/images/artwork/195f3920-7b0c-4d7b-8023-dd6ec17c01ff.jpeg',
     title: 'Commission Work',
     category: 'commissions',
     medium: 'Mixed Media',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 11,
-    src: '/3317fa68-5b21-45f1-95a4-9f0e9fa3c12f.jpeg',
+    src: '/images/artwork/3317fa68-5b21-45f1-95a4-9f0e9fa3c12f.jpeg',
     title: 'Street Culture',
     category: 'graffiti',
     medium: 'Photography',
     year: '2025',
     description: 'Cartoon'
   },
-  { 
+  {
     id: 12,
-    src: '/6dfb7c87-a1f1-4e6f-bee2-3bef1474e03c.jpeg',
+    src: '/images/artwork/6dfb7c87-a1f1-4e6f-bee2-3bef1474e03c.jpeg',
     title: 'Digital Grain',
     category: 'digital',
     medium: 'Digital Art',
@@ -164,11 +164,64 @@ const artworks = [
   }
 ];
 
+// Photography data
+const photography = [
+  {
+    id: 1,
+    src: '/images/photography/IMG_2041.jpeg',
+    title: 'Urban Geometry',
+    category: 'architecture',
+    description: 'Lines and shadows in the city center',
+    year: '2025'
+  },
+  {
+    id: 2,
+    src: '/images/photography/IMG_2042.jpeg',
+    title: 'Neon Nights',
+    category: 'street',
+    description: 'Vibrant colors of the night market',
+    year: '2025'
+  },
+  {
+    id: 3,
+    src: '/images/photography/IMG_2043.jpeg',
+    title: 'Portrait Study',
+    category: 'portrait',
+    description: 'Natural light portraiture',
+    year: '2025'
+  },
+  {
+    id: 4,
+    src: '/images/photography/IMG_2044.jpeg',
+    title: 'Abstract Texture',
+    category: 'texture',
+    description: 'Macro details of urban decay',
+    year: '2025'
+  },
+  {
+    id: 5,
+    src: '/images/photography/IMG_2045.jpeg',
+    title: 'City Silhouettes',
+    category: 'street',
+    description: 'Shadows against the sunset',
+    year: '2025'
+  },
+  {
+    id: 6,
+    src: '/images/photography/IMG_2046.jpeg',
+    title: 'Modern Lines',
+    category: 'architecture',
+    description: 'Contemporary building facade',
+    year: '2025'
+  }
+];
+
 function App() {
   const [activeFilter, setActiveFilter] = React.useState('all');
   const [artworkFilter, setArtworkFilter] = React.useState('all');
+  const [photoFilter, setPhotoFilter] = React.useState('all');
   const [lightboxImage, setLightboxImage] = React.useState(null);
-  
+
   // Dynamic meta tags based on current section
   const currentSection = useCurrentSection();
   useMetaTags(currentSection);
@@ -187,87 +240,96 @@ function App() {
 
   const filteredWorks = activeFilter === 'all' ? works : works.filter(work => work.type === activeFilter);
   const filteredArtworks = artworkFilter === 'all' ? artworks : artworks.filter(artwork => artwork.category === artworkFilter);
+  const filteredPhotos = photoFilter === 'all' ? photography : photography.filter(photo => photo.category === photoFilter);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="jm-site" style={{ 
-            background: '#fafafa', 
-            color: '#1a1a1a', 
+          <div className="jm-site" style={{
+            background: '#fafafa',
+            color: '#1a1a1a',
             fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
             minHeight: '100vh',
             lineHeight: 1.6
           }}>
             {/* Minimalist Navigation */}
-            <nav style={{ 
-              position: 'fixed', 
-              top: 0, 
-              width: '100%', 
-              background: 'rgba(250, 250, 250, 0.95)', 
+            <nav style={{
+              position: 'fixed',
+              top: 0,
+              width: '100%',
+              background: 'rgba(250, 250, 250, 0.95)',
               backdropFilter: 'blur(20px)',
               zIndex: 1000,
               padding: '20px 0',
               borderBottom: '1px solid rgba(26, 26, 26, 0.1)'
             }}>
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'space-between', 
-                alignItems: 'center', 
-                maxWidth: '1400px', 
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                maxWidth: '1400px',
                 margin: '0 auto',
                 padding: '0 20px'
               }}>
-                <a href="#" style={{ 
-                  fontFamily: "'Inter', sans-serif", 
-                  fontSize: '18px', 
+                <a href="#" style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '18px',
                   fontWeight: '600',
                   color: '#1a1a1a',
                   letterSpacing: '-0.02em',
                   textDecoration: 'none',
                   transition: 'opacity 0.2s ease'
                 }}
-                onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-                onMouseLeave={(e) => e.target.style.opacity = '1'}
+                  onMouseEnter={(e) => e.target.style.opacity = '0.8'}
+                  onMouseLeave={(e) => e.target.style.opacity = '1'}
                 >
                   Josh Moriarty Films
                 </a>
                 <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                  <a href="#" style={{ 
-                    color: '#1a1a1a', 
-                    textDecoration: 'none', 
+                  <a href="#" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
                     fontWeight: '500',
                     fontSize: '16px',
                     transition: 'opacity 0.2s ease',
                     opacity: 0.8
                   }}>Home</a>
-                  <a href="#work" style={{ 
-                    color: '#1a1a1a', 
-                    textDecoration: 'none', 
+                  <a href="#work" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
                     fontWeight: '500',
                     fontSize: '16px',
                     transition: 'opacity 0.2s ease',
                     opacity: 0.8
                   }}>Work</a>
-                  <a href="#artwork" style={{ 
-                    color: '#1a1a1a', 
-                    textDecoration: 'none', 
+                  <a href="#photography" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
+                    fontWeight: '500',
+                    fontSize: '16px',
+                    transition: 'opacity 0.2s ease',
+                    opacity: 0.8
+                  }}>Photography</a>
+                  <a href="#artwork" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
                     fontWeight: '500',
                     fontSize: '16px',
                     transition: 'opacity 0.2s ease',
                     opacity: 0.8
                   }}>Artwork</a>
-                  <a href="#about" style={{ 
-                    color: '#1a1a1a', 
-                    textDecoration: 'none', 
+                  <a href="#about" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
                     fontWeight: '500',
                     fontSize: '16px',
                     transition: 'opacity 0.2s ease',
                     opacity: 0.8
                   }}>About</a>
-                  <a href="#contact" style={{ 
-                    color: '#1a1a1a', 
-                    textDecoration: 'none', 
+                  <a href="#contact" style={{
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
                     fontWeight: '500',
                     fontSize: '16px',
                     transition: 'opacity 0.2s ease',
@@ -285,7 +347,7 @@ function App() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundImage: 'url(/IMG_0226.jpeg)',
+              backgroundImage: 'url(/images/photography/IMG_0226.jpeg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -318,7 +380,7 @@ function App() {
                   letterSpacing: '-0.04em',
                   lineHeight: '0.9'
                 }}>
-                  Josh Moriarty<br/>Films
+                  Josh Moriarty<br />Films
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
@@ -441,15 +503,15 @@ function App() {
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     cursor: 'pointer'
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.12)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-                  }}
-                  onClick={() => window.open(work.url, '_blank')}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.12)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                    }}
+                    onClick={() => window.open(work.url, '_blank')}
                   >
                     {/* Thumbnail */}
                     <div style={{
@@ -477,7 +539,7 @@ function App() {
                       }}>
                         ▶
                       </div>
-                      
+
                       {/* Category badge */}
                       <div style={{
                         position: 'absolute',
@@ -575,6 +637,138 @@ function App() {
               </div>
             </section>
 
+            {/* Photography Section */}
+            <section id="photography" style={{
+              background: '#ffffff',
+              padding: '80px 20px'
+            }}>
+              <div style={{
+                maxWidth: '1400px',
+                margin: '0 auto'
+              }}>
+                {/* Section Title */}
+                <div style={{
+                  textAlign: 'center',
+                  marginBottom: '80px'
+                }}>
+                  <h2 style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                    fontWeight: '700',
+                    margin: '0 0 20px 0',
+                    letterSpacing: '-0.03em',
+                    lineHeight: '1.1',
+                    color: '#1a1a1a'
+                  }}>
+                    Photography
+                  </h2>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#666',
+                    maxWidth: '600px',
+                    margin: '0 auto 40px auto',
+                    letterSpacing: '-0.01em'
+                  }}>
+                    Composition, colour, shape. High-resolution moments complementing the analog grain.
+                  </p>
+                </div>
+
+                {/* Photo Filter Buttons */}
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '20px',
+                  marginBottom: '60px',
+                  flexWrap: 'wrap'
+                }}>
+                  {['all', 'street', 'portrait', 'architecture', 'texture'].map(filter => (
+                    <button
+                      key={filter}
+                      onClick={() => setPhotoFilter(filter)}
+                      style={{
+                        padding: '12px 24px',
+                        background: photoFilter === filter ? '#1a1a1a' : 'transparent',
+                        color: photoFilter === filter ? '#ffffff' : '#1a1a1a',
+                        border: '1px solid #1a1a1a',
+                        borderRadius: '6px',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      {filter === 'all' ? 'All Photos' : filter.charAt(0).toUpperCase() + filter.slice(1)}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Photography Grid */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+                  gap: '30px',
+                  marginBottom: '60px'
+                }}>
+                  {filteredPhotos.map((photo) => (
+                    <div
+                      key={photo.id}
+                      style={{
+                        position: 'relative',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        aspectRatio: '3/4',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        transition: 'transform 0.3s ease'
+                      }}
+                      onClick={() => setLightboxImage(photo)}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                      onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                    >
+                      <img
+                        src={photo.src}
+                        alt={photo.title}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          transition: 'transform 0.5s ease'
+                        }}
+                      />
+                      <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        padding: '30px 20px',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                        color: '#ffffff',
+                        opacity: 0,
+                        transition: 'opacity 0.3s ease'
+                      }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = 0}
+                        className="photo-overlay"
+                      >
+                        <h3 style={{
+                          margin: '0 0 8px 0',
+                          fontSize: '1.2rem',
+                          fontWeight: '600'
+                        }}>{photo.title}</h3>
+                        <p style={{
+                          margin: 0,
+                          fontSize: '0.9rem',
+                          opacity: 0.9
+                        }}>{photo.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
             {/* Artwork Section */}
             <section id="artwork" style={{
               background: '#f8f8f8',
@@ -637,11 +831,11 @@ function App() {
                         transition: 'all 0.2s ease'
                       }}
                     >
-                      {filter === 'all' ? 'All Work' : 
-                       filter === 'street' ? 'Cartoon' :
-                       filter === 'digital' ? 'Digital' :
-                       filter === 'graffiti' ? 'Graffiti' :
-                       'Commissions'}
+                      {filter === 'all' ? 'All Work' :
+                        filter === 'street' ? 'Cartoon' :
+                          filter === 'digital' ? 'Digital' :
+                            filter === 'graffiti' ? 'Graffiti' :
+                              'Commissions'}
                     </button>
                   ))}
                 </div>
@@ -654,8 +848,8 @@ function App() {
                   marginBottom: '60px'
                 }}>
                   {filteredArtworks.map((artwork) => (
-                    <div 
-                      key={artwork.id} 
+                    <div
+                      key={artwork.id}
                       className="artwork-item"
                       style={{
                         background: '#ffffff',
@@ -702,7 +896,7 @@ function App() {
                         }}>
                           {artwork.title}
                         </div>
-                        
+
                         {/* Hover Overlay */}
                         <div className="artwork-overlay" style={{
                           position: 'absolute',
@@ -788,7 +982,7 @@ function App() {
 
             {/* Lightbox Modal */}
             {lightboxImage && (
-              <div 
+              <div
                 className="lightbox-overlay"
                 style={{
                   position: 'fixed',
@@ -814,7 +1008,7 @@ function App() {
                   overflow: 'hidden',
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
                 }}
-                onClick={(e) => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {/* Close Button */}
                   <button
@@ -985,8 +1179,8 @@ function App() {
                         fontSize: '0.95rem',
                         margin: 0
                       }}>
-                        Sony PD170<br/>
-                        DV Tape Format<br/>
+                        Sony PD170<br />
+                        DV Tape Format<br />
                         Analog Audio
                       </p>
                     </div>
@@ -1003,8 +1197,8 @@ function App() {
                         fontSize: '0.95rem',
                         margin: 0
                       }}>
-                        Live Performances<br/>
-                        DJ Sets<br/>
+                        Live Performances<br />
+                        DJ Sets<br />
                         Documentary Style
                       </p>
                     </div>
@@ -1043,7 +1237,7 @@ function App() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Contact Info Section */}
               <div style={{
                 background: '#f8f8f8',
@@ -1121,7 +1315,7 @@ function App() {
                 }}>
                   Prefer to email directly?
                 </p>
-                <a 
+                <a
                   href="mailto:joshmoriartyfilms@gmail.com"
                   style={{
                     fontSize: '1.1rem',
@@ -1147,7 +1341,7 @@ function App() {
                 </a>
               </div>
 
-              <form 
+              <form
                 name="contact"
                 method="POST"
                 data-netlify="true"
