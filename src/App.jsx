@@ -195,7 +195,7 @@ function App() {
                 }}>
                   Available for bookings, collaborations, and events.
                 </p>
-                <a href="mailto:contact@joshmoriartyfilms.com" style={{
+                <a href="mailto:joshmoriartyfilms@gmail.com" style={{
                   display: 'inline-block',
                   padding: '16px 40px',
                   background: '#ffffff',
@@ -211,6 +211,17 @@ function App() {
                 >
                   Get in Touch
                 </a>
+
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '30px',
+                  marginTop: '40px'
+                }}>
+                  <a href="https://www.instagram.com/joshmoriartyfilms" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>Instagram</a>
+                  <a href="https://www.youtube.com/@joshmoriartyfilms" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>YouTube</a>
+                  <a href="#" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>LinkedIn</a>
+                </div>
                 <div style={{
                   marginTop: '60px',
                   paddingTop: '40px',
