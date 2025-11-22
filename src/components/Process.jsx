@@ -1,32 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { processItems } from '../data/content';
 
 function Process() {
-    const processItems = [
-        {
-            title: 'Storyboarding',
-            description: 'Visualizing the narrative flow before the camera rolls. Every shot is planned to ensure the story beats land.',
-            src: '/images/process/storyboard.png',
-            alt: 'Hand-drawn storyboard sketches'
-        },
-        {
-            title: 'Lighting Design',
-            description: 'Technical planning for atmospheric depth. Mapping out light sources to create the signature gritty aesthetic.',
-            src: '/images/process/lighting.png',
-            alt: 'Technical lighting plan diagram'
-        },
-        {
-            title: 'On Set',
-            description: 'The Sony PD170 in action. Capturing the raw energy of the moment with authentic DV tape hardware.',
-            src: '/images/process/bts.png',
-            alt: 'Behind the scenes camera setup'
-        },
-        {
-            title: 'Post-Production',
-            description: 'Where the story comes together. A complex timeline of cuts, color grading, and sound design.',
-            src: '/images/process/timeline.png',
-            alt: 'Video editing timeline'
-        }
-    ];
+    const [selectedItem, setSelectedItem] = useState(null);
 
     return (
         <section id="process" style={{
@@ -74,11 +50,18 @@ function Process() {
                             borderRadius: '12px',
                             overflow: 'hidden',
                             boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-                            transition: 'transform 0.3s ease',
-                            cursor: 'default'
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            cursor: 'pointer'
                         }}
-                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-5px)';
+                                e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.1)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+                            }}
+                            onClick={() => setSelectedItem(item)}
                         >
                             <div style={{
                                 height: '250px',
@@ -118,12 +101,99 @@ function Process() {
                                 }}>
                                     {item.description}
                                 </p>
+                                <div style={{
+                                    marginTop: '16px',
+                                    fontSize: '0.9rem',
+                                    fontWeight: '600',
+                                    color: '#1a1a1a',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px'
+                                }}>
+                                    View Details <span>→</span>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+
+
+            {/* Process Lightbox */}
+            {
+                selectedItem && (
+                    <div style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(0, 0, 0, 0.95)',
+                        zIndex: 2000,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '40px'
+                    }}
+                        onClick={() => setSelectedItem(null)}
+                    >
+                        <button style={{
+                            position: 'absolute',
+                            top: '20px',
+                            right: '20px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ffffff',
+                            fontSize: '40px',
+                            cursor: 'pointer',
+                            zIndex: 2001
+                        }}
+                            onClick={() => setSelectedItem(null)}
+                        >
+                            ×
+                        </button>
+                        <div style={{
+                            maxWidth: '800px',
+                            width: '100%',
+                            maxHeight: '90vh',
+                            overflowY: 'auto',
+                            background: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '40px'
+                        }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <h2 style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: '2rem',
+                                fontWeight: '700',
+                                marginBottom: '20px',
+                                color: '#1a1a1a'
+                            }}>
+                                {selectedItem.title}
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                                {selectedItem.details && selectedItem.details.map((detail, idx) => (
+                                    <div key={idx}>
+                                        {detail.type === 'image' && (
+                                            <div style={{ marginBottom: '10px' }}>
+                                                <img src={detail.src} alt={detail.caption} style={{ width: '100%', borderRadius: '8px' }} />
+                                                {detail.caption && <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '8px', fontStyle: 'italic' }}>{detail.caption}</p>}
+                                            </div>
+                                        )}
+                                        {detail.type === 'text' && (
+                                            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: '#333' }}>
+                                                {detail.content}
+                                            </p>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </section >
     );
 }
 

@@ -245,3 +245,56 @@ export const credits = [
         year: '2023'
     }
 ];
+
+export const processItems = [
+    {
+        title: 'Storyboarding',
+        description: 'Visualizing the narrative flow before the camera rolls. Every shot is planned to ensure the story beats land.',
+        src: '/images/process/storyboard.png',
+        alt: 'Hand-drawn storyboard sketches',
+        details: [
+            { type: 'image', src: '/images/process/storyboard.png', caption: 'Initial sketch for the opening sequence.' },
+            { type: 'text', content: 'The storyboard is the blueprint. I use it to communicate my vision to the crew and ensure we are all on the same page.' }
+        ]
+    },
+    {
+        title: 'Lighting Design',
+        description: 'Technical planning for atmospheric depth. Mapping out light sources to create the signature gritty aesthetic.',
+        src: '/images/process/lighting.png',
+        alt: 'Technical lighting plan diagram',
+        details: [
+            { type: 'image', src: '/images/process/lighting.png', caption: 'Lighting setup for the warehouse scene.' },
+            { type: 'text', content: 'I wanted to create a high-contrast look, so I used a single key light and a lot of negative fill.' }
+        ]
+    },
+    {
+        title: 'On Set',
+        description: 'The Sony PD170 in action. Capturing the raw energy of the moment with authentic DV tape hardware.',
+        src: '/images/process/bts.png',
+        alt: 'Behind the scenes camera setup',
+        details: [
+            { type: 'image', src: '/images/process/bts.png', caption: 'Filming the live performance.' },
+            { type: 'text', content: 'Shooting on DV tape requires a different approach. You have to be more intentional with your shots because you can\'t just shoot forever.' }
+        ]
+    },
+    {
+        title: 'Post-Production',
+        description: 'Where the story comes together. A complex timeline of cuts, color grading, and sound design.',
+        src: '/images/process/timeline.png',
+        alt: 'Video editing timeline',
+        details: [
+            { type: 'image', src: '/images/process/timeline.png', caption: 'The final edit timeline.' },
+            { type: 'text', content: 'Editing is where the rhythm of the film is established. I spend a lot of time fine-tuning the cuts to the music.' }
+        ]
+    },
+    {
+        title: 'Visual Diary',
+        description: 'A collection of daily observations, sketches, and experiments. The raw material of creativity.',
+        src: '/images/process/storyboard.png', // Placeholder
+        alt: 'Open sketchbook with notes and drawings',
+        details: [
+            { type: 'text', content: 'My visual diary is where I explore new ideas and experiment with different techniques. It\'s a safe space to fail and learn.' },
+            { type: 'image', src: '/images/process/storyboard.png', caption: 'Sketches from my daily commute.' }
+        ]
+    }
+];

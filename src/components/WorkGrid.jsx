@@ -3,6 +3,7 @@ import { works } from '../data/content';
 
 function WorkGrid() {
     const [activeFilter, setActiveFilter] = useState('all');
+    const [selectedVideo, setSelectedVideo] = useState(null);
 
     const filteredWorks = activeFilter === 'all' ? works : works.filter(work => work.type === activeFilter);
 
@@ -96,7 +97,7 @@ function WorkGrid() {
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
                                 e.preventDefault();
-                                window.open(work.url, '_blank');
+                                setSelectedVideo(work);
                             }
                         }}
                         style={{
@@ -115,7 +116,7 @@ function WorkGrid() {
                             e.currentTarget.style.transform = 'translateY(0)';
                             e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
                         }}
-                        onClick={() => window.open(work.url, '_blank')}
+                        onClick={() => setSelectedVideo(work)}
                     >
                         {/* Thumbnail */}
                         <div style={{
@@ -210,15 +211,26 @@ function WorkGrid() {
                                 fontSize: '0.9rem'
                             }}>
                                 <div style={{ marginBottom: '12px' }}>
-                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Role</span>
-                                    <span style={{ color: '#444' }}>{work.role}</span>
+                                    <span style={{
+                                        fontWeight: '600',
+                                        color: '#ffffff',
+                                        background: '#1a1a1a',
+                                        padding: '2px 8px',
+                                        borderRadius: '4px',
+                                        display: 'inline-block',
+                                        marginBottom: '4px',
+                                        fontSize: '0.75rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.5px'
+                                    }}>Role</span>
+                                    <span style={{ color: '#444', display: 'block', marginTop: '4px', fontWeight: '500' }}>{work.role}</span>
                                 </div>
                                 <div style={{ marginBottom: '12px' }}>
                                     <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Concept</span>
                                     <span style={{ color: '#444' }}>{work.concept}</span>
                                 </div>
                                 <div>
-                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Critical Analysis</span>
+                                    <span style={{ fontWeight: '600', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Critical Reflection & Challenges</span>
                                     <span style={{ color: '#444', fontStyle: 'italic' }}>"{work.criticalAnalysis}"</span>
                                 </div>
                             </div>
@@ -268,7 +280,65 @@ function WorkGrid() {
                     ></iframe>
                 </div>
             </div>
-        </section>
+
+            {/* Video Lightbox */}
+            {
+                selectedVideo && (
+                    <div style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(0, 0, 0, 0.95)',
+                        zIndex: 2000,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '40px'
+                    }}
+                        onClick={() => setSelectedVideo(null)}
+                    >
+                        <button style={{
+                            position: 'absolute',
+                            top: '20px',
+                            right: '20px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ffffff',
+                            fontSize: '40px',
+                            cursor: 'pointer',
+                            zIndex: 2001
+                        }}
+                            onClick={() => setSelectedVideo(null)}
+                            aria-label="Close lightbox"
+                        >
+                            ×
+                        </button>
+                        <div style={{
+                            width: '100%',
+                            maxWidth: '1000px',
+                            aspectRatio: '16/9',
+                            position: 'relative',
+                            background: '#000',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+                        }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <iframe
+                                src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
+                                title={selectedVideo.title}
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+                )
+            }
+        </section >
     );
 }
 
