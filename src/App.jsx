@@ -101,6 +101,7 @@ function App() {
                   <img
                     src="/images/photography/IMG_2043.jpeg"
                     alt="Josh Moriarty"
+                    loading="lazy"
                     style={{
                       width: '100%',
                       borderRadius: '12px',

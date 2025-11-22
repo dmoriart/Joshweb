@@ -75,14 +75,6 @@ function Navigation() {
                         transition: 'opacity 0.2s ease',
                         opacity: 0.8
                     }}>Process</a>
-                    <a href="#credits" style={{
-                        color: '#1a1a1a',
-                        textDecoration: 'none',
-                        fontWeight: '500',
-                        fontSize: '16px',
-                        transition: 'opacity 0.2s ease',
-                        opacity: 0.8
-                    }}>Credits</a>
                     <a href="#about" style={{
                         color: '#1a1a1a',
                         textDecoration: 'none',
@@ -91,6 +83,14 @@ function Navigation() {
                         transition: 'opacity 0.2s ease',
                         opacity: 0.8
                     }}>About</a>
+                    <a href="#credits" style={{
+                        color: '#1a1a1a',
+                        textDecoration: 'none',
+                        fontWeight: '500',
+                        fontSize: '16px',
+                        transition: 'opacity 0.2s ease',
+                        opacity: 0.8
+                    }}>Credits</a>
                     <a href="#contact" style={{
                         color: '#1a1a1a',
                         textDecoration: 'none',

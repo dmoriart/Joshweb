@@ -148,7 +148,7 @@ function WorkGrid() {
                                 justifyContent: 'center',
                                 color: '#ffffff',
                                 fontSize: '20px'
-                            }}>
+                            }} aria-hidden="true">
                                 ▶
                             </div>
 
