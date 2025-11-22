@@ -89,14 +89,24 @@ function WorkGrid() {
                 marginBottom: '80px'
             }}>
                 {filteredWorks.map((work, index) => (
-                    <div key={index} style={{
-                        background: '#ffffff',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                        cursor: 'pointer'
-                    }}
+                    <div key={index}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Watch ${work.title}`}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                window.open(work.url, '_blank');
+                            }
+                        }}
+                        style={{
+                            background: '#ffffff',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            cursor: 'pointer'
+                        }}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.transform = 'translateY(-4px)';
                             e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.12)';
@@ -110,11 +120,19 @@ function WorkGrid() {
                         {/* Thumbnail */}
                         <div style={{
                             height: '240px',
-                            backgroundImage: `url(${getYouTubeThumbnail(work.url)})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            position: 'relative'
+                            position: 'relative',
+                            overflow: 'hidden'
                         }}>
+                            <img
+                                src={getYouTubeThumbnail(work.url)}
+                                alt={`Thumbnail for ${work.title}`}
+                                loading="lazy"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover'
+                                }}
+                            />
                             {/* Play button overlay */}
                             <div style={{
                                 position: 'absolute',

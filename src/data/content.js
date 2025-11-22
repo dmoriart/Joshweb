@@ -222,3 +222,26 @@ export const photography = [
         year: '2025'
     }
 ];
+
+export const credits = [
+    {
+        role: 'Director of Photography',
+        production: 'Neon Nights',
+        year: '2025'
+    },
+    {
+        role: 'Camera Operator',
+        production: 'Underground Beats',
+        year: '2024'
+    },
+    {
+        role: 'Editor',
+        production: 'Urban Decay Documentary',
+        year: '2024'
+    },
+    {
+        role: 'Assistant Camera',
+        production: 'The Last Skate',
+        year: '2023'
+    }
+];

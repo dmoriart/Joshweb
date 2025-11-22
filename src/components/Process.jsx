@@ -87,6 +87,7 @@ function Process() {
                                 <img
                                     src={item.src}
                                     alt={item.alt}
+                                    loading="lazy"
                                     style={{
                                         width: '100%',
                                         height: '100%',

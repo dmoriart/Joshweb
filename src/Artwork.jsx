@@ -30,7 +30,7 @@ function Artwork() {
   return (
     <div className="eb-main">
       <header className="eb-header">
-        <img src="/images/photography/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" />
+        <img src="/images/photography/IMG_2041.jpeg" alt="Josh Moriarty Logo" className="eb-logo" style={{ width: '120px', height: 'auto', borderRadius: '50%', marginBottom: '1rem' }} />
         <h1>Artwork</h1>
         <nav className="eb-nav">
           <a href="/">Home</a>

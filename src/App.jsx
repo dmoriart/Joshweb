@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
 import Process from './components/Process';
+import Credits from './components/Credits';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
 
@@ -168,6 +169,8 @@ function App() {
               </div>
             </section>
 
+            <Credits />
+
             {/* Contact Section */}
             <section id="contact" style={{
               padding: '100px 20px',
@@ -236,7 +239,7 @@ function App() {
           </div>
         } />
       </Routes>
-    </Router>
+    </Router >
   );
 }
 
