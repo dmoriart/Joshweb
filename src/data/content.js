@@ -64,87 +64,6 @@ export const works = [
 export const artworks = [
     {
         id: 1,
-        src: '/images/photography/IMG_2041.jpeg',
-        title: 'Urban Decay',
-        category: 'street',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 2,
-        src: '/images/photography/IMG_2042.jpeg',
-        title: 'Night Vision',
-        category: 'street',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 3,
-        src: '/images/photography/IMG_2043.jpeg',
-        title: 'Analog Dreams',
-        category: 'digital',
-        medium: 'Digital Art',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 4,
-        src: '/images/photography/IMG_2044.jpeg',
-        title: 'Concrete Jungle',
-        category: 'street',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 5,
-        src: '/images/photography/IMG_2045.jpeg',
-        title: 'Underground Scene',
-        category: 'graffiti',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 6,
-        src: '/images/photography/IMG_2046.jpeg',
-        title: 'Texture Study',
-        category: 'digital',
-        medium: 'Digital Art',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 7,
-        src: '/images/photography/IMG_2242.jpeg',
-        title: 'Raw Energy',
-        category: 'street',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 8,
-        src: '/images/photography/IMG_2243.jpeg',
-        title: 'City Lights',
-        category: 'street',
-        medium: 'Photography',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 9,
-        src: '/images/photography/IMG_2244.jpeg',
-        title: 'Abstract Forms',
-        category: 'digital',
-        medium: 'Digital Art',
-        year: '2025',
-        description: 'Cartoon'
-    },
-    {
-        id: 10,
         src: '/images/artwork/195f3920-7b0c-4d7b-8023-dd6ec17c01ff.jpeg',
         title: 'Commission Work',
         category: 'commissions',
@@ -153,7 +72,7 @@ export const artworks = [
         description: 'Cartoon'
     },
     {
-        id: 11,
+        id: 2,
         src: '/images/artwork/3317fa68-5b21-45f1-95a4-9f0e9fa3c12f.jpeg',
         title: 'Street Culture',
         category: 'graffiti',
@@ -162,63 +81,272 @@ export const artworks = [
         description: 'Cartoon'
     },
     {
-        id: 12,
+        id: 3,
         src: '/images/artwork/6dfb7c87-a1f1-4e6f-bee2-3bef1474e03c.jpeg',
         title: 'Digital Grain',
         category: 'digital',
         medium: 'Digital Art',
         year: '2025',
         description: 'Cartoon'
+    },
+    {
+        id: 4,
+        src: '/images/artwork/885611da-0311-4b9e-916c-6e9cccac3236.jpeg',
+        title: 'Urban Expression',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Cartoon'
+    },
+    {
+        id: 5,
+        src: '/images/artwork/89eaeab3-e22e-47b1-8752-ab7b1a1a883a.jpeg',
+        title: 'Abstract Vision',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Cartoon'
+    },
+    {
+        id: 6,
+        src: '/images/artwork/9ae208f5-c832-4b57-9a24-1e4c05dc25af.jpeg',
+        title: 'Contemporary Forms',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Cartoon'
+    },
+    {
+        id: 7,
+        src: '/images/artwork/IMG_0899.jpeg',
+        title: 'Street Scene',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 8,
+        src: '/images/artwork/IMG_0900.jpeg',
+        title: 'Urban Portrait',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 9,
+        src: '/images/artwork/IMG_0918.jpeg',
+        title: 'City Life',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 10,
+        src: '/images/artwork/IMG_0919.jpeg',
+        title: 'Night Study',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 11,
+        src: '/images/artwork/IMG_0920.jpeg',
+        title: 'Urban Canvas',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 12,
+        src: '/images/artwork/IMG_2041.jpeg',
+        title: 'Urban Decay',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 13,
+        src: '/images/artwork/IMG_2042.jpeg',
+        title: 'Night Vision',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 14,
+        src: '/images/artwork/IMG_2043.jpeg',
+        title: 'Analog Dreams',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 15,
+        src: '/images/artwork/IMG_2044.jpeg',
+        title: 'Concrete Jungle',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 16,
+        src: '/images/artwork/IMG_2045.jpeg',
+        title: 'Underground Scene',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 17,
+        src: '/images/artwork/IMG_2046.jpeg',
+        title: 'Texture Study',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 18,
+        src: '/images/artwork/IMG_2242.jpeg',
+        title: 'Raw Energy',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 19,
+        src: '/images/artwork/IMG_2243.jpeg',
+        title: 'City Lights',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 20,
+        src: '/images/artwork/IMG_2244.jpeg',
+        title: 'Abstract Forms',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 21,
+        src: '/images/artwork/IMG_2245.jpeg',
+        title: 'Urban Patterns',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 22,
+        src: '/images/artwork/IMG_2246.jpeg',
+        title: 'Street Reflections',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 23,
+        src: '/images/artwork/IMG_2247.jpeg',
+        title: 'Modern Geometry',
+        category: 'street',
+        medium: 'Photography',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 24,
+        src: '/images/artwork/a158a0ac-89b7-4e57-b25f-1359fbf70080.jpeg',
+        title: 'Digital Composition',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 25,
+        src: '/images/artwork/ae53c6f0-243c-4129-9bc8-a36da2e42321.jpeg',
+        title: 'Abstract Study',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 26,
+        src: '/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.jpeg',
+        title: 'Mixed Media Work',
+        category: 'digital',
+        medium: 'Mixed Media',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 27,
+        src: '/images/artwork/d150822e-7a10-4c7b-9a9a-bdfdba9fc729.jpeg',
+        title: 'Contemporary Art',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Artwork'
+    },
+    {
+        id: 28,
+        src: '/images/artwork/e7228d1f-1c24-4220-8543-a1ed0737a57a.jpeg',
+        title: 'Visual Expression',
+        category: 'digital',
+        medium: 'Digital Art',
+        year: '2025',
+        description: 'Artwork'
     }
 ];
 
 export const photography = [
     {
         id: 1,
-        src: '/images/photography/IMG_2041.jpeg',
-        title: 'Urban Geometry',
-        category: 'architecture',
-        description: 'Lines and shadows in the city center',
+        src: '/images/photography/20762154-d0ce-4a9e-b8ca-59a57a0925cd.jpeg',
+        title: 'Urban Moments',
+        category: 'street',
+        description: 'Captured moments on the street',
         year: '2025'
     },
     {
         id: 2,
-        src: '/images/photography/IMG_2042.jpeg',
-        title: 'Neon Nights',
+        src: '/images/photography/IMG_0226.jpeg',
+        title: 'City Perspectives',
         category: 'street',
-        description: 'Vibrant colors of the night market',
+        description: 'Urban landscape from a new angle',
         year: '2025'
     },
     {
         id: 3,
-        src: '/images/photography/IMG_2043.jpeg',
-        title: 'Portrait Study',
-        category: 'portrait',
-        description: 'Natural light portraiture',
+        src: '/images/photography/IMG_0230.jpeg',
+        title: 'Night Photography',
+        category: 'street',
+        description: 'After dark cityscapes',
         year: '2025'
     },
     {
         id: 4,
-        src: '/images/photography/IMG_2044.jpeg',
-        title: 'Abstract Texture',
-        category: 'texture',
-        description: 'Macro details of urban decay',
-        year: '2025'
-    },
-    {
-        id: 5,
-        src: '/images/photography/IMG_2045.jpeg',
-        title: 'City Silhouettes',
+        src: '/images/photography/fdeb6997-2140-4d7a-9db4-79aef9de2a16.jpeg',
+        title: 'Street Life',
         category: 'street',
-        description: 'Shadows against the sunset',
-        year: '2025'
-    },
-    {
-        id: 6,
-        src: '/images/photography/IMG_2046.jpeg',
-        title: 'Modern Lines',
-        category: 'architecture',
-        description: 'Contemporary building facade',
+        description: 'Documentary street photography',
         year: '2025'
     }
 ];
