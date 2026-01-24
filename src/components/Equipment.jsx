@@ -149,45 +149,6 @@ function Equipment() {
                         </div>
                     ))}
                 </div>
-
-                {/* Skills Section */}
-                <div style={{
-                    marginTop: '80px',
-                    padding: '40px',
-                    background: '#f8f8f8',
-                    borderRadius: '12px'
-                }}>
-                    <h3 style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: '1.5rem',
-                        fontWeight: '600',
-                        margin: '0 0 20px 0',
-                        color: '#1a1a1a',
-                        textAlign: 'center'
-                    }}>
-                        Additional Skills & Software
-                    </h3>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                        gap: '20px',
-                        marginTop: '30px'
-                    }}>
-                        {['Adobe Premiere Pro', 'DaVinci Resolve', 'Final Cut Pro', 'Color Grading', 'Audio Editing', 'DV Tape Workflow'].map((skill, idx) => (
-                            <div key={idx} style={{
-                                padding: '16px',
-                                background: '#ffffff',
-                                borderRadius: '8px',
-                                textAlign: 'center',
-                                fontSize: '0.95rem',
-                                fontWeight: '500',
-                                color: '#333'
-                            }}>
-                                {skill}
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
