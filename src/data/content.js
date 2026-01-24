@@ -246,10 +246,10 @@ export const processItems = [
     {
         title: 'On Set',
         description: 'The Sony PD170 in action. Capturing the raw energy of the moment with authentic DV tape hardware.',
-        src: '/images/process/bts.png',
+        src: '/images/photography/IMG_0226.jpeg',
         alt: 'Behind the scenes camera setup',
         details: [
-            { type: 'image', src: '/images/process/bts.png', caption: 'Filming the live performance.' },
+            { type: 'image', src: '/images/photography/IMG_0226.jpeg', caption: 'Filming the live performance.' },
             { type: 'text', content: 'Shooting on DV tape requires a different approach. You have to be more intentional with your shots because you can\'t just shoot forever.' }
         ]
     },
