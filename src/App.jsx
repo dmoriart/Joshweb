@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
 import Process from './components/Process';
+import Equipment from './components/Equipment';
 import Credits from './components/Credits';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
@@ -71,6 +72,7 @@ function App() {
             </section>
 
             <Process />
+            <Equipment />
 
             {/* About Section */}
             <section id="about" style={{

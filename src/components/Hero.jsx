@@ -63,9 +63,40 @@ function Hero() {
                     fontSize: '14px',
                     fontWeight: '500',
                     letterSpacing: '0.5px',
-                    textTransform: 'uppercase'
+                    textTransform: 'uppercase',
+                    marginBottom: '20px'
                 }}>
                     DV Tape • Sony PD170
+                </div>
+
+                {/* Watch Reel CTA */}
+                <div>
+                    <a
+                        href="#work"
+                        style={{
+                            display: 'inline-block',
+                            padding: '16px 40px',
+                            background: '#ffffff',
+                            color: '#1a1a1a',
+                            textDecoration: 'none',
+                            borderRadius: '6px',
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            letterSpacing: '0.5px',
+                            transition: 'all 0.3s ease',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.target.style.transform = 'translateY(-2px)';
+                            e.target.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.transform = 'translateY(0)';
+                            e.target.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                        }}
+                    >
+                        Watch Demo Reel
+                    </a>
                 </div>
             </div>
 
