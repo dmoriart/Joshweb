@@ -84,6 +84,84 @@ function WorkGrid() {
                 ))}
             </div>
 
+            {/* Featured Demo Reel - Moved to Top */}
+            <div id="demo-reel" style={{
+                background: '#1a1a1a',
+                borderRadius: '12px',
+                padding: '40px 20px',
+                textAlign: 'center',
+                color: '#ffffff',
+                marginBottom: '80px',
+                scrollMarginTop: '100px'
+            }}>
+                <h3 style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '2rem',
+                    fontWeight: '700',
+                    margin: '0 0 16px 0',
+                    letterSpacing: '-0.03em'
+                }}>
+                    Demo Reel
+                </h3>
+                <p style={{
+                    fontSize: '1.1rem',
+                    opacity: 0.8,
+                    margin: '0 0 40px 0'
+                }}>
+                    A compilation of underground moments captured on DV tape
+                </p>
+                <div style={{
+                    maxWidth: '900px',
+                    margin: '0 auto',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    boxShadow: '0 8px 40px rgba(0, 0, 0, 0.3)'
+                }}>
+                    <iframe
+                        src="https://www.youtube.com/embed/IUF6f7UPeaQ"
+                        title="Josh Moriarty Demo Reel"
+                        width="100%"
+                        height="500"
+                        style={{ border: 0 }}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </div>
+
+            {/* Filter Buttons */}
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '20px',
+                marginBottom: '60px',
+                flexWrap: 'wrap'
+            }}>
+                {['all', 'bands', 'djs'].map(filter => (
+                    <button
+                        key={filter}
+                        onClick={() => setActiveFilter(filter)}
+                        aria-label={`Filter by ${filter === 'all' ? 'all work' : filter}`}
+                        aria-pressed={activeFilter === filter}
+                        style={{
+                            padding: '12px 24px',
+                            background: activeFilter === filter ? '#1a1a1a' : 'transparent',
+                            color: activeFilter === filter ? '#ffffff' : '#1a1a1a',
+                            border: '1px solid #1a1a1a',
+                            borderRadius: '6px',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        {filter === 'all' ? 'All Work' : filter === 'bands' ? 'Live Bands' : 'DJ Sets'}
+                    </button>
+                ))}
+            </div>
+
             {/* Work Grid */}
             <div style={{
                 display: 'grid',
@@ -239,48 +317,6 @@ function WorkGrid() {
                         </div>
                     </div>
                 ))}
-            </div>
-
-            {/* Featured Reel */}
-            <div style={{
-                background: '#1a1a1a',
-                borderRadius: '12px',
-                padding: '40px 20px',
-                textAlign: 'center',
-                color: '#ffffff'
-            }}>
-                <h3 style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '2rem',
-                    fontWeight: '700',
-                    margin: '0 0 16px 0',
-                    letterSpacing: '-0.03em'
-                }}>
-                    Demo Reel
-                </h3>
-                <p style={{
-                    fontSize: '1.1rem',
-                    opacity: 0.8,
-                    margin: '0 0 40px 0'
-                }}>
-                    A compilation of underground moments captured on DV tape
-                </p>
-                <div style={{
-                    maxWidth: '800px',
-                    margin: '0 auto',
-                    borderRadius: '8px',
-                    overflow: 'hidden'
-                }}>
-                    <iframe
-                        src="https://www.youtube.com/embed/IUF6f7UPeaQ"
-                        title="Josh Moriarty Demo Reel"
-                        width="100%"
-                        height="450"
-                        style={{ border: 0 }}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
             </div>
 
             {/* Video Lightbox */}

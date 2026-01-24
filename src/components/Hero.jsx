@@ -72,7 +72,7 @@ function Hero() {
                 {/* Watch Reel CTA */}
                 <div>
                     <a
-                        href="#work"
+                        href="#demo-reel"
                         style={{
                             display: 'inline-block',
                             padding: '16px 40px',
