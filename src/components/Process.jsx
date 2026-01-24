@@ -152,6 +152,83 @@ function Process() {
                         >
                             ×
                         </button>
+
+                        {/* Previous Button */}
+                        <button style={{
+                            position: 'absolute',
+                            left: '20px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            border: '2px solid rgba(255, 255, 255, 0.3)',
+                            color: '#ffffff',
+                            fontSize: '30px',
+                            cursor: 'pointer',
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.3s ease',
+                            zIndex: 2001
+                        }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const currentIndex = processItems.indexOf(selectedItem);
+                                const prevIndex = currentIndex === 0 ? processItems.length - 1 : currentIndex - 1;
+                                setSelectedItem(processItems[prevIndex]);
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+                                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                            }}
+                        >
+                            ‹
+                        </button>
+
+                        {/* Next Button */}
+                        <button style={{
+                            position: 'absolute',
+                            right: '20px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            border: '2px solid rgba(255, 255, 255, 0.3)',
+                            color: '#ffffff',
+                            fontSize: '30px',
+                            cursor: 'pointer',
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.3s ease',
+                            zIndex: 2001
+                        }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const currentIndex = processItems.indexOf(selectedItem);
+                                const nextIndex = currentIndex === processItems.length - 1 ? 0 : currentIndex + 1;
+                                setSelectedItem(processItems[nextIndex]);
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+                                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                            }}
+                        >
+                            ›
+                        </button>
+
                         <div style={{
                             maxWidth: '800px',
                             width: '100%',

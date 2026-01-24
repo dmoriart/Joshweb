@@ -80,10 +80,62 @@ function Hero() {
                 fontWeight: '500',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                opacity: 0.7
+                opacity: 0.7,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '10px'
             }}>
                 Scroll to explore
+                <div style={{
+                    width: '24px',
+                    height: '36px',
+                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    borderRadius: '12px',
+                    position: 'relative',
+                    animation: 'scrollPulse 2s infinite'
+                }}>
+                    <div style={{
+                        width: '4px',
+                        height: '8px',
+                        background: 'rgba(255, 255, 255, 0.8)',
+                        borderRadius: '2px',
+                        position: 'absolute',
+                        top: '8px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        animation: 'scrollDot 2s infinite'
+                    }}></div>
+                </div>
             </div>
+
+            {/* Animation keyframes */}
+            <style>{`
+                @keyframes scrollPulse {
+                    0%, 100% {
+                        opacity: 0.5;
+                    }
+                    50% {
+                        opacity: 1;
+                    }
+                }
+                @keyframes scrollDot {
+                    0% {
+                        transform: translateX(-50%) translateY(0);
+                        opacity: 0;
+                    }
+                    40% {
+                        opacity: 1;
+                    }
+                    80% {
+                        transform: translateX(-50%) translateY(16px);
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

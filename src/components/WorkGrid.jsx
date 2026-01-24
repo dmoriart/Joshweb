@@ -63,6 +63,8 @@ function WorkGrid() {
                     <button
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
+                        aria-label={`Filter by ${filter === 'all' ? 'all work' : filter}`}
+                        aria-pressed={activeFilter === filter}
                         style={{
                             padding: '12px 24px',
                             background: activeFilter === filter ? '#1a1a1a' : 'transparent',

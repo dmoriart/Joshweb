@@ -55,6 +55,8 @@ function Photography() {
                         <button
                             key={filter}
                             onClick={() => setPhotoFilter(filter)}
+                            aria-label={`Filter by ${filter === 'all' ? 'all photos' : filter}`}
+                            aria-pressed={photoFilter === filter}
                             style={{
                                 padding: '12px 24px',
                                 background: photoFilter === filter ? '#1a1a1a' : 'transparent',
@@ -108,19 +110,17 @@ function Photography() {
                                     transition: 'transform 0.5s ease'
                                 }}
                             />
-                            <div style={{
-                                position: 'absolute',
-                                bottom: 0,
-                                left: 0,
-                                width: '100%',
-                                padding: '30px 20px',
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                                color: '#ffffff',
-                                opacity: 0,
-                                transition: 'opacity 0.3s ease'
-                            }}
-                                onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-                                onMouseLeave={(e) => e.currentTarget.style.opacity = 0}
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    padding: '30px 20px',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                                    color: '#ffffff',
+                                    transition: 'opacity 0.3s ease'
+                                }}
                                 className="photo-overlay"
                             >
                                 <h3 style={{
@@ -137,6 +137,23 @@ function Photography() {
                         </div>
                     ))}
                 </div>
+
+                {/* Responsive CSS for photo overlays */}
+                <style>{`
+                    .photo-overlay {
+                        opacity: 0;
+                    }
+                    
+                    .photo-overlay:hover {
+                        opacity: 1 !important;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .photo-overlay {
+                            opacity: 1 !important;
+                        }
+                    }
+                `}</style>
             </div>
 
             {/* Lightbox */}

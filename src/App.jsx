@@ -99,7 +99,7 @@ function App() {
                     zIndex: 0
                   }}></div>
                   <img
-                    src="/images/photography/IMG_2043.jpeg"
+                    src="/images/artwork/IMG_2043.jpeg"
                     alt="Josh Moriarty"
                     loading="lazy"
                     style={{
@@ -224,7 +224,6 @@ function App() {
                 }}>
                   <a href="https://www.instagram.com/joshmoriartyfilms" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>Instagram</a>
                   <a href="https://www.youtube.com/@joshmoriartyfilms" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>YouTube</a>
-                  <a href="#" style={{ color: '#ffffff', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = 0.7}>LinkedIn</a>
                 </div>
                 <div style={{
                   marginTop: '60px',
