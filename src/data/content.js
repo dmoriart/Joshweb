@@ -191,24 +191,34 @@ export const photography = [
 
 export const credits = [
     {
-        role: 'Director of Photography',
-        production: 'Neon Nights',
+        role: 'Filmed and edited',
+        production: 'Stick n Poke - Soundhouse',
         year: '2025'
     },
     {
-        role: 'Camera Operator',
-        production: 'Underground Beats',
-        year: '2024'
+        role: 'Filmed and edited',
+        production: 'Lockout - Soundhouse',
+        year: '2025'
     },
     {
-        role: 'Editor',
-        production: 'Urban Decay Documentary',
-        year: '2024'
+        role: 'Filmed and edited',
+        production: 'DJ Ortega - Wigwam',
+        year: '2025'
     },
     {
-        role: 'Assistant Camera',
-        production: 'The Last Skate',
-        year: '2023'
+        role: 'Filmed and edited',
+        production: 'Stick n Poke - Sound recording studio',
+        year: '2025'
+    },
+    {
+        role: 'Filmed and edited',
+        production: 'Stick n Poke - Soundhouse',
+        year: '2025'
+    },
+    {
+        role: 'Filmed and edited',
+        production: 'DJ RHR - Wigwam',
+        year: '2025'
     }
 ];
 
