@@ -7,7 +7,7 @@ export const works = [
         description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025.',
         year: '2025',
         category: 'DJ Set',
-        role: 'Videographer & Editor',
+        role: 'Filmed and edited by Josh Moriarty',
         concept: 'To capture the frenetic energy of the crowd and the DJ\'s performance using rapid cuts and close-ups.',
         criticalAnalysis: 'The use of DV tape added a necessary grit that complemented the underground techno sound, though low-light conditions challenged the autofocus.'
     },
@@ -19,7 +19,7 @@ export const works = [
         description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
         year: '2025',
         category: 'DJ SET',
-        role: 'Camera Operator',
+        role: 'Filmed and edited by Josh Moriarty',
         concept: 'Focusing on the interaction between the DJ and the equipment, highlighting the technical skill involved.',
         criticalAnalysis: 'A more static approach allowed for a clearer view of the mixing process, providing a contrast to the high-energy crowd shots.'
     },
@@ -31,7 +31,7 @@ export const works = [
         description: 'Raw underground energy captured through analog grain.',
         year: '2025',
         category: 'Live Performance',
-        role: 'Director of Photography',
+        role: 'Filmed and edited by Josh Moriarty',
         concept: 'Documenting the raw, unpolished nature of a live punk performance.',
         criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience.'
     },
@@ -43,7 +43,7 @@ export const works = [
         description: 'Late night basement vibes captured on DV tape.',
         year: '2025',
         category: 'Club Set',
-        role: 'Videographer',
+        role: 'Filmed and edited by Josh Moriarty',
         concept: 'Emphasizing the intimacy and atmosphere of a small, packed club venue.',
         criticalAnalysis: 'The limited dynamic range of the PD170 was used to artistic effect, crushing blacks to isolate the subject in the strobe lights.'
     },
@@ -55,7 +55,7 @@ export const works = [
         description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025.',
         year: '2025',
         category: 'DJ SET',
-        role: 'Editor',
+        role: 'Filmed and edited by Josh Moriarty',
         concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
         criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact.'
     },
