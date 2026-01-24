@@ -36,18 +36,6 @@ export const works = [
         criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience.'
     },
     {
-        title: 'DJ SHOUTOUT',
-        url: 'https://www.youtube.com/watch?v=AidsPG4xpMk',
-        type: 'djs',
-        venue: 'Club Night',
-        description: 'Late night basement vibes captured on DV tape.',
-        year: '2025',
-        category: 'Club Set',
-        role: 'Filmed and edited by Josh Moriarty',
-        concept: 'Emphasizing the intimacy and atmosphere of a small, packed club venue.',
-        criticalAnalysis: 'The limited dynamic range of the PD170 was used to artistic effect, crushing blacks to isolate the subject in the strobe lights.'
-    },
-    {
         title: 'DJ RHR',
         url: 'https://youtu.be/qPzb5GKsq58',
         type: 'djs',
@@ -58,7 +46,7 @@ export const works = [
         role: 'Filmed and edited by Josh Moriarty',
         concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
         criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact.'
-    },
+    }
 ];
 
 export const artworks = [
