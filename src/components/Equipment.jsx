@@ -9,10 +9,10 @@ function Equipment() {
             description: 'Primary camera for all video work. 3-CCD professional DV tape camcorder.'
         },
         {
-            name: 'Sony Easycam Digital Video 8',
-            type: 'Digital Video 8 Camcorder',
-            image: '/images/equipment/sony-easycam.png',
-            description: 'Compact digital video camera for alternative perspectives and B-roll.'
+            name: 'Sony CCD-TR810E',
+            type: 'Hi8 & Video8 Handycam',
+            image: '/images/equipment/sony-tr810e.png',
+            description: 'Compact Hi8/Video8 camcorder for alternative perspectives and analog experimentation.'
         },
         {
             name: 'FED-3 Olympic',
