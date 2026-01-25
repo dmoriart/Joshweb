@@ -5,11 +5,12 @@ function Navigation() {
 
     const navLinks = [
         { href: '#', label: 'Home' },
+        { href: '#featured-reel', label: 'Demo Reel' },
         { href: '#work', label: 'Work' },
-        { href: '#photography', label: 'Photography' },
-        { href: '#artwork', label: 'Artwork' },
         { href: '#process', label: 'Process' },
         { href: '#equipment', label: 'Equipment' },
+        { href: '#photography', label: 'Photography' },
+        { href: '#artwork', label: 'Artwork' },
         { href: '#about', label: 'About' },
         { href: '#credits', label: 'Credits' },
         { href: '#contact', label: 'Contact' }
@@ -131,7 +132,7 @@ function Navigation() {
                 height: mobileMenuOpen ? 'calc(100vh - 71px)' : '0',
                 background: 'rgba(250, 250, 250, 0.98)',
                 backdropFilter: 'blur(20px)',
-                overflow: 'hidden',
+                overflowY: 'auto',
                 transition: 'height 0.3s ease',
                 display: 'none'
             }}
