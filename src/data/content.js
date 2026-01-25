@@ -169,14 +169,6 @@ export const photography = [
     },
     {
         id: 4,
-        src: '/images/photography/Image.jpeg',
-        title: 'Urban Composition',
-        category: 'architecture',
-        description: 'Architectural detail and light',
-        year: '2025'
-    },
-    {
-        id: 5,
         src: '/images/photography/Timeline 1_01_00_04_23.jpg',
         title: 'Performance Energy',
         category: 'portrait',
@@ -184,7 +176,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 6,
+        id: 5,
         src: '/images/photography/Timeline 1_01_00_04_35.jpg',
         title: 'Stage Presence',
         category: 'portrait',
@@ -192,7 +184,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 7,
+        id: 6,
         src: '/images/photography/Timeline 1_01_08_59_22.jpg',
         title: 'In the Zone',
         category: 'portrait',
@@ -200,7 +192,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 8,
+        id: 7,
         src: '/images/photography/Timeline 1_01_26_35_50.jpg',
         title: 'Raw Energy',
         category: 'portrait',
@@ -208,7 +200,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 9,
+        id: 8,
         src: '/images/photography/Timeline 1_01_28_00_36.jpg',
         title: 'The Drop',
         category: 'portrait',
@@ -216,7 +208,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 10,
+        id: 9,
         src: '/images/photography/dj.jpg',
         title: 'DJ in Action',
         category: 'portrait',
@@ -224,7 +216,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 11,
+        id: 10,
         src: '/images/photography/dj2.jpg',
         title: 'Behind the Decks',
         category: 'portrait',
@@ -232,7 +224,7 @@ export const photography = [
         year: '2025'
     },
     {
-        id: 12,
+        id: 11,
         src: '/images/photography/lockout.jpg',
         title: 'Live Performance',
         category: 'portrait',
