@@ -9,7 +9,7 @@ function Hero() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundImage: 'url(/images/photography/D92998F4-80BC-4043-89B8-A5927E373E72.jpeg)',
+            backgroundImage: 'url(/images/photography/IMG_0226.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
@@ -49,7 +49,7 @@ function Hero() {
                     textTransform: 'uppercase',
                     marginBottom: '20px'
                 }}>
-                    DV Tape • Sony PD170
+                    Josh Moriarty
                 </div>
 
                 {/* Watch Reel CTA */}
