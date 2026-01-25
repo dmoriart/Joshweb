@@ -236,6 +236,11 @@ export const photography = [
 export const credits = [
     {
         role: 'Filmed and edited',
+        production: 'Background video for clothing brand photoshoot',
+        year: '2026'
+    },
+    {
+        role: 'Filmed and edited',
         production: 'Stick n Poke - Soundhouse',
         year: '2025'
     },
