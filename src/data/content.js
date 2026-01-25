@@ -171,14 +171,7 @@ export const photography = [
         description: 'Documentary street photography',
         year: '2025'
     },
-    {
-        id: 3,
-        src: '/images/photography/IMG_0230.jpeg',
-        title: 'Night Photography',
-        category: 'street',
-        description: 'After dark cityscapes',
-        year: '2025'
-    },
+
     {
         id: 4,
         src: '/images/photography/Timeline 1_01_00_04_23.jpg',
