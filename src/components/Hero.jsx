@@ -34,16 +34,7 @@ function Hero() {
                 maxWidth: '800px',
                 padding: '0 20px'
             }}>
-                <h1 style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: 'clamp(3rem, 8vw, 6rem)',
-                    fontWeight: '700',
-                    margin: '0 0 24px 0',
-                    letterSpacing: '-0.04em',
-                    lineHeight: '0.9'
-                }}>
-                    Josh Moriarty<br />Films
-                </h1>
+
                 <p style={{
                     fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
                     fontWeight: '400',
