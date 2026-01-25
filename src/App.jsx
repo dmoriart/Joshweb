@@ -156,7 +156,7 @@ function App() {
                         fontSize: '2rem',
                         fontWeight: '700',
                         margin: '0 0 8px 0'
-                      }}>50+</h4>
+                      }}>20+</h4>
                       <span style={{ color: '#666' }}>Events Covered</span>
                     </div>
                     <div>
