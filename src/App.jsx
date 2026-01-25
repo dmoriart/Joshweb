@@ -76,7 +76,7 @@ function App() {
             <Process />
             <Equipment />
 
-            {/* About Section */}
+            {/* About Section - Artist Statement */}
             <section id="about" style={{
               padding: '100px 20px',
               background: '#ffffff'
@@ -123,32 +123,49 @@ function App() {
                     margin: '0 0 30px 0',
                     letterSpacing: '-0.03em'
                   }}>
-                    About The Process
+                    Artist Statement
                   </h2>
+
+                  {/* Why I Make Films */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    Specializing in capturing the raw energy of Dublin's underground music scene using authentic DV tape technology. The Sony PD170 offers a unique, nostalgic aesthetic that digital cameras simply can't replicate.
+                    As a student filmmaker, I'm drawn to documenting Dublin's underground music scene—live bands and DJ sets—because these moments are raw, unrepeatable, and full of energy. I shoot on a Sony PD170 rather than an iPhone because I believe the medium shapes the message. The PD170's nostalgic DV tape aesthetic creates a texture and warmth that modern digital cameras simply can't replicate.
                   </p>
+
+                  {/* Film Influences */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    I am inspired by the raw energy of 90s skate videos and the visual storytelling of Stacy Peralta and Craig Stecyk in the documentary <em>Dogtown and Z-Boys</em> (2001). My perspective on visual storytelling was further shaped by the animated depth of <em>Star Wars: The Clone Wars</em> and the practical effects mastery in <em>An American Werewolf in London</em>.
+                    I'm inspired by films that combine strong visual style with character and atmosphere. <em>An American Werewolf in London</em> showed me how practical effects and visual design create visceral emotional impact. <em>Star Wars: The Clone Wars</em> demonstrated how animation can achieve cinematic depth and storytelling sophistication. <em>The Gentlemen</em> taught me how editing and camera movement support tone and narrative flow. <em>Rango</em> opened my eyes to distinctive visual style and character design as storytelling tools.
                   </p>
+
+                  {/* Christopher Nolan & Structure */}
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#444',
+                    marginBottom: '24px',
+                    lineHeight: '1.8'
+                  }}>
+                    <em>Tenet</em> particularly fascinates me for how Christopher Nolan uses structure, sound, and editing to shape the audience's experience. He uses sound in innovative ways that redefine how we engage with film. What I love most is discovering something new with every rewatch—details that completely change the movie's meaning. This idea of layered storytelling drives my own approach to filmmaking.
+                  </p>
+
+                  {/* Educational Goals */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '30px',
                     lineHeight: '1.8'
                   }}>
-                    While I love the DV tape aesthetic, I am eager to expand my technical knowledge in lighting, sound design, and narrative direction to tell even more compelling stories.
+                    While I love the DV tape aesthetic, I'm eager to develop my technical skills in lighting, sound design, and narrative direction. Film school will give me the foundation to tell more compelling stories and push beyond documentation into crafted visual narratives. I want to learn how visual choices affect mood and storytelling at a deeper level, combining the raw energy I capture now with sophisticated cinematic technique.
                   </p>
+
                   <div style={{
                     display: 'flex',
                     gap: '40px'

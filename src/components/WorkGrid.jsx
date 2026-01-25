@@ -319,7 +319,7 @@ function WorkGrid() {
                 ))}
             </div>
 
-            {/* Video Lightbox */}
+            {/* Project Case Study Modal */}
             {
                 selectedVideo && (
                     <div style={{
@@ -328,50 +328,199 @@ function WorkGrid() {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        background: 'rgba(0, 0, 0, 0.95)',
+                        background: 'rgba(0, 0, 0, 0.98)',
                         zIndex: 2000,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        padding: '40px'
+                        padding: '20px'
                     }}
                         onClick={() => setSelectedVideo(null)}
                     >
-                        <button style={{
-                            position: 'absolute',
-                            top: '20px',
-                            right: '20px',
-                            background: 'transparent',
-                            border: 'none',
-                            color: '#ffffff',
-                            fontSize: '40px',
-                            cursor: 'pointer',
-                            zIndex: 2001
-                        }}
-                            onClick={() => setSelectedVideo(null)}
-                            aria-label="Close lightbox"
-                        >
-                            ×
-                        </button>
                         <div style={{
                             width: '100%',
-                            maxWidth: '1000px',
-                            aspectRatio: '16/9',
+                            maxWidth: '1200px',
+                            height: '90vh',
+                            background: '#1a1a1a',
+                            borderRadius: '20px',
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: 'column',
                             position: 'relative',
-                            background: '#000',
-                            boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                         }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <iframe
-                                src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
-                                title={selectedVideo.title}
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            {/* Close Button */}
+                            <button style={{
+                                position: 'absolute',
+                                top: '20px',
+                                right: '20px',
+                                background: 'rgba(0, 0, 0, 0.5)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                color: '#ffffff',
+                                width: '40px',
+                                height: '40px',
+                                borderRadius: '50%',
+                                fontSize: '24px',
+                                cursor: 'pointer',
+                                zIndex: 2002,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.2s'
+                            }}
+                                onClick={() => setSelectedVideo(null)}
+                                onMouseEnter={(e) => e.target.style.background = 'rgba(255, 0, 0, 0.5)'}
+                                onMouseLeave={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.5)'}
+                                aria-label="Close case study"
+                            >
+                                ×
+                            </button>
+
+                            {/* Content Scroll Container */}
+                            <div style={{
+                                overflowY: 'auto',
+                                height: '100%'
+                            }}>
+                                {/* Video Section */}
+                                <div style={{
+                                    width: '100%',
+                                    aspectRatio: '16/9',
+                                    background: '#000'
+                                }}>
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
+                                        title={selectedVideo.title}
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+
+                                {/* Details Section */}
+                                <div style={{
+                                    padding: '40px',
+                                    color: '#ffffff'
+                                }}>
+                                    {/* Header */}
+                                    <div style={{
+                                        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                                        paddingBottom: '30px',
+                                        marginBottom: '30px',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'flex-start',
+                                        flexWrap: 'wrap',
+                                        gap: '20px'
+                                    }}>
+                                        <div>
+                                            <span style={{
+                                                background: '#ffffff',
+                                                color: '#000000',
+                                                padding: '4px 12px',
+                                                borderRadius: '4px',
+                                                fontSize: '0.8rem',
+                                                fontWeight: 'bold',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '1px',
+                                                display: 'inline-block',
+                                                marginBottom: '12px'
+                                            }}>
+                                                Project Case Study
+                                            </span>
+                                            <h2 style={{
+                                                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                                                fontWeight: '700',
+                                                margin: 0,
+                                                lineHeight: 1.1
+                                            }}>{selectedVideo.title}</h2>
+                                            <div style={{
+                                                display: 'flex',
+                                                gap: '20px',
+                                                marginTop: '12px',
+                                                color: 'rgba(255, 255, 255, 0.6)',
+                                                fontSize: '1rem'
+                                            }}>
+                                                <span>{selectedVideo.venue}</span>
+                                                <span>•</span>
+                                                <span>{selectedVideo.year}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Technical Specs Grid */}
+                                        <div style={{
+                                            background: 'rgba(255, 255, 255, 0.05)',
+                                            padding: '20px',
+                                            borderRadius: '12px',
+                                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                                            minWidth: '300px'
+                                        }}>
+                                            <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '1px' }}>Technical Specifications</h4>
+                                            <div style={{ fontSize: '0.95rem', lineHeight: '1.6', fontFamily: 'monospace' }}>
+                                                {selectedVideo.technicalDetails || 'Sony PD170 | MiniDV Format'}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Content Grid */}
+                                    <div style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                                        gap: '40px'
+                                    }}>
+                                        {/* Left Column */}
+                                        <div>
+                                            <div style={{ marginBottom: '40px' }}>
+                                                <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: '#ffffff' }}>The Brief & Concept</h3>
+                                                <p style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem' }}>
+                                                    {selectedVideo.description}
+                                                </p>
+                                                <p style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem', marginTop: '16px' }}>
+                                                    <strong>Concept:</strong> {selectedVideo.concept}
+                                                </p>
+                                            </div>
+
+                                            {selectedVideo.challenge && (
+                                                <div style={{ marginBottom: '40px' }}>
+                                                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: '#ff4d4d' }}>The Challenge</h3>
+                                                    <p style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem' }}>
+                                                        {selectedVideo.challenge}
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Right Column */}
+                                        <div>
+                                            <div style={{ marginBottom: '40px' }}>
+                                                <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: '#4d94ff' }}>Production Notes</h3>
+                                                <div style={{
+                                                    background: 'rgba(0, 0, 0, 0.3)',
+                                                    padding: '24px',
+                                                    borderRadius: '8px',
+                                                    borderLeft: '4px solid #4d94ff'
+                                                }}>
+                                                    <p style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.05rem', fontStyle: 'italic', margin: 0 }}>
+                                                        "{selectedVideo.criticalAnalysis}"
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            {selectedVideo.outcome && (
+                                                <div>
+                                                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: '#66ff66' }}>Project Outcome</h3>
+                                                    <p style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem' }}>
+                                                        {selectedVideo.outcome}
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )

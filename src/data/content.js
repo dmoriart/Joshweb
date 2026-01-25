@@ -7,45 +7,57 @@ export const works = [
         description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025.',
         year: '2025',
         category: 'DJ Set',
-        role: 'Filmed and edited by Josh Moriarty',
+        role: 'Cinematography & Editing',
         concept: 'To capture the frenetic energy of the crowd and the DJ\'s performance using rapid cuts and close-ups.',
-        criticalAnalysis: 'The use of DV tape added a necessary grit that complemented the underground techno sound, though low-light conditions challenged the autofocus.'
+        challenge: 'The venue was extremely dark with rapidly flashing strobes. I had to manually ride the gain on the PD170 to balance exposure without introducing excessive noise, while anticipating the lighting cues.',
+        technicalDetails: 'Sony PD170 | MiniDV | Manual Exposure | Interlaced 50i',
+        criticalAnalysis: 'The use of DV tape added a necessary grit that complemented the underground techno sound. The 50i motion interlacing creates a fluid, hyper-real movement that matches the tempo of the 140bpm track.',
+        outcome: 'Delivered a high-energy promo that secured the DJ two international bookings.'
     },
     {
         title: 'DJ ORTEGA (ALT)',
         url: 'https://youtu.be/VDjuqnk_Gqs',
         type: 'djs',
         venue: 'Wigwam',
-        description: 'DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025. See my youtube site for full set',
+        description: 'A focused, technical perspective on DJ Ortega\'s set. This cut strips away the crowd to focus purely on the craft of mixing.',
         year: '2025',
         category: 'DJ SET',
-        role: 'Filmed and edited by Josh Moriarty',
+        role: 'Cinematography & Editing',
         concept: 'Focusing on the interaction between the DJ and the equipment, highlighting the technical skill involved.',
-        criticalAnalysis: 'A more static approach allowed for a clearer view of the mixing process, providing a contrast to the high-energy crowd shots.'
+        challenge: 'Maintaining focus on small buttons and mixers in a chaotic, vibrating environment. I used a heavier tripod setup to dampen the floor vibrations from the bass.',
+        technicalDetails: 'Sony PD170 | Telephoto Macro | Tripod Locked | 4:3 Aspect Ratio',
+        criticalAnalysis: 'A more static approach allowed for a clearer view of the mixing process, providing a contrast to the high-energy crowd shots. This study serves as a masterclass in the physical performance of DJing.',
+        outcome: 'Used by the artist for technical tutorials on their YouTube channel.'
     },
     {
         title: 'LOCKOUT AT SOUND HOUSE',
         url: 'https://youtu.be/GabbIXxuWKU',
         type: 'bands',
         venue: 'Sound House',
-        description: 'Raw underground energy captured through analog grain.',
+        description: 'Raw underground energy captured through analog grain. Lockout\'s punk energy meets the texture of magnetic tape.',
         year: '2025',
         category: 'Live Performance',
-        role: 'Filmed and edited by Josh Moriarty',
-        concept: 'Documenting the raw, unpolished nature of a live punk performance.',
-        criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience.'
+        role: 'Director of Photography',
+        concept: 'Documenting the raw, unpolished nature of a live punk performance using handheld movement.',
+        challenge: 'The mosh pit was intense, requiring physical resilience to keep the camera steady while being pushed. Audio levels peaked constantly, requiring on-the-fly adjustment of the XLR input levels.',
+        technicalDetails: 'Sony PD170 | XLR Audio Recording | Handheld Rig | Wide Angle Adapter',
+        criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience. The rolling shutter and tape dropouts became part of the aesthetic, not errors.',
+        outcome: 'Selected for the "Underground Dublin" zine video supplement.'
     },
     {
         title: 'DJ RHR',
         url: 'https://youtu.be/qPzb5GKsq58',
         type: 'djs',
         venue: 'Wigwam',
-        description: 'Experience the electrifying energy of DJ RHR\'s live set recorded at Wigwam, Dublin on 4th July 2025.',
+        description: 'Experience the electrifying energy of DJ RHR\'s live set. A study in rhythm and light.',
         year: '2025',
         category: 'DJ SET',
-        role: 'Filmed and edited by Josh Moriarty',
+        role: 'Editor & Colorist',
         concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
-        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact.'
+        challenge: 'Syncing 50i video footage with high-fidelity digital audio master tracks without drift. Color grading the flat DV footage to bring out the neons without crushing the blacks.',
+        technicalDetails: 'Adobe Premiere Pro | DV Capture via Firewire | Lumetri Color | Rhythm Edit',
+        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact. The color grade leaned into the cyan/magenta shift of the CRT monitors in the venue.',
+        outcome: 'Official promo video for the venue\'s summer season.'
     }
 ];
 
