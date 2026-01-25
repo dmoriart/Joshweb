@@ -35,15 +35,7 @@ function Hero() {
                 padding: '0 20px'
             }}>
 
-                <p style={{
-                    fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-                    fontWeight: '400',
-                    margin: '0 0 40px 0',
-                    opacity: 0.9,
-                    letterSpacing: '-0.01em'
-                }}>
-                    Capturing raw, authentic moments through analog grain
-                </p>
+
                 <div style={{
                     display: 'inline-block',
                     padding: '12px 32px',
