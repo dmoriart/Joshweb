@@ -32,6 +32,8 @@ function App() {
             <Hero />
             <FeaturedReel />
             <WorkGrid />
+            <Process />
+            <Equipment />
             <Photography />
 
             {/* Artwork Section */}
@@ -72,9 +74,6 @@ function App() {
                 <Artwork />
               </div>
             </section>
-
-            <Process />
-            <Equipment />
 
             {/* About Section - Artist Statement */}
             <section id="about" style={{
