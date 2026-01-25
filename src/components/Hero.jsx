@@ -35,22 +35,27 @@ function Hero() {
                 padding: '0 20px'
             }}>
 
-
-                <div style={{
-                    display: 'inline-block',
-                    padding: '12px 32px',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    borderRadius: '6px',
-                    fontSize: '14px',
-                    fontWeight: '500',
-                    letterSpacing: '0.5px',
-                    textTransform: 'uppercase',
-                    marginBottom: '20px'
+                <h1 style={{
+                    fontSize: 'clamp(48px, 8vw, 80px)',
+                    fontWeight: '700',
+                    letterSpacing: '-1px',
+                    marginBottom: '20px',
+                    textShadow: '0 2px 20px rgba(0, 0, 0, 0.3)'
                 }}>
                     Josh Moriarty
-                </div>
+                </h1>
+
+                <p style={{
+                    fontSize: 'clamp(18px, 2.5vw, 24px)',
+                    fontWeight: '400',
+                    letterSpacing: '0.5px',
+                    marginBottom: '40px',
+                    opacity: '0.95',
+                    maxWidth: '600px',
+                    lineHeight: '1.5'
+                }}>
+                    Underground DV Tape Videographer
+                </p>
 
                 {/* Watch Reel CTA */}
                 <div>
