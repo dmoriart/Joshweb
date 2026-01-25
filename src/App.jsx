@@ -3,6 +3,7 @@ import './App.css';
 import Artwork from './Artwork';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import FeaturedReel from './components/FeaturedReel';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
 import Process from './components/Process';
@@ -29,6 +30,7 @@ function App() {
           }}>
             <Navigation />
             <Hero />
+            <FeaturedReel />
             <WorkGrid />
             <Photography />
 
