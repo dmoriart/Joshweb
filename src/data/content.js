@@ -158,6 +158,7 @@ export const photography = [
     {
         id: 'brand',
         title: 'Clothing Brand Campaign',
+        orientation: 'portrait',
         description: 'Commercial fashion photography focusing on urban aesthetics and texture.',
         images: [
             { id: 'b1', src: '/images/photography/brand1.jpeg', title: 'Urban Texture', description: 'Collection Lead' },
@@ -171,6 +172,7 @@ export const photography = [
     {
         id: 'dj',
         title: 'DJ Sessions',
+        orientation: 'landscape',
         description: 'Capturing the energy and technical precision of underground club culture.',
         images: [
             { id: 'd1', src: '/images/photography/DJ1.jpg', title: 'Focus', description: 'In the mix' },
@@ -184,6 +186,7 @@ export const photography = [
     {
         id: 'aurora',
         title: 'Aurora Borealis',
+        orientation: 'landscape',
         description: 'Long exposure astrophotography capturing natural phenomena.',
         images: [
             { id: 'a1', src: '/images/photography/aurora1.jpeg', title: 'Northern Lights I', description: 'Wide sky capture' },
@@ -194,6 +197,7 @@ export const photography = [
     {
         id: 'live',
         title: 'Live Performance',
+        orientation: 'landscape',
         description: 'Raw energy of live music performance.',
         images: [
             { id: 'l1', src: '/images/photography/lockout.jpg', title: 'Lockout Live', description: 'Performance intensity' }

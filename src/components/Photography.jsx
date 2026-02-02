@@ -4,6 +4,47 @@ import { photography } from '../data/content';
 function Photography() {
     const [lightboxImage, setLightboxImage] = useState(null);
 
+    // Handle Keyboard Navigation
+    React.useEffect(() => {
+        if (!lightboxImage) return;
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setLightboxImage(null);
+            if (e.key === 'ArrowRight') navigateLightbox('next');
+            if (e.key === 'ArrowLeft') navigateLightbox('prev');
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [lightboxImage]);
+
+    const navigateLightbox = (direction) => {
+        if (!lightboxImage) return;
+
+        // Find current collection and image index
+        let currentCollection = null;
+        let currentIndex = -1;
+
+        for (const collection of photography) {
+            const index = collection.images.findIndex(img => img.id === lightboxImage.id);
+            if (index !== -1) {
+                currentCollection = collection;
+                currentIndex = index;
+                break;
+            }
+        }
+
+        if (currentCollection && currentIndex !== -1) {
+            let newIndex;
+            if (direction === 'next') {
+                newIndex = (currentIndex + 1) % currentCollection.images.length;
+            } else {
+                newIndex = (currentIndex - 1 + currentCollection.images.length) % currentCollection.images.length;
+            }
+            setLightboxImage(currentCollection.images[newIndex]);
+        }
+    };
+
     return (
         <section id="photography" style={{
             background: '#ffffff',
@@ -86,7 +127,8 @@ function Photography() {
                                             borderRadius: '8px',
                                             overflow: 'hidden',
                                             cursor: 'pointer',
-                                            aspectRatio: '3/4',
+                                            // Dynamic Aspect Ratio based on collection type
+                                            aspectRatio: collection.orientation === 'portrait' ? '3/4' : '3/2',
                                             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
                                             transition: 'transform 0.3s ease'
                                         }}
@@ -168,10 +210,11 @@ function Photography() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        padding: '40px'
+                        userSelect: 'none'
                     }}
                     onClick={() => setLightboxImage(null)}
                 >
+                    {/* Close Button */}
                     <button
                         style={{
                             position: 'absolute',
@@ -182,12 +225,66 @@ function Photography() {
                             color: '#ffffff',
                             fontSize: '40px',
                             cursor: 'pointer',
-                            zIndex: 2001
+                            zIndex: 2005,
+                            padding: '10px'
                         }}
                         onClick={() => setLightboxImage(null)}
+                        aria-label="Close Lightbox"
                     >
                         ×
                     </button>
+
+                    {/* Navigation Buttons */}
+                    <button
+                        style={{
+                            position: 'absolute',
+                            left: '20px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ffffff',
+                            fontSize: '60px',
+                            cursor: 'pointer',
+                            zIndex: 2005,
+                            padding: '20px',
+                            opacity: 0.7,
+                            transition: 'opacity 0.2s'
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            navigateLightbox('prev');
+                        }}
+                        onMouseEnter={(e) => e.target.style.opacity = 1}
+                        onMouseLeave={(e) => e.target.style.opacity = 0.7}
+                        aria-label="Previous Image"
+                    >
+                        ‹
+                    </button>
+
+                    <button
+                        style={{
+                            position: 'absolute',
+                            right: '20px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ffffff',
+                            fontSize: '60px',
+                            cursor: 'pointer',
+                            zIndex: 2005,
+                            padding: '20px',
+                            opacity: 0.7,
+                            transition: 'opacity 0.2s'
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            navigateLightbox('next');
+                        }}
+                        onMouseEnter={(e) => e.target.style.opacity = 1}
+                        onMouseLeave={(e) => e.target.style.opacity = 0.7}
+                        aria-label="Next Image"
+                    >
+                        ›
+                    </button>
+
                     <div
                         style={{
                             maxWidth: '90%',
@@ -203,7 +300,8 @@ function Photography() {
                                 maxWidth: '100%',
                                 maxHeight: '85vh',
                                 borderRadius: '4px',
-                                boxShadow: '0 0 40px rgba(0,0,0,0.5)'
+                                boxShadow: '0 0 40px rgba(0,0,0,0.5)',
+                                objectFit: 'contain'
                             }}
                         />
                         <div style={{
