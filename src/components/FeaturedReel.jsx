@@ -78,8 +78,8 @@ function FeaturedReel() {
                             lineHeight: '1.6',
                             letterSpacing: '-0.01em'
                         }}>
-                            A curated compilation of underground moments from Dublin's music scene—raw performances,
-                            intimate DJ sets, and the authentic energy of DV tape cinematography
+                            A raw, unfiltered look at Dublin's urban landscape—clothing brand photoshoots set against
+                            gritty car park backdrops, captured with the authentic grain of DV tape cinematography
                         </p>
                     </div>
 
