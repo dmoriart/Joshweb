@@ -85,14 +85,14 @@ function FeaturedReel() {
 
                     {/* Video Player */}
                     <div style={{
-                        maxWidth: '1000px',
+                        maxWidth: '900px',
                         margin: '0 auto',
                         position: 'relative'
                     }}>
-                        {/* Video Container with 16:9 Aspect Ratio */}
+                        {/* Video Container with 4:3 Aspect Ratio (Sony PD170 DV format) */}
                         <div style={{
                             position: 'relative',
-                            paddingBottom: '56.25%', // 16:9 aspect ratio
+                            paddingBottom: '75%', // 4:3 aspect ratio for DV tape
                             height: 0,
                             borderRadius: '12px',
                             overflow: 'hidden',
