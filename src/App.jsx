@@ -102,7 +102,7 @@ function App() {
                     zIndex: 0
                   }}></div>
                   <img
-                    src="/images/photography/D92998F4-80BC-4043-89B8-A5927E373E72 (1).jpeg"
+                    src="/images/photography/josh_portrait.jpg"
                     alt="Josh Moriarty"
                     loading="lazy"
                     style={{

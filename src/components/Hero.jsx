@@ -9,7 +9,7 @@ function Hero() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundImage: 'url(/images/photography/IMG_0226.jpeg)',
+            backgroundImage: 'url(/images/process/IMG_0226.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
