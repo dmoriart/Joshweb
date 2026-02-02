@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { photography } from '../data/content';
 
 function Photography() {
-    const [photoFilter, setPhotoFilter] = useState('all');
     const [lightboxImage, setLightboxImage] = useState(null);
-
-    const filteredPhotos = photoFilter === 'all' ? photography : photography.filter(photo => photo.category === photoFilter);
 
     return (
         <section id="photography" style={{
@@ -43,96 +40,97 @@ function Photography() {
                     </p>
                 </div>
 
-                {/* Photo Filter Buttons */}
+                {/* Collections Grid */}
                 <div style={{
                     display: 'flex',
-                    justifyContent: 'center',
-                    gap: '20px',
-                    marginBottom: '60px',
-                    flexWrap: 'wrap'
+                    flexDirection: 'column',
+                    gap: '100px'
                 }}>
-                    {['all', 'street', 'portrait', 'architecture', 'texture'].map(filter => (
-                        <button
-                            key={filter}
-                            onClick={() => setPhotoFilter(filter)}
-                            aria-label={`Filter by ${filter === 'all' ? 'all photos' : filter}`}
-                            aria-pressed={photoFilter === filter}
-                            style={{
-                                padding: '12px 24px',
-                                background: photoFilter === filter ? '#1a1a1a' : 'transparent',
-                                color: photoFilter === filter ? '#ffffff' : '#1a1a1a',
-                                border: '1px solid #1a1a1a',
-                                borderRadius: '6px',
-                                fontSize: '14px',
-                                fontWeight: '500',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.5px',
-                                cursor: 'pointer',
-                                transition: 'all 0.2s ease'
-                            }}
-                        >
-                            {filter === 'all' ? 'All Photos' : filter.charAt(0).toUpperCase() + filter.slice(1)}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Photography Grid */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-                    gap: '30px',
-                    marginBottom: '60px'
-                }}>
-                    {filteredPhotos.map((photo) => (
-                        <div
-                            key={photo.id}
-                            style={{
-                                position: 'relative',
-                                borderRadius: '12px',
-                                overflow: 'hidden',
-                                cursor: 'pointer',
-                                aspectRatio: '3/4',
-                                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                                transition: 'transform 0.3s ease'
-                            }}
-                            onClick={() => setLightboxImage(photo)}
-                            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        >
-                            <img
-                                src={photo.src}
-                                alt={photo.title}
-                                loading="lazy"
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                    transition: 'transform 0.5s ease'
-                                }}
-                            />
-                            <div
-                                style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    padding: '30px 20px',
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                                    color: '#ffffff',
-                                    transition: 'opacity 0.3s ease'
-                                }}
-                                className="photo-overlay"
-                            >
+                    {photography.map((collection) => (
+                        <div key={collection.id} style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '30px'
+                        }}>
+                            {/* Collection Header */}
+                            <div style={{
+                                borderBottom: '1px solid #eee',
+                                paddingBottom: '20px'
+                            }}>
                                 <h3 style={{
-                                    margin: '0 0 8px 0',
-                                    fontSize: '1.2rem',
-                                    fontWeight: '600'
-                                }}>{photo.title}</h3>
+                                    fontFamily: "'Inter', sans-serif",
+                                    fontSize: '1.8rem',
+                                    fontWeight: '600',
+                                    margin: '0 0 10px 0',
+                                    color: '#1a1a1a'
+                                }}>{collection.title}</h3>
                                 <p style={{
+                                    fontSize: '1rem',
+                                    color: '#666',
                                     margin: 0,
-                                    fontSize: '0.9rem',
-                                    opacity: 0.9
-                                }}>{photo.description}</p>
+                                    maxWidth: '600px'
+                                }}>{collection.description}</p>
+                            </div>
+
+                            {/* Collection Images */}
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                                gap: '20px'
+                            }}>
+                                {collection.images.map((photo) => (
+                                    <div
+                                        key={photo.id}
+                                        style={{
+                                            position: 'relative',
+                                            borderRadius: '8px',
+                                            overflow: 'hidden',
+                                            cursor: 'pointer',
+                                            aspectRatio: '3/4',
+                                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                                            transition: 'transform 0.3s ease'
+                                        }}
+                                        onClick={() => setLightboxImage(photo)}
+                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                    >
+                                        <img
+                                            src={photo.src}
+                                            alt={photo.title}
+                                            loading="lazy"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                transition: 'transform 0.5s ease'
+                                            }}
+                                        />
+                                        <div
+                                            style={{
+                                                position: 'absolute',
+                                                bottom: 0,
+                                                left: 0,
+                                                width: '100%',
+                                                padding: '20px',
+                                                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                                                color: '#ffffff',
+                                                transition: 'opacity 0.3s ease'
+                                            }}
+                                            className="photo-overlay"
+                                        >
+                                            <h4 style={{
+                                                margin: '0 0 4px 0',
+                                                fontSize: '1.1rem',
+                                                fontWeight: '500'
+                                            }}>{photo.title}</h4>
+                                            <p style={{
+                                                margin: 0,
+                                                fontSize: '0.85rem',
+                                                opacity: 0.9
+                                            }}>{photo.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ))}

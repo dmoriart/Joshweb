@@ -156,85 +156,48 @@ export const artworks = [
 
 export const photography = [
     {
-        id: 1,
-        src: '/images/photography/20762154-d0ce-4a9e-b8ca-59a57a0925cd.jpeg',
-        title: 'Urban Moments',
-        category: 'street',
-        description: 'Captured moments on the street',
-        year: '2025'
+        id: 'brand',
+        title: 'Clothing Brand Campaign',
+        description: 'Commercial fashion photography focusing on urban aesthetics and texture.',
+        images: [
+            { id: 'b1', src: '/images/photography/brand1.jpeg', title: 'Urban Texture', description: 'Collection Lead' },
+            { id: 'b2', src: '/images/photography/brand2.jpeg', title: 'Detail Shot', description: 'Fabric detail' },
+            { id: 'b3', src: '/images/photography/brand3.jpeg', title: 'Street Style', description: 'Location shoot' },
+            { id: 'b4', src: '/images/photography/brand4.jpeg', title: 'Motion', description: 'Dynamic movement' },
+            { id: 'b5', src: '/images/photography/brand5.jpeg', title: 'Portrait', description: 'Model closeup' },
+            { id: 'b6', src: '/images/photography/brand6.jpeg', title: 'Atmosphere', description: 'Wide context' }
+        ]
     },
     {
-        id: 2,
-        src: '/images/photography/fdeb6997-2140-4d7a-9db4-79aef9de2a16.jpeg',
-        title: 'Street Life',
-        category: 'street',
-        description: 'Documentary street photography',
-        year: '2025'
-    },
-
-    {
-        id: 4,
-        src: '/images/photography/Timeline 1_01_00_04_23.jpg',
-        title: 'Performance Energy',
-        category: 'portrait',
-        description: 'Live performance capture',
-        year: '2025'
+        id: 'dj',
+        title: 'DJ Sessions',
+        description: 'Capturing the energy and technical precision of underground club culture.',
+        images: [
+            { id: 'd1', src: '/images/photography/DJ1.jpg', title: 'Focus', description: 'In the mix' },
+            { id: 'd2', src: '/images/photography/DJ2.jpg', title: 'Control', description: 'Tactile interaction' },
+            { id: 'd3', src: '/images/photography/DJ3.jpg', title: 'Atmosphere', description: 'Club lighting' },
+            { id: 'd4', src: '/images/photography/DJ4.jpg', title: 'Connection', description: 'Crowd interaction' },
+            { id: 'd5', src: '/images/photography/DJ5.jpg', title: 'Intensity', description: 'Peak moment' },
+            { id: 'd6', src: '/images/photography/DJ6.jpg', title: 'Technique', description: 'Hands on decks' }
+        ]
     },
     {
-        id: 5,
-        src: '/images/photography/Timeline 1_01_00_04_35.jpg',
-        title: 'Stage Presence',
-        category: 'portrait',
-        description: 'Performer in the moment',
-        year: '2025'
+        id: 'aurora',
+        title: 'Aurora Borealis',
+        description: 'Long exposure astrophotography capturing natural phenomena.',
+        images: [
+            { id: 'a1', src: '/images/photography/aurora1.jpeg', title: 'Northern Lights I', description: 'Wide sky capture' },
+            { id: 'a2', src: '/images/photography/aurora2.jpeg', title: 'Northern Lights II', description: 'Vibrant colors' },
+            { id: 'a3', src: '/images/photography/aurora3.jpeg', title: 'Northern Lights III', description: 'Night sky' }
+        ]
     },
     {
-        id: 6,
-        src: '/images/photography/Timeline 1_01_08_59_22.jpg',
-        title: 'In the Zone',
-        category: 'portrait',
-        description: 'Focused performance',
-        year: '2025'
-    },
-    {
-        id: 7,
-        src: '/images/photography/Timeline 1_01_26_35_50.jpg',
-        title: 'Raw Energy',
-        category: 'portrait',
-        description: 'Intensity captured',
-        year: '2025'
-    },
-    {
-        id: 8,
-        src: '/images/photography/Timeline 1_01_28_00_36.jpg',
-        title: 'The Drop',
-        category: 'portrait',
-        description: 'Peak performance moment',
-        year: '2025'
-    },
-    {
-        id: 9,
-        src: '/images/photography/dj.jpg',
-        title: 'DJ in Action',
-        category: 'portrait',
-        description: 'Technical precision behind the decks',
-        year: '2025'
-    },
-    {
-        id: 10,
-        src: '/images/photography/dj2.jpg',
-        title: 'Behind the Decks',
-        category: 'portrait',
-        description: 'The art of mixing',
-        year: '2025'
-    },
-    {
-        id: 11,
-        src: '/images/photography/lockout.jpg',
+        id: 'live',
         title: 'Live Performance',
-        category: 'portrait',
-        description: 'Band in full flow',
-        year: '2025'
+        description: 'Raw energy of live music performance.',
+        images: [
+            { id: 'l1', src: '/images/photography/lockout.jpg', title: 'Lockout Live', description: 'Performance intensity' }
+        ]
     }
 ];
 
