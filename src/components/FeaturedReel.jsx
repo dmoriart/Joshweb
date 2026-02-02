@@ -100,7 +100,7 @@ function FeaturedReel() {
                             border: '2px solid rgba(255, 255, 255, 0.1)'
                         }}>
                             <iframe
-                                src="https://www.youtube.com/embed/IUF6f7UPeaQ?autoplay=1&mute=1&loop=1&playlist=IUF6f7UPeaQ&rel=0"
+                                src="https://www.youtube.com/embed/HRsAaCGVGRo?autoplay=1&mute=1&loop=1&playlist=HRsAaCGVGRo&rel=0"
                                 title="Josh Moriarty Films - Demo Reel 2025"
                                 style={{
                                     position: 'absolute',

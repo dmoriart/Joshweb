@@ -1,5 +1,20 @@
 export const works = [
     {
+        title: 'DEMO REEL 2024',
+        url: 'https://youtu.be/IUF6f7UPeaQ',
+        type: 'djs',
+        venue: 'Various Locations',
+        description: 'A curated compilation of underground moments from Dublin\'s music scene—raw performances, intimate DJ sets, and the authentic energy of DV tape cinematography.',
+        year: '2024',
+        category: 'Demo Reel',
+        role: 'Director, Cinematographer & Editor',
+        concept: 'Showcasing the breadth of underground club culture documentation across multiple venues and artists.',
+        challenge: 'Selecting and sequencing the most compelling moments from dozens of hours of footage while maintaining narrative flow and rhythmic pacing.',
+        technicalDetails: 'Sony PD170 | MiniDV | Mixed Lighting Conditions | Multi-venue Compilation',
+        criticalAnalysis: 'This compilation demonstrates the consistency of visual style across different environments and subjects. The DV tape aesthetic unifies disparate performances into a cohesive whole.',
+        outcome: 'Featured showreel that secured multiple commercial bookings and established signature visual style.'
+    },
+    {
         title: 'DJ ORTEGA',
         url: 'https://youtu.be/mo90B3F9Lkk',
         type: 'djs',
