@@ -1,6 +1,6 @@
 export const works = [
     {
-        title: 'DEMO REEL 2024',
+        title: 'DEMO REEL 2025',
         url: 'https://youtu.be/IUF6f7UPeaQ',
         type: 'djs',
         venue: 'Various Locations',

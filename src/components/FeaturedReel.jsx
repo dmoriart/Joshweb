@@ -67,7 +67,7 @@ function FeaturedReel() {
                             color: '#ffffff',
                             lineHeight: '1.1'
                         }}>
-                            Demo Reel 2025
+                            Demo Reel 2026
                         </h2>
 
                         <p style={{
@@ -101,7 +101,7 @@ function FeaturedReel() {
                         }}>
                             <iframe
                                 src="https://www.youtube.com/embed/HRsAaCGVGRo?autoplay=1&mute=1&loop=1&playlist=HRsAaCGVGRo&rel=0"
-                                title="Josh Moriarty Films - Demo Reel 2025"
+                                title="Josh Moriarty Films - Demo Reel 2026"
                                 style={{
                                     position: 'absolute',
                                     top: 0,
