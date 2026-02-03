@@ -1,11 +1,11 @@
 export const works = [
     {
-        title: 'DEMO REEL 2025',
+        title: 'DEMO REEL 2026',
         url: 'https://youtu.be/IUF6f7UPeaQ',
         type: 'djs',
         venue: 'Various Locations',
         description: 'A curated compilation of underground moments from Dublin\'s music scene—raw performances, intimate DJ sets, and the authentic energy of DV tape cinematography.',
-        year: '2024',
+        year: '2026',
         category: 'Demo Reel',
         role: 'Director, Cinematographer & Editor',
         concept: 'Showcasing the breadth of underground club culture documentation across multiple venues and artists.',

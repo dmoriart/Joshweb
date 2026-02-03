@@ -128,8 +128,8 @@ function FeaturedReel() {
                             {[
                                 { label: 'Format', value: 'DV Tape' },
                                 { label: 'Camera', value: 'Sony PD170' },
-                                { label: 'Duration', value: '3:42' },
-                                { label: 'Year', value: '2025' }
+                                { label: 'Duration', value: '3:01' },
+                                { label: 'Year', value: '2026' }
                             ].map((item, index) => (
                                 <div key={index} style={{
                                     textAlign: 'center'
