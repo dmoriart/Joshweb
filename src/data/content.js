@@ -181,7 +181,9 @@ export const photography = [
             { id: 'b3', src: '/images/photography/brand3.jpeg', title: 'Street Style', description: 'Location shoot' },
             { id: 'b4', src: '/images/photography/brand4.jpeg', title: 'Motion', description: 'Dynamic movement' },
             { id: 'b5', src: '/images/photography/brand5.jpeg', title: 'Portrait', description: 'Model closeup' },
-            { id: 'b6', src: '/images/photography/brand6.jpeg', title: 'Atmosphere', description: 'Wide context' }
+            { id: 'b6', src: '/images/photography/brand6.jpeg', title: 'Atmosphere', description: 'Wide context' },
+            { id: 'b7', src: '/images/photography/brand7.jpeg', title: 'Editorial', description: 'Campaign shot' },
+            { id: 'b8', src: '/images/photography/brand8.jpeg', title: 'Styling', description: 'Creative direction' }
         ]
     },
     {

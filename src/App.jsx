@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import FeaturedReel from './components/FeaturedReel';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
-import Process from './components/Process';
+// import Process from './components/Process';
 import Equipment from './components/Equipment';
 import Credits from './components/Credits';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -32,7 +32,7 @@ function App() {
             <Hero />
             <FeaturedReel />
             <WorkGrid />
-            <Process />
+            {/* <Process /> */}
             <Equipment />
             <Photography />
 
@@ -102,7 +102,7 @@ function App() {
                     zIndex: 0
                   }}></div>
                   <img
-                    src="/images/photography/josh_portrait.jpg"
+                    src="/images/photography/about.jpeg"
                     alt="Josh Moriarty"
                     loading="lazy"
                     style={{
