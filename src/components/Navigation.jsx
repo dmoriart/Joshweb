@@ -7,7 +7,6 @@ function Navigation() {
         { href: '#', label: 'Home' },
         { href: '#featured-reel', label: 'Demo Reel' },
         { href: '#work', label: 'Work' },
-        { href: '#process', label: 'Process' },
         { href: '#equipment', label: 'Equipment' },
         { href: '#photography', label: 'Photography' },
         { href: '#artwork', label: 'Artwork' },
