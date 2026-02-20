@@ -85,14 +85,14 @@ function FeaturedReel() {
 
                     {/* Video Player */}
                     <div style={{
-                        maxWidth: '900px',
+                        maxWidth: '500px',
                         margin: '0 auto',
                         position: 'relative'
                     }}>
-                        {/* Video Container with 4:3 Aspect Ratio (Sony PD170 DV format) */}
+                        {/* Video Container with 9:16 Aspect Ratio (YouTube Shorts format) */}
                         <div style={{
                             position: 'relative',
-                            paddingBottom: '75%', // 4:3 aspect ratio for DV tape
+                            paddingBottom: '177.78%', // 9:16 aspect ratio for Shorts
                             height: 0,
                             borderRadius: '12px',
                             overflow: 'hidden',
@@ -100,7 +100,7 @@ function FeaturedReel() {
                             border: '2px solid rgba(255, 255, 255, 0.1)'
                         }}>
                             <iframe
-                                src="https://www.youtube.com/embed/HRsAaCGVGRo?autoplay=1&mute=1&loop=1&playlist=HRsAaCGVGRo&rel=0"
+                                src="https://www.youtube.com/embed/1g72m-MM1m4?autoplay=1&mute=1&loop=1&playlist=1g72m-MM1m4&rel=0"
                                 title="Josh Moriarty Films - Demo Reel 2026"
                                 style={{
                                     position: 'absolute',
@@ -128,7 +128,7 @@ function FeaturedReel() {
                             {[
                                 { label: 'Format', value: 'DV Tape' },
                                 { label: 'Camera', value: 'Sony PD170' },
-                                { label: 'Duration', value: '3:01' },
+                                { label: 'Duration', value: '0:59' },
                                 { label: 'Year', value: '2026' }
                             ].map((item, index) => (
                                 <div key={index} style={{
