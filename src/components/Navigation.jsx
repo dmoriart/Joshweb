@@ -9,7 +9,7 @@ function Navigation() {
         { href: '#work', label: 'Work' },
         { href: '#equipment', label: 'Equipment' },
         { href: '#photography', label: 'Photography' },
-        { href: '#artwork', label: 'Artwork' },
+        { href: '#artwork', label: 'Drawing Portfolio' },
         { href: '#about', label: 'About' },
         { href: '#credits', label: 'Credits' },
         { href: '#contact', label: 'Contact' }

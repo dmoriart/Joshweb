@@ -36,7 +36,6 @@ function App() {
             <Equipment />
             <Photography />
 
-            {/* Artwork Section */}
             <section id="artwork" style={{
               background: '#f8f8f8',
               padding: '80px 20px'
@@ -48,7 +47,7 @@ function App() {
                 {/* Section Title */}
                 <div style={{
                   textAlign: 'center',
-                  marginBottom: '80px'
+                  marginBottom: '50px'
                 }}>
                   <h2 style={{
                     fontFamily: "'Inter', sans-serif",
@@ -59,16 +58,17 @@ function App() {
                     lineHeight: '1.1',
                     color: '#1a1a1a'
                   }}>
-                    Visual Artwork
+                    Drawing Portfolio
                   </h2>
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#666',
-                    maxWidth: '600px',
+                    maxWidth: '700px',
                     margin: '0 auto',
-                    letterSpacing: '-0.01em'
+                    letterSpacing: '-0.01em',
+                    lineHeight: '1.6'
                   }}>
-                    Digital and mixed media explorations
+                    Observational drawing, character design, and visual storytelling — demonstrating foundational skills in figure work, perspective, tonal rendering, and creative expression
                   </p>
                 </div>
                 <Artwork />
