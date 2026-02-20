@@ -1,5 +1,20 @@
 export const works = [
     {
+        title: 'CLOTHING BRAND PHOTOSHOOT',
+        url: 'https://youtu.be/HpGS_WcvOBM',
+        type: 'djs',
+        venue: 'Dublin',
+        description: 'A clothing brand photoshoot set against Dublin\'s gritty urban backdrop, captured with the raw, authentic grain of DV tape cinematography.',
+        year: '2026',
+        category: 'Commercial',
+        role: 'Director, Cinematographer & Editor',
+        concept: 'Blending streetwear fashion with Dublin\'s raw urban landscape to create an authentic, textured visual identity for the brand.',
+        challenge: 'Balancing the commercial demands of a fashion shoot with the lo-fi aesthetic of DV tape, ensuring the clothing pops while maintaining the gritty atmosphere.',
+        technicalDetails: 'Sony PD170 | MiniDV | Natural & Practical Lighting | Handheld',
+        criticalAnalysis: 'The DV tape format adds a tactile, analogue quality that elevates the streetwear beyond a typical lookbook—grounding the fashion in a real, lived-in environment.',
+        outcome: 'Delivered a brand video that captured the raw energy of the shoot and the urban context of the clothing line.'
+    },
+    {
         title: 'DEMO REEL 2026',
         url: 'https://youtu.be/IUF6f7UPeaQ',
         type: 'djs',
