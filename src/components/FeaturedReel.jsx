@@ -85,14 +85,14 @@ function FeaturedReel() {
 
                     {/* Video Player */}
                     <div style={{
-                        maxWidth: '500px',
+                        maxWidth: '900px',
                         margin: '0 auto',
                         position: 'relative'
                     }}>
-                        {/* Video Container with 9:16 Aspect Ratio (YouTube Shorts format) */}
+                        {/* Video Container with 16:9 Aspect Ratio */}
                         <div style={{
                             position: 'relative',
-                            paddingBottom: '177.78%', // 9:16 aspect ratio for Shorts
+                            paddingBottom: '56.25%', // 16:9 aspect ratio
                             height: 0,
                             borderRadius: '12px',
                             overflow: 'hidden',
