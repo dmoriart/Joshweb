@@ -8,7 +8,7 @@ function WorkGrid() {
     const filteredWorks = activeFilter === 'all' ? works : works.filter(work => work.type === activeFilter);
 
     function getYouTubeId(url) {
-        const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+        const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
         if (match && match[1]) return match[1];
         const altMatch = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
         return altMatch ? altMatch[1] : null;
