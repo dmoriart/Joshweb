@@ -11,28 +11,41 @@ function getYouTubeId(url) {
 function Animation() {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [hoveredId, setHoveredId] = useState(null);
-    const [reelVisible, setReelVisible] = useState(false);
+    const [reelPlaying, setReelPlaying] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [playHovered, setPlayHovered] = useState(false);
     const reelRef = useRef(null);
 
     // The first animation is the featured demo reel
     const featuredReel = animations[0];
     const featuredId = featuredReel ? getYouTubeId(featuredReel.url) : null;
 
-    // Lazy-load the hero iframe only when the section scrolls into view
+    // Detect mobile and auto-play only on desktop
     useEffect(() => {
-        if (!reelRef.current) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setReelVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { rootMargin: '200px', threshold: 0.1 }
-        );
-        observer.observe(reelRef.current);
-        return () => observer.disconnect();
+        const mobile = window.matchMedia('(max-width: 768px)').matches;
+        setIsMobile(mobile);
+
+        // On desktop, auto-play when section scrolls into view
+        if (!mobile && reelRef.current) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        // Small delay to let scroll settle before loading iframe
+                        setTimeout(() => setReelPlaying(true), 300);
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.3 }
+            );
+            observer.observe(reelRef.current);
+            return () => observer.disconnect();
+        }
+        // On mobile: do nothing — user taps the play button
     }, []);
+
+    const handlePlayClick = () => {
+        setReelPlaying(true);
+    };
 
     return (
         <section id="animation" style={{
@@ -92,7 +105,7 @@ function Animation() {
                 </div>
 
                 {/* ═══════════════════════════════════════════════
-                    DEMO REEL HERO — auto-playing featured video
+                    DEMO REEL HERO — auto-plays on desktop, click-to-play on mobile
                 ═══════════════════════════════════════════════ */}
                 {featuredReel && (
                     <div
@@ -109,15 +122,16 @@ function Animation() {
                             border: '1px solid rgba(255, 255, 255, 0.08)',
                             background: '#000',
                         }}>
-                            {/* 16:9 aspect ratio container */}
+                            {/* 16:9 aspect ratio container — fixed size prevents layout shift */}
                             <div style={{
                                 position: 'relative',
                                 paddingBottom: '56.25%',
                                 height: 0,
+                                overflow: 'hidden',
                             }}>
-                                {reelVisible && featuredId ? (
+                                {reelPlaying && featuredId ? (
                                     <iframe
-                                        src={`https://www.youtube.com/embed/${featuredId}?autoplay=1&mute=1&loop=1&playlist=${featuredId}&rel=0&modestbranding=1&showinfo=0&controls=1`}
+                                        src={`https://www.youtube.com/embed/${featuredId}?autoplay=1&mute=${isMobile ? '0' : '1'}&loop=1&playlist=${featuredId}&rel=0&modestbranding=1&showinfo=0&controls=1&playsinline=1`}
                                         title={featuredReel.title}
                                         style={{
                                             position: 'absolute',
@@ -131,38 +145,48 @@ function Animation() {
                                         allowFullScreen
                                     ></iframe>
                                 ) : (
-                                    /* Thumbnail placeholder before iframe loads */
-                                    <div style={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
-                                        width: '100%',
-                                        height: '100%',
-                                        backgroundImage: featuredId
-                                            ? `url(https://img.youtube.com/vi/${featuredId}/maxresdefault.jpg)`
-                                            : 'none',
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                    }}>
-                                        <div style={{
-                                            width: '72px',
-                                            height: '72px',
-                                            background: 'rgba(0, 0, 0, 0.7)',
-                                            borderRadius: '50%',
+                                    /* Thumbnail with play button — always shown until user/observer triggers play */
+                                    <div
+                                        onClick={handlePlayClick}
+                                        style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundImage: featuredId
+                                                ? `url(https://img.youtube.com/vi/${featuredId}/maxresdefault.jpg)`
+                                                : 'none',
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            backdropFilter: 'blur(4px)',
-                                        }}>
+                                            cursor: 'pointer',
+                                        }}
+                                    >
+                                        <div
+                                            onMouseEnter={() => setPlayHovered(true)}
+                                            onMouseLeave={() => setPlayHovered(false)}
+                                            style={{
+                                                width: '80px',
+                                                height: '80px',
+                                                background: playHovered ? 'rgba(255, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.7)',
+                                                borderRadius: '50%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                backdropFilter: 'blur(4px)',
+                                                transition: 'all 0.25s ease',
+                                                transform: playHovered ? 'scale(1.1)' : 'scale(1)',
+                                            }}
+                                        >
                                             <div style={{
                                                 width: 0,
                                                 height: 0,
-                                                borderLeft: '24px solid #fff',
-                                                borderTop: '14px solid transparent',
-                                                borderBottom: '14px solid transparent',
+                                                borderLeft: '26px solid #fff',
+                                                borderTop: '15px solid transparent',
+                                                borderBottom: '15px solid transparent',
                                                 marginLeft: '6px',
                                             }}></div>
                                         </div>
