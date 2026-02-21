@@ -111,7 +111,7 @@ export const animations = [
         id: 1,
         title: 'Animation Test 1',
         url: 'https://youtu.be/amqhi52QMLY',
-        description: 'First animation test exploring movement and timing fundamentals.',
+        description: 'Animated comic book panel using drawing tablet.',
         year: '2026',
         category: 'Test',
         technicalDetails: 'Hand-drawn animation test',

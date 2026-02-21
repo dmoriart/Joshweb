@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { animations } from '../data/content';
 
 function getYouTubeId(url) {
@@ -11,6 +11,28 @@ function getYouTubeId(url) {
 function Animation() {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [hoveredId, setHoveredId] = useState(null);
+    const [reelVisible, setReelVisible] = useState(false);
+    const reelRef = useRef(null);
+
+    // The first animation is the featured demo reel
+    const featuredReel = animations[0];
+    const featuredId = featuredReel ? getYouTubeId(featuredReel.url) : null;
+
+    // Lazy-load the hero iframe only when the section scrolls into view
+    useEffect(() => {
+        if (!reelRef.current) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setReelVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '200px', threshold: 0.1 }
+        );
+        observer.observe(reelRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <section id="animation" style={{
@@ -18,13 +40,13 @@ function Animation() {
             background: '#111111',
         }}>
             <div style={{
-                maxWidth: '1400px',
+                maxWidth: '1200px',
                 margin: '0 auto'
             }}>
                 {/* Section Header */}
                 <div style={{
                     textAlign: 'center',
-                    marginBottom: '50px'
+                    marginBottom: '48px'
                 }}>
                     <div style={{
                         display: 'inline-block',
@@ -55,7 +77,7 @@ function Animation() {
                         lineHeight: '1.1',
                         color: '#ffffff'
                     }}>
-                        Animation Tests
+                        Animation Demo Reel
                     </h2>
                     <p style={{
                         fontSize: '1.1rem',
@@ -65,149 +87,266 @@ function Animation() {
                         letterSpacing: '-0.01em',
                         lineHeight: '1.6'
                     }}>
-                        Exploring movement, timing, and storytelling through animation — building foundational skills in bringing drawings to life
+                        Bringing drawings to life — exploring movement, timing, and visual storytelling through hand-drawn animation
                     </p>
                 </div>
 
-                {/* Video Grid */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                    gap: '24px',
-                    maxWidth: '1200px',
-                    margin: '0 auto',
-                }}>
-                    {animations.map((anim) => {
-                        const ytId = getYouTubeId(anim.url);
-                        const thumbnail = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
-
-                        return (
-                            <div
-                                key={anim.id}
-                                onClick={() => setSelectedVideo(anim)}
-                                onMouseEnter={() => setHoveredId(anim.id)}
-                                onMouseLeave={() => setHoveredId(null)}
-                                style={{
-                                    background: 'rgba(255, 255, 255, 0.05)',
-                                    borderRadius: '12px',
-                                    overflow: 'hidden',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease',
-                                    transform: hoveredId === anim.id ? 'translateY(-4px)' : 'translateY(0)',
-                                    boxShadow: hoveredId === anim.id
-                                        ? '0 16px 40px rgba(0,0,0,0.4)'
-                                        : '0 4px 20px rgba(0,0,0,0.2)',
-                                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                                }}
-                            >
-                                {/* Thumbnail */}
-                                <div style={{
-                                    position: 'relative',
-                                    paddingBottom: '56.25%',
-                                    overflow: 'hidden',
-                                }}>
-                                    {thumbnail && (
-                                        <img
-                                            src={thumbnail}
-                                            alt={anim.title}
-                                            loading="lazy"
-                                            style={{
-                                                position: 'absolute',
-                                                top: 0,
-                                                left: 0,
-                                                width: '100%',
-                                                height: '100%',
-                                                objectFit: 'cover',
-                                                transition: 'transform 0.5s ease',
-                                                transform: hoveredId === anim.id ? 'scale(1.05)' : 'scale(1)',
-                                            }}
-                                        />
-                                    )}
-                                    {/* Play button overlay */}
+                {/* ═══════════════════════════════════════════════
+                    DEMO REEL HERO — auto-playing featured video
+                ═══════════════════════════════════════════════ */}
+                {featuredReel && (
+                    <div
+                        ref={reelRef}
+                        style={{
+                            marginBottom: '64px',
+                        }}
+                    >
+                        <div style={{
+                            position: 'relative',
+                            borderRadius: '16px',
+                            overflow: 'hidden',
+                            boxShadow: '0 0 80px rgba(255, 255, 255, 0.04), 0 20px 60px rgba(0,0,0,0.5)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            background: '#000',
+                        }}>
+                            {/* 16:9 aspect ratio container */}
+                            <div style={{
+                                position: 'relative',
+                                paddingBottom: '56.25%',
+                                height: 0,
+                            }}>
+                                {reelVisible && featuredId ? (
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${featuredId}?autoplay=1&mute=1&loop=1&playlist=${featuredId}&rel=0&modestbranding=1&showinfo=0&controls=1`}
+                                        title={featuredReel.title}
+                                        style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            border: 0,
+                                        }}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                ) : (
+                                    /* Thumbnail placeholder before iframe loads */
                                     <div style={{
                                         position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%, -50%)',
-                                        width: '60px',
-                                        height: '60px',
-                                        background: 'rgba(0, 0, 0, 0.6)',
-                                        borderRadius: '50%',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        backgroundImage: featuredId
+                                            ? `url(https://img.youtube.com/vi/${featuredId}/maxresdefault.jpg)`
+                                            : 'none',
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        transition: 'all 0.3s ease',
-                                        opacity: hoveredId === anim.id ? 1 : 0.7,
-                                        backdropFilter: 'blur(4px)',
                                     }}>
                                         <div style={{
-                                            width: 0,
-                                            height: 0,
-                                            borderLeft: '20px solid #fff',
-                                            borderTop: '12px solid transparent',
-                                            borderBottom: '12px solid transparent',
-                                            marginLeft: '4px',
-                                        }}></div>
+                                            width: '72px',
+                                            height: '72px',
+                                            background: 'rgba(0, 0, 0, 0.7)',
+                                            borderRadius: '50%',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            backdropFilter: 'blur(4px)',
+                                        }}>
+                                            <div style={{
+                                                width: 0,
+                                                height: 0,
+                                                borderLeft: '24px solid #fff',
+                                                borderTop: '14px solid transparent',
+                                                borderBottom: '14px solid transparent',
+                                                marginLeft: '6px',
+                                            }}></div>
+                                        </div>
                                     </div>
-
-                                    {/* Category badge */}
-                                    <div style={{
-                                        position: 'absolute',
-                                        top: '12px',
-                                        left: '12px',
-                                        background: 'rgba(0, 0, 0, 0.6)',
-                                        padding: '4px 12px',
-                                        borderRadius: '20px',
-                                        fontSize: '0.7rem',
-                                        color: '#fff',
-                                        fontWeight: '600',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.5px',
-                                        backdropFilter: 'blur(4px)',
-                                    }}>
-                                        {anim.category}
-                                    </div>
-                                </div>
-
-                                {/* Info */}
-                                <div style={{ padding: '20px' }}>
-                                    <h3 style={{
-                                        fontSize: '1.1rem',
-                                        fontWeight: '600',
-                                        color: '#fff',
-                                        margin: '0 0 8px 0',
-                                        letterSpacing: '-0.02em'
-                                    }}>
-                                        {anim.title}
-                                    </h3>
-                                    <p style={{
-                                        fontSize: '0.9rem',
-                                        color: 'rgba(255, 255, 255, 0.5)',
-                                        margin: '0 0 12px 0',
-                                        lineHeight: '1.5'
-                                    }}>
-                                        {anim.description}
-                                    </p>
-                                    <div style={{
-                                        display: 'flex',
-                                        gap: '16px',
-                                        fontSize: '0.75rem',
-                                        color: 'rgba(255, 255, 255, 0.35)',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.5px',
-                                        fontWeight: '600',
-                                    }}>
-                                        <span>{anim.year}</span>
-                                        {anim.technicalDetails && <span>{anim.technicalDetails}</span>}
-                                    </div>
-                                </div>
+                                )}
                             </div>
-                        );
-                    })}
+                        </div>
+
+                        {/* Reel caption */}
+                        <div style={{
+                            textAlign: 'center',
+                            marginTop: '20px',
+                        }}>
+                            <p style={{
+                                fontSize: '0.95rem',
+                                color: 'rgba(255, 255, 255, 0.45)',
+                                margin: 0,
+                                fontStyle: 'italic',
+                                letterSpacing: '-0.01em',
+                            }}>
+                                {featuredReel.description}
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* ═══════════════════════════════════════════════
+                    INDIVIDUAL PIECES — listed below the reel
+                ═══════════════════════════════════════════════ */}
+                <div style={{
+                    marginBottom: '16px',
+                }}>
+                    <h3 style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: '1.3rem',
+                        fontWeight: '600',
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        margin: '0 0 24px 0',
+                        letterSpacing: '-0.02em',
+                        paddingBottom: '12px',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                    }}>
+                        Individual Pieces
+                    </h3>
+
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '16px',
+                    }}>
+                        {animations.map((anim) => {
+                            const ytId = getYouTubeId(anim.url);
+                            const thumbnail = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
+                            const isHovered = hoveredId === anim.id;
+
+                            return (
+                                <div
+                                    key={anim.id}
+                                    onClick={() => setSelectedVideo(anim)}
+                                    onMouseEnter={() => setHoveredId(anim.id)}
+                                    onMouseLeave={() => setHoveredId(null)}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '20px',
+                                        background: isHovered
+                                            ? 'rgba(255, 255, 255, 0.08)'
+                                            : 'rgba(255, 255, 255, 0.03)',
+                                        borderRadius: '12px',
+                                        padding: '12px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.25s ease',
+                                        transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
+                                        border: '1px solid rgba(255, 255, 255, 0.06)',
+                                    }}
+                                >
+                                    {/* Thumbnail */}
+                                    <div style={{
+                                        position: 'relative',
+                                        width: '180px',
+                                        minWidth: '180px',
+                                        borderRadius: '8px',
+                                        overflow: 'hidden',
+                                        aspectRatio: '16 / 9',
+                                    }}>
+                                        {thumbnail && (
+                                            <img
+                                                src={thumbnail}
+                                                alt={anim.title}
+                                                loading="lazy"
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover',
+                                                    display: 'block',
+                                                    transition: 'transform 0.4s ease',
+                                                    transform: isHovered ? 'scale(1.06)' : 'scale(1)',
+                                                }}
+                                            />
+                                        )}
+                                        {/* Play icon */}
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            transform: 'translate(-50%, -50%)',
+                                            width: '36px',
+                                            height: '36px',
+                                            background: 'rgba(0, 0, 0, 0.6)',
+                                            borderRadius: '50%',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            opacity: isHovered ? 1 : 0.6,
+                                            transition: 'opacity 0.25s ease',
+                                            backdropFilter: 'blur(4px)',
+                                        }}>
+                                            <div style={{
+                                                width: 0,
+                                                height: 0,
+                                                borderLeft: '12px solid #fff',
+                                                borderTop: '7px solid transparent',
+                                                borderBottom: '7px solid transparent',
+                                                marginLeft: '2px',
+                                            }}></div>
+                                        </div>
+                                    </div>
+
+                                    {/* Info */}
+                                    <div style={{ flex: 1, minWidth: 0 }}>
+                                        <h4 style={{
+                                            fontSize: '1rem',
+                                            fontWeight: '600',
+                                            color: '#fff',
+                                            margin: '0 0 6px 0',
+                                            letterSpacing: '-0.02em',
+                                        }}>
+                                            {anim.title}
+                                        </h4>
+                                        <p style={{
+                                            fontSize: '0.85rem',
+                                            color: 'rgba(255, 255, 255, 0.5)',
+                                            margin: '0 0 8px 0',
+                                            lineHeight: '1.5',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis',
+                                            whiteSpace: 'nowrap',
+                                        }}>
+                                            {anim.description}
+                                        </p>
+                                        <div style={{
+                                            display: 'flex',
+                                            gap: '12px',
+                                            fontSize: '0.7rem',
+                                            color: 'rgba(255, 255, 255, 0.3)',
+                                            textTransform: 'uppercase',
+                                            letterSpacing: '0.5px',
+                                            fontWeight: '600',
+                                        }}>
+                                            <span>{anim.year}</span>
+                                            {anim.technicalDetails && <span>• {anim.technicalDetails}</span>}
+                                        </div>
+                                    </div>
+
+                                    {/* Arrow */}
+                                    <div style={{
+                                        fontSize: '1.2rem',
+                                        color: 'rgba(255, 255, 255, 0.25)',
+                                        transition: 'all 0.25s ease',
+                                        opacity: isHovered ? 1 : 0.4,
+                                        transform: isHovered ? 'translateX(2px)' : 'translateX(0)',
+                                    }}>
+                                        →
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
 
-            {/* Video Lightbox */}
+            {/* ═══════════════════════════════════════════════
+                VIDEO LIGHTBOX — click a piece to watch
+            ═══════════════════════════════════════════════ */}
             {selectedVideo && (
                 <div
                     onClick={() => setSelectedVideo(null)}
