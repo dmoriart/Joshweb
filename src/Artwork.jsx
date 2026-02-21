@@ -149,6 +149,9 @@ function Artwork() {
               style={{
                 width: '100%',
                 display: 'block',
+                aspectRatio: '3 / 4',
+                objectFit: 'cover',
+                backgroundColor: '#e0e0e0',
                 transition: 'transform 0.5s ease',
                 transform: hoveredId === artwork.id ? 'scale(1.03)' : 'scale(1)',
               }}

@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 
 function Navigation() {
+    const handleNavClick = (e, href) => {
+        e.preventDefault();
+        if (href === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const el = document.querySelector(href);
+        if (el) {
+            const navHeight = 80;
+            const y = el.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = [
@@ -65,6 +78,7 @@ function Navigation() {
                         <a
                             key={index}
                             href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
                             style={{
                                 color: '#1a1a1a',
                                 textDecoration: 'none',
@@ -148,7 +162,7 @@ function Navigation() {
                         <a
                             key={index}
                             href={link.href}
-                            onClick={handleLinkClick}
+                            onClick={(e) => { handleNavClick(e, link.href); handleLinkClick(); }}
                             style={{
                                 color: '#1a1a1a',
                                 textDecoration: 'none',
