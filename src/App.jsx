@@ -8,6 +8,7 @@ import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
 // import Process from './components/Process';
 import Equipment from './components/Equipment';
+import Animation from './components/Animation';
 import Credits from './components/Credits';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
@@ -74,6 +75,8 @@ function App() {
                 <Artwork />
               </div>
             </section>
+
+            <Animation />
 
             {/* About Section - Artist Statement */}
             <section id="about" style={{

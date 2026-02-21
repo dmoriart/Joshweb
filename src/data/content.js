@@ -106,6 +106,18 @@ export const works = [
     }
 ];
 
+export const animations = [
+    {
+        id: 1,
+        title: 'Animation Test 1',
+        url: 'https://youtu.be/amqhi52QMLY',
+        description: 'First animation test exploring movement and timing fundamentals.',
+        year: '2026',
+        category: 'Test',
+        technicalDetails: 'Hand-drawn animation test',
+    },
+];
+
 export const artworks = [
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range' },
