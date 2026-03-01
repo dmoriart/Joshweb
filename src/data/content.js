@@ -200,6 +200,10 @@ export const artworks = [
     { id: 48, src: '/images/artwork/IMG_2242.jpeg', title: 'Sketchbook Study XXV', category: 'sketchbook', description: 'Mixed media exploration' },
     { id: 49, src: '/images/artwork/IMG_2247.jpeg', title: 'Sketchbook Study XXVI', category: 'sketchbook', description: 'Study of form and space' },
     { id: 50, src: '/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.jpeg', title: 'Sketchbook Study XXVII', category: 'sketchbook', description: 'Experimental drawing and technique' },
+    { id: 51, src: '/images/artwork/IMG_1138.jpeg', title: 'Sketchbook Study XXVIII', category: 'sketchbook', description: 'Exploratory sketching and technique' },
+    { id: 52, src: '/images/artwork/IMG_1139.jpeg', title: 'Sketchbook Study XXIX', category: 'sketchbook', description: 'Observational drawing practice' },
+    { id: 53, src: '/images/artwork/IMG_1140.jpeg', title: 'Sketchbook Study XXX', category: 'sketchbook', description: 'Study of form and detail' },
+    { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
 ];
 
 export const photography = [
