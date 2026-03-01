@@ -116,6 +116,24 @@ export const animations = [
         category: 'Test',
         technicalDetails: 'Hand-drawn animation test',
     },
+    {
+        id: 2,
+        title: 'Art Project 8',
+        url: 'https://youtu.be/HB9AqAWKESM',
+        description: 'Sample animation exploring movement and form, hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
+        year: '2026',
+        category: 'Sample',
+        technicalDetails: 'Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+    },
+    {
+        id: 3,
+        title: 'Jump',
+        url: 'https://youtu.be/kbII5uQrros',
+        description: 'Jump animation cycle studying weight, timing, and the arc of motion — hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
+        year: '2026',
+        category: 'Sample',
+        technicalDetails: 'Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+    },
 ];
 
 export const artworks = [
