@@ -128,44 +128,59 @@ function App() {
                     Artist Statement
                   </h2>
 
-                  {/* Why I Make Films */}
+                  {/* Artist Profile Text */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    As a student filmmaker, I'm drawn to documenting Dublin's underground music scene—live bands and DJ sets—because these moments are raw, unrepeatable, and full of energy. I shoot on a Sony PD170 rather than an iPhone because I believe the medium shapes the message. The PD170's nostalgic DV tape aesthetic creates a texture and warmth that modern digital cameras simply can't replicate.
+                    A lot of my recent work involves documenting Dublin’s underground music scene — live bands and DJ sets — because those environments are raw, energetic and completely unrepeatable. Filming these moments has taught me how movement, rhythm and lighting shape the way an audience experiences a story.
                   </p>
 
-                  {/* Film Influences */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    I'm inspired by films that combine strong visual style with character and atmosphere. <em>An American Werewolf in London</em> showed me how practical effects and visual design create visceral emotional impact. <em>Star Wars: The Clone Wars</em> demonstrated how animation can achieve cinematic depth and storytelling sophistication. <em>The Gentlemen</em> taught me how editing and camera movement support tone and narrative flow. <em>Rango</em> opened my eyes to distinctive visual style and character design as storytelling tools.
+                    I often shoot using a Sony PD170 rather than a phone or modern digital camera. The DV tape format produces a textured, imperfect image that feels closer to memory than high-resolution digital footage. Working with that aesthetic has made me more aware of how the medium itself influences mood and storytelling.
                   </p>
 
-                  {/* Christopher Nolan & Structure */}
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    <em>Tenet</em> particularly fascinates me for how Christopher Nolan uses structure, sound, and editing to shape the audience's experience. He uses sound in innovative ways that redefine how we engage with film. What I love most is discovering something new with every rewatch—details that completely change the movie's meaning. This idea of layered storytelling drives my own approach to filmmaking.
+                    Alongside filmmaking I’m developing a strong interest in animation and drawing. What attracts me to animation is the ability to build worlds from the ground up — where every movement, expression and environment is designed intentionally. Instead of recording reality, animation allows you to create it.
                   </p>
 
-                  {/* Educational Goals */}
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#444',
+                    marginBottom: '24px',
+                    lineHeight: '1.8'
+                  }}>
+                    My influences come from films and animated series that combine strong visual style with character and atmosphere. I’m particularly drawn to work where visual design, editing and movement shape how a story is felt as much as how it is told.
+                  </p>
+
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#444',
+                    marginBottom: '24px',
+                    lineHeight: '1.8'
+                  }}>
+                    Through film, drawing and animation experiments I’m exploring how visual choices — framing, colour, movement and character — can create emotional impact.
+                  </p>
+
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#444',
                     marginBottom: '30px',
                     lineHeight: '1.8'
                   }}>
-                    While I love the DV tape aesthetic, I'm eager to develop my technical skills in lighting, sound design, and narrative direction. Film school will give me the foundation to tell more compelling stories and push beyond documentation into crafted visual narratives. I want to learn how visual choices affect mood and storytelling at a deeper level, combining the raw energy I capture now with sophisticated cinematic technique.
+                    I’m currently developing my skills in animation, cinematography and visual storytelling with the goal of creating work that blends the raw energy of documentary filmmaking with the imaginative freedom of animation.
                   </p>
 
                   <div style={{
