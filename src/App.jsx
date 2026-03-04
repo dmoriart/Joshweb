@@ -191,12 +191,12 @@ function App() {
                   <p style={{
                     fontSize: '1.1rem',
                     color: '#666',
-                    maxWidth: '700px',
+                    maxWidth: '800px',
                     margin: '0 auto',
                     letterSpacing: '-0.01em',
                     lineHeight: '1.6'
                   }}>
-                    Observational drawing, character design, and visual storytelling — demonstrating foundational skills in figure work, perspective, tonal rendering, and creative expression
+                    Applying the same observational lens I use in documentary filmmaking to my sketchbook studies—studying form, light, and movement. Observational drawing, character design, and visual storytelling demonstrate foundational skills in figure work, perspective, tonal rendering, and creative expression.
                   </p>
                 </div>
                 <Artwork />
