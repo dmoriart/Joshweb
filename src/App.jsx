@@ -31,52 +31,6 @@ function App() {
           }}>
             <Navigation />
             <Hero />
-            <FeaturedReel />
-            <WorkGrid />
-            {/* <Process /> */}
-            <Equipment />
-            <Photography />
-
-            <section id="artwork" style={{
-              background: '#f8f8f8',
-              padding: '80px 20px'
-            }}>
-              <div style={{
-                maxWidth: '1400px',
-                margin: '0 auto'
-              }}>
-                {/* Section Title */}
-                <div style={{
-                  textAlign: 'center',
-                  marginBottom: '50px'
-                }}>
-                  <h2 style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-                    fontWeight: '700',
-                    margin: '0 0 20px 0',
-                    letterSpacing: '-0.03em',
-                    lineHeight: '1.1',
-                    color: '#1a1a1a'
-                  }}>
-                    Drawing Portfolio
-                  </h2>
-                  <p style={{
-                    fontSize: '1.1rem',
-                    color: '#666',
-                    maxWidth: '700px',
-                    margin: '0 auto',
-                    letterSpacing: '-0.01em',
-                    lineHeight: '1.6'
-                  }}>
-                    Observational drawing, character design, and visual storytelling — demonstrating foundational skills in figure work, perspective, tonal rendering, and creative expression
-                  </p>
-                </div>
-                <Artwork />
-              </div>
-            </section>
-
-            <Animation />
 
             {/* About Section - Artist Statement */}
             <section id="about" style={{
@@ -207,6 +161,55 @@ function App() {
                 </div>
               </div>
             </section>
+
+            <FeaturedReel />
+
+            <section id="artwork" style={{
+              background: '#f8f8f8',
+              padding: '80px 20px'
+            }}>
+              <div style={{
+                maxWidth: '1400px',
+                margin: '0 auto'
+              }}>
+                {/* Section Title */}
+                <div style={{
+                  textAlign: 'center',
+                  marginBottom: '50px'
+                }}>
+                  <h2 style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                    fontWeight: '700',
+                    margin: '0 0 20px 0',
+                    letterSpacing: '-0.03em',
+                    lineHeight: '1.1',
+                    color: '#1a1a1a'
+                  }}>
+                    Drawing Portfolio
+                  </h2>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#666',
+                    maxWidth: '700px',
+                    margin: '0 auto',
+                    letterSpacing: '-0.01em',
+                    lineHeight: '1.6'
+                  }}>
+                    Observational drawing, character design, and visual storytelling — demonstrating foundational skills in figure work, perspective, tonal rendering, and creative expression
+                  </p>
+                </div>
+                <Artwork />
+              </div>
+            </section>
+
+            <Animation />
+
+            <WorkGrid />
+            {/* <Process /> */}
+            <Equipment />
+            <Photography />
+
 
             <Credits />
 
