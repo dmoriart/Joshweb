@@ -54,7 +54,7 @@ function Hero() {
                     maxWidth: '600px',
                     lineHeight: '1.5'
                 }}>
-                    Underground DV Tape Videographer
+                    Visual Storyteller: Film, Drawing & Animation
                 </p>
 
                 {/* Watch Reel CTA */}
