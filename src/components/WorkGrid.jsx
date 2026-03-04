@@ -38,7 +38,7 @@ function WorkGrid() {
                     letterSpacing: '-0.03em',
                     lineHeight: '1.1'
                 }}>
-                    Selected Work
+                    Selected Film Work
                 </h2>
                 <p style={{
                     fontSize: '1.1rem',

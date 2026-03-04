@@ -22,7 +22,7 @@ function Navigation() {
         { href: '#featured-reel', label: 'Demo Reel' },
         { href: '#artwork', label: 'Drawing Portfolio' },
         { href: '#animation', label: 'Animation' },
-        { href: '#work', label: 'Work' },
+        { href: '#work', label: 'Selected Film Work' },
         { href: '#equipment', label: 'Equipment' },
         { href: '#photography', label: 'Photography' },
         { href: '#credits', label: 'Credits' },
