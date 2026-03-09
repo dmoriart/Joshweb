@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { animations } from '../data/content';
 
 function getYouTubeId(url) {
@@ -8,463 +8,340 @@ function getYouTubeId(url) {
     return altMatch ? altMatch[1] : null;
 }
 
+function getYouTubeThumbnail(url) {
+    const ytId = getYouTubeId(url);
+    return ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
+}
+
 function Animation() {
     const [selectedVideo, setSelectedVideo] = useState(null);
-    const [hoveredId, setHoveredId] = useState(null);
-    const [reelPlaying, setReelPlaying] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-    const [playHovered, setPlayHovered] = useState(false);
-    const reelRef = useRef(null);
-
-    // The first animation is the featured demo reel
-    const featuredReel = animations[0];
-    const featuredId = featuredReel ? getYouTubeId(featuredReel.url) : null;
-
-    // Detect mobile and auto-play only on desktop
-    useEffect(() => {
-        const mobile = window.matchMedia('(max-width: 768px)').matches;
-        setIsMobile(mobile);
-
-        // On desktop, auto-play when section scrolls into view
-        if (!mobile && reelRef.current) {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        // Small delay to let scroll settle before loading iframe
-                        setTimeout(() => setReelPlaying(true), 300);
-                        observer.disconnect();
-                    }
-                },
-                { threshold: 0.3 }
-            );
-            observer.observe(reelRef.current);
-            return () => observer.disconnect();
-        }
-        // On mobile: do nothing — user taps the play button
-    }, []);
-
-    const handlePlayClick = () => {
-        setReelPlaying(true);
-    };
 
     return (
         <section id="animation" style={{
-            padding: '80px 20px',
-            background: '#111111',
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '80px 20px'
         }}>
+            {/* Section Title */}
             <div style={{
-                maxWidth: '1200px',
-                margin: '0 auto'
+                textAlign: 'center',
+                marginBottom: '80px'
             }}>
-                {/* Section Header */}
-                <div style={{
-                    textAlign: 'center',
-                    marginBottom: '48px'
+                <h2 style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                    fontWeight: '700',
+                    margin: '0 0 20px 0',
+                    letterSpacing: '-0.03em',
+                    lineHeight: '1.1'
                 }}>
-                    <div style={{
-                        display: 'inline-block',
-                        background: 'rgba(255, 255, 255, 0.08)',
-                        padding: '8px 20px',
-                        borderRadius: '30px',
-                        marginBottom: '20px',
-                        border: '1px solid rgba(255, 255, 255, 0.1)'
-                    }}>
-                        <span style={{
-                            color: '#ffffff',
-                            fontSize: '13px',
-                            fontWeight: '600',
-                            textTransform: 'uppercase',
-                            letterSpacing: '1.5px',
-                            opacity: 0.9
-                        }}>
-                            🎬 Animation
-                        </span>
-                    </div>
+                    Animation
+                </h2>
+                <p style={{
+                    fontSize: '1.1rem',
+                    color: '#666',
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    letterSpacing: '-0.01em'
+                }}>
+                    Bringing drawings to life — exploring movement, timing, and visual storytelling through hand-drawn animation
+                </p>
+            </div>
 
-                    <h2 style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-                        fontWeight: '700',
-                        margin: '0 0 20px 0',
-                        letterSpacing: '-0.03em',
-                        lineHeight: '1.1',
-                        color: '#ffffff'
-                    }}>
-                        Animation Demo Reel
-                    </h2>
-                    <p style={{
-                        fontSize: '1.1rem',
-                        color: 'rgba(255, 255, 255, 0.6)',
-                        maxWidth: '700px',
-                        margin: '0 auto',
-                        letterSpacing: '-0.01em',
-                        lineHeight: '1.6'
-                    }}>
-                        Bringing drawings to life — exploring movement, timing, and visual storytelling through hand-drawn animation
-                    </p>
-                </div>
-
-                {/* ═══════════════════════════════════════════════
-                    DEMO REEL HERO — auto-plays on desktop, click-to-play on mobile
-                ═══════════════════════════════════════════════ */}
-                {featuredReel && (
+            {/* Animation Grid */}
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '20px',
+                marginBottom: '80px'
+            }}>
+                {animations.map((anim) => (
                     <div
-                        ref={reelRef}
-                        style={{
-                            marginBottom: '64px',
+                        key={anim.id}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Watch ${anim.title}`}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setSelectedVideo(anim);
+                            }
                         }}
-                    >
-                        <div style={{
-                            position: 'relative',
-                            borderRadius: '16px',
+                        style={{
+                            background: '#ffffff',
+                            borderRadius: '12px',
                             overflow: 'hidden',
-                            boxShadow: '0 0 80px rgba(255, 255, 255, 0.04), 0 20px 60px rgba(0,0,0,0.5)',
-                            border: '1px solid rgba(255, 255, 255, 0.08)',
-                            background: '#000',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            cursor: 'pointer'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-4px)';
+                            e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.12)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                        }}
+                        onClick={() => setSelectedVideo(anim)}
+                    >
+                        {/* Thumbnail */}
+                        <div style={{
+                            height: '240px',
+                            position: 'relative',
+                            overflow: 'hidden'
                         }}>
-                            {/* 16:9 aspect ratio container — fixed size prevents layout shift */}
+                            <img
+                                src={getYouTubeThumbnail(anim.url)}
+                                alt={`Thumbnail for ${anim.title}`}
+                                loading="lazy"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover'
+                                }}
+                            />
+                            {/* Play button overlay */}
                             <div style={{
-                                position: 'relative',
-                                paddingBottom: '56.25%',
-                                height: 0,
-                                overflow: 'hidden',
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: '60px',
+                                height: '60px',
+                                background: 'rgba(0, 0, 0, 0.8)',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#ffffff',
+                                fontSize: '20px'
+                            }} aria-hidden="true">
+                                ▶
+                            </div>
+
+                            {/* Category badge */}
+                            <div style={{
+                                position: 'absolute',
+                                top: '16px',
+                                right: '16px',
+                                background: 'rgba(0, 0, 0, 0.8)',
+                                color: '#ffffff',
+                                padding: '4px 12px',
+                                borderRadius: '20px',
+                                fontSize: '12px',
+                                fontWeight: '500',
+                                textTransform: 'uppercase'
                             }}>
-                                {reelPlaying && featuredId ? (
-                                    <iframe
-                                        src={`https://www.youtube.com/embed/${featuredId}?autoplay=1&mute=${isMobile ? '0' : '1'}&loop=1&playlist=${featuredId}&rel=0&modestbranding=1&showinfo=0&controls=1&playsinline=1`}
-                                        title={featuredReel.title}
-                                        style={{
-                                            position: 'absolute',
-                                            top: 0,
-                                            left: 0,
-                                            width: '100%',
-                                            height: '100%',
-                                            border: 0,
-                                        }}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
-                                ) : (
-                                    /* Thumbnail with play button — always shown until user/observer triggers play */
-                                    <div
-                                        onClick={handlePlayClick}
-                                        style={{
-                                            position: 'absolute',
-                                            top: 0,
-                                            left: 0,
-                                            width: '100%',
-                                            height: '100%',
-                                            backgroundImage: featuredId
-                                                ? `url(https://img.youtube.com/vi/${featuredId}/maxresdefault.jpg)`
-                                                : 'none',
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                        }}
-                                    >
-                                        <div
-                                            onMouseEnter={() => setPlayHovered(true)}
-                                            onMouseLeave={() => setPlayHovered(false)}
-                                            style={{
-                                                width: '80px',
-                                                height: '80px',
-                                                background: playHovered ? 'rgba(255, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.7)',
-                                                borderRadius: '50%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                backdropFilter: 'blur(4px)',
-                                                transition: 'all 0.25s ease',
-                                                transform: playHovered ? 'scale(1.1)' : 'scale(1)',
-                                            }}
-                                        >
-                                            <div style={{
-                                                width: 0,
-                                                height: 0,
-                                                borderLeft: '26px solid #fff',
-                                                borderTop: '15px solid transparent',
-                                                borderBottom: '15px solid transparent',
-                                                marginLeft: '6px',
-                                            }}></div>
-                                        </div>
-                                    </div>
-                                )}
+                                {anim.category}
                             </div>
                         </div>
 
-                        {/* Reel caption */}
-                        <div style={{
-                            textAlign: 'center',
-                            marginTop: '20px',
-                        }}>
-                            <p style={{
-                                fontSize: '0.95rem',
-                                color: 'rgba(255, 255, 255, 0.45)',
-                                margin: 0,
-                                fontStyle: 'italic',
-                                letterSpacing: '-0.01em',
+                        {/* Content */}
+                        <div style={{ padding: '24px' }}>
+                            <h3 style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: '1.25rem',
+                                fontWeight: '600',
+                                margin: '0 0 8px 0',
+                                letterSpacing: '-0.02em'
                             }}>
-                                {featuredReel.description}
+                                {anim.title}
+                            </h3>
+                            <p style={{
+                                color: '#666',
+                                fontSize: '0.95rem',
+                                margin: '0 0 16px 0',
+                                lineHeight: '1.5'
+                            }}>
+                                {anim.description}
                             </p>
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                color: '#999',
+                                fontSize: '0.85rem',
+                                fontWeight: '500',
+                                marginBottom: '20px'
+                            }}>
+                                <span>Hand-drawn digital</span>
+                                <span>{anim.year}</span>
+                            </div>
+
+                            {/* Technical Details */}
+                            <div style={{
+                                borderTop: '1px solid #eee',
+                                paddingTop: '16px',
+                                fontSize: '0.9rem'
+                            }}>
+                                <div>
+                                    <span style={{
+                                        fontWeight: '600',
+                                        color: '#1a1a1a',
+                                        display: 'block',
+                                        marginBottom: '4px',
+                                        fontSize: '0.8rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.5px'
+                                    }}>Tools</span>
+                                    <span style={{ color: '#444' }}>{anim.technicalDetails}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                )}
-
-                {/* ═══════════════════════════════════════════════
-                    INDIVIDUAL PIECES — listed below the reel
-                ═══════════════════════════════════════════════ */}
-                <div style={{
-                    marginBottom: '16px',
-                }}>
-                    <h3 style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: '1.3rem',
-                        fontWeight: '600',
-                        color: 'rgba(255, 255, 255, 0.8)',
-                        margin: '0 0 24px 0',
-                        letterSpacing: '-0.02em',
-                        paddingBottom: '12px',
-                        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                    }}>
-                        Individual Pieces
-                    </h3>
-
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '16px',
-                    }}>
-                        {animations.map((anim) => {
-                            const ytId = getYouTubeId(anim.url);
-                            const thumbnail = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
-                            const isHovered = hoveredId === anim.id;
-
-                            return (
-                                <div
-                                    key={anim.id}
-                                    onClick={() => setSelectedVideo(anim)}
-                                    onMouseEnter={() => setHoveredId(anim.id)}
-                                    onMouseLeave={() => setHoveredId(null)}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '20px',
-                                        background: isHovered
-                                            ? 'rgba(255, 255, 255, 0.08)'
-                                            : 'rgba(255, 255, 255, 0.03)',
-                                        borderRadius: '12px',
-                                        padding: '12px',
-                                        cursor: 'pointer',
-                                        transition: 'all 0.25s ease',
-                                        transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
-                                        border: '1px solid rgba(255, 255, 255, 0.06)',
-                                    }}
-                                >
-                                    {/* Thumbnail */}
-                                    <div style={{
-                                        position: 'relative',
-                                        width: '180px',
-                                        minWidth: '180px',
-                                        borderRadius: '8px',
-                                        overflow: 'hidden',
-                                        aspectRatio: '16 / 9',
-                                    }}>
-                                        {thumbnail && (
-                                            <img
-                                                src={thumbnail}
-                                                alt={anim.title}
-                                                loading="lazy"
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'cover',
-                                                    display: 'block',
-                                                    transition: 'transform 0.4s ease',
-                                                    transform: isHovered ? 'scale(1.06)' : 'scale(1)',
-                                                }}
-                                            />
-                                        )}
-                                        {/* Play icon */}
-                                        <div style={{
-                                            position: 'absolute',
-                                            top: '50%',
-                                            left: '50%',
-                                            transform: 'translate(-50%, -50%)',
-                                            width: '36px',
-                                            height: '36px',
-                                            background: 'rgba(0, 0, 0, 0.6)',
-                                            borderRadius: '50%',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            opacity: isHovered ? 1 : 0.6,
-                                            transition: 'opacity 0.25s ease',
-                                            backdropFilter: 'blur(4px)',
-                                        }}>
-                                            <div style={{
-                                                width: 0,
-                                                height: 0,
-                                                borderLeft: '12px solid #fff',
-                                                borderTop: '7px solid transparent',
-                                                borderBottom: '7px solid transparent',
-                                                marginLeft: '2px',
-                                            }}></div>
-                                        </div>
-                                    </div>
-
-                                    {/* Info */}
-                                    <div style={{ flex: 1, minWidth: 0 }}>
-                                        <h4 style={{
-                                            fontSize: '1rem',
-                                            fontWeight: '600',
-                                            color: '#fff',
-                                            margin: '0 0 6px 0',
-                                            letterSpacing: '-0.02em',
-                                        }}>
-                                            {anim.title}
-                                        </h4>
-                                        <p style={{
-                                            fontSize: '0.85rem',
-                                            color: 'rgba(255, 255, 255, 0.5)',
-                                            margin: '0 0 8px 0',
-                                            lineHeight: '1.5',
-                                            overflow: 'hidden',
-                                            textOverflow: 'ellipsis',
-                                            whiteSpace: 'nowrap',
-                                        }}>
-                                            {anim.description}
-                                        </p>
-                                        <div style={{
-                                            display: 'flex',
-                                            gap: '12px',
-                                            fontSize: '0.7rem',
-                                            color: 'rgba(255, 255, 255, 0.3)',
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '0.5px',
-                                            fontWeight: '600',
-                                        }}>
-                                            <span>{anim.year}</span>
-                                            {anim.technicalDetails && <span>• {anim.technicalDetails}</span>}
-                                        </div>
-                                    </div>
-
-                                    {/* Arrow */}
-                                    <div style={{
-                                        fontSize: '1.2rem',
-                                        color: 'rgba(255, 255, 255, 0.25)',
-                                        transition: 'all 0.25s ease',
-                                        opacity: isHovered ? 1 : 0.4,
-                                        transform: isHovered ? 'translateX(2px)' : 'translateX(0)',
-                                    }}>
-                                        →
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                ))}
             </div>
 
-            {/* ═══════════════════════════════════════════════
-                VIDEO LIGHTBOX — click a piece to watch
-            ═══════════════════════════════════════════════ */}
+            {/* Project Modal */}
             {selectedVideo && (
-                <div
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'rgba(0, 0, 0, 0.98)',
+                    zIndex: 2000,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px'
+                }}
                     onClick={() => setSelectedVideo(null)}
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                        background: 'rgba(0, 0, 0, 0.95)',
+                >
+                    <div style={{
+                        width: '100%',
+                        maxWidth: '1200px',
+                        height: '90vh',
+                        background: '#1a1a1a',
+                        borderRadius: '20px',
+                        overflow: 'hidden',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        zIndex: 10000,
-                        cursor: 'zoom-out',
-                        backdropFilter: 'blur(10px)',
+                        position: 'relative',
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                     }}
-                >
-                    {/* Close button */}
-                    <button
-                        onClick={() => setSelectedVideo(null)}
-                        style={{
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close Button */}
+                        <button style={{
                             position: 'absolute',
                             top: '20px',
                             right: '20px',
-                            background: 'none',
-                            border: 'none',
-                            color: '#fff',
-                            fontSize: '2rem',
+                            background: 'rgba(0, 0, 0, 0.5)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            color: '#ffffff',
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            fontSize: '24px',
                             cursor: 'pointer',
-                            opacity: 0.7,
-                            transition: 'opacity 0.2s',
-                            zIndex: 10001,
+                            zIndex: 2002,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.2s'
                         }}
-                        onMouseEnter={(e) => e.target.style.opacity = 1}
-                        onMouseLeave={(e) => e.target.style.opacity = 0.7}
-                    >
-                        ✕
-                    </button>
+                            onClick={() => setSelectedVideo(null)}
+                            onMouseEnter={(e) => e.target.style.background = 'rgba(255, 0, 0, 0.5)'}
+                            onMouseLeave={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.5)'}
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
 
-                    {/* Video embed */}
-                    <div
-                        onClick={(e) => e.stopPropagation()}
-                        style={{
-                            width: '85vw',
-                            maxWidth: '960px',
-                            cursor: 'default',
-                        }}
-                    >
-                        <div style={{
-                            position: 'relative',
-                            paddingBottom: '56.25%',
-                            height: 0,
-                            borderRadius: '8px',
-                            overflow: 'hidden',
-                            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
-                        }}>
-                            <iframe
-                                src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
-                                title={selectedVideo.title}
-                                style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    height: '100%',
-                                    border: 0,
-                                }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
+                        {/* Scrollable content */}
+                        <div style={{ overflowY: 'auto', height: '100%' }}>
+                            {/* Video */}
+                            <div style={{
+                                width: '100%',
+                                aspectRatio: '16/9',
+                                background: '#000'
+                            }}>
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
+                                    title={selectedVideo.title}
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
 
-                        {/* Caption */}
-                        <div style={{
-                            marginTop: '20px',
-                            textAlign: 'center',
-                            color: '#fff',
-                        }}>
-                            <h3 style={{
-                                fontSize: '1.3rem',
-                                fontWeight: '600',
-                                margin: '0 0 8px 0',
-                            }}>
-                                {selectedVideo.title}
-                            </h3>
-                            <p style={{
-                                fontSize: '0.9rem',
-                                opacity: 0.6,
-                                margin: 0,
-                            }}>
-                                {selectedVideo.description}
-                            </p>
+                            {/* Details */}
+                            <div style={{ padding: '40px', color: '#ffffff' }}>
+                                {/* Header */}
+                                <div style={{
+                                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                                    paddingBottom: '30px',
+                                    marginBottom: '30px',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'flex-start',
+                                    flexWrap: 'wrap',
+                                    gap: '20px'
+                                }}>
+                                    <div>
+                                        <span style={{
+                                            background: '#ffffff',
+                                            color: '#000000',
+                                            padding: '4px 12px',
+                                            borderRadius: '4px',
+                                            fontSize: '0.8rem',
+                                            fontWeight: 'bold',
+                                            textTransform: 'uppercase',
+                                            letterSpacing: '1px',
+                                            display: 'inline-block',
+                                            marginBottom: '12px'
+                                        }}>
+                                            {selectedVideo.category}
+                                        </span>
+                                        <h2 style={{
+                                            fontSize: 'clamp(2rem, 4vw, 3rem)',
+                                            fontWeight: '700',
+                                            margin: 0,
+                                            lineHeight: 1.1
+                                        }}>{selectedVideo.title}</h2>
+                                        <div style={{
+                                            display: 'flex',
+                                            gap: '20px',
+                                            marginTop: '12px',
+                                            color: 'rgba(255, 255, 255, 0.6)',
+                                            fontSize: '1rem'
+                                        }}>
+                                            <span>Hand-drawn digital</span>
+                                            <span>•</span>
+                                            <span>{selectedVideo.year}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Technical Specs */}
+                                    <div style={{
+                                        background: 'rgba(255, 255, 255, 0.05)',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        minWidth: '300px'
+                                    }}>
+                                        <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '1px' }}>Technical Specifications</h4>
+                                        <div style={{ fontSize: '0.95rem', lineHeight: '1.6', fontFamily: 'monospace' }}>
+                                            {selectedVideo.technicalDetails || 'Autodesk Sketchbook | XP-Pen Artist 15.6'}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Description */}
+                                <div style={{ maxWidth: '800px' }}>
+                                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: '#ffffff' }}>About this piece</h3>
+                                    {selectedVideo.description.split('\n\n').map((para, i) => (
+                                        <p key={i} style={{ lineHeight: '1.8', color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem', marginBottom: '16px' }}>
+                                            {para}
+                                        </p>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

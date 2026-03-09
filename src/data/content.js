@@ -134,6 +134,15 @@ export const animations = [
         category: 'Sample',
         technicalDetails: 'Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
     },
+    {
+        id: 4,
+        title: 'Exploratory Animation Study',
+        url: 'https://youtu.be/QjYmnFbmSu4',
+        description: 'This piece was an exploratory animation study.\n\nI created the animation by hand in Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet. The main focus was fluidity, trying to keep the movement loose and expressive',
+        year: '2026',
+        category: 'Study',
+        technicalDetails: 'Autodesk Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+    },
 ];
 
 export const artworks = [
