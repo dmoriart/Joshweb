@@ -114,7 +114,7 @@ export const animations = [
         description: 'Animated comic book panel using drawing tablet.',
         year: '2026',
         category: 'Test',
-        technicalDetails: 'Hand-drawn animation test',
+        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
     {
         id: 2,
@@ -123,7 +123,7 @@ export const animations = [
         description: 'Sample animation exploring movement and form, hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
         year: '2026',
         category: 'Sample',
-        technicalDetails: 'Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
     {
         id: 3,
@@ -132,7 +132,7 @@ export const animations = [
         description: 'Jump animation cycle studying weight, timing, and the arc of motion — hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
         year: '2026',
         category: 'Sample',
-        technicalDetails: 'Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
     {
         id: 4,
@@ -141,7 +141,7 @@ export const animations = [
         description: 'This piece was an exploratory animation study.\n\nI created the animation by hand in Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet. The main focus was fluidity, trying to keep the movement loose and expressive',
         year: '2026',
         category: 'Study',
-        technicalDetails: 'Autodesk Sketchbook | XP-Pen Artist 15.6 | Digital hand-drawn',
+        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
 ];
 
