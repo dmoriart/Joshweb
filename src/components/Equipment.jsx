@@ -31,6 +31,12 @@ function Equipment() {
             type: '35mm SLR Camera',
             image: '/images/equipment/cosina.png',
             description: 'Vintage SLR for film photography and understanding classic cinematography techniques.'
+        },
+        {
+            name: 'XP-Pen Artist 15.6',
+            type: 'Drawing Tablet',
+            image: '/images/equipment/xp-pen.png', // Placeholder, image needs to be added to public/images/equipment/
+            description: 'Digital display tablet used for hand-drawn 2D animation and digital art.'
         }
     ];
 
