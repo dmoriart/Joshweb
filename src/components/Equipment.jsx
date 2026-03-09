@@ -35,7 +35,7 @@ function Equipment() {
         {
             name: 'XP-Pen Artist 15.6',
             type: 'Drawing Tablet',
-            image: '/images/equipment/xp-pen.png', // Placeholder, image needs to be added to public/images/equipment/
+            image: '/images/equipment/xppen.jpg',
             description: 'Digital display tablet used for hand-drawn 2D animation and digital art.'
         }
     ];
