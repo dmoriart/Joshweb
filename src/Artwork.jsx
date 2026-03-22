@@ -7,7 +7,7 @@ const categories = [
   { key: 'fan-art', label: 'Character & Fan Art' },
   { key: 'viewpoint', label: 'View & Viewpoint' },
   { key: 'street', label: 'Street' },
-  { key: 'music', label: 'Music' },
+  { key: 'digital', label: 'Digital Artwork' },
   { key: 'photoshoot', label: 'Photoshoot' },
   { key: 'sketchbook', label: 'Sketchbook & Studies' },
 ];

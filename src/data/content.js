@@ -147,13 +147,13 @@ export const animations = [
 
 export const artworks = [
     // Digital Artwork
-    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 56, src: '/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.png', title: 'Digital Artwork II', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 57, src: '/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.png', title: 'Digital Artwork III', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 58, src: '/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.png', title: 'Digital Artwork IV', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 59, src: '/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.png', title: 'Digital Artwork V', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 60, src: '/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.png', title: 'Digital Artwork VI', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'sketchbook', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 56, src: '/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.png', title: 'Digital Artwork II', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 57, src: '/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.png', title: 'Digital Artwork III', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 58, src: '/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.png', title: 'Digital Artwork IV', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 59, src: '/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.png', title: 'Digital Artwork V', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 60, src: '/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.png', title: 'Digital Artwork VI', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
 
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range' },
@@ -175,9 +175,9 @@ export const artworks = [
     { id: 13, src: '/images/artwork/View and viewpoint4.jpeg', title: 'View & Viewpoint IV', category: 'viewpoint', description: 'Study of environment and viewpoint' },
     { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'View & Viewpoint V', category: 'viewpoint', description: 'Perspective and compositional exploration' },
 
-    // Music
-    { id: 15, src: '/images/artwork/music1.jpeg', title: 'Music I', category: 'music', description: 'Expressive drawing capturing the energy of music' },
-    { id: 16, src: '/images/artwork/music2.jpeg', title: 'Music II', category: 'music', description: 'Emotive study of musical expression and movement' },
+    // Music (now merged with Street)
+    { id: 15, src: '/images/artwork/music1.jpeg', title: 'Music I', category: 'street', description: 'Expressive drawing capturing the energy of music' },
+    { id: 16, src: '/images/artwork/music2.jpeg', title: 'Music II', category: 'street', description: 'Emotive study of musical expression and movement' },
 
     // Street
     { id: 17, src: '/images/artwork/street1.jpeg', title: 'Street I', category: 'street', description: 'Urban observational sketching from life' },
