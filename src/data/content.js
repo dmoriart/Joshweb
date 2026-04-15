@@ -257,7 +257,7 @@ export const photography = [
         description: 'Capturing the energy and technical precision of underground club culture.',
         images: [
             { id: 'd1', src: '/images/photography/DJ1.jpg', title: 'Focus', description: 'In the mix' },
-            { id: 'd2', src: '/images/photography/DJ2.jpg', title: 'Control', description: 'Tactile interaction' },
+            { id: 'd2', src: '/images/photography/dj2.jpg', title: 'Control', description: 'Tactile interaction' },
             { id: 'd3', src: '/images/photography/DJ3.jpg', title: 'Atmosphere', description: 'Club lighting' },
             { id: 'd4', src: '/images/photography/DJ4.jpg', title: 'Connection', description: 'Crowd interaction' },
             { id: 'd5', src: '/images/photography/DJ5.jpg', title: 'Intensity', description: 'Peak moment' },
