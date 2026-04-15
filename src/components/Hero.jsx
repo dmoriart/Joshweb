@@ -91,7 +91,7 @@ function Hero() {
                         Video Demo Reel
                     </a>
                     <a
-                        href="#animation"
+                        href="#featured-animation-reel"
                         style={{
                             display: 'inline-block',
                             padding: '14px 32px',
