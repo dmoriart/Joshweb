@@ -10,8 +10,27 @@ function Photography() {
 
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') setLightboxImage(null);
-            if (e.key === 'ArrowRight') navigateLightbox('next');
-            if (e.key === 'ArrowLeft') navigateLightbox('prev');
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                setLightboxImage((currentImage) => {
+                    if (!currentImage) return currentImage;
+
+                    for (const collection of photography) {
+                        const currentIndex = collection.images.findIndex(
+                            (img) => img.id === currentImage.id
+                        );
+
+                        if (currentIndex === -1) continue;
+
+                        const offset = e.key === 'ArrowRight' ? 1 : -1;
+                        const nextIndex =
+                            (currentIndex + offset + collection.images.length) % collection.images.length;
+
+                        return collection.images[nextIndex];
+                    }
+
+                    return currentImage;
+                });
+            }
         };
 
         window.addEventListener('keydown', handleKeyDown);

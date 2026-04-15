@@ -2,14 +2,17 @@
 VibeLend - Modern Enterprise Loan Origination System
 FastAPI backend application
 """
+import logging
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlmodel import SQLModel, Session, create_engine
 
 from app.models.application import LoanApplication
 from app.services.credit_brain import CreditBrain
 
+logger = logging.getLogger(__name__)
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -46,10 +49,10 @@ def on_startup():
 # Request/Response models
 class LoanApplicationRequest(BaseModel):
     """Request model for loan application submission"""
-    name: str
-    income: float
-    credit_score: int
-    requested_amount: float
+    name: str = Field(min_length=1, max_length=255)
+    income: float = Field(gt=0)
+    credit_score: int = Field(ge=300, le=850)
+    requested_amount: float = Field(gt=0)
 
 
 class LoanApplicationResponse(BaseModel):
@@ -120,10 +123,11 @@ def submit_application(application: LoanApplicationRequest):
                 message=decision.message
             )
             
-    except Exception as e:
+    except Exception:
+        logger.exception("Error processing loan application")
         raise HTTPException(
             status_code=500,
-            detail=f"Error processing application: {str(e)}"
+            detail="Error processing application"
         )
 
 
