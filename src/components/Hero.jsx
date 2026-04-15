@@ -57,33 +57,65 @@ function Hero() {
                     Visual Storyteller: Film, Drawing & Animation
                 </p>
 
-                {/* Watch Reel CTA */}
-                <div>
+                {/* CTA Buttons */}
+                <div style={{
+                    display: 'flex',
+                    gap: '16px',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap'
+                }}>
                     <a
                         href="#featured-reel"
                         style={{
                             display: 'inline-block',
-                            padding: '16px 40px',
+                            padding: '14px 32px',
                             background: '#ffffff',
                             color: '#1a1a1a',
                             textDecoration: 'none',
                             borderRadius: '6px',
-                            fontSize: '16px',
+                            fontSize: '15px',
                             fontWeight: '600',
-                            letterSpacing: '0.5px',
+                            letterSpacing: '0.3px',
                             transition: 'all 0.3s ease',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)'
                         }}
                         onMouseEnter={(e) => {
                             e.target.style.transform = 'translateY(-2px)';
-                            e.target.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+                            e.target.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.3)';
                         }}
                         onMouseLeave={(e) => {
                             e.target.style.transform = 'translateY(0)';
-                            e.target.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                            e.target.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
                         }}
                     >
-                        Watch Demo Reel
+                        Video Demo Reel
+                    </a>
+                    <a
+                        href="#animation"
+                        style={{
+                            display: 'inline-block',
+                            padding: '14px 32px',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            backdropFilter: 'blur(10px)',
+                            color: '#ffffff',
+                            textDecoration: 'none',
+                            border: '1px solid rgba(255, 255, 255, 0.3)',
+                            borderRadius: '6px',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            letterSpacing: '0.3px',
+                            transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.target.style.transform = 'translateY(-2px)';
+                            e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.transform = 'translateY(0)';
+                            e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                        }}
+                    >
+                        Animation Demo Reel
                     </a>
                 </div>
             </div>
