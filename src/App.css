@@ -198,6 +198,32 @@ textarea:focus {
     min-height: 0 !important;
     padding: 96px 24px 36px !important;
   }
+
+  .hero-content {
+    align-self: start !important;
+    padding: 118px 16px 0 !important;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-content p {
+    margin-bottom: 18px !important;
+  }
+
+  .hero-panel-caption {
+    max-width: 300px !important;
+  }
+
+  .hero-panel-caption h2 {
+    font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-panel-caption p {
+    display: none !important;
+  }
   
   /* Work section responsive */
   #work {
@@ -246,7 +272,7 @@ textarea:focus {
   
   /* Ensure hero content doesn't overflow */
   section:first-of-type > div:nth-child(2) {
-    padding: 128px 16px 96px !important;
+    padding: 118px 16px 0 !important;
     max-width: 100% !important;
   }
   
@@ -291,6 +317,23 @@ textarea:focus {
   .hero-panel {
     min-height: 0 !important;
     padding: 84px 18px 30px !important;
+  }
+
+  .hero-content {
+    padding: 108px 14px 0 !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .hero-panel-caption h2 {
+    font-size: clamp(1.55rem, 7vw, 2.1rem) !important;
   }
   
   #work,

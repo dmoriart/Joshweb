@@ -112,7 +112,7 @@ function Hero() {
             </div>
 
             {/* Hero Content */}
-            <div style={{
+            <div className="hero-content" style={{
                 position: 'relative',
                 zIndex: 2,
                 textAlign: 'center',
