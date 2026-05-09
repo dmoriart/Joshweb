@@ -212,6 +212,10 @@ textarea:focus {
     margin-bottom: 18px !important;
   }
 
+  .hero-content > div {
+    display: none !important;
+  }
+
   .hero-panel-caption {
     max-width: 300px !important;
   }
