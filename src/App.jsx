@@ -80,7 +80,7 @@ function App() {
                     margin: '0 0 30px 0',
                     letterSpacing: '-0.03em'
                   }}>
-                    Artist Statement
+                    About the Practice
                   </h2>
 
                   {/* Artist Profile Text */}
@@ -90,7 +90,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    A lot of my recent work involves documenting Dublin’s underground music scene — live bands and DJ sets — because those environments are raw, energetic and completely unrepeatable. Filming these moments has taught me how movement, rhythm and lighting shape the way an audience experiences a story.
+                    Josh Moriarty is a visual artist specializing in animation and cinematography. His work moves between drawn worlds and filmed reality, using movement, rhythm, framing and texture to create images that feel immediate and atmospheric.
                   </p>
 
                   <p style={{
@@ -99,7 +99,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    I often shoot using a Sony PD170 rather than a phone or modern digital camera. The DV tape format produces a textured, imperfect image that feels closer to memory than high-resolution digital footage. Working with that aesthetic has made me more aware of how the medium itself influences mood and storytelling.
+                    In cinematography, he is drawn to raw, unrepeatable environments: Dublin's underground music scene, live bands, DJ sets, streetwear shoots and urban locations. Shooting on a Sony PD170 gives the footage a tactile DV texture, where grain, motion and imperfection become part of the storytelling.
                   </p>
 
                   <p style={{
@@ -108,7 +108,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    Alongside filmmaking I’m developing a strong interest in animation and drawing. What attracts me to animation is the ability to build worlds from the ground up — where every movement, expression and environment is designed intentionally. Instead of recording reality, animation allows you to create it.
+                    In animation and drawing, Josh approaches the image from the opposite direction: building scenes from the ground up, where every gesture, expression, line and environment is intentionally designed. Animation lets him shape timing and emotion with the same sensitivity he brings to live footage.
                   </p>
 
                   <p style={{
@@ -117,7 +117,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    My influences come from films and animated series that combine strong visual style with character and atmosphere. I’m particularly drawn to work where visual design, editing and movement shape how a story is felt as much as how it is told.
+                    The bridge between the two disciplines is visual storytelling. Whether he is filming a crowded venue or animating a character study, the focus is on how light, colour, movement and composition shape the way a story is felt.
                   </p>
 
                   <p style={{
@@ -126,16 +126,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    Through film, drawing and animation experiments I’m exploring how visual choices — framing, colour, movement and character — can create emotional impact.
-                  </p>
-
-                  <p style={{
-                    fontSize: '1.1rem',
-                    color: '#444',
-                    marginBottom: '30px',
-                    lineHeight: '1.8'
-                  }}>
-                    I’m currently developing my skills in animation, cinematography and visual storytelling with the goal of creating work that blends the raw energy of documentary filmmaking with the imaginative freedom of animation.
+                    His current practice brings together the documentary energy of analog filmmaking and the imaginative control of hand-drawn animation, creating a portfolio that sits between observation, design and cinematic atmosphere.
                   </p>
 
                   <div style={{
@@ -155,8 +146,8 @@ function App() {
                         fontSize: '2rem',
                         fontWeight: '700',
                         margin: '0 0 8px 0'
-                      }}>100%</h4>
-                      <span style={{ color: '#666' }}>Analog Format</span>
+                      }}>2</h4>
+                      <span style={{ color: '#666' }}>Visual Disciplines</span>
                     </div>
                   </div>
                 </div>

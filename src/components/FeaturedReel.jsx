@@ -1,12 +1,16 @@
 import React from 'react';
 
 function FeaturedReel() {
+    const reelLinks = [
+        { href: '#work', label: 'Film Reel', meta: 'DV tape cinematography, music, fashion, events' },
+        { href: '#featured-animation-reel', label: 'Animation Reel', meta: 'Hand-drawn motion, timing, character studies' }
+    ];
 
     return (
         <section id="featured-reel" style={{
             maxWidth: '1400px',
-            margin: '-60px auto 0',
-            padding: '0 20px 60px',
+            margin: '0 auto',
+            padding: '80px 20px 60px',
             position: 'relative',
             zIndex: 10
         }}>
@@ -54,7 +58,7 @@ function FeaturedReel() {
                                 letterSpacing: '1.5px',
                                 opacity: 0.9
                             }}>
-                                ⭐ Featured Showreel
+                                Creative Reel
                             </span>
                         </div>
 
@@ -67,7 +71,7 @@ function FeaturedReel() {
                             color: '#ffffff',
                             lineHeight: '1.1'
                         }}>
-                            Demo Reel 2026
+                            Animation + Cinematography
                         </h2>
 
                         <p style={{
@@ -78,8 +82,9 @@ function FeaturedReel() {
                             lineHeight: '1.6',
                             letterSpacing: '-0.01em'
                         }}>
-                            A raw, unfiltered look at Dublin's urban landscape—clothing brand photoshoots set against
-                            gritty car park backdrops, captured with the authentic grain of DV tape cinematography
+                            A gateway reel for Josh's visual practice, bringing together hand-drawn movement,
+                            textured DV cinematography, rhythm, light, and atmosphere before opening into the
+                            dedicated film and animation bodies of work.
                         </p>
                     </div>
 
@@ -101,7 +106,7 @@ function FeaturedReel() {
                         }}>
                             <iframe
                                 src="https://www.youtube.com/embed/HRsAaCGVGRo?autoplay=1&mute=1&loop=1&playlist=HRsAaCGVGRo&rel=0"
-                                title="Josh Moriarty Films - Demo Reel 2026"
+                                title="Josh Moriarty - Creative Reel 2026"
                                 style={{
                                     position: 'absolute',
                                     top: 0,
@@ -126,9 +131,9 @@ function FeaturedReel() {
                             padding: '0 20px'
                         }}>
                             {[
-                                { label: 'Format', value: 'DV Tape' },
-                                { label: 'Camera', value: 'Sony PD170' },
-                                { label: 'Duration', value: '0:59' },
+                                { label: 'Disciplines', value: 'Animation + Film' },
+                                { label: 'Focus', value: 'Movement + Mood' },
+                                { label: 'Texture', value: 'Drawn + Analog' },
                                 { label: 'Year', value: '2026' }
                             ].map((item, index) => (
                                 <div key={index} style={{
@@ -155,37 +160,51 @@ function FeaturedReel() {
                             ))}
                         </div>
 
-                        {/* Call to Action */}
+                        {/* Reel Navigation */}
                         <div style={{
-                            textAlign: 'center',
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                            gap: '16px',
                             marginTop: '40px'
                         }}>
-                            <a
-                                href="#work"
-                                style={{
-                                    display: 'inline-block',
-                                    padding: '14px 32px',
-                                    background: '#ffffff',
-                                    color: '#1a1a1a',
-                                    textDecoration: 'none',
-                                    borderRadius: '8px',
-                                    fontSize: '15px',
-                                    fontWeight: '600',
-                                    letterSpacing: '0.3px',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 4px 15px rgba(255, 255, 255, 0.2)'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.transform = 'translateY(-2px)';
-                                    e.target.style.boxShadow = '0 6px 25px rgba(255, 255, 255, 0.3)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.transform = 'translateY(0)';
-                                    e.target.style.boxShadow = '0 4px 15px rgba(255, 255, 255, 0.2)';
-                                }}
-                            >
-                                View Full Portfolio →
-                            </a>
+                            {reelLinks.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    style={{
+                                        display: 'block',
+                                        padding: '18px 20px',
+                                        background: '#ffffff',
+                                        color: '#1a1a1a',
+                                        textDecoration: 'none',
+                                        borderRadius: '8px',
+                                        fontSize: '15px',
+                                        fontWeight: '600',
+                                        letterSpacing: '0',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 15px rgba(255, 255, 255, 0.14)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(255, 255, 255, 0.24)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 255, 255, 0.14)';
+                                    }}
+                                >
+                                    <span style={{ display: 'block', marginBottom: '6px' }}>{link.label}</span>
+                                    <span style={{
+                                        display: 'block',
+                                        color: '#555',
+                                        fontSize: '0.88rem',
+                                        fontWeight: '500',
+                                        lineHeight: 1.45
+                                    }}>
+                                        {link.meta}
+                                    </span>
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>

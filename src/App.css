@@ -54,6 +54,19 @@ button, .work-card, .filter-button {
   transition: all 0.2s ease;
 }
 
+.hero-panel:hover img {
+  filter: saturate(1.05) contrast(1.12) !important;
+  transform: scale(1.05) !important;
+}
+
+.hero-panel:hover .hero-panel-caption {
+  transform: translateY(-6px);
+}
+
+.hero-panel-caption {
+  transition: transform 0.3s ease;
+}
+
 /* Form focus states */
 input:focus,
 select:focus,
@@ -171,8 +184,19 @@ textarea:focus {
   
   /* Hero responsive */
   section:first-of-type {
-    height: 80vh !important;
+    min-height: 100vh !important;
     padding: 0 16px !important;
+  }
+
+  .hero-split {
+    position: absolute !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+  }
+
+  .hero-panel {
+    min-height: 0 !important;
+    padding: 96px 24px 36px !important;
   }
   
   /* Work section responsive */
@@ -222,7 +246,7 @@ textarea:focus {
   
   /* Ensure hero content doesn't overflow */
   section:first-of-type > div:nth-child(2) {
-    padding: 0 16px !important;
+    padding: 128px 16px 96px !important;
     max-width: 100% !important;
   }
   
@@ -261,7 +285,12 @@ textarea:focus {
   }
   
   section:first-of-type {
-    height: 70vh !important;
+    min-height: 100vh !important;
+  }
+
+  .hero-panel {
+    min-height: 0 !important;
+    padding: 84px 18px 30px !important;
   }
   
   #work,

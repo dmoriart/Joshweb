@@ -19,7 +19,7 @@ function Navigation() {
     const navLinks = [
         { href: '#', label: 'Home' },
         { href: '#about', label: 'About' },
-        { href: '#featured-reel', label: 'Demo Reel' },
+        { href: '#featured-reel', label: 'Creative Reel' },
         { href: '#artwork', label: 'Drawing Portfolio' },
         { href: '#animation', label: 'Animation' },
         { href: '#work', label: 'Selected Film Work' },
@@ -65,7 +65,7 @@ function Navigation() {
                     onMouseEnter={(e) => e.target.style.opacity = '0.8'}
                     onMouseLeave={(e) => e.target.style.opacity = '1'}
                 >
-                    Josh Moriarty Films
+                    Josh Moriarty
                 </a>
 
                 {/* Desktop Navigation */}
