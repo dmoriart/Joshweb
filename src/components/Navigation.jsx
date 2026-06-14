@@ -18,6 +18,7 @@ function Navigation() {
 
     const navLinks = [
         { href: '#', label: 'Home' },
+        { href: '#portfolio', label: 'Animation / Clean-Up' },
         { href: '#about', label: 'About' },
         { href: '#featured-reel', label: 'Creative Reel' },
         { href: '#artwork', label: 'Drawing Portfolio' },

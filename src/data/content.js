@@ -233,6 +233,18 @@ export const artworks = [
     { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
 ];
 
+// Clean-up / before-and-after examples for the Animation / Clean-Up Portfolio.
+// Drop the two images into /public/images/cleanup/ and add an entry here.
+// The Clean-Up subsection only renders when this array has at least one item.
+export const cleanups = [
+    // {
+    //     id: 1,
+    //     before: '/images/cleanup/rough1.jpeg',
+    //     after: '/images/cleanup/clean1.jpeg',
+    //     caption: 'Self-directed clean-up exercise showing rough drawing refined into clearer line work, with focus on line consistency, readability and preserving the character pose.',
+    // },
+];
+
 export const photography = [
     {
         id: 'brand',

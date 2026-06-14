@@ -3,6 +3,7 @@ import './App.css';
 import Artwork from './Artwork';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import Portfolio from './components/Portfolio';
 import FeaturedReel from './components/FeaturedReel';
 import FeaturedAnimationReel from './components/FeaturedAnimationReel';
 import WorkGrid from './components/WorkGrid';
@@ -32,6 +33,9 @@ function App() {
           }}>
             <Navigation />
             <Hero />
+
+            {/* Animation / Clean-Up Portfolio - application-focused gateway */}
+            <Portfolio />
 
             {/* About Section - Artist Statement */}
             <section id="about" style={{
