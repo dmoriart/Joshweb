@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { animations } from '../data/content';
+import MotionClipGrid from './MotionClipGrid';
 
 function getYouTubeId(url) {
     const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
@@ -46,6 +47,11 @@ function Animation() {
                 }}>
                     Bringing drawings to life — exploring movement, timing, and visual storytelling through hand-drawn animation
                 </p>
+            </div>
+
+            {/* 2D Movement Loops */}
+            <div style={{ marginBottom: '40px' }}>
+                <MotionClipGrid />
             </div>
 
             {/* Animation Grid */}

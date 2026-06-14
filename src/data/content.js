@@ -106,6 +106,14 @@ export const works = [
     }
 ];
 
+// Short, self-hosted 2D movement loops. Rendered inline as muted autoplay
+// loops (videos) or as a GIF — ideal for showing movement instantly.
+export const motionClips = [
+    { id: 'res', type: 'video', src: '/images/animation/res.mp4', title: '2D movement test', caption: 'Exploring timing, pose changes and motion.' },
+    { id: 'oct', type: 'video', src: '/images/animation/oct.mp4', title: 'Character movement study', caption: 'Focused on rhythm, spacing and gesture.' },
+    { id: 'anim16', type: 'gif', src: '/images/animation/Animation16.gif', title: 'Short animation experiment', caption: 'Independent test using frame-by-frame movement.' },
+];
+
 export const animations = [
     {
         id: 1,

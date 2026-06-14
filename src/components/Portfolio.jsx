@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { animations, artworks, cleanups } from '../data/content';
+import MotionClipGrid from './MotionClipGrid';
 
 // Strongest 2D movement tests for the application-focused preview.
 const FEATURED_ANIMATION_IDS = [1, 4, 5, 2];
@@ -110,6 +111,9 @@ function Portfolio() {
                     title="2D Movement Animation"
                     blurb="Selected frame-by-frame tests exploring timing, pose changes, spacing and gesture."
                 />
+                <div style={{ marginBottom: '24px' }}>
+                    <MotionClipGrid />
+                </div>
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
