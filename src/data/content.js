@@ -116,15 +116,6 @@ export const motionClips = [
 
 export const animations = [
     {
-        id: 1,
-        title: 'Animation Demo Reel',
-        url: 'https://youtu.be/ITeqduodtzc',
-        description: 'A compilation showcasing animation work and motion design — bringing drawings to life through movement, timing, and visual storytelling.',
-        year: '2026',
-        category: 'Demo Reel',
-        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
-    },
-    {
         id: 2,
         title: 'Animation Test 1',
         url: 'https://youtu.be/amqhi52QMLY',
@@ -140,24 +131,6 @@ export const animations = [
         description: 'Sample animation exploring movement and form, hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
         year: '2026',
         category: 'Sample',
-        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
-    },
-    {
-        id: 4,
-        title: 'Jump',
-        url: 'https://youtu.be/kbII5uQrros',
-        description: 'Jump animation cycle studying weight, timing, and the arc of motion — hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
-        year: '2026',
-        category: 'Sample',
-        technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
-    },
-    {
-        id: 5,
-        title: 'Exploratory Animation Study',
-        url: 'https://youtu.be/QjYmnFbmSu4',
-        description: 'This piece was an exploratory animation study.\n\nI created the animation by hand in Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet. The main focus was fluidity, trying to keep the movement loose and expressive',
-        year: '2026',
-        category: 'Study',
         technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
 ];
