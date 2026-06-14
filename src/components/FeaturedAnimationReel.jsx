@@ -67,7 +67,7 @@ function FeaturedAnimationReel() {
                             color: '#ffffff',
                             lineHeight: '1.1'
                         }}>
-                            Animation Demo Reel
+                            2D Movement Test
                         </h2>
 
                         <p style={{
@@ -98,21 +98,25 @@ function FeaturedAnimationReel() {
                             boxShadow: '0 10px 50px rgba(0, 0, 0, 0.5)',
                             border: '2px solid rgba(255, 255, 255, 0.1)'
                         }}>
-                            <iframe
-                                src="https://www.youtube.com/embed/ITeqduodtzc?rel=0&modestbranding=1"
-                                title="Josh Moriarty - Animation Demo Reel"
+                            <video
+                                src="/images/animation/res.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="metadata"
+                                aria-label="Josh Moriarty - 2D Movement Test"
                                 style={{
                                     position: 'absolute',
                                     top: 0,
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
+                                    objectFit: 'contain',
+                                    background: '#000',
                                     border: 0
                                 }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                loading="lazy"
-                            ></iframe>
+                            ></video>
                         </div>
 
                         {/* Technical Details Below Video */}
