@@ -231,19 +231,19 @@ function Portfolio() {
                     <>
                         <SubheadingBlock
                             number="3"
-                            title="Clean-Up / Sketch to Colour"
-                            blurb="A drawing taken through three stages — initial sketch, clean filled-in line work, and final colour — showing line consistency, readability and a preserved pose."
+                            title="Clean-Up / Before-and-After"
+                            blurb="A rough original drawing refined into clean, consistent line work — showing line consistency, readability and a preserved pose."
                         />
                         <div style={{ marginBottom: '50px' }}>
                             {cleanups.map((ex) => (
-                                <figure key={ex.id} style={{ margin: '0 0 32px 0' }}>
+                                <figure key={ex.id} style={{ margin: '0 0 40px 0' }}>
                                     <div style={{
                                         display: 'grid',
-                                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                                        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
                                         gap: '20px'
                                     }}>
-                                        {ex.stages.map((stage, i) => (
-                                            <div key={stage.label} style={{
+                                        {ex.images.map((img) => (
+                                            <div key={img.label} style={{
                                                 position: 'relative',
                                                 borderRadius: '10px',
                                                 overflow: 'hidden',
@@ -263,11 +263,11 @@ function Portfolio() {
                                                     fontWeight: '600',
                                                     textTransform: 'uppercase',
                                                     letterSpacing: '0.5px'
-                                                }}>{`${i + 1}. ${stage.label}`}</span>
-                                                {stage.src ? (
+                                                }}>{img.label}</span>
+                                                {img.src ? (
                                                     <img
-                                                        src={stage.src}
-                                                        alt={`${stage.label} stage`}
+                                                        src={img.src}
+                                                        alt={`${img.label} drawing`}
                                                         loading="lazy"
                                                         style={{ width: '100%', display: 'block' }}
                                                     />

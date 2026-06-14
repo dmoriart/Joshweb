@@ -214,18 +214,25 @@ export const artworks = [
     { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
 ];
 
-// Clean-up progression examples for the Animation / Clean-Up Portfolio.
-// Each entry shows three stages: initial sketch -> filled-in line work -> colour.
-// Drop photos into /public/images/cleanup/ and set each stage's `src`.
-// Empty `src` renders a labeled placeholder slot, so this acts as a template.
+// Clean-up before-and-after examples for the Animation / Clean-Up Portfolio.
+// Each entry is one example with an `images` array (original -> cleaned up).
+// Drop photos into /public/images/cleanup/ and set each image's `src`.
+// Empty `src` renders a labeled placeholder slot.
 export const cleanups = [
     {
         id: 1,
-        caption: 'Self-directed clean-up exercise taking a character from initial sketch through clean filled-in line work to final colour — focused on line consistency, readability and preserving the character pose.',
-        stages: [
-            { label: 'Initial sketch', src: '' },
-            { label: 'Filled-in drawing', src: '' },
-            { label: 'Coloured in', src: '' },
+        caption: 'Self-directed clean-up exercise: a rough original drawing refined into clean, consistent line work while preserving the character pose and readability.',
+        images: [
+            { label: 'Original', src: '/images/cleanup/clean1.png' },
+            { label: 'Cleaned up', src: '/images/cleanup/clean2.png' },
+        ],
+    },
+    {
+        id: 2,
+        caption: 'Further clean-up study showing the same refinement from rough drawing to tidied line work.',
+        images: [
+            { label: 'Original', src: '/images/cleanup/Screenshot_20260614-210212.png' },
+            { label: 'Cleaned up', src: '/images/cleanup/Screenshot_20260614-210352.png' },
         ],
     },
 ];
