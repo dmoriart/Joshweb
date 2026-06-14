@@ -32,7 +32,7 @@ const Credits = () => {
                     </h2>
 
                     <a
-                        href="/Josh_Moriarty_CV.pdf"
+                        href="/CV%20-%20Josh%20Moriarty-June%202026.pdf"
                         download
                         style={{
                             display: 'inline-block',
