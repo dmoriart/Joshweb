@@ -3,7 +3,7 @@ import { animations, artworks, cleanups } from '../data/content';
 import MotionClipGrid from './MotionClipGrid';
 
 // Strongest 2D movement tests for the application-focused preview.
-const FEATURED_ANIMATION_IDS = [1, 4, 5, 2];
+const FEATURED_ANIMATION_IDS = [2];
 // Strongest cartoon / character drawings.
 const FEATURED_DRAWING_IDS = [54, 5, 6, 7, 8, 9, 55, 57];
 
