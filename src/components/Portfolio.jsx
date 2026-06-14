@@ -231,19 +231,19 @@ function Portfolio() {
                     <>
                         <SubheadingBlock
                             number="3"
-                            title="Clean-Up / Before-and-After"
-                            blurb="Rough sketch refined into a cleaner line version — focused on line consistency, readability and preserving the character pose."
+                            title="Clean-Up / Sketch to Colour"
+                            blurb="A drawing taken through three stages — initial sketch, clean filled-in line work, and final colour — showing line consistency, readability and a preserved pose."
                         />
                         <div style={{ marginBottom: '50px' }}>
                             {cleanups.map((ex) => (
                                 <figure key={ex.id} style={{ margin: '0 0 32px 0' }}>
                                     <div style={{
                                         display: 'grid',
-                                        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                                         gap: '20px'
                                     }}>
-                                        {[{ src: ex.before, label: 'Rough' }, { src: ex.after, label: 'Clean-up' }].map((img) => (
-                                            <div key={img.label} style={{
+                                        {ex.stages.map((stage, i) => (
+                                            <div key={stage.label} style={{
                                                 position: 'relative',
                                                 borderRadius: '10px',
                                                 overflow: 'hidden',
@@ -254,6 +254,7 @@ function Portfolio() {
                                                     position: 'absolute',
                                                     top: '12px',
                                                     left: '12px',
+                                                    zIndex: 1,
                                                     background: 'rgba(0,0,0,0.8)',
                                                     color: '#fff',
                                                     padding: '4px 10px',
@@ -262,13 +263,32 @@ function Portfolio() {
                                                     fontWeight: '600',
                                                     textTransform: 'uppercase',
                                                     letterSpacing: '0.5px'
-                                                }}>{img.label}</span>
-                                                <img
-                                                    src={img.src}
-                                                    alt={`${img.label} drawing`}
-                                                    loading="lazy"
-                                                    style={{ width: '100%', display: 'block' }}
-                                                />
+                                                }}>{`${i + 1}. ${stage.label}`}</span>
+                                                {stage.src ? (
+                                                    <img
+                                                        src={stage.src}
+                                                        alt={`${stage.label} stage`}
+                                                        loading="lazy"
+                                                        style={{ width: '100%', display: 'block' }}
+                                                    />
+                                                ) : (
+                                                    <div style={{
+                                                        aspectRatio: '3 / 4',
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        gap: '8px',
+                                                        border: '2px dashed #ccc',
+                                                        borderRadius: '10px',
+                                                        color: '#aaa',
+                                                        textAlign: 'center',
+                                                        padding: '20px'
+                                                    }}>
+                                                        <span style={{ fontSize: '1.8rem', lineHeight: 1 }} aria-hidden="true">+</span>
+                                                        <span style={{ fontSize: '0.85rem', fontWeight: '500' }}>Photo coming soon</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         ))}
                                     </div>

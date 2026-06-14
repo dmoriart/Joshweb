@@ -214,16 +214,20 @@ export const artworks = [
     { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
 ];
 
-// Clean-up / before-and-after examples for the Animation / Clean-Up Portfolio.
-// Drop the two images into /public/images/cleanup/ and add an entry here.
-// The Clean-Up subsection only renders when this array has at least one item.
+// Clean-up progression examples for the Animation / Clean-Up Portfolio.
+// Each entry shows three stages: initial sketch -> filled-in line work -> colour.
+// Drop photos into /public/images/cleanup/ and set each stage's `src`.
+// Empty `src` renders a labeled placeholder slot, so this acts as a template.
 export const cleanups = [
-    // {
-    //     id: 1,
-    //     before: '/images/cleanup/rough1.jpeg',
-    //     after: '/images/cleanup/clean1.jpeg',
-    //     caption: 'Self-directed clean-up exercise showing rough drawing refined into clearer line work, with focus on line consistency, readability and preserving the character pose.',
-    // },
+    {
+        id: 1,
+        caption: 'Self-directed clean-up exercise taking a character from initial sketch through clean filled-in line work to final colour — focused on line consistency, readability and preserving the character pose.',
+        stages: [
+            { label: 'Initial sketch', src: '' },
+            { label: 'Filled-in drawing', src: '' },
+            { label: 'Coloured in', src: '' },
+        ],
+    },
 ];
 
 export const photography = [
