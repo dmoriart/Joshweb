@@ -1,11 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motionClips } from '../data/content';
 
-// Inline, self-hosted 2D movement loops. Videos autoplay muted and loop so
-// the movement is visible immediately, without a click or YouTube chrome.
+const prefersReducedMotion = () =>
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Inline, self-hosted 2D movement loops. Videos loop muted so the movement is
+// visible without a click or YouTube chrome. Playback is driven by an
+// IntersectionObserver so off-screen clips stay paused, and autoplay is
+// skipped entirely when the visitor prefers reduced motion.
 // Clicking any clip opens an enlarged lightbox view.
 function MotionClipGrid() {
     const [selected, setSelected] = useState(null);
+    const gridRef = useRef(null);
+
+    // Play only the inline clips that are on screen; pause the rest.
+    useEffect(() => {
+        if (prefersReducedMotion() || !gridRef.current) return;
+        const videos = gridRef.current.querySelectorAll('video');
+        if (!videos.length) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        video.play().catch(() => { });
+                    } else {
+                        video.pause();
+                    }
+                });
+            },
+            { threshold: 0.25 }
+        );
+        videos.forEach((video) => observer.observe(video));
+        return () => observer.disconnect();
+    }, []);
 
     // Close lightbox on Escape and lock body scroll while open.
     useEffect(() => {
@@ -23,7 +54,7 @@ function MotionClipGrid() {
         clip.type === 'video' ? (
             <video
                 src={clip.src}
-                autoPlay
+                autoPlay={enlarged}
                 muted
                 loop
                 playsInline
@@ -48,7 +79,7 @@ function MotionClipGrid() {
 
     return (
         <>
-            <div style={{
+            <div ref={gridRef} style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
                 gap: '20px'
