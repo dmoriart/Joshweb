@@ -79,7 +79,7 @@ export const works = [
         url: 'https://youtu.be/GabbIXxuWKU',
         type: 'bands',
         venue: 'Sound House',
-        description: 'Raw underground energy captured through analog grain. Lockout\'s punk energy meets the texture of magnetic tape.',
+        description: 'Raw underground energy captured through analogue grain. Lockout\'s punk energy meets the texture of magnetic tape.',
         year: '2025',
         category: 'Live Performance',
         role: 'Director of Photography',
@@ -97,11 +97,11 @@ export const works = [
         description: 'Experience the electrifying energy of DJ RHR\'s live set. A study in rhythm and light.',
         year: '2025',
         category: 'DJ SET',
-        role: 'Editor & Colorist',
+        role: 'Editor & Colourist',
         concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
-        challenge: 'Syncing 50i video footage with high-fidelity digital audio master tracks without drift. Color grading the flat DV footage to bring out the neons without crushing the blacks.',
+        challenge: 'Syncing 50i video footage with high-fidelity digital audio master tracks without drift. Colour grading the flat DV footage to bring out the neons without crushing the blacks.',
         technicalDetails: 'Adobe Premiere Pro | DV Capture via Firewire | Lumetri Color | Rhythm Edit',
-        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact. The color grade leaned into the cyan/magenta shift of the CRT monitors in the venue.',
+        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact. The colour grade leaned into the cyan/magenta shift of the CRT monitors in the venue.',
         outcome: 'Official promo video for the venue\'s summer season.'
     }
 ];
@@ -361,7 +361,7 @@ export const processItems = [
     },
     {
         title: 'Post-Production',
-        description: 'Where the story comes together. A complex timeline of cuts, color grading, and sound design.',
+        description: 'Where the story comes together. A complex timeline of cuts, colour grading, and sound design.',
         src: '/images/process/timeline.png',
         alt: 'Video editing timeline',
         details: [

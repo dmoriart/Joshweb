@@ -133,7 +133,7 @@ function FeaturedReel() {
                             {[
                                 { label: 'Disciplines', value: 'Animation + Film' },
                                 { label: 'Focus', value: 'Movement + Mood' },
-                                { label: 'Texture', value: 'Drawn + Analog' },
+                                { label: 'Texture', value: 'Drawn + Analogue' },
                                 { label: 'Year', value: '2026' }
                             ].map((item, index) => (
                                 <div key={index} style={{

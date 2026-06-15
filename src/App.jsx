@@ -84,7 +84,7 @@ function App() {
                     margin: '0 0 30px 0',
                     letterSpacing: '-0.03em'
                   }}>
-                    About the Practice
+                    About Me
                   </h2>
 
                   {/* Artist Profile Text */}
@@ -94,7 +94,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    Josh Moriarty is a visual artist specializing in animation and cinematography. His work moves between drawn worlds and filmed reality, using movement, rhythm, framing and texture to create images that feel immediate and atmospheric.
+                    I'm a visual artist working across animation and cinematography. My work moves between drawn worlds and filmed reality, using movement, rhythm, framing and texture to create images that feel immediate and atmospheric.
                   </p>
 
                   <p style={{
@@ -103,7 +103,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    In cinematography, he is drawn to raw, unrepeatable environments: Dublin's underground music scene, live bands, DJ sets, streetwear shoots and urban locations. Shooting on a Sony PD170 gives the footage a tactile DV texture, where grain, motion and imperfection become part of the storytelling.
+                    In cinematography, I'm drawn to raw, unrepeatable environments: Dublin's underground music scene, live bands, DJ sets, streetwear shoots and urban locations. Shooting on a Sony PD170 gives the footage a tactile DV texture, where grain, motion and imperfection become part of the storytelling.
                   </p>
 
                   <p style={{
@@ -112,7 +112,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    In animation and drawing, Josh approaches the image from the opposite direction: building scenes from the ground up, where every gesture, expression, line and environment is intentionally designed. Animation lets him shape timing and emotion with the same sensitivity he brings to live footage.
+                    In animation and drawing, I approach the image from the opposite direction: building scenes from the ground up, where every gesture, expression, line and environment is intentionally designed. Animation lets me shape timing and emotion with the same sensitivity I bring to live footage.
                   </p>
 
                   <p style={{
@@ -121,7 +121,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    The bridge between the two disciplines is visual storytelling. Whether he is filming a crowded venue or animating a character study, the focus is on how light, colour, movement and composition shape the way a story is felt.
+                    The bridge between the two is visual storytelling. Whether I'm filming a crowded venue or animating a character study, I focus on how light, colour, movement and composition shape the way a story is felt.
                   </p>
 
                   <p style={{
@@ -130,7 +130,7 @@ function App() {
                     marginBottom: '24px',
                     lineHeight: '1.8'
                   }}>
-                    His current practice brings together the documentary energy of analog filmmaking and the imaginative control of hand-drawn animation, creating a portfolio that sits between observation, design and cinematic atmosphere.
+                    Right now my work brings together the documentary energy of analogue filmmaking and the imaginative control of hand-drawn animation — a portfolio that sits between observation, design and cinematic atmosphere.
                   </p>
 
                   <div style={{
@@ -193,7 +193,7 @@ function App() {
                     letterSpacing: '-0.01em',
                     lineHeight: '1.6'
                   }}>
-                    Applying the same observational lens I use in documentary filmmaking to my sketchbook studies—studying form, light, and movement. Observational drawing, character design, and visual storytelling demonstrate foundational skills in figure work, perspective, tonal rendering, and creative expression.
+                    I bring the same observational eye from my filmmaking into my sketchbook — studying form, light and movement. These pages move between observational drawing, character design and visual storytelling, and they're where I work on the foundations: figure work, perspective, tonal rendering and finding my own voice.
                   </p>
                 </div>
                 <Artwork />

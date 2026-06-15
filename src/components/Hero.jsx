@@ -11,7 +11,7 @@ function Hero() {
         },
         {
             label: 'Cinematography',
-            title: 'Analog Film',
+            title: 'Analogue Film',
             image: '/images/process/IMG_0226.jpeg',
             href: '#work',
             description: 'DV tape texture, live energy, fashion, music, and documentary moments.'
@@ -143,7 +143,7 @@ function Hero() {
                     maxWidth: '680px',
                     lineHeight: '1.5'
                 }}>
-                    Visual Artist specializing in Animation and Cinematography
+                    Visual Artist specialising in Animation and Cinematography
                 </p>
 
                 {/* CTA Buttons */}
