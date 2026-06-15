@@ -3,7 +3,7 @@ import React from 'react';
 function FeaturedReel() {
     const reelLinks = [
         { href: '#work', label: 'Film Reel', meta: 'DV tape cinematography, music, fashion, events' },
-        { href: '#featured-animation-reel', label: 'Animation Reel', meta: 'Hand-drawn motion, timing, character studies' }
+        { href: '#animation', label: 'Animation Reel', meta: 'Hand-drawn motion, timing, character studies' }
     ];
 
     return (

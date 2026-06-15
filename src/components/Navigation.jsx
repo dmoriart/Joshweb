@@ -1,4 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const navLinks = [
+    { href: '#', id: 'home', label: 'Home' },
+    { href: '#portfolio', id: 'portfolio', label: 'Portfolio' },
+    { href: '#artwork', id: 'artwork', label: 'Drawing' },
+    { href: '#animation', id: 'animation', label: 'Animation' },
+    { href: '#work', id: 'work', label: 'Film' },
+    { href: '#contact', id: 'contact', label: 'Contact' }
+];
 
 function Navigation() {
     const handleNavClick = (e, href) => {
@@ -15,20 +24,26 @@ function Navigation() {
         }
     };
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeId, setActiveId] = useState('home');
 
-    const navLinks = [
-        { href: '#', label: 'Home' },
-        { href: '#portfolio', label: 'Animation / Clean-Up' },
-        { href: '#about', label: 'About' },
-        { href: '#featured-reel', label: 'Creative Reel' },
-        { href: '#artwork', label: 'Drawing Portfolio' },
-        { href: '#animation', label: 'Animation' },
-        { href: '#work', label: 'Selected Film Work' },
-        { href: '#equipment', label: 'Equipment' },
-        { href: '#photography', label: 'Photography' },
-        { href: '#credits', label: 'Credits' },
-        { href: '#contact', label: 'Contact' }
-    ];
+    // Scroll-spy: highlight whichever section is crossing the viewport middle.
+    useEffect(() => {
+        const sections = navLinks
+            .map((link) => document.getElementById(link.id))
+            .filter(Boolean);
+        if (!sections.length) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) setActiveId(entry.target.id);
+                });
+            },
+            { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+        );
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
+    }, []);
 
     const handleLinkClick = () => {
         setMobileMenuOpen(false);
@@ -80,13 +95,16 @@ function Navigation() {
                             key={index}
                             href={link.href}
                             onClick={(e) => handleNavClick(e, link.href)}
+                            aria-current={activeId === link.id ? 'true' : undefined}
                             style={{
                                 color: '#1a1a1a',
                                 textDecoration: 'none',
-                                fontWeight: '500',
+                                fontWeight: activeId === link.id ? '700' : '500',
                                 fontSize: '16px',
                                 transition: 'opacity 0.2s ease',
-                                opacity: 0.8
+                                opacity: activeId === link.id ? 1 : 0.7,
+                                paddingBottom: '2px',
+                                borderBottom: activeId === link.id ? '2px solid #1a1a1a' : '2px solid transparent'
                             }}
                             className="desktop-nav-link"
                         >
@@ -164,13 +182,15 @@ function Navigation() {
                             key={index}
                             href={link.href}
                             onClick={(e) => { handleNavClick(e, link.href); handleLinkClick(); }}
+                            aria-current={activeId === link.id ? 'true' : undefined}
                             style={{
                                 color: '#1a1a1a',
                                 textDecoration: 'none',
-                                fontWeight: '500',
+                                fontWeight: activeId === link.id ? '700' : '500',
                                 fontSize: '18px',
                                 padding: '20px 40px',
                                 borderBottom: '1px solid rgba(26, 26, 26, 0.1)',
+                                borderLeft: activeId === link.id ? '4px solid #1a1a1a' : '4px solid transparent',
                                 transition: 'background 0.2s ease'
                             }}
                             onMouseEnter={(e) => e.target.style.background = 'rgba(26, 26, 26, 0.05)'}

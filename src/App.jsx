@@ -5,7 +5,6 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import FeaturedReel from './components/FeaturedReel';
-import FeaturedAnimationReel from './components/FeaturedAnimationReel';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
 // import Process from './components/Process';
@@ -159,7 +158,6 @@ function App() {
             </section>
 
             <FeaturedReel />
-            <FeaturedAnimationReel />
 
             <section id="artwork" style={{
               background: '#f8f8f8',
