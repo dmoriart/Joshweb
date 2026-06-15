@@ -111,6 +111,25 @@ function Navigation() {
                             {link.label}
                         </a>
                     ))}
+                    <a
+                        href="/CV%20-%20Josh%20Moriarty-June%202026.pdf"
+                        download
+                        className="desktop-nav-link"
+                        style={{
+                            color: '#1a1a1a',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '14px',
+                            padding: '6px 16px',
+                            border: '2px solid #1a1a1a',
+                            borderRadius: '20px',
+                            transition: 'background 0.2s ease, color 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.color = '#ffffff'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#1a1a1a'; }}
+                    >
+                        CV
+                    </a>
                 </div>
 
                 {/* Hamburger Button */}
@@ -199,6 +218,21 @@ function Navigation() {
                             {link.label}
                         </a>
                     ))}
+                    <a
+                        href="/CV%20-%20Josh%20Moriarty-June%202026.pdf"
+                        download
+                        onClick={handleLinkClick}
+                        style={{
+                            color: '#1a1a1a',
+                            textDecoration: 'none',
+                            fontWeight: '700',
+                            fontSize: '18px',
+                            padding: '20px 40px',
+                            borderBottom: '1px solid rgba(26, 26, 26, 0.1)'
+                        }}
+                    >
+                        Download CV
+                    </a>
                 </div>
             </div>
 

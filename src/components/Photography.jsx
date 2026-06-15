@@ -66,7 +66,7 @@ function Photography() {
 
     return (
         <section id="photography" style={{
-            background: '#ffffff',
+            background: '#f5f5f5',
             padding: '80px 20px'
         }}>
             <div style={{

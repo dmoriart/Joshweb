@@ -11,6 +11,7 @@ import Photography from './components/Photography';
 import Equipment from './components/Equipment';
 import Animation from './components/Animation';
 import Credits from './components/Credits';
+import ContactForm from './components/ContactForm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
 
@@ -39,7 +40,7 @@ function App() {
             {/* About Section - Artist Statement */}
             <section id="about" style={{
               padding: '100px 20px',
-              background: '#ffffff'
+              background: '#f5f5f5'
             }}>
               <div style={{
                 maxWidth: '1000px',
@@ -160,7 +161,7 @@ function App() {
             <FeaturedReel />
 
             <section id="artwork" style={{
-              background: '#f8f8f8',
+              background: '#ffffff',
               padding: '80px 20px'
             }}>
               <div style={{
@@ -235,22 +236,15 @@ function App() {
                 }}>
                   Available for bookings, collaborations, and events.
                 </p>
-                <a href="mailto:joshmoriartyfilms@gmail.com" style={{
-                  display: 'inline-block',
-                  padding: '16px 40px',
-                  background: '#ffffff',
-                  color: '#1a1a1a',
-                  textDecoration: 'none',
-                  borderRadius: '6px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  transition: 'transform 0.2s ease'
-                }}
-                  onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-                  onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                >
-                  Get in Touch
-                </a>
+
+                <ContactForm />
+
+                <p style={{ marginTop: '24px', fontSize: '0.95rem', opacity: 0.6 }}>
+                  Or email me directly at{' '}
+                  <a href="mailto:joshmoriartyfilms@gmail.com" style={{ color: '#ffffff' }}>
+                    joshmoriartyfilms@gmail.com
+                  </a>
+                </p>
 
                 <div style={{
                   display: 'flex',
@@ -268,7 +262,7 @@ function App() {
                   fontSize: '0.9rem',
                   opacity: 0.5
                 }}>
-                  © 2025 Josh Moriarty Films. All rights reserved.
+                  © 2026 Josh Moriarty Films. All rights reserved.
                 </div>
               </div>
             </section>
