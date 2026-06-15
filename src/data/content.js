@@ -11,8 +11,8 @@ export const works = [
         concept: 'Blending streetwear fashion with Dublin\'s raw urban landscape to create an authentic, textured visual identity for the brand.',
         challenge: 'Balancing the commercial demands of a fashion shoot with the lo-fi aesthetic of DV tape, ensuring the clothing pops while maintaining the gritty atmosphere.',
         technicalDetails: 'Sony PD170 | MiniDV | Natural & Practical Lighting | Handheld',
-        criticalAnalysis: 'The DV tape format adds a tactile, analogue quality that elevates the streetwear beyond a typical lookbook—grounding the fashion in a real, lived-in environment.',
-        outcome: 'Delivered a brand video that captured the raw energy of the shoot and the urban context of the clothing line.'
+        criticalAnalysis: 'Shooting on DV gave it a tactile, analogue feel that suited the streetwear and kept it grounded in a real setting rather than a polished studio look.',
+        outcome: 'A short brand video that captured the energy of the shoot and the urban setting of the clothing.'
     },
     {
         title: 'CLOTHING BRAND PHOTOSHOOT 2',
@@ -26,8 +26,8 @@ export const works = [
         concept: 'Continuing the urban fashion series with a grittier, more intimate perspective on streetwear in Dublin\'s concrete landscapes.',
         challenge: 'Working within the vertical format while maintaining the cinematic DV tape aesthetic and ensuring the clothing remains the focal point against harsh industrial backdrops.',
         technicalDetails: 'Sony PD170 | MiniDV | Practical Lighting | Handheld',
-        criticalAnalysis: 'The vertical format lends itself to the portrait-style fashion framing, while the DV grain adds an authenticity that polished digital shoots often lack.',
-        outcome: 'Featured as the main demo reel showpiece, showcasing the brand\'s urban identity.'
+        criticalAnalysis: 'The vertical format worked well for the portrait-style fashion framing, and the DV grain gave it a more authentic feel than a clean digital shoot.',
+        outcome: 'One of the pieces I included in my demo reel.'
     },
     {
         title: 'DEMO REEL 2026',
@@ -41,23 +41,23 @@ export const works = [
         concept: 'Showcasing the breadth of underground club culture documentation across multiple venues and artists.',
         challenge: 'Selecting and sequencing the most compelling moments from dozens of hours of footage while maintaining narrative flow and rhythmic pacing.',
         technicalDetails: 'Sony PD170 | MiniDV | Mixed Lighting Conditions | Multi-venue Compilation',
-        criticalAnalysis: 'This compilation demonstrates the consistency of visual style across different environments and subjects. The DV tape aesthetic unifies disparate performances into a cohesive whole.',
-        outcome: 'Featured showreel that secured multiple commercial bookings and established signature visual style.'
+        criticalAnalysis: 'Putting it together helped me see a consistent style starting to form across different venues and subjects, with the DV look tying the clips together.',
+        outcome: 'A showreel pulling together some of my favourite moments from the past year of filming.'
     },
     {
         title: 'DJ ORTEGA',
         url: 'https://youtu.be/mo90B3F9Lkk',
         type: 'djs',
         venue: 'Wigwam',
-        description: 'Step into the heart of Dublin\'s club culture with DJ Ortega\'s high-octane set recorded live at Wigwam on 4th July 2025.',
+        description: 'DJ Ortega\'s set recorded live at Wigwam on 4th July 2025, capturing the energy of the crowd and the night.',
         year: '2025',
         category: 'DJ Set',
         role: 'Cinematography & Editing',
         concept: 'To capture the frenetic energy of the crowd and the DJ\'s performance using rapid cuts and close-ups.',
         challenge: 'The venue was extremely dark with rapidly flashing strobes. I had to manually ride the gain on the PD170 to balance exposure without introducing excessive noise, while anticipating the lighting cues.',
         technicalDetails: 'Sony PD170 | MiniDV | Manual Exposure | Interlaced 50i',
-        criticalAnalysis: 'The use of DV tape added a necessary grit that complemented the underground techno sound. The 50i motion interlacing creates a fluid, hyper-real movement that matches the tempo of the 140bpm track.',
-        outcome: 'Delivered a high-energy promo that secured the DJ two international bookings.'
+        criticalAnalysis: 'The DV tape added a grit that suited the underground techno, and the 50i motion gave the movement a fluid feel that matched the pace of the track.',
+        outcome: 'One of my earlier live sets — good practice at filming in a fast-moving, low-light venue.'
     },
     {
         title: 'DJ ORTEGA (ALT)',
@@ -71,8 +71,8 @@ export const works = [
         concept: 'Focusing on the interaction between the DJ and the equipment, highlighting the technical skill involved.',
         challenge: 'Maintaining focus on small buttons and mixers in a chaotic, vibrating environment. I used a heavier tripod setup to dampen the floor vibrations from the bass.',
         technicalDetails: 'Sony PD170 | Telephoto Macro | Tripod Locked | 4:3 Aspect Ratio',
-        criticalAnalysis: 'A more static approach allowed for a clearer view of the mixing process, providing a contrast to the high-energy crowd shots. This study serves as a masterclass in the physical performance of DJing.',
-        outcome: 'Used by the artist for technical tutorials on their YouTube channel.'
+        criticalAnalysis: 'The more static approach gave a clearer view of the mixing, a nice contrast to the busier crowd shots.',
+        outcome: 'An alternative cut focusing on the technical side of the set.'
     },
     {
         title: 'LOCKOUT AT SOUND HOUSE',
@@ -86,23 +86,23 @@ export const works = [
         concept: 'Documenting the raw, unpolished nature of a live punk performance using handheld movement.',
         challenge: 'The mosh pit was intense, requiring physical resilience to keep the camera steady while being pushed. Audio levels peaked constantly, requiring on-the-fly adjustment of the XLR input levels.',
         technicalDetails: 'Sony PD170 | XLR Audio Recording | Handheld Rig | Wide Angle Adapter',
-        criticalAnalysis: 'The handheld camera movement mirrored the chaotic energy of the music, creating an immersive viewer experience. The rolling shutter and tape dropouts became part of the aesthetic, not errors.',
-        outcome: 'Selected for the "Underground Dublin" zine video supplement.'
+        criticalAnalysis: 'The handheld movement matched the chaos of the gig, and the tape dropouts and shutter artefacts became part of the look rather than mistakes.',
+        outcome: 'A raw, hands-on shoot in the middle of a busy punk gig.'
     },
     {
         title: 'DJ RHR',
         url: 'https://youtu.be/qPzb5GKsq58',
         type: 'djs',
         venue: 'Wigwam',
-        description: 'Experience the electrifying energy of DJ RHR\'s live set. A study in rhythm and light.',
+        description: 'DJ RHR\'s live set — a short edit focused on rhythm and light.',
         year: '2025',
         category: 'DJ SET',
         role: 'Editor & Colourist',
         concept: 'Creating a rhythmic edit that syncs perfectly with the beat of the track.',
         challenge: 'Syncing 50i video footage with high-fidelity digital audio master tracks without drift. Colour grading the flat DV footage to bring out the neons without crushing the blacks.',
         technicalDetails: 'Adobe Premiere Pro | DV Capture via Firewire | Lumetri Color | Rhythm Edit',
-        criticalAnalysis: 'Pacing was key here; the edit builds tension in alignment with the musical drops, enhancing the audio-visual impact. The colour grade leaned into the cyan/magenta shift of the CRT monitors in the venue.',
-        outcome: 'Official promo video for the venue\'s summer season.'
+        criticalAnalysis: 'Pacing mattered most here — I tried to build the edit around the musical drops, and leaned the colour grade into the cyan/magenta shift coming off the CRT monitors in the venue.',
+        outcome: 'An edit focused on cutting to the beat of the track.'
     }
 ];
 
