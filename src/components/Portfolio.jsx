@@ -220,7 +220,7 @@ function Portfolio() {
                                 src={art.src}
                                 alt={art.title}
                                 loading="lazy"
-                                style={{ width: '100%', aspectRatio: '3 / 4', objectFit: 'cover', display: 'block' }}
+                                style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'contain', display: 'block' }}
                             />
                         </button>
                     ))}
