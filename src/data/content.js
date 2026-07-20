@@ -137,6 +137,7 @@ export const animations = [
 
 export const artworks = [
     // Latest Character Work
+    { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration' },
     { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration' },
     { id: 63, src: '/images/artwork/1000005524.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration' },
     { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration' },
