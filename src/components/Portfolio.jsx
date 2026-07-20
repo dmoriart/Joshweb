@@ -5,7 +5,7 @@ import MotionClipGrid from './MotionClipGrid';
 // Strongest 2D movement tests for the application-focused preview.
 const FEATURED_ANIMATION_IDS = [2];
 // Strongest cartoon / character drawings.
-const FEATURED_DRAWING_IDS = [54, 5, 6, 7, 8, 9, 55, 57];
+const FEATURED_DRAWING_IDS = [66, 62, 63, 64, 65];
 
 function getYouTubeId(url) {
     const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
