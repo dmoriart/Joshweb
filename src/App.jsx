@@ -7,11 +7,11 @@ import Portfolio from './components/Portfolio';
 import FeaturedReel from './components/FeaturedReel';
 import WorkGrid from './components/WorkGrid';
 import Photography from './components/Photography';
-// import Process from './components/Process';
 import Equipment from './components/Equipment';
 import Animation from './components/Animation';
 import Credits from './components/Credits';
 import ContactForm from './components/ContactForm';
+import ResponsiveImage from './components/ResponsiveImage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMetaTags, useCurrentSection } from './useMetaTags';
 
@@ -63,12 +63,13 @@ function App() {
                     borderRadius: '12px',
                     zIndex: 0
                   }}></div>
-                  <img
+                  <ResponsiveImage
                     src="/images/photography/about.jpeg"
                     alt="Josh Moriarty"
-                    loading="lazy"
+                    sizes="(max-width: 768px) 92vw, 460px"
                     style={{
                       width: '100%',
+                      height: 'auto',
                       borderRadius: '12px',
                       position: 'relative',
                       zIndex: 1,
@@ -133,27 +134,9 @@ function App() {
                     Right now my work brings together the documentary energy of analogue filmmaking and the imaginative control of hand-drawn animation — a portfolio that sits between observation, design and cinematic atmosphere.
                   </p>
 
-                  <div style={{
-                    display: 'flex',
-                    gap: '40px'
-                  }}>
-                    <div>
-                      <h4 style={{
-                        fontSize: '2rem',
-                        fontWeight: '700',
-                        margin: '0 0 8px 0'
-                      }}>20+</h4>
-                      <span style={{ color: '#666' }}>Events Covered</span>
-                    </div>
-                    <div>
-                      <h4 style={{
-                        fontSize: '2rem',
-                        fontWeight: '700',
-                        margin: '0 0 8px 0'
-                      }}>2</h4>
-                      <span style={{ color: '#666' }}>Visual Disciplines</span>
-                    </div>
-                  </div>
+                  {/* The "20+ Events Covered" / "2 Visual Disciplines" counters
+                      that sat here were removed on 2026-07-30: neither figure
+                      was verifiable against anything in this repository. */}
                 </div>
               </div>
             </section>
@@ -202,7 +185,6 @@ function App() {
             <Animation />
 
             <WorkGrid />
-            {/* <Process /> */}
             <Equipment />
             <Photography />
 
