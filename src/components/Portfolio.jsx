@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
 import { animations, artworks, cleanups } from '../data/content';
 import MotionClipGrid from './MotionClipGrid';
+import Lightbox from './Lightbox';
+import ResponsiveImage from './ResponsiveImage';
+import { getYouTubeEmbedUrl, getYouTubeThumbnail } from '../lib/youtube';
 
 // Strongest 2D movement tests for the application-focused preview.
 const FEATURED_ANIMATION_IDS = [2];
 // Strongest cartoon / character drawings.
 const FEATURED_DRAWING_IDS = [66, 62, 63, 64, 65];
-
-function getYouTubeId(url) {
-    const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
-    if (match && match[1]) return match[1];
-    const altMatch = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
-    return altMatch ? altMatch[1] : null;
-}
-
-function getYouTubeThumbnail(url) {
-    const ytId = getYouTubeId(url);
-    return ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
-}
 
 function scrollToSection(href) {
     const el = document.querySelector(href);
@@ -216,11 +207,11 @@ function Portfolio() {
                                 e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
                             }}
                         >
-                            <img
+                            <ResponsiveImage
                                 src={art.src}
-                                alt={art.title}
-                                loading="lazy"
-                                style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'contain', display: 'block' }}
+                                alt={`${art.title}. ${art.description}`}
+                                sizes="(max-width: 700px) 45vw, 200px"
+                                style={{ width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'contain', display: 'block' }}
                             />
                         </button>
                     ))}
@@ -265,11 +256,11 @@ function Portfolio() {
                                                     letterSpacing: '0.5px'
                                                 }}>{img.label}</span>
                                                 {img.src ? (
-                                                    <img
+                                                    <ResponsiveImage
                                                         src={img.src}
                                                         alt={`${img.label} drawing`}
-                                                        loading="lazy"
-                                                        style={{ width: '100%', display: 'block' }}
+                                                        sizes="(max-width: 700px) 92vw, 400px"
+                                                        style={{ width: '100%', height: 'auto', display: 'block' }}
                                                     />
                                                 ) : (
                                                     <div style={{
@@ -327,65 +318,44 @@ function Portfolio() {
                 </div>
             </div>
 
-            {/* Video modal */}
             {selectedVideo && (
-                <div
-                    onClick={() => setSelectedVideo(null)}
-                    style={{
-                        position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.95)', zIndex: 2000,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'
-                    }}
+                <Lightbox
+                    label={`${selectedVideo.title}, video player`}
+                    onClose={() => setSelectedVideo(null)}
+                    caption={<h3 className="jm-lightbox__title">{selectedVideo.title}</h3>}
                 >
-                    <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: '960px' }}>
-                        <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: '12px', overflow: 'hidden' }}>
-                            <iframe
-                                src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
-                                title={selectedVideo.title}
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        <p style={{ color: '#fff', marginTop: '16px', fontSize: '1rem', textAlign: 'center' }}>
-                            {selectedVideo.title}
-                        </p>
+                    <div style={{ width: 'min(960px, 90vw)', aspectRatio: '16 / 9', background: '#000', borderRadius: '12px', overflow: 'hidden' }}>
+                        <iframe
+                            src={getYouTubeEmbedUrl(selectedVideo.url)}
+                            title={selectedVideo.title}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
                     </div>
-                    <button
-                        onClick={() => setSelectedVideo(null)}
-                        aria-label="Close"
-                        style={closeButtonStyle}
-                    >×</button>
-                </div>
+                </Lightbox>
             )}
 
-            {/* Image lightbox */}
             {selectedImage && (
-                <div
-                    onClick={() => setSelectedImage(null)}
-                    style={{
-                        position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.92)', zIndex: 2000,
-                        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                        padding: '20px', backdropFilter: 'blur(10px)', cursor: 'zoom-out'
-                    }}
+                <Lightbox
+                    label={`${selectedImage.title}, artwork viewer`}
+                    onClose={() => setSelectedImage(null)}
+                    caption={
+                        <>
+                            <h3 className="jm-lightbox__title">{selectedImage.title}</h3>
+                            <p className="jm-lightbox__description">{selectedImage.description}</p>
+                        </>
+                    }
                 >
-                    <img
+                    <ResponsiveImage
+                        full
+                        priority
                         src={selectedImage.src}
-                        alt={selectedImage.title}
-                        onClick={(e) => e.stopPropagation()}
-                        style={{ maxWidth: '85vw', maxHeight: '78vh', objectFit: 'contain', borderRadius: '4px', cursor: 'default' }}
+                        alt={`${selectedImage.title}. ${selectedImage.description}`}
                     />
-                    <div onClick={(e) => e.stopPropagation()} style={{ color: '#fff', textAlign: 'center', marginTop: '20px', maxWidth: '600px', cursor: 'default' }}>
-                        <h3 style={{ margin: '0 0 8px 0', fontSize: '1.2rem', fontWeight: '600' }}>{selectedImage.title}</h3>
-                        <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.7, lineHeight: '1.5' }}>{selectedImage.description}</p>
-                    </div>
-                    <button
-                        onClick={() => setSelectedImage(null)}
-                        aria-label="Close"
-                        style={closeButtonStyle}
-                    >×</button>
-                </div>
+                </Lightbox>
             )}
         </section>
     );
@@ -413,21 +383,6 @@ const secondaryButtonStyle = {
     fontWeight: '600',
     cursor: 'pointer',
     transition: 'background 0.2s ease, color 0.2s ease'
-};
-
-const closeButtonStyle = {
-    position: 'fixed',
-    top: '20px',
-    right: '24px',
-    background: 'rgba(0,0,0,0.5)',
-    border: '1px solid rgba(255,255,255,0.2)',
-    color: '#fff',
-    width: '44px',
-    height: '44px',
-    borderRadius: '50%',
-    fontSize: '24px',
-    cursor: 'pointer',
-    zIndex: 2002
 };
 
 export default Portfolio;

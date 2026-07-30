@@ -1,0 +1,76 @@
+/* Self-hosted 2D movement loops. */
+
+.jm-clips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--jm-space-5);
+}
+
+.jm-clip {
+  margin: 0;
+  border-radius: var(--jm-radius-md);
+  overflow: hidden;
+  background: var(--jm-surface-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.jm-clip__trigger {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: #000;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.jm-clip__trigger :is(video, img) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.jm-clip__expand {
+  position: absolute;
+  right: var(--jm-space-3);
+  bottom: var(--jm-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--jm-radius-sm);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+}
+
+.jm-clip__expand svg {
+  width: 16px;
+  height: 16px;
+}
+
+.jm-clip__caption {
+  padding: var(--jm-space-4);
+  line-height: 1.5;
+}
+
+.jm-clip__title {
+  font-size: var(--jm-text-base);
+  font-weight: 600;
+  color: var(--jm-text-light);
+  margin-bottom: var(--jm-space-1);
+}
+
+.jm-clip__text {
+  font-size: var(--jm-text-sm);
+  color: var(--jm-text-muted-light);
+}
+
+.jm-clip__meta {
+  margin-top: var(--jm-space-2);
+  font-size: var(--jm-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--jm-tracking-wide);
+  color: var(--jm-text-muted-light);
+}

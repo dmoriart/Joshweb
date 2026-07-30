@@ -1,0 +1,147 @@
+/* Shared overlay viewer. Replaces four separate ad-hoc implementations. */
+
+.jm-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jm-space-5);
+  padding: clamp(56px, 8vh, 88px) var(--jm-space-4) var(--jm-space-6);
+  background: rgba(6, 6, 8, 0.94);
+  backdrop-filter: blur(12px);
+  animation: jm-lightbox-in var(--jm-duration) var(--jm-ease);
+}
+
+@keyframes jm-lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.jm-lightbox__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  max-width: min(1400px, 100%);
+}
+
+/* Media sizes itself to the stage rather than the viewport, so the caption
+   below it is never pushed off-screen. */
+.jm-lightbox__stage :is(img, video) {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--jm-radius-sm);
+  box-shadow: var(--jm-shadow-lg);
+}
+
+.jm-lightbox__caption {
+  flex-shrink: 0;
+  max-width: var(--jm-container-narrow);
+  text-align: center;
+  color: var(--jm-text);
+}
+
+.jm-lightbox__title {
+  font-size: var(--jm-text-xl);
+  margin-bottom: var(--jm-space-2);
+}
+
+.jm-lightbox__description {
+  font-size: var(--jm-text-sm);
+  color: var(--jm-text-muted);
+  line-height: 1.6;
+}
+
+.jm-lightbox__meta {
+  display: block;
+  margin-top: var(--jm-space-3);
+  font-size: var(--jm-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--jm-tracking-wide);
+  color: var(--jm-text-muted);
+}
+
+/* ---- Controls ---- */
+
+.jm-lightbox__button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 48px keeps every control above the comfortable touch-target minimum. */
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--jm-border-strong);
+  border-radius: var(--jm-radius-pill);
+  color: var(--jm-text);
+  cursor: pointer;
+  transition: background var(--jm-duration) var(--jm-ease);
+}
+
+.jm-lightbox__button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.jm-lightbox__button--close {
+  top: var(--jm-space-4);
+  right: var(--jm-space-4);
+}
+
+.jm-lightbox__button--prev {
+  left: var(--jm-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jm-lightbox__button--next {
+  right: var(--jm-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jm-lightbox__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* On narrow screens the side arrows would sit on top of the artwork, so they
+   move to a bar beneath the caption instead. */
+@media (max-width: 700px) {
+  .jm-lightbox {
+    padding-inline: var(--jm-space-3);
+  }
+
+  .jm-lightbox__button--prev,
+  .jm-lightbox__button--next {
+    position: static;
+    transform: none;
+  }
+
+  .jm-lightbox__nav {
+    display: flex;
+    gap: var(--jm-space-5);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 701px) {
+  .jm-lightbox__nav {
+    display: contents;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jm-lightbox {
+    animation: none;
+  }
+}

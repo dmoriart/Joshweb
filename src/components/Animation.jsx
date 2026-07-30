@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import { animations } from '../data/content';
 import MotionClipGrid from './MotionClipGrid';
-
-function getYouTubeId(url) {
-    const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
-    if (match && match[1]) return match[1];
-    const altMatch = url.match(/[?&]v=([A-Za-z0-9_-]{11})/);
-    return altMatch ? altMatch[1] : null;
-}
-
-function getYouTubeThumbnail(url) {
-    const ytId = getYouTubeId(url);
-    return ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null;
-}
+import { getYouTubeEmbedUrl, getYouTubeThumbnail } from '../lib/youtube';
 
 function Animation() {
     const [selectedVideo, setSelectedVideo] = useState(null);
@@ -266,7 +255,7 @@ function Animation() {
                                 background: '#000'
                             }}>
                                 <iframe
-                                    src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.url)}?autoplay=1`}
+                                    src={getYouTubeEmbedUrl(selectedVideo.url)}
                                     title={selectedVideo.title}
                                     width="100%"
                                     height="100%"
