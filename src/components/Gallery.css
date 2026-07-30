@@ -3,22 +3,20 @@
 .jm-filters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--jm-space-2);
-  margin-bottom: var(--jm-space-6);
+  margin-bottom: var(--jm-space-5);
 }
 
 .jm-filter {
-  /* 44px minimum height keeps these usable as touch targets. */
+  /* 44px minimum keeps these usable as touch targets. */
   min-height: 44px;
   padding: var(--jm-space-2) var(--jm-space-5);
   background: transparent;
-  border: 1px solid var(--jm-border-light);
+  border: 1px solid var(--jm-border);
   border-radius: var(--jm-radius-pill);
-  color: var(--jm-text-muted-light);
+  color: var(--jm-text-muted);
   font-size: var(--jm-text-sm);
   font-weight: 600;
-  letter-spacing: 0.02em;
   cursor: pointer;
   transition: border-color var(--jm-duration) var(--jm-ease),
     color var(--jm-duration) var(--jm-ease),
@@ -26,29 +24,26 @@
 }
 
 .jm-filter:hover {
-  border-color: var(--jm-text-light);
-  color: var(--jm-text-light);
+  border-color: var(--jm-border-strong);
+  color: var(--jm-text);
 }
 
 .jm-filter[aria-pressed='true'] {
-  background: var(--jm-text-light);
-  border-color: var(--jm-text-light);
-  color: var(--jm-surface-light);
+  background: var(--jm-text);
+  border-color: var(--jm-text);
+  color: var(--jm-bg);
 }
 
 .jm-gallery__count {
-  margin-bottom: var(--jm-space-5);
-  text-align: center;
+  margin-bottom: var(--jm-space-6);
   font-size: var(--jm-text-sm);
-  /* Was #999 (2.85:1) — this token is 5.7:1 on the light background. */
-  color: var(--jm-text-muted-light);
+  /* Was #999 on white at 2.85:1; this token is 8.2:1 on the dark surface. */
+  color: var(--jm-text-muted);
 }
 
 .jm-masonry {
   column-count: 3;
   column-gap: var(--jm-space-5);
-  max-width: var(--jm-container);
-  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
@@ -71,31 +66,32 @@
 
 .jm-tile {
   display: block;
+  position: relative;
   width: 100%;
   padding: 0;
-  border: none;
+  border: 1px solid var(--jm-border);
   border-radius: var(--jm-radius-md);
   overflow: hidden;
-  background: var(--jm-surface-light);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: var(--jm-surface);
   cursor: zoom-in;
-  position: relative;
   text-align: left;
   transition: transform var(--jm-duration) var(--jm-ease),
-    box-shadow var(--jm-duration) var(--jm-ease);
+    box-shadow var(--jm-duration) var(--jm-ease),
+    border-color var(--jm-duration) var(--jm-ease);
 }
 
 .jm-tile:hover,
 .jm-tile:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--jm-border-strong);
+  box-shadow: var(--jm-shadow-md);
 }
 
 .jm-tile img {
   display: block;
   width: 100%;
   height: auto;
-  background-color: #e6e6e8;
+  background-color: var(--jm-surface-raised);
   transition: transform 400ms var(--jm-ease);
 }
 
@@ -107,7 +103,7 @@
   position: absolute;
   inset: auto 0 0 0;
   padding: var(--jm-space-7) var(--jm-space-4) var(--jm-space-4);
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   color: #fff;
   opacity: 0;
   transition: opacity var(--jm-duration) var(--jm-ease);
@@ -119,16 +115,25 @@
 }
 
 .jm-tile__title {
+  display: block;
   font-size: var(--jm-text-base);
   font-weight: 600;
   margin-bottom: var(--jm-space-1);
 }
 
 .jm-tile__category {
+  display: block;
   font-size: var(--jm-text-xs);
   text-transform: uppercase;
   letter-spacing: var(--jm-tracking-wide);
   opacity: 0.85;
+}
+
+/* No hover on touch, so captions stay visible. */
+@media (hover: none) {
+  .jm-tile__overlay {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -138,10 +143,7 @@
   }
 
   .jm-tile:hover,
-  .jm-tile:focus-visible {
-    transform: none;
-  }
-
+  .jm-tile:focus-visible,
   .jm-tile:hover img {
     transform: none;
   }

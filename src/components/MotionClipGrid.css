@@ -10,9 +10,9 @@
   margin: 0;
   border-radius: var(--jm-radius-md);
   overflow: hidden;
-  background: var(--jm-surface-light);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
+  background: var(--jm-surface);
+  border: 1px solid var(--jm-border);
+  }
 
 .jm-clip__trigger {
   display: block;
@@ -58,13 +58,13 @@
 .jm-clip__title {
   font-size: var(--jm-text-base);
   font-weight: 600;
-  color: var(--jm-text-light);
+  color: var(--jm-text);
   margin-bottom: var(--jm-space-1);
 }
 
 .jm-clip__text {
   font-size: var(--jm-text-sm);
-  color: var(--jm-text-muted-light);
+  color: var(--jm-text-muted);
 }
 
 .jm-clip__meta {
@@ -72,5 +72,5 @@
   font-size: var(--jm-text-xs);
   text-transform: uppercase;
   letter-spacing: var(--jm-tracking-wide);
-  color: var(--jm-text-muted-light);
+  color: var(--jm-text-muted);
 }

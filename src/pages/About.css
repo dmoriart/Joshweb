@@ -1,0 +1,127 @@
+.jm-about {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--jm-space-7);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .jm-about {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: var(--jm-space-8);
+  }
+}
+
+.jm-about__body {
+  max-width: 64ch;
+}
+
+.jm-about__body p {
+  margin-bottom: var(--jm-space-4);
+  color: var(--jm-text-muted);
+}
+
+.jm-about__lead {
+  font-size: var(--jm-text-lg);
+  color: var(--jm-text) !important;
+}
+
+.jm-about__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--jm-space-3) var(--jm-space-6);
+  margin-block: var(--jm-space-6);
+  padding-block: var(--jm-space-5);
+  border-block: 1px solid var(--jm-border);
+}
+
+.jm-about__facts dt {
+  font-size: var(--jm-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--jm-tracking-wide);
+  color: var(--jm-text-muted);
+}
+
+.jm-about__facts dd {
+  margin: 0;
+}
+
+.jm-about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jm-space-3);
+}
+
+.jm-about__portrait {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--jm-border);
+  border-radius: var(--jm-radius-lg);
+}
+
+/* ---- Tag lists ---- */
+
+.jm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jm-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jm-tags li {
+  padding: var(--jm-space-2) var(--jm-space-4);
+  border: 1px solid var(--jm-border);
+  border-radius: var(--jm-radius-pill);
+  font-size: var(--jm-text-sm);
+  color: var(--jm-text-muted);
+}
+
+/* ---- Kit ---- */
+
+.jm-kit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--jm-space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jm-kit__item {
+  display: flex;
+  gap: var(--jm-space-4);
+  align-items: flex-start;
+  padding: var(--jm-space-4);
+  border: 1px solid var(--jm-border);
+  border-radius: var(--jm-radius-md);
+  background: var(--jm-surface);
+}
+
+.jm-kit__item img {
+  flex-shrink: 0;
+  width: 84px;
+  height: auto;
+  border-radius: var(--jm-radius-sm);
+  background: var(--jm-surface-raised);
+}
+
+.jm-kit__item h3 {
+  font-size: var(--jm-text-base);
+}
+
+.jm-kit__type {
+  margin-top: var(--jm-space-1);
+  font-size: var(--jm-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--jm-tracking-wide);
+  color: var(--jm-accent);
+}
+
+.jm-kit__description {
+  margin-top: var(--jm-space-2);
+  font-size: var(--jm-text-sm);
+  color: var(--jm-text-muted);
+}

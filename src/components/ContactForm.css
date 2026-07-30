@@ -1,0 +1,78 @@
+.jm-form {
+  display: grid;
+  gap: var(--jm-space-5);
+  max-width: 640px;
+}
+
+.jm-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--jm-space-5);
+}
+
+.jm-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jm-space-2);
+}
+
+.jm-field label {
+  font-size: var(--jm-text-sm);
+  font-weight: 600;
+  color: var(--jm-text);
+}
+
+.jm-field :is(input, select, textarea) {
+  width: 100%;
+  padding: var(--jm-space-3) var(--jm-space-4);
+  background: var(--jm-surface);
+  border: 1px solid var(--jm-border-strong);
+  border-radius: var(--jm-radius-sm);
+  color: var(--jm-text);
+  font-family: inherit;
+  font-size: var(--jm-text-base);
+}
+
+.jm-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Native dropdown options render on the OS surface, so they need a colour
+   that works on a light background. */
+.jm-field option {
+  color: #16161a;
+}
+
+.jm-form button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.jm-form__error {
+  padding: var(--jm-space-4);
+  border: 1px solid #ff8a8a;
+  border-radius: var(--jm-radius-sm);
+  /* #ffb4b4 on the dark surface is 8.9:1. */
+  color: #ffb4b4;
+  font-size: var(--jm-text-sm);
+}
+
+.jm-form__success {
+  max-width: 640px;
+  padding: var(--jm-space-7) var(--jm-space-5);
+  border: 1px solid var(--jm-border-strong);
+  border-radius: var(--jm-radius-md);
+  background: var(--jm-surface);
+  text-align: center;
+}
+
+.jm-form__success-title {
+  font-size: var(--jm-text-lg);
+  font-weight: 600;
+  margin-bottom: var(--jm-space-2);
+}
+
+.jm-form__success p:last-child {
+  color: var(--jm-text-muted);
+}

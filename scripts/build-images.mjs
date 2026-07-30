@@ -25,9 +25,13 @@
 
 import { mkdir, readdir, stat, writeFile, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { execFile as execFileCallback } from 'node:child_process';
+import { promisify } from 'node:util';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+
+const execFile = promisify(execFileCallback);
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE_DIR = path.join(ROOT, 'media');
@@ -133,6 +137,62 @@ async function processPassthrough(sourcePath, relative) {
     return 1;
 }
 
+/**
+ * Extracts a poster frame from a video.
+ *
+ * Without one a <video preload="metadata"> renders as a black rectangle until
+ * it starts playing, which is what visitors on reduced-motion settings — and
+ * anyone whose autoplay is blocked — would otherwise see.
+ *
+ * Skipped silently when ffmpeg is unavailable: a missing poster degrades to
+ * the previous behaviour rather than failing the build.
+ */
+async function buildVideoPoster(sourcePath, relative) {
+    const parsed = path.parse(relative);
+    const output = path.join(OUTPUT_DIR, parsed.dir, `${parsed.name}-poster.webp`);
+    if (!(await isStale(sourcePath, output))) return 0;
+
+    try {
+        // ffmpeg decodes the frame; sharp encodes it. Going through sharp
+        // rather than asking ffmpeg for WebP directly avoids depending on
+        // which encoders a given ffmpeg build happens to ship with.
+        const { stdout } = await execFile(
+            'ffmpeg',
+            [
+                '-loglevel', 'error',
+                // A little way in — clips often open on a blank frame.
+                '-ss', '0.3',
+                '-i', sourcePath,
+                '-frames:v', '1',
+                '-f', 'image2pipe',
+                '-vcodec', 'png',
+                'pipe:1',
+            ],
+            { encoding: 'buffer', maxBuffer: 64 * 1024 * 1024 }
+        );
+        if (!stdout?.length) return 0;
+        await sharp(stdout).webp({ quality: QUALITY_GRID }).toFile(output);
+        return 1;
+    } catch {
+        return 0;
+    }
+}
+
+/**
+ * The 1200x630 social preview card, cropped from the featured hero artwork.
+ * Generated rather than committed so it follows whatever piece leads the site.
+ */
+async function buildShareCard() {
+    const source = path.join(SOURCE_DIR, 'artwork', '1000005511.png');
+    const output = path.join(ROOT, 'public', 'share-card.jpg');
+    if (!existsSync(source)) return;
+    if (!(await isStale(source, output))) return;
+    await sharp(source)
+        .resize(1200, 630, { fit: 'cover', position: 'attention' })
+        .jpeg({ quality: 84, mozjpeg: true })
+        .toFile(output);
+}
+
 async function main() {
     if (!existsSync(SOURCE_DIR)) {
         console.error(`✗ No media directory at ${SOURCE_DIR}`);
@@ -156,6 +216,9 @@ async function main() {
                 processed += 1;
             } else if (PASSTHROUGH.has(extension)) {
                 written += await processPassthrough(sourcePath, relative);
+                if (extension === '.mp4' || extension === '.webm') {
+                    written += await buildVideoPoster(sourcePath, relative);
+                }
                 processed += 1;
             }
         } catch (error) {
@@ -163,6 +226,7 @@ async function main() {
         }
     }
 
+    await buildShareCard();
     await writeFile(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
     console.log(

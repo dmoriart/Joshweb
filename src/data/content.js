@@ -418,6 +418,60 @@ export const photography = [
 ];
 
 /**
+ * Software Josh actually uses, evidenced by the existing content data.
+ *
+ * TODO: Confirm the full list. Anything not listed here — Photoshop, Clip
+ * Studio Paint, Procreate, After Effects, TVPaint, Toon Boom, Blender — must
+ * be confirmed before it is added. See docs/content-gaps.md §2.3.
+ */
+export const software = [
+    'Autodesk Sketchbook',
+    'Adobe Premiere Pro',
+    'XP-Pen Artist 15.6',
+    'XPPen Magic Drawing Pad',
+];
+
+/** Cameras and hardware, moved out of the old Equipment component. */
+export const equipment = [
+    {
+        name: 'XP-Pen Artist 15.6',
+        type: 'Drawing tablet',
+        image: '/images/equipment/xppen.jpg',
+        description: 'Display tablet used for hand-drawn 2D animation and digital art.',
+    },
+    {
+        name: 'Sony PD170',
+        type: 'Professional DV camcorder',
+        image: '/images/equipment/sony-pd170.png',
+        description: 'Primary camera for video work. 3-CCD professional DV tape camcorder.',
+    },
+    {
+        name: 'Sony CCD-TR810E',
+        type: 'Hi8 & Video8 Handycam',
+        image: '/images/equipment/sony-tr810e.png',
+        description: 'Compact Hi8/Video8 camcorder for alternative perspectives.',
+    },
+    {
+        name: 'FED-3 Olympic',
+        type: 'Soviet rangefinder camera',
+        image: '/images/equipment/fed3-olympic.png',
+        description: '35mm film rangefinder for still photography.',
+    },
+    {
+        name: 'Petri 1.9 Super',
+        type: 'Japanese rangefinder',
+        image: '/images/equipment/petri-super.png',
+        description: 'Fast f/1.9 rangefinder for low-light photography.',
+    },
+    {
+        name: 'Cosina',
+        type: '35mm SLR camera',
+        image: '/images/equipment/cosina.png',
+        description: 'Vintage SLR for film photography.',
+    },
+];
+
+/**
  * TODO: "Stick n Poke - Soundhouse" appears twice below. Confirm whether these
  * are two separate dates or a duplicate entry.
  * TODO: Every credit is a film credit. Add any drawing, animation or
