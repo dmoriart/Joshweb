@@ -1,4 +1,4 @@
-import React from 'react';
+import { resolveImage } from '../lib/images';
 
 function Hero() {
     const panels = [
@@ -35,7 +35,9 @@ function Hero() {
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr'
             }}>
-                {panels.map((panel) => (
+                {panels.map((panel) => {
+                    const image = resolveImage(panel.image);
+                    return (
                     <a
                         key={panel.label}
                         href={panel.href}
@@ -53,8 +55,15 @@ function Hero() {
                         }}
                     >
                         <img
-                            src={panel.image}
+                            src={image.src}
+                            srcSet={image.srcSet}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            width={image.width}
+                            height={image.height}
                             alt={`${panel.label} work preview`}
+                            /* Above the fold on every visit — the one place
+                               eager loading is the right call. */
+                            fetchPriority="high"
                             style={{
                                 position: 'absolute',
                                 inset: 0,
@@ -108,7 +117,8 @@ function Hero() {
                             </p>
                         </div>
                     </a>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Hero Content */}

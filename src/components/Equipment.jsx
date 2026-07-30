@@ -1,4 +1,4 @@
-import React from 'react';
+import ResponsiveImage from './ResponsiveImage';
 
 function Equipment() {
     const equipment = [
@@ -108,13 +108,15 @@ function Equipment() {
                                 justifyContent: 'center',
                                 padding: '20px'
                             }}>
-                                <img
+                                <ResponsiveImage
                                     src={item.image}
                                     alt={item.name}
-                                    loading="lazy"
+                                    sizes="(max-width: 700px) 90vw, 300px"
                                     style={{
                                         maxWidth: '100%',
                                         maxHeight: '100%',
+                                        width: 'auto',
+                                        height: 'auto',
                                         objectFit: 'contain'
                                     }}
                                 />
