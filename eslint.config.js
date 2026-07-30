@@ -4,7 +4,16 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'public/images'] },
+  // Node context: build scripts and tests read the filesystem.
+  {
+    files: ['scripts/**/*.mjs', 'generate-sitemap.js', 'src/**/*.test.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.node,
+    },
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
