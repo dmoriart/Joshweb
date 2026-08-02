@@ -40,10 +40,16 @@ function Sketchbook() {
                     rendering and observational drawing from life.
                 </PageHeader>
 
+                {/* 34 drawings is a lot to render up front on a phone, and a
+                    reviewer skimming that many studies takes away less than
+                    one seeing a tighter selection. The rest are one click
+                    away. Trimming the set properly is a curation call for
+                    Josh — see docs/content-gaps.md §3.4. */}
                 <ArtworkGallery
                     items={items}
                     categories={availableCategories}
                     noun="drawing"
+                    initialCount={12}
                 />
             </div>
         </>

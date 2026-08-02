@@ -15,9 +15,10 @@ import './Gallery.css';
  *        Omit to render the gallery without a filter bar.
  * @param {string} props.noun Singular label used in the result count.
  */
-function ArtworkGallery({ items, categories, noun = 'piece' }) {
+function ArtworkGallery({ items, categories, noun = 'piece', initialCount }) {
     const [activeFilter, setActiveFilter] = useState('all');
     const [openIndex, setOpenIndex] = useState(null);
+    const [showAll, setShowAll] = useState(false);
 
     const filtered = useMemo(
         () =>
@@ -26,6 +27,12 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                 : items.filter((item) => item.category === activeFilter),
         [items, activeFilter]
     );
+
+    // Long grids start truncated. The lightbox still pages through the full
+    // filtered set, so nothing becomes unreachable — only the initial render
+    // is smaller.
+    const isTruncated = Boolean(initialCount) && !showAll && filtered.length > initialCount;
+    const visible = isTruncated ? filtered.slice(0, initialCount) : filtered;
 
     const open = openIndex === null ? null : filtered[openIndex];
 
@@ -52,6 +59,7 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                             onClick={() => {
                                 setActiveFilter(category.key);
                                 setOpenIndex(null);
+                                setShowAll(false);
                             }}
                         >
                             {category.label}
@@ -62,12 +70,13 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
 
             {/* role="status" so a filter change is announced, not just seen. */}
             <p className="jm-gallery__count" role="status">
-                Showing {filtered.length} {noun}
+                Showing {visible.length}
+                {isTruncated ? ` of ${filtered.length}` : ''} {noun}
                 {filtered.length === 1 ? '' : 's'}
             </p>
 
             <div className="jm-masonry">
-                {filtered.map((item, index) => (
+                {visible.map((item, index) => (
                     <div key={item.id} className="jm-masonry__item">
                         <button
                             type="button"
@@ -105,6 +114,16 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                     </div>
                 ))}
             </div>
+
+            {isTruncated && (
+                <button
+                    type="button"
+                    className="jm-button jm-button--secondary jm-gallery__more"
+                    onClick={() => setShowAll(true)}
+                >
+                    Show all {filtered.length} {noun}s
+                </button>
+            )}
 
             {open && (
                 <Lightbox
