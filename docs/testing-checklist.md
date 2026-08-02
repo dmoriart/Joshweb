@@ -168,20 +168,37 @@ by React and the router, which do not split out this way.
 Marking three gallery images eager instead of one also measured no better — they
 compete with each other.
 
-### Remaining performance ideas, in order of likely value
+### Applied after the first Lighthouse run
 
-Mobile `/sketchbook` at 84 is the weakest page; it renders 34 images.
+| Change | Result |
+|---|---|
+| **Self-hosted Inter** — 47 KB variable latin subset, `font-display: swap`, preloaded, cached immutably | The design now renders in the typeface it was drawn in. CLS stayed at 0. |
+| **`content-visibility: auto`** on masonry items | Off-screen tiles skip layout and paint. Three-column flow verified intact — no collapsed tiles, no overflow. |
+| **Truncated long grids** — Sketchbook shows 12 of 34 with a "Show all" button | Page weight **1529 KB → 1140 KB (−25%)** |
 
-- [ ] **Self-host the font.** The CSS asks for `Inter` but nothing ever loads it,
-      so most visitors get their system sans-serif. Either self-host with
-      `font-display: swap` or commit to the system stack — currently it is
-      neither, and the design was drawn against Inter.
-- [ ] `content-visibility: auto` on the masonry items below the fold
-- [ ] Paginate or lazily extend the sketchbook grid beyond the first ~12 pieces
-- [ ] Trim the number of sketchbook studies shown at all — `content-gaps.md`
-      §3.4 already recommends cutting 30 placeholder-titled studies to the
-      10–15 worth showing, which would help both the page weight and the
-      portfolio's signal-to-noise
+Mobile `/sketchbook` measured over four runs afterwards: 82, 86, 88, 87 —
+**median 87**, up from 84–86, LCP unchanged at 4.0 s. The 82 was the first
+request after deploy, against a cold CDN cache.
+
+Mobile `/` Speed Index improved 4.2 s → 2.8 s.
+
+Note the ±4 point spread across identical runs. Never draw a conclusion from a
+single mobile Lighthouse run; take a median of three or more.
+
+### Remaining ideas
+
+- [ ] **Trim the sketchbook properly.** Truncation fixed the page weight, but
+      `content-gaps.md` §3.4 still stands: 30 studies carry placeholder titles
+      like "Sketchbook Study XIX". Cutting to the 10–15 genuinely worth showing
+      is a curation call only Josh can make, and it improves the portfolio's
+      signal-to-noise more than it improves the score.
+- [ ] The sketchbook scans are photographed paper where sensor grain dominates
+      file size — a 960w variant can reach 430 KB. Denoising before encoding
+      measured ~18% smaller in testing but risks softening line work. Only worth
+      doing with Josh's eyes on the result.
+- [ ] `unused-javascript` still flags ~36 KB. This is React and the router
+      themselves, not page code — see the reverted splitting experiment above.
+      A genuinely smaller bundle would mean a lighter router, not more chunks.
 
 ---
 
