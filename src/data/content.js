@@ -1,8 +1,53 @@
+/**
+ * Central content source for the whole site.
+ *
+ * Shapes are documented in ./types.js. Editing guidance, including how to add
+ * artwork and what must never be invented, is in the README.
+ *
+ * @typedef {import('./types.js').ArtworkItem}   ArtworkItem
+ * @typedef {import('./types.js').AnimationItem} AnimationItem
+ * @typedef {import('./types.js').CleanupItem}   CleanupItem
+ * @typedef {import('./types.js').FilmItem}      FilmItem
+ * @typedef {import('./types.js').SequenceItem}  SequenceItem
+ */
+
+/**
+ * Multi-page comic and storyboard sequences, in reading order.
+ *
+ * Deliberately empty: no sequential-art assets exist in this repository yet.
+ * The Sequential Art page and its nav entry stay hidden while this is empty,
+ * rather than shipping a placeholder. See docs/content-gaps.md §1.1–1.3 for
+ * exactly what is needed.
+ *
+ * @type {SequenceItem[]}
+ */
+export const sequences = [];
+
+/** Groupings for the film page. @see FilmItem.group */
+export const filmGroups = [
+    { key: 'all', label: 'All Film Work' },
+    { key: 'reel', label: 'Reel' },
+    { key: 'fashion', label: 'Fashion & Brand' },
+    { key: 'music', label: 'Live Music' },
+    { key: 'editing', label: 'Editing & Colour' },
+];
+
+/**
+ * Film and video projects.
+ *
+ * TODO: Verify every `role` below with Josh. Several of these appear to be
+ * solo shoots, and "Director of Photography" on a one-person handheld gig
+ * reads as inflated to an industry reviewer — "Camera and edit" is stronger
+ * because it is plainly true. See docs/content-gaps.md §3.3.
+ *
+ * @type {FilmItem[]}
+ */
 export const works = [
     {
         title: 'CLOTHING BRAND PHOTOSHOOT',
         url: 'https://youtu.be/HpGS_WcvOBM',
         type: 'djs',
+        group: 'fashion',
         venue: 'Dublin',
         description: 'A clothing brand photoshoot set against Dublin\'s gritty urban backdrop, captured with the raw, authentic grain of DV tape cinematography.',
         year: '2026',
@@ -18,6 +63,7 @@ export const works = [
         title: 'CLOTHING BRAND PHOTOSHOOT 2',
         url: 'https://youtube.com/shorts/1g72m-MM1m4',
         type: 'djs',
+        group: 'fashion',
         venue: 'Dublin',
         description: 'A second clothing brand photoshoot capturing the raw textures of Dublin\'s car park backdrops with the unmistakable grain of DV tape.',
         year: '2026',
@@ -33,6 +79,7 @@ export const works = [
         title: 'DEMO REEL 2026',
         url: 'https://youtu.be/IUF6f7UPeaQ',
         type: 'djs',
+        group: 'reel',
         venue: 'Various Locations',
         description: 'A curated compilation of underground moments from Dublin\'s music scene—raw performances, intimate DJ sets, and the authentic energy of DV tape cinematography.',
         year: '2026',
@@ -48,6 +95,7 @@ export const works = [
         title: 'DJ ORTEGA',
         url: 'https://youtu.be/mo90B3F9Lkk',
         type: 'djs',
+        group: 'music',
         venue: 'Wigwam',
         description: 'DJ Ortega\'s set recorded live at Wigwam on 4th July 2025, capturing the energy of the crowd and the night.',
         year: '2025',
@@ -63,6 +111,7 @@ export const works = [
         title: 'DJ ORTEGA (ALT)',
         url: 'https://youtu.be/VDjuqnk_Gqs',
         type: 'djs',
+        group: 'music',
         venue: 'Wigwam',
         description: 'A focused, technical perspective on DJ Ortega\'s set. This cut strips away the crowd to focus purely on the craft of mixing.',
         year: '2025',
@@ -78,6 +127,7 @@ export const works = [
         title: 'LOCKOUT AT SOUND HOUSE',
         url: 'https://youtu.be/GabbIXxuWKU',
         type: 'bands',
+        group: 'music',
         venue: 'Sound House',
         description: 'Raw underground energy captured through analogue grain. Lockout\'s punk energy meets the texture of magnetic tape.',
         year: '2025',
@@ -93,6 +143,7 @@ export const works = [
         title: 'DJ RHR',
         url: 'https://youtu.be/qPzb5GKsq58',
         type: 'djs',
+        group: 'editing',
         venue: 'Wigwam',
         description: 'DJ RHR\'s live set — a short edit focused on rhythm and light.',
         year: '2025',
@@ -106,56 +157,113 @@ export const works = [
     }
 ];
 
-// Short, self-hosted 2D movement loops. Rendered inline as muted autoplay
-// loops (videos) or as a GIF — ideal for showing movement instantly.
+/**
+ * Short, self-hosted 2D movement loops, rendered inline as muted autoplay
+ * loops (videos) or as a GIF — the fastest way to show movement to a reviewer.
+ *
+ * TODO: Confirm duration, software and frame timing (1s or 2s) for each clip.
+ * TODO: Confirm whether each is original work or a college/self-directed exercise.
+ * TODO: Supply a poster frame per clip so nothing loads as a black rectangle.
+ * TODO: Replace the placeholder titles with the real names of these pieces.
+ *
+ * @type {AnimationItem[]}
+ */
 export const motionClips = [
-    { id: 'res', type: 'video', src: '/images/animation/res.mp4', title: '2D movement test', caption: 'Exploring timing, pose changes and motion.' },
-    { id: 'oct', type: 'video', src: '/images/animation/oct.mp4', title: 'Character movement study', caption: 'Focused on rhythm, spacing and gesture.' },
-    { id: 'anim16', type: 'gif', src: '/images/animation/Animation16.gif', title: 'Short animation experiment', caption: 'Independent test using frame-by-frame movement.' },
+    {
+        id: 'res',
+        type: 'video',
+        src: '/images/animation/res.mp4',
+        title: '2D movement test',
+        caption: 'Exploring timing, pose changes and motion.',
+        featured: true,
+    },
+    {
+        id: 'oct',
+        type: 'video',
+        src: '/images/animation/oct.mp4',
+        title: 'Character movement study',
+        caption: 'Focused on rhythm, spacing and gesture.',
+        featured: true,
+    },
+    {
+        id: 'anim16',
+        type: 'gif',
+        src: '/images/animation/Animation16.gif',
+        title: 'Short animation experiment',
+        caption: 'Independent test using frame-by-frame movement.',
+    },
 ];
 
+/**
+ * Hosted animation pieces.
+ *
+ * TODO: Confirm duration for both pieces.
+ * TODO: Confirm whether each is original work or a college exercise.
+ *
+ * @type {AnimationItem[]}
+ */
 export const animations = [
     {
         id: 2,
+        type: 'youtube',
         title: 'Animation Test 1',
         url: 'https://youtu.be/amqhi52QMLY',
         description: 'Animated comic book panel using drawing tablet.',
         year: '2026',
         category: 'Test',
+        tools: 'Autodesk Sketchbook, XP-Pen Artist 15.6',
         technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
+        featured: true,
     },
     {
         id: 3,
+        type: 'youtube',
         title: 'Art Project 8',
         url: 'https://youtu.be/HB9AqAWKESM',
         description: 'Sample animation exploring movement and form, hand-drawn digitally using Sketchbook on an XP-Pen Artist 15.6 drawing tablet.',
         year: '2026',
         category: 'Sample',
+        tools: 'Autodesk Sketchbook, XP-Pen Artist 15.6',
         technicalDetails: 'Autodesk Sketchbook using an XP-Pen Artist 15.6 drawing tablet',
     },
 ];
 
-export const artworks = [
-    // Latest Character Work
-    { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration' },
-    { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration' },
-    { id: 63, src: '/images/artwork/1000005524.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration' },
-    { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration' },
-    { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration' },
+/** The showreel that opens the animation page. */
+export const animationReel = {
+    url: 'https://youtu.be/HRsAaCGVGRo',
+    title: 'Creative Reel 2026',
+    // TODO: Confirm duration and the exact list of pieces included in the reel.
+};
 
-    // Digital Artwork
-    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 56, src: '/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.png', title: 'Digital Artwork II', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 57, src: '/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.png', title: 'Digital Artwork III', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 58, src: '/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.png', title: 'Digital Artwork IV', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 59, src: '/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.png', title: 'Digital Artwork V', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 60, src: '/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.png', title: 'Digital Artwork VI', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+/**
+ * Every still piece on the site.
+ *
+ * `featured: true` promotes a piece to the home page. Keep that list short —
+ * five or six pieces at most, or it stops being a selection.
+ *
+ * TODO: The 30 "Sketchbook Study I–XXX" and 7 "Digital Artwork I–VII" entries
+ * carry placeholder titles and rotating generic descriptions. Identify the
+ * 10–15 genuinely worth showing and give those real titles; see
+ * docs/content-gaps.md §3.4.
+ *
+ * @type {ArtworkItem[]}
+ */
+export const artworks = [
+    // Latest character work — the strongest pieces for a comic portfolio review.
+    // TODO: Confirm the software and year for these five pieces.
+    { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 63, src: '/images/artwork/1000005524.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration', featured: true },
+
+    // Digital Artwork — tools confirmed from the existing descriptions.
+    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
     { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
 
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range' },
     { id: 2, src: '/images/artwork/Selfportrait2.jpeg', title: 'Self Portrait II', category: 'self-portraits', description: 'Study in proportion and expression' },
-    { id: 3, src: '/images/artwork/Selfportrait3.jpeg', title: 'Self Portrait III', category: 'self-portraits', description: 'Tonal study with emphasis on light and shadow' },
     { id: 4, src: '/images/artwork/Selfportrait4.jpeg', title: 'Self Portrait IV', category: 'self-portraits', description: 'Expressive self portrait capturing mood and character' },
 
     // Star Wars Fan Art
@@ -173,58 +281,50 @@ export const artworks = [
     { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'View & Viewpoint V', category: 'viewpoint', description: 'Perspective and compositional exploration' },
 
     // Music (now merged with Street)
-    { id: 15, src: '/images/artwork/music1.jpeg', title: 'Music I', category: 'street', description: 'Expressive drawing capturing the energy of music' },
-    { id: 16, src: '/images/artwork/music2.jpeg', title: 'Music II', category: 'street', description: 'Emotive study of musical expression and movement' },
 
     // Street
-    { id: 17, src: '/images/artwork/street1.jpeg', title: 'Street I', category: 'street', description: 'Urban observational sketching from life' },
-    { id: 18, src: '/images/artwork/street2.jpeg', title: 'Street II', category: 'street', description: 'Quick study of urban environment and figures' },
-    { id: 19, src: '/images/artwork/street3.jpeg', title: 'Street III', category: 'street', description: 'Street scene capturing atmosphere and movement' },
-    { id: 20, src: '/images/artwork/street4.jpeg', title: 'Street IV', category: 'street', description: 'Observational drawing of city life' },
-    { id: 21, src: '/images/artwork/street5.jpeg', title: 'Street V', category: 'street', description: 'Urban landscape study' },
 
     // Photoshoot
     { id: 22, src: '/images/artwork/Photoshoot1.jpeg', title: 'Photoshoot I', category: 'photoshoot', description: 'Figure drawing from photographic reference' },
     { id: 23, src: '/images/artwork/Photoshoot2.jpeg', title: 'Photoshoot II', category: 'photoshoot', description: 'Study of pose and form from reference' },
 
     // Sketchbook & Studies
-    { id: 24, src: '/images/artwork/IMG_1070.jpeg', title: 'Sketchbook Study I', category: 'sketchbook', description: 'Life drawing and observational study' },
     { id: 25, src: '/images/artwork/IMG_1080.jpeg', title: 'Sketchbook Study II', category: 'sketchbook', description: 'Exploratory sketches and mark-making' },
-    { id: 26, src: '/images/artwork/IMG_1093.jpeg', title: 'Sketchbook Study III', category: 'sketchbook', description: 'Drawing development and experimentation' },
-    { id: 27, src: '/images/artwork/IMG_1096.jpeg', title: 'Sketchbook Study IV', category: 'sketchbook', description: 'Observational drawing practice' },
     { id: 28, src: '/images/artwork/IMG_1098.jpeg', title: 'Sketchbook Study V', category: 'sketchbook', description: 'Tonal study and rendering' },
     { id: 29, src: '/images/artwork/IMG_1099.jpeg', title: 'Sketchbook Study VI', category: 'sketchbook', description: 'Composition and form exploration' },
     { id: 30, src: '/images/artwork/IMG_1102.jpeg', title: 'Sketchbook Study VII', category: 'sketchbook', description: 'Life drawing session' },
     { id: 31, src: '/images/artwork/IMG_1105.jpeg', title: 'Sketchbook Study VIII', category: 'sketchbook', description: 'Quick gesture and proportion study' },
     { id: 32, src: '/images/artwork/IMG_1106.jpeg', title: 'Sketchbook Study IX', category: 'sketchbook', description: 'Detailed observational drawing' },
     { id: 33, src: '/images/artwork/IMG_1107.jpeg', title: 'Sketchbook Study X', category: 'sketchbook', description: 'Exploratory mark-making and form' },
-    { id: 34, src: '/images/artwork/IMG_1109.jpeg', title: 'Sketchbook Study XI', category: 'sketchbook', description: 'Tonal rendering practice' },
     { id: 35, src: '/images/artwork/IMG_1110.jpeg', title: 'Sketchbook Study XII', category: 'sketchbook', description: 'Study of light and shadow' },
     { id: 36, src: '/images/artwork/IMG_1111.jpeg', title: 'Sketchbook Study XIII', category: 'sketchbook', description: 'Drawing from observation' },
     { id: 37, src: '/images/artwork/IMG_1112.jpeg', title: 'Sketchbook Study XIV', category: 'sketchbook', description: 'Composition study' },
     { id: 38, src: '/images/artwork/IMG_1113.jpeg', title: 'Sketchbook Study XV', category: 'sketchbook', description: 'Exploratory drawing' },
     { id: 39, src: '/images/artwork/IMG_1114.jpeg', title: 'Sketchbook Study XVI', category: 'sketchbook', description: 'Detail and texture study' },
     { id: 40, src: '/images/artwork/IMG_1115.jpeg', title: 'Sketchbook Study XVII', category: 'sketchbook', description: 'Figure and form exploration' },
-    { id: 41, src: '/images/artwork/IMG_1116.jpeg', title: 'Sketchbook Study XVIII', category: 'sketchbook', description: 'Observational sketching' },
     { id: 42, src: '/images/artwork/IMG_2041.jpeg', title: 'Sketchbook Study XIX', category: 'sketchbook', description: 'Life drawing and tonal work' },
     { id: 43, src: '/images/artwork/IMG_2042.jpeg', title: 'Sketchbook Study XX', category: 'sketchbook', description: 'Mark-making and expression' },
     { id: 44, src: '/images/artwork/IMG_2043.jpeg', title: 'Sketchbook Study XXI', category: 'sketchbook', description: 'Compositional exploration' },
     { id: 45, src: '/images/artwork/IMG_2044.jpeg', title: 'Sketchbook Study XXII', category: 'sketchbook', description: 'Tonal range and rendering' },
     { id: 46, src: '/images/artwork/IMG_2045.jpeg', title: 'Sketchbook Study XXIII', category: 'sketchbook', description: 'Observational detail study' },
     { id: 47, src: '/images/artwork/IMG_2046.jpeg', title: 'Sketchbook Study XXIV', category: 'sketchbook', description: 'Drawing development' },
-    { id: 48, src: '/images/artwork/IMG_2242.jpeg', title: 'Sketchbook Study XXV', category: 'sketchbook', description: 'Mixed media exploration' },
     { id: 49, src: '/images/artwork/IMG_2247.jpeg', title: 'Sketchbook Study XXVI', category: 'sketchbook', description: 'Study of form and space' },
-    { id: 50, src: '/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.jpeg', title: 'Sketchbook Study XXVII', category: 'sketchbook', description: 'Experimental drawing and technique' },
     { id: 51, src: '/images/artwork/IMG_1138.jpeg', title: 'Sketchbook Study XXVIII', category: 'sketchbook', description: 'Exploratory sketching and technique' },
     { id: 52, src: '/images/artwork/IMG_1139.jpeg', title: 'Sketchbook Study XXIX', category: 'sketchbook', description: 'Observational drawing practice' },
     { id: 53, src: '/images/artwork/IMG_1140.jpeg', title: 'Sketchbook Study XXX', category: 'sketchbook', description: 'Study of form and detail' },
     { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
 ];
 
-// Clean-up before-and-after examples for the Animation / Clean-Up Portfolio.
-// Each entry is one example with an `images` array (original -> cleaned up).
-// Drop photos into /public/images/cleanup/ and set each image's `src`.
-// Empty `src` renders a labeled placeholder slot.
+/**
+ * Clean-up before-and-after pairs. Each entry runs rough original → cleaned up.
+ * Drop new photos into /public/images/cleanup/ and set each image's `src`.
+ *
+ * TODO: Confirm the software used for each clean-up.
+ * TODO: Confirm the year of each.
+ * TODO: Confirm whether the source rough was Josh's own drawing or supplied.
+ *
+ * @type {CleanupItem[]}
+ */
 export const cleanups = [
     {
         id: 1,
@@ -297,6 +397,66 @@ export const photography = [
     }
 ];
 
+/**
+ * Software Josh actually uses, evidenced by the existing content data.
+ *
+ * TODO: Confirm the full list. Anything not listed here — Photoshop, Clip
+ * Studio Paint, Procreate, After Effects, TVPaint, Toon Boom, Blender — must
+ * be confirmed before it is added. See docs/content-gaps.md §2.3.
+ */
+export const software = [
+    'Autodesk Sketchbook',
+    'Adobe Premiere Pro',
+    'XP-Pen Artist 15.6',
+    'XPPen Magic Drawing Pad',
+];
+
+/** Cameras and hardware, moved out of the old Equipment component. */
+export const equipment = [
+    {
+        name: 'XP-Pen Artist 15.6',
+        type: 'Drawing tablet',
+        image: '/images/equipment/xppen.jpg',
+        description: 'Display tablet used for hand-drawn 2D animation and digital art.',
+    },
+    {
+        name: 'Sony PD170',
+        type: 'Professional DV camcorder',
+        image: '/images/equipment/sony-pd170.png',
+        description: 'Primary camera for video work. 3-CCD professional DV tape camcorder.',
+    },
+    {
+        name: 'Sony CCD-TR810E',
+        type: 'Hi8 & Video8 Handycam',
+        image: '/images/equipment/sony-tr810e.png',
+        description: 'Compact Hi8/Video8 camcorder for alternative perspectives.',
+    },
+    {
+        name: 'FED-3 Olympic',
+        type: 'Soviet rangefinder camera',
+        image: '/images/equipment/fed3-olympic.png',
+        description: '35mm film rangefinder for still photography.',
+    },
+    {
+        name: 'Petri 1.9 Super',
+        type: 'Japanese rangefinder',
+        image: '/images/equipment/petri-super.png',
+        description: 'Fast f/1.9 rangefinder for low-light photography.',
+    },
+    {
+        name: 'Cosina',
+        type: '35mm SLR camera',
+        image: '/images/equipment/cosina.png',
+        description: 'Vintage SLR for film photography.',
+    },
+];
+
+/**
+ * TODO: "Stick n Poke - Soundhouse" appears twice below. Confirm whether these
+ * are two separate dates or a duplicate entry.
+ * TODO: Every credit is a film credit. Add any drawing, animation or
+ * illustration credits that exist.
+ */
 export const credits = [
     {
         role: 'Filmed and edited',
@@ -335,55 +495,8 @@ export const credits = [
     }
 ];
 
-export const processItems = [
-    {
-        title: 'Storyboarding',
-        description: 'Visualizing the narrative flow before the camera rolls. Every shot is planned to ensure the story beats land.',
-        src: '/images/process/storyboard.png',
-        alt: 'Hand-drawn storyboard sketches',
-        details: [
-            { type: 'image', src: '/images/process/storyboard.png', caption: 'Initial sketch for the opening sequence.' },
-            { type: 'text', content: 'The storyboard is the blueprint. I use it to communicate my vision to the crew and ensure we are all on the same page.' }
-        ]
-    },
-    {
-        title: 'Lighting Design',
-        description: 'Technical planning for atmospheric depth. Mapping out light sources to create the signature gritty aesthetic.',
-        src: '/images/process/lighting.png',
-        alt: 'Technical lighting plan diagram',
-        details: [
-            { type: 'image', src: '/images/process/lighting.png', caption: 'Lighting setup for the warehouse scene.' },
-            { type: 'text', content: 'I wanted to create a high-contrast look, so I used a single key light and a lot of negative fill.' }
-        ]
-    },
-    {
-        title: 'On Set',
-        description: 'The Sony PD170 in action. Capturing the raw energy of the moment with authentic DV tape hardware.',
-        src: '/images/photography/josh_portrait.jpg',
-        alt: 'Behind the scenes camera setup',
-        details: [
-            { type: 'image', src: '/images/photography/josh_portrait.jpg', caption: 'Filming the live performance.' },
-            { type: 'text', content: 'Shooting on DV tape requires a different approach. You have to be more intentional with your shots because you can\'t just shoot forever.' }
-        ]
-    },
-    {
-        title: 'Post-Production',
-        description: 'Where the story comes together. A complex timeline of cuts, colour grading, and sound design.',
-        src: '/images/process/timeline.png',
-        alt: 'Video editing timeline',
-        details: [
-            { type: 'image', src: '/images/process/timeline.png', caption: 'The final edit timeline.' },
-            { type: 'text', content: 'Editing is where the rhythm of the film is established. I spend a lot of time fine-tuning the cuts to the music.' }
-        ]
-    },
-    {
-        title: 'Visual Diary',
-        description: 'A collection of daily observations, sketches, and experiments. The raw material of creativity.',
-        src: '/images/process/storyboard.png', // Placeholder
-        alt: 'Open sketchbook with notes and drawings',
-        details: [
-            { type: 'text', content: 'My visual diary is where I explore new ideas and experiment with different techniques. It\'s a safe space to fail and learn.' },
-            { type: 'image', src: '/images/process/storyboard.png', caption: 'Sketches from my daily commute.' }
-        ]
-    }
-];
+// `processItems` and its `Process` component were removed on 2026-07-30.
+// The entries described lighting setups, a "warehouse scene" and an edit
+// timeline that correspond to no project on this site, and the section had
+// been disabled in App.jsx for some time. A genuine process section will be
+// rebuilt from real assets — see docs/content-gaps.md §1.2 and §1.3.

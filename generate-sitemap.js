@@ -1,58 +1,35 @@
 #!/usr/bin/env node
 
 /**
- * Simple sitemap generator for Josh Moriarty Films
- * Run this script to update the sitemap.xml file
+ * Emits one sitemap entry per active route.
+ *
+ * Routes are read from src/routes.js so the sitemap can never drift from the
+ * navigation. Routes gated on missing content — Sequential Art, until comic
+ * pages exist — are excluded automatically rather than advertising a page that
+ * is not there.
  */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { SITE_URL, activeRoutes } from './src/routes.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const DOMAIN = 'https://joshmoriartyfilms.ie';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TODAY = new Date().toISOString().split('T')[0];
 
-const urls = [
-  {
-    loc: `${DOMAIN}/`,
-    lastmod: TODAY,
-    changefreq: 'weekly',
-    priority: '1.0'
-  }
-];
+const entry = (route) => `  <url>
+    <loc>${SITE_URL}${route.path}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${route.path === '/' ? 'weekly' : 'monthly'}</changefreq>
+    <priority>${route.path === '/' ? '1.0' : '0.8'}</priority>
+  </url>`;
 
-function generateSitemap() {
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${activeRoutes.map(entry).join('\n')}
+</urlset>
 `;
 
-  urls.forEach(url => {
-    sitemap += `  <url>
-    <loc>${url.loc}</loc>
-    <lastmod>${url.lastmod}</lastmod>
-    <changefreq>${url.changefreq}</changefreq>
-    <priority>${url.priority}</priority>
-  </url>
-
-`;
-  });
-
-  sitemap += `</urlset>`;
-
-  return sitemap;
-}
-
-// Generate and write sitemap
-const sitemapContent = generateSitemap();
-const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
-
-fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-console.log(`✅ Sitemap generated successfully at ${sitemapPath}`);
-console.log(`📍 Sitemap URL: ${DOMAIN}/sitemap.xml`);
+const outputPath = path.join(__dirname, 'public', 'sitemap.xml');
+fs.writeFileSync(outputPath, sitemap, 'utf8');
+console.log(`✅ Sitemap: ${activeRoutes.length} URLs written to ${outputPath}`);

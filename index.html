@@ -3,86 +3,91 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpeg" href="/IMG_1073.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
-  <title>Josh Moriarty - Cinematographer & Filmmaker Portfolio</title>
+  <!-- Was a 4.7 MB photo served as the favicon on every page load. -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!--
+    Per-route title, description, canonical and Open Graph values are set by
+    src/components/PageMeta.jsx. The values below are the home-page defaults
+    and what a crawler sees before any JavaScript runs.
+  -->
+  <title>Josh Moriarty | Comic Artist, 2D Animator and Filmmaker</title>
   <meta name="description"
-    content="Josh Moriarty - Dublin-based cinematographer specialising in live music documentation. Authentic analogue aesthetic with Sony PD170 DV tape." />
-  <meta name="keywords"
-    content="Josh Moriarty, cinematographer, filmmaker, DV tape, Sony PD170, analogue video, live performances, DJ sets, Dublin, film portfolio, music videography, documentary" />
+    content="Portfolio of Irish comic artist, 2D animator and filmmaker Josh Moriarty, featuring illustration, sequential art, animation and film work." />
   <meta name="author" content="Josh Moriarty" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="English" />
   <meta name="google-site-verification" content="J6yplOO95iZjh_IBiG0hXRcdgGXQ9gZ9JKggET_2Qb8" />
   <link rel="canonical" href="https://joshmoriartyfilms.ie/" />
 
-  <!-- Open Graph / Facebook Meta Tags -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joshmoriartyfilms.ie/" />
-  <meta property="og:title" content="Josh Moriarty - Cinematographer & Filmmaker Portfolio" />
+  <meta property="og:title" content="Josh Moriarty | Comic Artist, 2D Animator and Filmmaker" />
   <meta property="og:description"
-    content="Dublin-based cinematographer specialising in live music documentation with authentic DV tape aesthetic." />
-  <meta property="og:image" content="https://joshmoriartyfilms.ie/images/process/IMG_0226.jpeg" />
+    content="Portfolio of Irish comic artist, 2D animator and filmmaker Josh Moriarty, featuring illustration, sequential art, animation and film work." />
+  <meta property="og:image" content="https://joshmoriartyfilms.ie/share-card.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Josh Moriarty Films" />
+  <meta property="og:site_name" content="Josh Moriarty" />
 
-  <!-- Twitter Meta Tags -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://joshmoriartyfilms.ie/" />
-  <meta name="twitter:title" content="Josh Moriarty - Cinematographer & Filmmaker Portfolio" />
+  <meta name="twitter:title" content="Josh Moriarty | Comic Artist, 2D Animator and Filmmaker" />
   <meta name="twitter:description"
-    content="Dublin-based cinematographer specialising in live music documentation with authentic DV tape aesthetic." />
-  <meta name="twitter:image" content="https://joshmoriartyfilms.ie/images/process/IMG_0226.jpeg" />
+    content="Portfolio of Irish comic artist, 2D animator and filmmaker Josh Moriarty, featuring illustration, sequential art, animation and film work." />
+  <meta name="twitter:image" content="https://joshmoriartyfilms.ie/share-card.jpg" />
   <meta name="twitter:creator" content="@joshmoriartyfilms" />
 
-  <!-- Additional Meta Tags -->
-  <meta name="theme-color" content="#1a1a1a" />
-  <meta name="msapplication-navbutton-color" content="#1a1a1a" />
+  <meta name="theme-color" content="#0d0d0f" />
 
-
-  <!-- Note: Firefox, Firefox for Android, and Opera do not support the theme-color meta tag.
-         There is currently no direct equivalent for Firefox or Opera.
-         For Safari/macOS, you can use a pinned tab color with the following tag: -->
-  <!-- No direct theme color support for Firefox or Opera; users of those browsers will see the default UI color. -->
-  <!--[if IE]>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <![endif]-->
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Josh Moriarty",
-      "jobTitle": "Cinematographer and Animator",
+      "jobTitle": "Comic Artist, 2D Animator and Filmmaker",
       "url": "https://joshmoriartyfilms.ie",
-      "description": "Dublin-based animator, cinematographer and filmmaker specialising in live music documentation with authentic DV tape aesthetic",
-      "knowsAbout": ["2D Animation", "DV Tape", "Underground Music", "Live Performances", "Documentary", "Sony PD170"],
+      "description": "Emerging Irish artist, animator and filmmaker working in comic art, character-driven animation and cinematic storytelling.",
+      "nationality": "Irish",
+      "address": { "@type": "PostalAddress", "addressCountry": "IE" },
+      "knowsAbout": [
+        "Comic illustration",
+        "Sequential art",
+        "2D animation",
+        "Animation clean-up",
+        "Storyboarding",
+        "Character design",
+        "Visual development",
+        "Filmmaking"
+      ],
       "sameAs": [
-        "https://www.youtube.com/@joshmoriartyfilms/featured",
-        "https://instagram.com/joshmoriartyfilms"
+        "https://www.youtube.com/@joshmoriartyfilms",
+        "https://www.instagram.com/joshmoriartyfilms"
       ]
     }
-    </script>
+  </script>
 
-  <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "baf6e175a4a34901ad2f8ee207760b77"}'></script>
-  <!-- End Cloudflare Web Analytics -->
+  <!-- Cloudflare Web Analytics. The token is a public beacon identifier, not a secret. -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "baf6e175a4a34901ad2f8ee207760b77"}'></script>
 </head>
 
 <body>
-  <!-- Hidden form for Netlify Forms detection -->
+  <!--
+    Hidden form so Netlify can detect the fields at build time. Field names and
+    option values must stay in sync with PROJECT_TYPES in ContactForm.jsx.
+  -->
   <form name="contact" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
     <select name="project-type">
-      <option value="live-band">Live Band/Performance</option>
-      <option value="dj-set">DJ Set/Club Night</option>
-      <option value="promo">Promo Video</option>
-      <option value="documentary">Documentary</option>
+      <option value="illustration">Illustration / comic art</option>
+      <option value="animation">Animation</option>
+      <option value="film">Film / video</option>
+      <option value="collaboration">Collaboration</option>
       <option value="other">Other</option>
     </select>
     <textarea name="message"></textarea>

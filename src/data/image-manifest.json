@@ -1,0 +1,836 @@
+{
+  "/images/artwork/1000005510.png": {
+    "src": "/images/artwork/1000005510.webp",
+    "width": 7016,
+    "height": 4961,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/1000005511.png": {
+    "src": "/images/artwork/1000005511.webp",
+    "width": 2160,
+    "height": 1440,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/1000005515.png": {
+    "src": "/images/artwork/1000005515.webp",
+    "width": 3508,
+    "height": 2480,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/1000005520.png": {
+    "src": "/images/artwork/1000005520.webp",
+    "width": 3508,
+    "height": 2480,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/1000005524.png": {
+    "src": "/images/artwork/1000005524.webp",
+    "width": 3508,
+    "height": 2480,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png": {
+    "src": "/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.webp",
+    "width": 2500,
+    "height": 1666,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1080.jpeg": {
+    "src": "/images/artwork/IMG_1080.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1098.jpeg": {
+    "src": "/images/artwork/IMG_1098.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1099.jpeg": {
+    "src": "/images/artwork/IMG_1099.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1102.jpeg": {
+    "src": "/images/artwork/IMG_1102.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1105.jpeg": {
+    "src": "/images/artwork/IMG_1105.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1106.jpeg": {
+    "src": "/images/artwork/IMG_1106.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1107.jpeg": {
+    "src": "/images/artwork/IMG_1107.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1110.jpeg": {
+    "src": "/images/artwork/IMG_1110.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1111.jpeg": {
+    "src": "/images/artwork/IMG_1111.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1112.jpeg": {
+    "src": "/images/artwork/IMG_1112.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1113.jpeg": {
+    "src": "/images/artwork/IMG_1113.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1114.jpeg": {
+    "src": "/images/artwork/IMG_1114.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1115.jpeg": {
+    "src": "/images/artwork/IMG_1115.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1138.jpeg": {
+    "src": "/images/artwork/IMG_1138.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1139.jpeg": {
+    "src": "/images/artwork/IMG_1139.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1140.jpeg": {
+    "src": "/images/artwork/IMG_1140.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_1146.jpeg": {
+    "src": "/images/artwork/IMG_1146.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2041.jpeg": {
+    "src": "/images/artwork/IMG_2041.webp",
+    "width": 4032,
+    "height": 2957,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2042.jpeg": {
+    "src": "/images/artwork/IMG_2042.webp",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2043.jpeg": {
+    "src": "/images/artwork/IMG_2043.webp",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2044.jpeg": {
+    "src": "/images/artwork/IMG_2044.webp",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2045.jpeg": {
+    "src": "/images/artwork/IMG_2045.webp",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2046.jpeg": {
+    "src": "/images/artwork/IMG_2046.webp",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/IMG_2247.jpeg": {
+    "src": "/images/artwork/IMG_2247.webp",
+    "width": 4032,
+    "height": 2533,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Photoshoot1.jpeg": {
+    "src": "/images/artwork/Photoshoot1.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Photoshoot2.jpeg": {
+    "src": "/images/artwork/Photoshoot2.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Selfportrait1.jpeg": {
+    "src": "/images/artwork/Selfportrait1.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Selfportrait2.jpeg": {
+    "src": "/images/artwork/Selfportrait2.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Selfportrait4.jpeg": {
+    "src": "/images/artwork/Selfportrait4.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Star Wars1.jpeg": {
+    "src": "/images/artwork/Star Wars1.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Star Wars2.jpeg": {
+    "src": "/images/artwork/Star Wars2.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Star Wars3.jpeg": {
+    "src": "/images/artwork/Star Wars3.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Star Wars4.jpeg": {
+    "src": "/images/artwork/Star Wars4.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/Star Wars5.jpeg": {
+    "src": "/images/artwork/Star Wars5.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/View and viewpoint1.jpeg": {
+    "src": "/images/artwork/View and viewpoint1.webp",
+    "width": 2485,
+    "height": 2983,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/View and viewpoint2.jpeg": {
+    "src": "/images/artwork/View and viewpoint2.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/View and viewpoint3.jpeg": {
+    "src": "/images/artwork/View and viewpoint3.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/View and viewpoint4.jpeg": {
+    "src": "/images/artwork/View and viewpoint4.webp",
+    "width": 2709,
+    "height": 2507,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/View and viewpoint5.jpeg": {
+    "src": "/images/artwork/View and viewpoint5.webp",
+    "width": 5712,
+    "height": 4284,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png": {
+    "src": "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.webp",
+    "width": 1392,
+    "height": 2160,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/cleanup/Screenshot_20260614-210212.png": {
+    "src": "/images/cleanup/Screenshot_20260614-210212.webp",
+    "width": 1280,
+    "height": 870,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/cleanup/Screenshot_20260614-210352.png": {
+    "src": "/images/cleanup/Screenshot_20260614-210352.webp",
+    "width": 707,
+    "height": 1154,
+    "widths": [
+      480
+    ]
+  },
+  "/images/cleanup/clean1.png": {
+    "src": "/images/cleanup/clean1.webp",
+    "width": 1360,
+    "height": 934,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/cleanup/clean2.png": {
+    "src": "/images/cleanup/clean2.webp",
+    "width": 1395,
+    "height": 921,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/cosina.png": {
+    "src": "/images/equipment/cosina.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/fed3-olympic.png": {
+    "src": "/images/equipment/fed3-olympic.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/petri-super.png": {
+    "src": "/images/equipment/petri-super.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/sony-easycam.png": {
+    "src": "/images/equipment/sony-easycam.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/sony-pd170.png": {
+    "src": "/images/equipment/sony-pd170.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/sony-tr810e.png": {
+    "src": "/images/equipment/sony-tr810e.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/equipment/xppen.jpg": {
+    "src": "/images/equipment/xppen.webp",
+    "width": 3308,
+    "height": 1861,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/DJ1.jpg": {
+    "src": "/images/photography/DJ1.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/DJ3.jpg": {
+    "src": "/images/photography/DJ3.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/DJ4.jpg": {
+    "src": "/images/photography/DJ4.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/DJ5.jpg": {
+    "src": "/images/photography/DJ5.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/DJ6.jpg": {
+    "src": "/images/photography/DJ6.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/IMG_1124.jpeg": {
+    "src": "/images/photography/IMG_1124.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/IMG_1125.jpeg": {
+    "src": "/images/photography/IMG_1125.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/IMG_1128.jpeg": {
+    "src": "/images/photography/IMG_1128.webp",
+    "width": 4284,
+    "height": 5712,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/about.jpeg": {
+    "src": "/images/photography/about.webp",
+    "width": 443,
+    "height": 719,
+    "widths": [
+      443
+    ]
+  },
+  "/images/photography/aurora1.jpeg": {
+    "src": "/images/photography/aurora1.webp",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/aurora2.jpeg": {
+    "src": "/images/photography/aurora2.webp",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/aurora3.jpeg": {
+    "src": "/images/photography/aurora3.webp",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/brand1.jpeg": {
+    "src": "/images/photography/brand1.webp",
+    "width": 739,
+    "height": 1102,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand2.jpeg": {
+    "src": "/images/photography/brand2.webp",
+    "width": 739,
+    "height": 1040,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand3.jpeg": {
+    "src": "/images/photography/brand3.webp",
+    "width": 739,
+    "height": 1104,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand4.jpeg": {
+    "src": "/images/photography/brand4.webp",
+    "width": 739,
+    "height": 492,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand5.jpeg": {
+    "src": "/images/photography/brand5.webp",
+    "width": 739,
+    "height": 1093,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand6.jpeg": {
+    "src": "/images/photography/brand6.webp",
+    "width": 739,
+    "height": 1097,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand7.jpeg": {
+    "src": "/images/photography/brand7.webp",
+    "width": 736,
+    "height": 1208,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/brand8.jpeg": {
+    "src": "/images/photography/brand8.webp",
+    "width": 739,
+    "height": 1106,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/dj2.jpg": {
+    "src": "/images/photography/dj2.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/photography/josh_portrait.jpg": {
+    "src": "/images/photography/josh_portrait.webp",
+    "width": 677,
+    "height": 682,
+    "widths": [
+      480
+    ]
+  },
+  "/images/photography/lockout.jpg": {
+    "src": "/images/photography/lockout.webp",
+    "width": 1920,
+    "height": 1080,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/process/IMG_0226.jpeg": {
+    "src": "/images/process/IMG_0226.webp",
+    "width": 2355,
+    "height": 1181,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/process/IMG_0230.jpeg": {
+    "src": "/images/process/IMG_0230.webp",
+    "width": 2560,
+    "height": 1440,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/process/bts.png": {
+    "src": "/images/process/bts.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/process/lighting.png": {
+    "src": "/images/process/lighting.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/process/storyboard.png": {
+    "src": "/images/process/storyboard.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/process/timeline.png": {
+    "src": "/images/process/timeline.webp",
+    "width": 1024,
+    "height": 1024,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/site/josh-icon-source.jpeg": {
+    "src": "/images/site/josh-icon-source.webp",
+    "width": 4284,
+    "height": 4292,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  }
+}

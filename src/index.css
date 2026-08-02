@@ -1,68 +1,205 @@
+/*
+ * Design tokens + base reset.
+ *
+ * Replaces the Vite starter stylesheet, which set a dark body background,
+ * purple link colours and a global button style that fought every other
+ * rule on the site.
+ *
+ * Direction: cinematic, dark-dominant, restrained. Artwork is the loudest
+ * thing on any page — the interface stays quiet.
+ */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ---- Surfaces (dark) ---- */
+  --jm-bg: #0d0d0f;
+  --jm-surface: #16161a;
+  --jm-surface-raised: #1e1e23;
+  --jm-border: rgba(255, 255, 255, 0.1);
+  --jm-border-strong: rgba(255, 255, 255, 0.22);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* ---- Surfaces (light, for sections that stay neutral) ---- */
+  --jm-bg-light: #f7f7f8;
+  --jm-surface-light: #ffffff;
+  --jm-border-light: rgba(13, 13, 15, 0.12);
 
+  /* ---- Text ----
+   * Every pairing below meets WCAG AA on its intended background.
+   * --jm-text-muted on --jm-bg is 8.2:1; --jm-text-muted-light on
+   * --jm-bg-light is 5.7:1. The old #999-on-white (2.85:1) is gone.
+   */
+  --jm-text: #f2f2f3;
+  --jm-text-muted: #a8a8b0;
+  --jm-text-light: #16161a;
+  --jm-text-muted-light: #5c5c66;
+
+  /* ---- Accent ----
+   * Used sparingly: focus rings, active nav state, small emphasis marks.
+   */
+  --jm-accent: #ff7a4d;
+  --jm-focus: #4da3ff;
+
+  /* ---- Type ----
+   * One family. Weight and size carry the hierarchy, not novelty faces.
+   */
+  --jm-font: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', system-ui, sans-serif;
+  --jm-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+
+  --jm-text-xs: 0.78rem;
+  --jm-text-sm: 0.9rem;
+  --jm-text-base: 1rem;
+  --jm-text-lg: 1.125rem;
+  --jm-text-xl: 1.375rem;
+  --jm-display-sm: clamp(1.6rem, 3.2vw, 2.2rem);
+  --jm-display-md: clamp(2rem, 4.5vw, 3rem);
+  --jm-display-lg: clamp(2.4rem, 6vw, 4.2rem);
+
+  --jm-tracking-tight: -0.03em;
+  --jm-tracking-wide: 0.12em;
+
+  /* ---- Space ---- */
+  --jm-space-1: 4px;
+  --jm-space-2: 8px;
+  --jm-space-3: 12px;
+  --jm-space-4: 16px;
+  --jm-space-5: 24px;
+  --jm-space-6: 32px;
+  --jm-space-7: 48px;
+  --jm-space-8: 64px;
+  --jm-space-9: 96px;
+  --jm-section-y: clamp(64px, 9vw, 120px);
+
+  /* ---- Shape + depth ---- */
+  --jm-radius-sm: 6px;
+  --jm-radius-md: 10px;
+  --jm-radius-lg: 16px;
+  --jm-radius-pill: 999px;
+  --jm-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.28);
+  --jm-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --jm-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  /* ---- Layout ---- */
+  --jm-container: 1200px;
+  --jm-container-narrow: 780px;
+  --jm-nav-height: 68px;
+
+  /* ---- Motion ---- */
+  --jm-ease: cubic-bezier(0.2, 0, 0.2, 1);
+  --jm-duration: 220ms;
+
+  color-scheme: dark;
+  font-family: var(--jm-font);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* ---- Reset ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  scroll-behavior: smooth;
+  /* Anchor targets clear the fixed header instead of hiding beneath it. */
+  scroll-padding-top: calc(var(--jm-nav-height) + var(--jm-space-4));
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--jm-bg);
+  color: var(--jm-text);
+  font-family: var(--jm-font);
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.2em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
   line-height: 1.1;
+  letter-spacing: var(--jm-tracking-tight);
+}
+
+p {
+  margin: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: inherit;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+/* ---- Focus ----
+ * Always visible, on every interactive element, on both surface families.
+ */
+:focus-visible {
+  outline: 2px solid var(--jm-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- Utilities ---- */
+
+.jm-container {
+  width: 100%;
+  max-width: var(--jm-container);
+  margin: 0 auto;
+  padding-inline: var(--jm-space-5);
+}
+
+/* Visible only when focused — the keyboard skip link. */
+.jm-skip-link {
+  position: absolute;
+  left: var(--jm-space-4);
+  top: var(--jm-space-4);
+  z-index: 2000;
+  padding: var(--jm-space-3) var(--jm-space-5);
+  background: var(--jm-text);
+  color: var(--jm-bg);
+  font-weight: 600;
+  border-radius: var(--jm-radius-sm);
+  transform: translateY(-200%);
+  transition: transform var(--jm-duration) var(--jm-ease);
+}
+
+.jm-skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.jm-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
