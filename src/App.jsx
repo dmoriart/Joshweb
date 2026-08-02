@@ -1,35 +1,28 @@
-import { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import ComicArt from './pages/ComicArt';
+import AnimationPage from './pages/AnimationPage';
+import Film from './pages/Film';
+import Sketchbook from './pages/Sketchbook';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import { activeRoutes } from './routes';
 
-/**
- * Only the home page is bundled up front.
+/*
+ * Routes are deliberately NOT lazily imported.
  *
- * Everything else is fetched when someone navigates to it, which keeps around
- * 36 KB of gallery, film and form code out of the first load. The chunks are
- * small and Netlify serves them from cache, so the swap is not perceptible.
+ * Splitting them was tried and measured worse: the page components are only
+ * 0.5-4 KB each, so the main bundle shrank by 3 KB while every sub-page gained
+ * four serial round trips before its images were discovered. Mobile LCP on
+ * /sketchbook went from 4.0 s to 6.2 s and Lighthouse performance from 86 to
+ * 75. The bundle is dominated by React and the router, which cannot be split
+ * out this way. Do not reintroduce without measuring.
  */
-const ComicArt = lazy(() => import('./pages/ComicArt'));
-const AnimationPage = lazy(() => import('./pages/AnimationPage'));
-const Film = lazy(() => import('./pages/Film'));
-const Sketchbook = lazy(() => import('./pages/Sketchbook'));
-const About = lazy(() => import('./pages/About'));
-const Contact = lazy(() => import('./pages/Contact'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 /** Pages gated on content existing are only routed when they have some. */
 const isRouted = (path) => activeRoutes.some((route) => route.path === path);
-
-/**
- * Reserves vertical space during a chunk fetch so the header does not jump.
- * Deliberately silent — a spinner for a sub-100ms load is more distracting
- * than nothing.
- */
-function RouteFallback() {
-    return <div style={{ minHeight: '70vh' }} aria-busy="true" />;
-}
 
 function App() {
     return (
@@ -37,28 +30,18 @@ function App() {
             <Routes>
                 <Route element={<Layout />}>
                     <Route index element={<Home />} />
-                    <Route
-                        path="*"
-                        element={
-                            <Suspense fallback={<RouteFallback />}>
-                                <Routes>
-                                    <Route path="comic-art" element={<ComicArt />} />
-                                    <Route path="animation" element={<AnimationPage />} />
-                                    <Route path="film" element={<Film />} />
-                                    <Route path="sketchbook" element={<Sketchbook />} />
-                                    <Route path="about" element={<About />} />
-                                    <Route path="contact" element={<Contact />} />
-                                    {isRouted('/sequential-art') && (
-                                        // TODO: Add the SequentialArt page when comic
-                                        // sequences land in content.js — see
-                                        // docs/content-gaps.md §1.1.
-                                        <Route path="sequential-art" element={<NotFound />} />
-                                    )}
-                                    <Route path="*" element={<NotFound />} />
-                                </Routes>
-                            </Suspense>
-                        }
-                    />
+                    <Route path="comic-art" element={<ComicArt />} />
+                    <Route path="animation" element={<AnimationPage />} />
+                    <Route path="film" element={<Film />} />
+                    <Route path="sketchbook" element={<Sketchbook />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="contact" element={<Contact />} />
+                    {isRouted('/sequential-art') && (
+                        // TODO: Add the SequentialArt page when comic sequences
+                        // land in content.js — see docs/content-gaps.md §1.1.
+                        <Route path="sequential-art" element={<NotFound />} />
+                    )}
+                    <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>

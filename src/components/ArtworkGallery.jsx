@@ -88,9 +88,10 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                                         : item.title
                                 }
                                 sizes="(max-width: 550px) 92vw, (max-width: 900px) 45vw, 380px"
-                                /* The first row is in view on load, so eager
-                                   loading it removes a round trip from LCP. */
-                                priority={index < 3}
+                                /* Only the first tile is eager. Marking three
+                                   as high priority made them compete with each
+                                   other and measured no better than none. */
+                                priority={index === 0}
                             />
                             <span className="jm-tile__overlay" aria-hidden="true">
                                 <span className="jm-tile__title">{item.title}</span>
