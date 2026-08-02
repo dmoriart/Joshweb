@@ -73,7 +73,12 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                             type="button"
                             className="jm-tile"
                             onClick={() => setOpenIndex(index)}
-                            aria-label={`View ${item.title}`}
+                            /* No aria-label: the image alt names the button.
+                               The old "View {title}" label left out the
+                               category shown on the tile, so the accessible
+                               name contradicted the visible label (WCAG 2.5.3).
+                               The caption below is aria-hidden because it only
+                               repeats what the alt text already says. */
                         >
                             <ResponsiveImage
                                 src={item.src}
@@ -83,8 +88,11 @@ function ArtworkGallery({ items, categories, noun = 'piece' }) {
                                         : item.title
                                 }
                                 sizes="(max-width: 550px) 92vw, (max-width: 900px) 45vw, 380px"
+                                /* The first row is in view on load, so eager
+                                   loading it removes a round trip from LCP. */
+                                priority={index < 3}
                             />
-                            <span className="jm-tile__overlay">
+                            <span className="jm-tile__overlay" aria-hidden="true">
                                 <span className="jm-tile__title">{item.title}</span>
                                 {categories && (
                                     <span className="jm-tile__category">

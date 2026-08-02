@@ -82,7 +82,10 @@ function MotionClipGrid({ featuredOnly = false }) {
                             </span>
                         </button>
                         <figcaption className="jm-clip__caption">
-                            <h4 className="jm-clip__title">{clip.title}</h4>
+                            {/* h3, not h4: the grid always sits directly under a
+                                section h2, and skipping a level breaks heading
+                                order for anyone navigating by headings. */}
+                            <h3 className="jm-clip__title">{clip.title}</h3>
                             <p className="jm-clip__text">{clip.caption}</p>
                             {clip.meta && <p className="jm-clip__meta">{clip.meta}</p>}
                         </figcaption>
