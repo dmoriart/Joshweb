@@ -107,13 +107,15 @@
   background: var(--jm-surface);
   cursor: zoom-in;
   transition: border-color var(--jm-duration) var(--jm-ease),
-    transform var(--jm-duration) var(--jm-ease);
+    box-shadow var(--jm-duration) var(--jm-ease);
 }
 
+/* No translate on hover — moving the element out from under a stationary
+   cursor makes hover oscillate. See the note in Gallery.css. */
 .jm-featured__item:hover,
 .jm-featured__item:focus-visible {
-  transform: translateY(-3px);
   border-color: var(--jm-border-strong);
+  box-shadow: var(--jm-shadow-md);
 }
 
 /* `contain`, not `cover`: these are finished pieces and cropping them to fill
@@ -212,10 +214,5 @@
 @media (prefers-reduced-motion: reduce) {
   .jm-featured__item {
     transition: none;
-  }
-
-  .jm-featured__item:hover,
-  .jm-featured__item:focus-visible {
-    transform: none;
   }
 }

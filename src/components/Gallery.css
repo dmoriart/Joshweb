@@ -89,14 +89,25 @@
   background: var(--jm-surface);
   cursor: zoom-in;
   text-align: left;
-  transition: transform var(--jm-duration) var(--jm-ease),
-    box-shadow var(--jm-duration) var(--jm-ease),
+  transition: box-shadow var(--jm-duration) var(--jm-ease),
     border-color var(--jm-duration) var(--jm-ease);
 }
 
+/*
+ * Hover must not move the element's own box.
+ *
+ * This previously lifted the tile 4px on hover. With the pointer resting near
+ * a tile's bottom edge, the lift moved the tile out from under the cursor,
+ * which ended the hover, which dropped it back under the cursor, which started
+ * it again — an oscillation that reads as flickering. Holding the pointer
+ * completely still produced enter/leave/enter/leave indefinitely.
+ *
+ * Feedback now comes from the border, the shadow, the image scale (which is
+ * clipped by overflow and so changes no layout) and the caption reveal. None
+ * of them alter the hit area.
+ */
 .jm-tile:hover,
 .jm-tile:focus-visible {
-  transform: translateY(-4px);
   border-color: var(--jm-border-strong);
   box-shadow: var(--jm-shadow-md);
 }
@@ -156,8 +167,6 @@
     transition: none;
   }
 
-  .jm-tile:hover,
-  .jm-tile:focus-visible,
   .jm-tile:hover img {
     transform: none;
   }

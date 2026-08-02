@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
@@ -11,6 +13,10 @@ const makeItems = (count, category = 'sketchbook') =>
         category,
         description: `Description ${index + 1}`,
     }));
+
+/* Vitest resolves import.meta.url to an http URL, not file://, so read
+   stylesheets from the project root instead. */
+const readCss = (relative) => readFileSync(join(process.cwd(), relative), 'utf8');
 
 const CATEGORIES = [
     { key: 'all', label: 'All' },
@@ -103,5 +109,47 @@ describe('ArtworkGallery accessible naming', () => {
         [...images].slice(1).forEach((image) => {
             expect(image).toHaveAttribute('loading', 'lazy');
         });
+    });
+});
+
+describe('hover stability', () => {
+    /*
+     * Regression guard. Tiles used to lift 4px on hover, which moved the
+     * element out from under a stationary cursor: hover ended, the tile
+     * dropped back under the cursor, hover restarted, and it flickered
+     * indefinitely. Any transform that changes a hover target's own box
+     * reintroduces that, so the rule is that hover feedback must not move the
+     * element — only its clipped contents.
+     */
+    it('declares no transform on the hover target itself', () => {
+        const css = readCss('src/components/Gallery.css');
+        const hoverBlock = css.match(
+            /\.jm-tile:hover,\s*\.jm-tile:focus-visible\s*\{([^}]*)\}/
+        );
+        expect(hoverBlock, 'expected a .jm-tile hover rule').not.toBeNull();
+        expect(hoverBlock[1]).not.toMatch(/transform\s*:/);
+    });
+
+    it('still scales the image, which is clipped and so changes no layout', () => {
+        const css = readCss('src/components/Gallery.css');
+        expect(css).toMatch(/\.jm-tile:hover\s+img\s*\{[^}]*transform\s*:\s*scale/);
+        expect(css).toMatch(/\.jm-tile\s*\{[^}]*overflow\s*:\s*hidden/);
+    });
+
+    it('applies the same rule to the featured and photo grids', () => {
+        const featured = readCss('src/pages/Home.css');
+        const photo = readCss('src/pages/Film.css');
+
+        const featuredHover = featured.match(
+            /\.jm-featured__item:hover,\s*\.jm-featured__item:focus-visible\s*\{([^}]*)\}/
+        );
+        const photoHover = photo.match(
+            /\.jm-photo:hover,\s*\.jm-photo:focus-visible\s*\{([^}]*)\}/
+        );
+
+        expect(featuredHover, 'expected a .jm-featured__item hover rule').not.toBeNull();
+        expect(photoHover, 'expected a .jm-photo hover rule').not.toBeNull();
+        expect(featuredHover[1]).not.toMatch(/transform\s*:/);
+        expect(photoHover[1]).not.toMatch(/transform\s*:/);
     });
 });

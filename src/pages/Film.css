@@ -77,7 +77,7 @@
   overflow: hidden;
   cursor: zoom-in;
   background: var(--jm-surface);
-  transition: transform var(--jm-duration) var(--jm-ease),
+  transition: box-shadow var(--jm-duration) var(--jm-ease),
     border-color var(--jm-duration) var(--jm-ease);
 }
 
@@ -89,10 +89,11 @@
   aspect-ratio: 3 / 2;
 }
 
+/* No translate on hover — see the note in Gallery.css. */
 .jm-photo:hover,
 .jm-photo:focus-visible {
-  transform: translateY(-3px);
   border-color: var(--jm-border-strong);
+  box-shadow: var(--jm-shadow-md);
 }
 
 .jm-photo img {
@@ -176,10 +177,5 @@
 @media (prefers-reduced-motion: reduce) {
   .jm-photo {
     transition: none;
-  }
-
-  .jm-photo:hover,
-  .jm-photo:focus-visible {
-    transform: none;
   }
 }
