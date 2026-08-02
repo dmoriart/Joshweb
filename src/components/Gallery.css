@@ -64,18 +64,24 @@
   }
 }
 
+/*
+ * No content-visibility here.
+ *
+ * `content-visibility: auto` was tried and removed: it caused visible
+ * flickering in the galleries. Chrome throws away the rendering of a skipped
+ * subtree and re-rasterises it when the element becomes relevant again, and
+ * near a viewport edge that boundary can be crossed repeatedly, flashing the
+ * tile. Masonry makes it worse, because column layout depends on knowing the
+ * height of every item.
+ *
+ * It also bought nothing measurable — the real gains on these pages came from
+ * truncating long grids (-25% page weight) and from responsive images. Do not
+ * reintroduce it without both a measurement and a scroll test on real
+ * hardware; headless Chrome does not reproduce the flicker.
+ */
 .jm-masonry__item {
   break-inside: avoid;
   margin-bottom: var(--jm-space-5);
-  /*
-   * Skip layout and paint for tiles that are off-screen. The placeholder size
-   * is a rough average tile height — it only needs to be close enough to keep
-   * the scrollbar stable, since the real height is used once a tile is near
-   * the viewport. `auto` in the first position lets the browser use the real
-   * size once measured rather than sticking with the estimate.
-   */
-  content-visibility: auto;
-  contain-intrinsic-size: auto 420px;
 }
 
 .jm-tile {
