@@ -19,6 +19,17 @@ const items = artworks.filter((artwork) =>
     CATEGORIES.some((category) => category.key === artwork.category)
 );
 
+/**
+ * A filter that would return nothing is worse than no filter at all — it
+ * invites a click that lands on an empty grid. Categories are derived from
+ * what is actually present, so removing artwork removes its filter too.
+ */
+const availableCategories = CATEGORIES.filter(
+    (category) =>
+        category.key === 'all' ||
+        items.some((item) => item.category === category.key)
+);
+
 function Sketchbook() {
     return (
         <>
@@ -29,7 +40,11 @@ function Sketchbook() {
                     rendering and observational drawing from life.
                 </PageHeader>
 
-                <ArtworkGallery items={items} categories={CATEGORIES} noun="drawing" />
+                <ArtworkGallery
+                    items={items}
+                    categories={availableCategories}
+                    noun="drawing"
+                />
             </div>
         </>
     );

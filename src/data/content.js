@@ -259,17 +259,11 @@ export const artworks = [
 
     // Digital Artwork — tools confirmed from the existing descriptions.
     { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
-    { id: 56, src: '/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.png', title: 'Digital Artwork II', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 57, src: '/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.png', title: 'Digital Artwork III', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 58, src: '/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.png', title: 'Digital Artwork IV', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 59, src: '/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.png', title: 'Digital Artwork V', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
-    { id: 60, src: '/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.png', title: 'Digital Artwork VI', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
     { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
 
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range' },
     { id: 2, src: '/images/artwork/Selfportrait2.jpeg', title: 'Self Portrait II', category: 'self-portraits', description: 'Study in proportion and expression' },
-    { id: 3, src: '/images/artwork/Selfportrait3.jpeg', title: 'Self Portrait III', category: 'self-portraits', description: 'Tonal study with emphasis on light and shadow' },
     { id: 4, src: '/images/artwork/Selfportrait4.jpeg', title: 'Self Portrait IV', category: 'self-portraits', description: 'Expressive self portrait capturing mood and character' },
 
     // Star Wars Fan Art
@@ -287,48 +281,34 @@ export const artworks = [
     { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'View & Viewpoint V', category: 'viewpoint', description: 'Perspective and compositional exploration' },
 
     // Music (now merged with Street)
-    { id: 15, src: '/images/artwork/music1.jpeg', title: 'Music I', category: 'street', description: 'Expressive drawing capturing the energy of music' },
-    { id: 16, src: '/images/artwork/music2.jpeg', title: 'Music II', category: 'street', description: 'Emotive study of musical expression and movement' },
 
     // Street
-    { id: 17, src: '/images/artwork/street1.jpeg', title: 'Street I', category: 'street', description: 'Urban observational sketching from life' },
-    { id: 18, src: '/images/artwork/street2.jpeg', title: 'Street II', category: 'street', description: 'Quick study of urban environment and figures' },
-    { id: 19, src: '/images/artwork/street3.jpeg', title: 'Street III', category: 'street', description: 'Street scene capturing atmosphere and movement' },
-    { id: 20, src: '/images/artwork/street4.jpeg', title: 'Street IV', category: 'street', description: 'Observational drawing of city life' },
-    { id: 21, src: '/images/artwork/street5.jpeg', title: 'Street V', category: 'street', description: 'Urban landscape study' },
 
     // Photoshoot
     { id: 22, src: '/images/artwork/Photoshoot1.jpeg', title: 'Photoshoot I', category: 'photoshoot', description: 'Figure drawing from photographic reference' },
     { id: 23, src: '/images/artwork/Photoshoot2.jpeg', title: 'Photoshoot II', category: 'photoshoot', description: 'Study of pose and form from reference' },
 
     // Sketchbook & Studies
-    { id: 24, src: '/images/artwork/IMG_1070.jpeg', title: 'Sketchbook Study I', category: 'sketchbook', description: 'Life drawing and observational study' },
     { id: 25, src: '/images/artwork/IMG_1080.jpeg', title: 'Sketchbook Study II', category: 'sketchbook', description: 'Exploratory sketches and mark-making' },
-    { id: 26, src: '/images/artwork/IMG_1093.jpeg', title: 'Sketchbook Study III', category: 'sketchbook', description: 'Drawing development and experimentation' },
-    { id: 27, src: '/images/artwork/IMG_1096.jpeg', title: 'Sketchbook Study IV', category: 'sketchbook', description: 'Observational drawing practice' },
     { id: 28, src: '/images/artwork/IMG_1098.jpeg', title: 'Sketchbook Study V', category: 'sketchbook', description: 'Tonal study and rendering' },
     { id: 29, src: '/images/artwork/IMG_1099.jpeg', title: 'Sketchbook Study VI', category: 'sketchbook', description: 'Composition and form exploration' },
     { id: 30, src: '/images/artwork/IMG_1102.jpeg', title: 'Sketchbook Study VII', category: 'sketchbook', description: 'Life drawing session' },
     { id: 31, src: '/images/artwork/IMG_1105.jpeg', title: 'Sketchbook Study VIII', category: 'sketchbook', description: 'Quick gesture and proportion study' },
     { id: 32, src: '/images/artwork/IMG_1106.jpeg', title: 'Sketchbook Study IX', category: 'sketchbook', description: 'Detailed observational drawing' },
     { id: 33, src: '/images/artwork/IMG_1107.jpeg', title: 'Sketchbook Study X', category: 'sketchbook', description: 'Exploratory mark-making and form' },
-    { id: 34, src: '/images/artwork/IMG_1109.jpeg', title: 'Sketchbook Study XI', category: 'sketchbook', description: 'Tonal rendering practice' },
     { id: 35, src: '/images/artwork/IMG_1110.jpeg', title: 'Sketchbook Study XII', category: 'sketchbook', description: 'Study of light and shadow' },
     { id: 36, src: '/images/artwork/IMG_1111.jpeg', title: 'Sketchbook Study XIII', category: 'sketchbook', description: 'Drawing from observation' },
     { id: 37, src: '/images/artwork/IMG_1112.jpeg', title: 'Sketchbook Study XIV', category: 'sketchbook', description: 'Composition study' },
     { id: 38, src: '/images/artwork/IMG_1113.jpeg', title: 'Sketchbook Study XV', category: 'sketchbook', description: 'Exploratory drawing' },
     { id: 39, src: '/images/artwork/IMG_1114.jpeg', title: 'Sketchbook Study XVI', category: 'sketchbook', description: 'Detail and texture study' },
     { id: 40, src: '/images/artwork/IMG_1115.jpeg', title: 'Sketchbook Study XVII', category: 'sketchbook', description: 'Figure and form exploration' },
-    { id: 41, src: '/images/artwork/IMG_1116.jpeg', title: 'Sketchbook Study XVIII', category: 'sketchbook', description: 'Observational sketching' },
     { id: 42, src: '/images/artwork/IMG_2041.jpeg', title: 'Sketchbook Study XIX', category: 'sketchbook', description: 'Life drawing and tonal work' },
     { id: 43, src: '/images/artwork/IMG_2042.jpeg', title: 'Sketchbook Study XX', category: 'sketchbook', description: 'Mark-making and expression' },
     { id: 44, src: '/images/artwork/IMG_2043.jpeg', title: 'Sketchbook Study XXI', category: 'sketchbook', description: 'Compositional exploration' },
     { id: 45, src: '/images/artwork/IMG_2044.jpeg', title: 'Sketchbook Study XXII', category: 'sketchbook', description: 'Tonal range and rendering' },
     { id: 46, src: '/images/artwork/IMG_2045.jpeg', title: 'Sketchbook Study XXIII', category: 'sketchbook', description: 'Observational detail study' },
     { id: 47, src: '/images/artwork/IMG_2046.jpeg', title: 'Sketchbook Study XXIV', category: 'sketchbook', description: 'Drawing development' },
-    { id: 48, src: '/images/artwork/IMG_2242.jpeg', title: 'Sketchbook Study XXV', category: 'sketchbook', description: 'Mixed media exploration' },
     { id: 49, src: '/images/artwork/IMG_2247.jpeg', title: 'Sketchbook Study XXVI', category: 'sketchbook', description: 'Study of form and space' },
-    { id: 50, src: '/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.jpeg', title: 'Sketchbook Study XXVII', category: 'sketchbook', description: 'Experimental drawing and technique' },
     { id: 51, src: '/images/artwork/IMG_1138.jpeg', title: 'Sketchbook Study XXVIII', category: 'sketchbook', description: 'Exploratory sketching and technique' },
     { id: 52, src: '/images/artwork/IMG_1139.jpeg', title: 'Sketchbook Study XXIX', category: 'sketchbook', description: 'Observational drawing practice' },
     { id: 53, src: '/images/artwork/IMG_1140.jpeg', title: 'Sketchbook Study XXX', category: 'sketchbook', description: 'Study of form and detail' },

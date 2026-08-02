@@ -59,68 +59,8 @@
       1440
     ]
   },
-  "/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.png": {
-    "src": "/images/artwork/330179d0-b5ef-4aba-9dda-b54bb1051420.webp",
-    "width": 1666,
-    "height": 2500,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.png": {
-    "src": "/images/artwork/93a6d4dc-5bd3-43ae-af3b-5f47f35942bf.webp",
-    "width": 1666,
-    "height": 2500,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.png": {
-    "src": "/images/artwork/96cdcdf4-f206-4538-a671-dd06ea49946c.webp",
-    "width": 2500,
-    "height": 1666,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/IMG_1070.jpeg": {
-    "src": "/images/artwork/IMG_1070.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
   "/images/artwork/IMG_1080.jpeg": {
     "src": "/images/artwork/IMG_1080.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/IMG_1093.jpeg": {
-    "src": "/images/artwork/IMG_1093.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/IMG_1096.jpeg": {
-    "src": "/images/artwork/IMG_1096.webp",
     "width": 4284,
     "height": 5712,
     "widths": [
@@ -189,16 +129,6 @@
       1440
     ]
   },
-  "/images/artwork/IMG_1109.jpeg": {
-    "src": "/images/artwork/IMG_1109.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
   "/images/artwork/IMG_1110.jpeg": {
     "src": "/images/artwork/IMG_1110.webp",
     "width": 4284,
@@ -251,16 +181,6 @@
   },
   "/images/artwork/IMG_1115.jpeg": {
     "src": "/images/artwork/IMG_1115.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/IMG_1116.jpeg": {
-    "src": "/images/artwork/IMG_1116.webp",
     "width": 4284,
     "height": 5712,
     "widths": [
@@ -369,16 +289,6 @@
       1440
     ]
   },
-  "/images/artwork/IMG_2242.jpeg": {
-    "src": "/images/artwork/IMG_2242.webp",
-    "width": 3024,
-    "height": 4032,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
   "/images/artwork/IMG_2247.jpeg": {
     "src": "/images/artwork/IMG_2247.webp",
     "width": 4032,
@@ -421,16 +331,6 @@
   },
   "/images/artwork/Selfportrait2.jpeg": {
     "src": "/images/artwork/Selfportrait2.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/Selfportrait3.jpeg": {
-    "src": "/images/artwork/Selfportrait3.webp",
     "width": 4284,
     "height": 5712,
     "widths": [
@@ -549,35 +449,6 @@
       1440
     ]
   },
-  "/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.png": {
-    "src": "/images/artwork/c7823b02-67d3-4cc3-94ec-b1305241451c.webp",
-    "width": 3500,
-    "height": 2333,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.jpeg": {
-    "src": "/images/artwork/cabdec1b-489e-4770-9936-4191926ff0b8.webp",
-    "width": 1160,
-    "height": 1802,
-    "widths": [
-      480,
-      960
-    ]
-  },
-  "/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.png": {
-    "src": "/images/artwork/ccf32000-3ac1-46f3-a73e-72fccb5cbd8f.webp",
-    "width": 1666,
-    "height": 2500,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
   "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png": {
     "src": "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.webp",
     "width": 1392,
@@ -585,76 +456,6 @@
     "widths": [
       480,
       960
-    ]
-  },
-  "/images/artwork/music1.jpeg": {
-    "src": "/images/artwork/music1.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/music2.jpeg": {
-    "src": "/images/artwork/music2.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/street1.jpeg": {
-    "src": "/images/artwork/street1.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/street2.jpeg": {
-    "src": "/images/artwork/street2.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/street3.jpeg": {
-    "src": "/images/artwork/street3.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/street4.jpeg": {
-    "src": "/images/artwork/street4.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
-    ]
-  },
-  "/images/artwork/street5.jpeg": {
-    "src": "/images/artwork/street5.webp",
-    "width": 4284,
-    "height": 5712,
-    "widths": [
-      480,
-      960,
-      1440
     ]
   },
   "/images/cleanup/Screenshot_20260614-210212.png": {

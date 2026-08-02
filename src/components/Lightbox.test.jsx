@@ -20,7 +20,7 @@ function Harness({ onPrev, onNext }) {
                     onNext={onNext}
                     caption={<p>A caption</p>}
                 >
-                    <img src="/images/artwork/music1.jpeg" alt="A drawing" />
+                    <img src="/images/artwork/1000005511.png" alt="A drawing" />
                 </Lightbox>
             )}
         </>

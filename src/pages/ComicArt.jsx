@@ -16,6 +16,13 @@ const items = artworks.filter((artwork) =>
     CATEGORIES.some((category) => category.key === artwork.category)
 );
 
+/** Only offer a filter that has something behind it. */
+const availableCategories = CATEGORIES.filter(
+    (category) =>
+        category.key === 'all' ||
+        items.some((item) => item.category === category.key)
+);
+
 function ComicArt() {
     return (
         <>
@@ -26,7 +33,11 @@ function ComicArt() {
                     pose and expression, drawn digitally and in the sketchbook.
                 </PageHeader>
 
-                <ArtworkGallery items={items} categories={CATEGORIES} noun="piece" />
+                <ArtworkGallery
+                    items={items}
+                    categories={availableCategories}
+                    noun="piece"
+                />
             </div>
         </>
     );
