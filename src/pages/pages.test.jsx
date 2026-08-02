@@ -100,9 +100,10 @@ describe('home page', () => {
             'href',
             '/comic-art'
         );
-        expect(
-            screen.getByRole('link', { name: 'Watch Animation Reel' })
-        ).toHaveAttribute('href', '/animation');
+        expect(screen.getByRole('link', { name: 'Watch Animation' })).toHaveAttribute(
+            'href',
+            '/animation'
+        );
     });
 });
 

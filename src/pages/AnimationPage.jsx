@@ -3,7 +3,7 @@ import PageHeader from '../components/PageHeader';
 import VideoEmbed from '../components/VideoEmbed';
 import MotionClipGrid from '../components/MotionClipGrid';
 import ResponsiveImage from '../components/ResponsiveImage';
-import { animationReel, animations, cleanups } from '../data/content';
+import { animations, cleanups } from '../data/content';
 import { routes } from '../routes';
 import './AnimationPage.css';
 
@@ -19,20 +19,11 @@ function AnimationPage() {
                     work showing how a rough drawing becomes a consistent line.
                 </PageHeader>
 
-                {/* Reel first — the fastest way for a reviewer to see the range. */}
-                <section aria-labelledby="reel-heading" className="jm-anim-reel">
-                    <h2 id="reel-heading" className="jm-visually-hidden">
-                        Showreel
-                    </h2>
-                    <VideoEmbed
-                        url={animationReel.url}
-                        title={animationReel.title}
-                        caption="Showreel — animation and film work."
-                    />
-                </section>
-
-                {/* Short clips before long ones: these play inline with no click. */}
-                <section className="jm-section" aria-labelledby="clips-heading">
+                {/* Drawn work first. The Creative Reel used to open this page,
+                    but it leads with live-action footage, so a reviewer saw
+                    cinematography before any animation. It now sits under Film.
+                    These clips loop inline with no click and no sound. */}
+                <section aria-labelledby="clips-heading">
                     <div className="jm-section__header">
                         <h2 id="clips-heading">Movement Tests</h2>
                         <p>

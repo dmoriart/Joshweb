@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/PageMeta';
 import ResponsiveImage from '../components/ResponsiveImage';
-import VideoEmbed from '../components/VideoEmbed';
 import MotionClipGrid from '../components/MotionClipGrid';
 import Lightbox from '../components/Lightbox';
-import { animationReel, artworks, sequences } from '../data/content';
+import { artworks, sequences } from '../data/content';
 import { routes } from '../routes';
 import { useState } from 'react';
 import './Home.css';
@@ -53,8 +52,11 @@ function Home() {
                         <Link className="jm-button jm-button--primary" to="/comic-art">
                             View Portfolio
                         </Link>
+                        {/* Not "Watch Animation Reel": the Creative Reel moved
+                            to Film, so there is no animation-only reel to
+                            promise. Restore the wording once one exists. */}
                         <Link className="jm-button jm-button--secondary" to="/animation">
-                            Watch Animation Reel
+                            Watch Animation
                         </Link>
                     </div>
                     <Link className="jm-button jm-button--quiet jm-hero__about" to="/about">
@@ -114,14 +116,12 @@ function Home() {
                     </section>
                 )}
 
-                <section className="jm-section" aria-labelledby="reel-heading">
+                {/* Leads on drawn movement rather than the Creative Reel, which
+                    opens on live-action and now sits under Film. */}
+                <section className="jm-section" aria-labelledby="animation-heading">
                     <div className="jm-section__header">
-                        <h2 id="reel-heading">Animation Reel</h2>
+                        <h2 id="animation-heading">Animation</h2>
                         <p>Hand-drawn movement, timing and character work.</p>
-                    </div>
-
-                    <div className="jm-home-reel">
-                        <VideoEmbed url={animationReel.url} title={animationReel.title} />
                     </div>
 
                     <div className="jm-home-clips">

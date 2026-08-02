@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getYouTubeEmbedUrl, getYouTubeId, getYouTubeThumbnail } from './youtube';
-import { animations, animationReel, works } from '../data/content';
+import { animations, works } from '../data/content';
 
 describe('getYouTubeId', () => {
     it('parses every link shape used in the content data', () => {
@@ -49,7 +49,6 @@ describe('content video URLs', () => {
     const urls = [
         ...works.map((work) => work.url),
         ...animations.map((animation) => animation.url),
-        animationReel.url,
     ];
 
     it.each(urls)('%s resolves to a video id', (url) => {

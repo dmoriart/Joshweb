@@ -76,6 +76,18 @@ export const works = [
         outcome: 'One of the pieces I included in my demo reel.'
     },
     {
+        title: 'CREATIVE REEL 2026',
+        url: 'https://youtu.be/HRsAaCGVGRo',
+        type: 'djs',
+        group: 'reel',
+        venue: 'Various Locations',
+        description: 'A reel bringing together hand-drawn movement and DV cinematography — rhythm, light and atmosphere across both sides of the work.',
+        year: '2026',
+        category: 'Reel',
+        // TODO: Confirm the exact role and the list of pieces included.
+        role: 'Editor',
+    },
+    {
         title: 'DEMO REEL 2026',
         url: 'https://youtu.be/IUF6f7UPeaQ',
         type: 'djs',
@@ -228,12 +240,13 @@ export const animations = [
     },
 ];
 
-/** The showreel that opens the animation page. */
-export const animationReel = {
-    url: 'https://youtu.be/HRsAaCGVGRo',
-    title: 'Creative Reel 2026',
-    // TODO: Confirm duration and the exact list of pieces included in the reel.
-};
+// The Creative Reel moved to `works` (group 'reel') on 2026-08-02. It leads
+// with live-action footage, so opening the animation page with it showed a
+// reviewer cinematography before any drawn work. The animation page now opens
+// on the 2D movement tests instead.
+//
+// TODO: An animation-only reel would be the strongest single addition to the
+// animation page. See docs/content-gaps.md §3.1.
 
 /**
  * Every still piece on the site.
