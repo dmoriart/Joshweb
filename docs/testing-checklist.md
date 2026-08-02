@@ -130,11 +130,58 @@ Measured on the built output.
 | JS bundle | 316 KB / 92.7 KB gzip | 291 KB / 87.7 KB gzip |
 | `width`/`height` on images | None | Every image |
 
-Outstanding:
+### Lighthouse — production, 2 August 2026
 
-- [ ] Run Lighthouse against the deploy preview and record LCP / CLS / TBT
-- [ ] Consider `content-visibility: auto` on the long sketchbook grid if the
-      66-item page measures poorly
+Run against `https://joshmoriartyfilms.ie` with Lighthouse 12 and system Chrome.
+Mobile uses the default throttled profile (slow 4G, 4× CPU slowdown).
+
+| Profile | Page | Perf | A11y | Best practices | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|---|
+| Desktop | `/` | **100** | **100** | **100** | **100** | 0.8 s | 0 | 0 ms |
+| Desktop | `/comic-art` | **99** | **100** | **100** | **100** | 0.9 s | 0 | 0 ms |
+| Mobile | `/` | **93** | **100** | **100** | **100** | 2.6 s | 0 | 20 ms |
+| Mobile | `/sketchbook` | **84** | **100** | **100** | **100** | 3.9 s | 0 | 10 ms |
+
+Zero failing audits in accessibility, best practices or SEO on any page.
+**CLS is 0 everywhere** — the intrinsic `width`/`height` from the image manifest
+is doing its job.
+
+Mobile scores move ±4 points between runs, so treat small differences as noise.
+
+### Reverted: route code splitting
+
+Lazily importing the page components was tried and **measured worse**, so it was
+reverted. Recorded here so nobody repeats it:
+
+| | Before | After splitting |
+|---|---|---|
+| Mobile `/sketchbook` perf | 86 | 75 |
+| Mobile `/sketchbook` LCP | 4.0 s | 6.2 s |
+| Desktop `/comic-art` perf | 100 | 88 |
+| Main bundle | 82 KB | 79 KB |
+
+The page components are only 0.5–4 KB each, so splitting saved 3 KB while adding
+four serial round trips before images were discovered. FCP was unchanged, which
+confirms the cost was the request chain, not parse time. The bundle is dominated
+by React and the router, which do not split out this way.
+
+Marking three gallery images eager instead of one also measured no better — they
+compete with each other.
+
+### Remaining performance ideas, in order of likely value
+
+Mobile `/sketchbook` at 84 is the weakest page; it renders 34 images.
+
+- [ ] **Self-host the font.** The CSS asks for `Inter` but nothing ever loads it,
+      so most visitors get their system sans-serif. Either self-host with
+      `font-display: swap` or commit to the system stack — currently it is
+      neither, and the design was drawn against Inter.
+- [ ] `content-visibility: auto` on the masonry items below the fold
+- [ ] Paginate or lazily extend the sketchbook grid beyond the first ~12 pieces
+- [ ] Trim the number of sketchbook studies shown at all — `content-gaps.md`
+      §3.4 already recommends cutting 30 placeholder-titled studies to the
+      10–15 worth showing, which would help both the page weight and the
+      portfolio's signal-to-noise
 
 ---
 
