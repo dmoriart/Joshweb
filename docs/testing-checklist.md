@@ -173,7 +173,7 @@ compete with each other.
 | Change | Result |
 |---|---|
 | **Self-hosted Inter** — 47 KB variable latin subset, `font-display: swap`, preloaded, cached immutably | The design now renders in the typeface it was drawn in. CLS stayed at 0. |
-| **`content-visibility: auto`** on masonry items | Off-screen tiles skip layout and paint. Three-column flow verified intact — no collapsed tiles, no overflow. |
+| ~~`content-visibility: auto` on masonry items~~ | **Reverted — caused visible flickering.** See below. |
 | **Truncated long grids** — Sketchbook shows 12 of 34 with a "Show all" button | Page weight **1529 KB → 1140 KB (−25%)** |
 
 Mobile `/sketchbook` measured over four runs afterwards: 82, 86, 88, 87 —
@@ -184,6 +184,42 @@ Mobile `/` Speed Index improved 4.2 s → 2.8 s.
 
 Note the ±4 point spread across identical runs. Never draw a conclusion from a
 single mobile Lighthouse run; take a median of three or more.
+
+### Reverted: `content-visibility: auto` on masonry items
+
+Added in the same pass, then removed after Josh reported flickering artwork in
+the Comic Art and Sketchbook galleries.
+
+Chrome discards the rendering of a subtree it has skipped and re-rasterises it
+when the element becomes relevant again. Near a viewport edge that boundary can
+be crossed repeatedly while scrolling, flashing the tile. Masonry compounds it,
+because column layout depends on knowing every item's height.
+
+It bought nothing measurable in the first place — the gains on these pages came
+from truncating long grids and from responsive images.
+
+**Do not reintroduce it without a scroll test on real hardware.** Headless
+Chrome does not reproduce this: scrolling showed zero layout shifts, no tile
+height changes and no unpainted in-view tiles. That false negative sent the
+first fix after the wrong cause.
+
+### Also fixed: hover oscillation
+
+Found while investigating the flicker, and a genuine bug in its own right.
+
+Tiles lifted 4px on hover. With the pointer resting near a tile's edge, the lift
+moved the element out from under the cursor, ending the hover, dropping the tile
+back under the cursor, and starting it again. A **stationary** pointer 2px inside
+a tile's bottom edge produced `enter,leave,enter,leave,enter`.
+
+Fixed in all three grids — gallery tiles, the Home featured grid, and the Film
+photo grid — by removing the translate. Hover feedback now comes from the
+border, shadow, image scale (clipped by `overflow`, so no layout change) and the
+caption reveal.
+
+Three tests in `ArtworkGallery.test.jsx` assert that no hover rule on a hit
+target declares a `transform`. **Rule: hover must never move the element that
+receives it.**
 
 ### Remaining ideas
 
