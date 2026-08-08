@@ -266,7 +266,7 @@ export const artworks = [
     // TODO: Confirm the software and year for these five pieces.
     { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration', featured: true },
-    { id: 63, src: '/images/artwork/1000005524.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 63, src: '/images/artwork/1000006079.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration', featured: true },
 
