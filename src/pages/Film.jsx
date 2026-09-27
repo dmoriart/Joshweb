@@ -50,6 +50,42 @@ function FilmCard({ work }) {
     );
 }
 
+const photoCollections = photography.filter((item) => item.kind !== 'still');
+const stillCollections = photography.filter((item) => item.kind === 'still');
+
+function PhotoCollection({ item, onOpen }) {
+    return (
+        <div className="jm-photo-collection">
+            <div className="jm-photo-collection__header">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+            </div>
+            <div className="jm-photo-grid">
+                {item.images.map((image, index) => (
+                    <button
+                        key={image.id}
+                        type="button"
+                        className="jm-photo"
+                        data-orientation={item.orientation}
+                        onClick={() => onOpen({ collectionId: item.id, index })}
+                        aria-label={`View ${image.title} from ${item.title}`}
+                    >
+                        <ResponsiveImage
+                            src={image.src}
+                            alt={`${image.title}. ${image.description}`}
+                            sizes="(max-width: 700px) 92vw, 300px"
+                        />
+                        <span className="jm-photo__overlay">
+                            <span className="jm-photo__title">{image.title}</span>
+                            <span className="jm-photo__description">{image.description}</span>
+                        </span>
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
+}
+
 function Film() {
     const [open, setOpen] = useState(null);
     const collection = open
@@ -111,47 +147,31 @@ function Film() {
                     </section>
                 ))}
 
-                <section className="jm-section" aria-labelledby="photography-heading">
+                {/* id="photography" is the target of the home page's
+                    "View photography" link. */}
+                <section
+                    id="photography"
+                    className="jm-section"
+                    aria-labelledby="photography-heading"
+                >
                     <div className="jm-section__header">
                         <h2 id="photography-heading">Photography</h2>
-                        <p>Stills shot alongside the film work.</p>
+                        <p>Photographs taken alongside the film work.</p>
                     </div>
+                    {photoCollections.map((item) => (
+                        <PhotoCollection key={item.id} item={item} onOpen={setOpen} />
+                    ))}
+                </section>
 
-                    {photography.map((item) => (
-                        <div key={item.id} className="jm-photo-collection">
-                            <div className="jm-photo-collection__header">
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                            </div>
-                            <div className="jm-photo-grid">
-                                {item.images.map((image, index) => (
-                                    <button
-                                        key={image.id}
-                                        type="button"
-                                        className="jm-photo"
-                                        data-orientation={item.orientation}
-                                        onClick={() =>
-                                            setOpen({ collectionId: item.id, index })
-                                        }
-                                        aria-label={`View ${image.title} from ${item.title}`}
-                                    >
-                                        <ResponsiveImage
-                                            src={image.src}
-                                            alt={`${image.title}. ${image.description}`}
-                                            sizes="(max-width: 700px) 92vw, 300px"
-                                        />
-                                        <span className="jm-photo__overlay">
-                                            <span className="jm-photo__title">
-                                                {image.title}
-                                            </span>
-                                            <span className="jm-photo__description">
-                                                {image.description}
-                                            </span>
-                                        </span>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
+                {/* Kept apart from photography: these are frames from the DV
+                    footage, not photographs. See `photography` in content.js. */}
+                <section className="jm-section" aria-labelledby="stills-heading">
+                    <div className="jm-section__header">
+                        <h2 id="stills-heading">Selected Film Stills</h2>
+                        <p>Frames taken from the DV footage.</p>
+                    </div>
+                    {stillCollections.map((item) => (
+                        <PhotoCollection key={item.id} item={item} onOpen={setOpen} />
                     ))}
                 </section>
 

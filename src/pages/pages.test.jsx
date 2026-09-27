@@ -114,6 +114,29 @@ describe('home page', () => {
     });
 });
 
+describe('home photography preview', () => {
+    it('shows the selected photos, labels film stills, and links to the collection', () => {
+        renderPage('/', Home);
+        const section = screen
+            .getByRole('heading', { level: 2, name: 'Photography' })
+            .closest('section');
+        const tiles = within(section).getAllByRole('button');
+        expect(tiles).toHaveLength(3);
+        expect(within(section).getByText(/Film still/)).toBeInTheDocument();
+        expect(within(section).getByRole('link', { name: 'View photography' })).toHaveAttribute(
+            'href',
+            '/film#photography'
+        );
+    });
+
+    it('sits between Film and About', () => {
+        renderPage('/', Home);
+        const order = screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent);
+        expect(order.indexOf('Photography')).toBe(order.indexOf('Film') + 1);
+        expect(order.indexOf('About')).toBe(order.indexOf('Photography') + 1);
+    });
+});
+
 describe('video embeds', () => {
     it('never auto-loads a player: nothing plays until a click', () => {
         renderPage('/animation', AnimationPage);

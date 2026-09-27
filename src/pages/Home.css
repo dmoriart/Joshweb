@@ -6,8 +6,8 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  /* Compact: the animation section should start near the fold. */
-  min-height: min(72vh, 640px);
+  /* Compact: the animation clips should come into view on the first screen. */
+  min-height: min(50vh, 440px);
   overflow: hidden;
   border-bottom: 1px solid var(--jm-border);
 }
@@ -41,7 +41,13 @@
 
 .jm-hero__content {
   position: relative;
-  padding-block: var(--jm-space-9) var(--jm-space-8);
+  padding-block: var(--jm-space-8) var(--jm-space-7);
+}
+
+/* The first section after the hero sits closer to it than later sections
+   sit to each other, so the clips start higher. */
+.jm-hero + .jm-container > .jm-section:first-child {
+  margin-top: var(--jm-space-7);
 }
 
 .jm-hero__name {
@@ -157,6 +163,60 @@
   margin-top: var(--jm-space-6);
 }
 
+/* ---- Photography ---- */
+
+.jm-home-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--jm-space-4);
+}
+
+.jm-home-photos__item {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 1px solid var(--jm-border);
+  border-radius: var(--jm-radius-md);
+  overflow: hidden;
+  background: var(--jm-surface);
+  cursor: zoom-in;
+  transition: border-color var(--jm-duration) var(--jm-ease),
+    box-shadow var(--jm-duration) var(--jm-ease);
+}
+
+.jm-home-photos__item:hover,
+.jm-home-photos__item:focus-visible {
+  border-color: var(--jm-border-strong);
+  box-shadow: var(--jm-shadow-md);
+}
+
+/* Photographs, unlike the artwork, can be cropped to a consistent tile; the
+   viewer shows each whole. The centred 4:5 crop also drops the black side
+   bars from the DV still. */
+.jm-home-photos__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.jm-home-photos__label {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: var(--jm-space-6) var(--jm-space-4) var(--jm-space-4);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  font-size: var(--jm-text-sm);
+  font-weight: 600;
+  text-align: left;
+  color: #fff;
+}
+
+.jm-home-photos__kind {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* ---- About ---- */
 
 .jm-home-about {
@@ -214,7 +274,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .jm-featured__item {
+  .jm-featured__item,
+  .jm-home-photos__item {
     transition: none;
   }
 }

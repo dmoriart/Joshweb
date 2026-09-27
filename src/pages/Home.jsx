@@ -4,7 +4,7 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import MotionClipGrid from '../components/MotionClipGrid';
 import VideoEmbed from '../components/VideoEmbed';
 import Lightbox from '../components/Lightbox';
-import { artworks, sequences, works } from '../data/content';
+import { artworks, photography, sequences, works } from '../data/content';
 import { routes } from '../routes';
 import { useState } from 'react';
 import './Home.css';
@@ -16,9 +16,18 @@ const featured = artworks.filter((artwork) => artwork.featured);
 const heroPiece = featured[0];
 const featuredFilm = works.find((work) => work.featured);
 
+// A small photography preview; stills are labelled as such.
+const featuredPhotos = photography.flatMap((collection) =>
+    collection.images
+        .filter((image) => image.featured)
+        .map((image) => ({ ...image, isStill: collection.kind === 'still' }))
+);
+
 function Home() {
     const [openIndex, setOpenIndex] = useState(null);
     const open = openIndex === null ? null : featured[openIndex];
+    const [photoIndex, setPhotoIndex] = useState(null);
+    const openPhoto = photoIndex === null ? null : featuredPhotos[photoIndex];
 
     const step = (offset) =>
         setOpenIndex((current) =>
@@ -167,6 +176,45 @@ function Home() {
                     </section>
                 )}
 
+                {featuredPhotos.length > 0 && (
+                    <section className="jm-section" aria-labelledby="photography-heading">
+                        <div className="jm-section__header">
+                            <h2 id="photography-heading">Photography</h2>
+                            <p>Selected photographs and film stills from the shoots.</p>
+                        </div>
+
+                        <div className="jm-home-photos">
+                            {featuredPhotos.map((photo, index) => (
+                                <button
+                                    key={photo.id}
+                                    type="button"
+                                    className="jm-home-photos__item"
+                                    onClick={() => setPhotoIndex(index)}
+                                >
+                                    <ResponsiveImage
+                                        src={photo.src}
+                                        alt={`${photo.title}. ${photo.description}`}
+                                        sizes="(max-width: 700px) 92vw, 360px"
+                                    />
+                                    <span className="jm-home-photos__label">
+                                        {photo.title}
+                                        {photo.isStill && (
+                                            <span className="jm-home-photos__kind"> · Film still</span>
+                                        )}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+
+                        <Link
+                            className="jm-button jm-button--secondary jm-section__cta"
+                            to="/film#photography"
+                        >
+                            View photography
+                        </Link>
+                    </section>
+                )}
+
                 <section className="jm-section jm-home-about" aria-labelledby="about-heading">
                     <div>
                         <h2 id="about-heading">About</h2>
@@ -217,6 +265,33 @@ function Home() {
                     }
                 >
                     <ResponsiveImage full priority src={open.src} alt={open.description} />
+                </Lightbox>
+            )}
+            {openPhoto && (
+                <Lightbox
+                    label={`${openPhoto.title}, photograph viewer`}
+                    onClose={() => setPhotoIndex(null)}
+                    onPrev={() =>
+                        setPhotoIndex((i) => (i - 1 + featuredPhotos.length) % featuredPhotos.length)
+                    }
+                    onNext={() => setPhotoIndex((i) => (i + 1) % featuredPhotos.length)}
+                    caption={
+                        <>
+                            <h3 className="jm-lightbox__title">{openPhoto.title}</h3>
+                            <p className="jm-lightbox__description">{openPhoto.description}</p>
+                            <span className="jm-lightbox__meta">
+                                {openPhoto.isStill ? 'Film still · ' : ''}
+                                {photoIndex + 1} of {featuredPhotos.length}
+                            </span>
+                        </>
+                    }
+                >
+                    <ResponsiveImage
+                        full
+                        priority
+                        src={openPhoto.src}
+                        alt={`${openPhoto.title}. ${openPhoto.description}`}
+                    />
                 </Lightbox>
             )}
         </>

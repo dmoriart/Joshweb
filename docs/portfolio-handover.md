@@ -12,6 +12,8 @@ Covers Prompts 3–6 of [portfolio-review.md](portfolio-review.md). Prompts 1–
 | Artwork titles (all) | The 35 remaining placeholder titles ("Sketchbook Study I–XXX", "Star Wars I–V" and so on) now describe what is visible. Characters are named only where unmistakable, and labelled fan art; the reflecting-sphere study credits M. C. Escher. A duplicate photo of one drawing (IMG_2046) no longer shows as a second card. |
 | Pause motion | The looping clips have a Pause motion / Play motion toggle, and start paused for visitors who prefer reduced motion. GIFs swap to a generated still when paused. |
 | Home drawings | Smoke replaces Masked Mercenary, which is still on Drawing & Comic Art. |
+| Photography | Home page shows three picks (Skate Jump, Red Hat, and the DJ Silhouette film still) between Film and About, linking to `/film#photography`. Every photo caption was rewritten to describe what is visible. The DJ and Lockout images are labelled **film stills** in their own section, because each is a PAL DV frame (1353×1080 picture between black bars on a 1080p canvas, no camera metadata). Mark a photo `featured: true` in `photography` to put it on the home page. |
+| Hero | Shortened so the animation clips come into view on the first screen at 1440×900. |
 | Intake tooling | `npm run prepare-incoming` makes a public master only for approved records, plus a private contact sheet at `portfolio-incoming/review/index.html`. |
 | Clean-Up | Hidden while the process was unconfirmed, then restored on 27 September 2026 once Josh confirmed he redrew the lines by hand (`processConfirmed` in `content.js`; a new pair starts unconfirmed). |
 | About | Now says he studies animation at Stillorgan College (confirmed 27 September 2026). The course name and year are still to be added. |
@@ -138,7 +140,9 @@ reel shown on the home page and at the top of Film (use it on one entry only);
 7. **19 orientation:** which way up is intended.
 8. **Clean-Up details:** software and year for each pair (hand redrawing is
    confirmed).
-9. **08 and 12:** are they the same character? If so, they can be grouped as
+9. **Film stills:** which DJ sets the DJ stills come from, so they can sit
+   with the right project.
+10. **08 and 12:** are they the same character? If so, they can be grouped as
    one project. Also: his own titles for any of the working titles.
-10. **Course details and CV:** exact course name and year at Stillorgan College;
+11. **Course details and CV:** exact course name and year at Stillorgan College;
     whether the June 2026 CV is current.
