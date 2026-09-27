@@ -11,7 +11,8 @@
     "generate-sitemap": "node generate-sitemap.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "build-images": "node scripts/build-images.mjs"
+    "build-images": "node scripts/build-images.mjs",
+    "prepare-incoming": "node scripts/prepare-incoming.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",

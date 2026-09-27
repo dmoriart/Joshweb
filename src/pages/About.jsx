@@ -10,7 +10,6 @@ const meta = routes.find((route) => route.path === '/about');
 
 const INTERESTS = [
     '2D animation',
-    'Animation clean-up',
     'Character design',
     'Storyboarding',
     'Comic illustration',

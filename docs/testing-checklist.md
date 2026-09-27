@@ -107,9 +107,9 @@ Verified at **390 × 844** (phone) and **1440 × 900** (desktop) on all pages.
 
 ### Metadata
 
-- [x] Home title: `Josh Moriarty | Comic Artist, 2D Animator and Filmmaker`
+- [x] Home title: `Josh Moriarty | Animation Student, Artist and Filmmaker`
 - [x] Each route sets its own title, description and canonical
-- [x] `Person` structured data lists the eight disciplines
+- [x] `Person` structured data lists the disciplines (clean-up removed until confirmed)
 - [x] Share card is 1200 × 630 and generated from the lead artwork
 - [ ] Validate the share card in the LinkedIn / Facebook / X debuggers after deploy
 - [ ] Re-submit the sitemap in Google Search Console — it grew from 1 URL to 7

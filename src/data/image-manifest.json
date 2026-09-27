@@ -458,6 +458,16 @@
       960
     ]
   },
+  "/images/artwork/smoke.jpeg": {
+    "src": "/images/artwork/smoke.webp",
+    "width": 1536,
+    "height": 2048,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
   "/images/cleanup/Screenshot_20260614-210212.png": {
     "src": "/images/cleanup/Screenshot_20260614-210212.webp",
     "width": 1280,

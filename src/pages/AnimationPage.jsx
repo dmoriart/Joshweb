@@ -9,14 +9,18 @@ import './AnimationPage.css';
 
 const meta = routes.find((route) => route.path === '/animation');
 
+// Clean-up is a skill claim, so a pair is only shown once Josh has confirmed
+// he redrew the lines himself. See `cleanups` in content.js.
+const confirmedCleanups = cleanups.filter((example) => example.processConfirmed);
+
 function AnimationPage() {
     return (
         <>
             <PageMeta title={meta.title} description={meta.description} path="/animation" />
             <div className="jm-container jm-page">
                 <PageHeader eyebrow="Portfolio" title="2D Animation">
-                    Hand-drawn movement: timing, spacing, weight and gesture, plus clean-up
-                    work showing how a rough drawing becomes a consistent line.
+                    Hand-drawn movement loops and longer animated pieces, drawn frame by
+                    frame on a tablet.
                 </PageHeader>
 
                 {/* Drawn work first. The Creative Reel used to open this page,
@@ -27,8 +31,8 @@ function AnimationPage() {
                     <div className="jm-section__header">
                         <h2 id="clips-heading">Movement Tests</h2>
                         <p>
-                            Frame-by-frame tests exploring timing, pose change, spacing and
-                            gesture. These loop silently — nothing plays with sound.
+                            Short frame-by-frame loops. They play silently — nothing plays
+                            with sound.
                         </p>
                     </div>
                     <MotionClipGrid />
@@ -37,7 +41,7 @@ function AnimationPage() {
                 <section className="jm-section" aria-labelledby="pieces-heading">
                     <div className="jm-section__header">
                         <h2 id="pieces-heading">Animated Pieces</h2>
-                        <p>Longer hand-drawn pieces, hosted on YouTube.</p>
+                        <p>Longer pieces, including an animated comic panel, hosted on YouTube.</p>
                     </div>
 
                     <div className="jm-anim-grid">
@@ -73,7 +77,7 @@ function AnimationPage() {
                     </div>
                 </section>
 
-                {cleanups.length > 0 && (
+                {confirmedCleanups.length > 0 && (
                     <section className="jm-section" aria-labelledby="cleanup-heading">
                         <div className="jm-section__header">
                             <h2 id="cleanup-heading">Clean-Up</h2>
@@ -83,7 +87,7 @@ function AnimationPage() {
                             </p>
                         </div>
 
-                        {cleanups.map((example) => (
+                        {confirmedCleanups.map((example) => (
                             <figure key={example.id} className="jm-cleanup">
                                 <div className="jm-cleanup__pair">
                                     {example.images.map((image) => (

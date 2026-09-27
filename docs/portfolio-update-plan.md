@@ -71,11 +71,11 @@ exact filename only; subjects are taken from the review, not inferred from names
 |---|---|---|---|
 | 0 | Save guide as `docs/portfolio-review.md`; gitignore `portfolio-incoming/` | `docs/`, `.gitignore` | Done |
 | 1 | This plan | `docs/portfolio-update-plan.md` | Done |
-| 2 | Animation-first hero, CTAs, home section order, nav order/label, titles, footer, About status and tools/equipment disclosure | `src/routes.js`, `src/pages/Home.jsx`, `src/pages/Home.css`, `src/pages/About.jsx`, `src/pages/About.css`, `src/pages/ComicArt.jsx`, `src/components/Layout.jsx`, `src/data/content.js`, `index.html`, `README.md`, `src/pages/pages.test.jsx` | Done — see decisions below |
-| 3 | Manifest for the 20 incoming images, private contact sheet, conservative web derivatives | new manifest outside `public/`; `media/` only for approved assets | Not started |
-| 4 | Integrate approved artwork; audit Clean-Up claims; descriptive animation titles; Film first view | `content.js`, gallery pages, `AnimationPage.jsx`, `Film.jsx` | Not started; blocked on Josh's confirmations |
-| 5 | Verification at 390 / 768 / 1440 px, a11y, build-output privacy check | — | Not started |
-| 6 | Handover and maintenance guide | `docs/` | Not started |
+| 2 | Animation-first hero, CTAs, home section order, nav order/label, titles, footer, About status and tools/equipment disclosure | `src/routes.js`, `src/pages/Home.jsx`, `src/pages/Home.css`, `src/pages/About.jsx`, `src/pages/About.css`, `src/pages/ComicArt.jsx`, `src/components/Layout.jsx`, `src/data/content.js`, `index.html`, `README.md`, `src/pages/pages.test.jsx` | Done, live 27 Sep 2026 — see decisions below |
+| 3 | Manifest for the 20 incoming images, private contact sheet, conservative web derivatives | `src/data/artwork-review.json`, `scripts/prepare-incoming.mjs` | Done |
+| 4 | Integrate approved artwork; audit Clean-Up claims; descriptive animation titles; Film first view | `content.js`, `ComicArt.jsx`, `AnimationPage.jsx`, `Film.jsx` | Done — only 07 approved so far |
+| 5 | Verification at 390 / 768 / 1440 px, a11y, build-output privacy check | — | Done — see handover |
+| 6 | Handover and maintenance guide | `docs/portfolio-handover.md` | Done |
 
 ## Stage 2 decisions to confirm with Josh
 

@@ -4,6 +4,11 @@
   gap: var(--jm-space-7);
 }
 
+.jm-film-reel {
+  max-width: 900px;
+  margin-bottom: var(--jm-space-8);
+}
+
 .jm-film-card h3 {
   margin-top: var(--jm-space-4);
   font-size: var(--jm-text-xl);

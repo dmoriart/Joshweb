@@ -35,6 +35,7 @@ minute. Runs after that are near-instant because unchanged files are skipped.
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run lint` | ESLint over the whole project |
 | `npm run build-images` | Regenerate image derivatives only (`--force` to rebuild all) |
+| `npm run prepare-incoming` | Review new drawing photos in the private `portfolio-incoming/` and publish approved ones — see [`docs/portfolio-handover.md`](docs/portfolio-handover.md) |
 | `npm run generate-sitemap` | Regenerate `public/sitemap.xml` from the route list |
 
 ---
