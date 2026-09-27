@@ -278,10 +278,12 @@ export const animations = [
  * the finished illustration, so the home page shows range rather than only
  * fan art (docs/portfolio-review.md §2).
  *
- * TODO: The 30 "Sketchbook Study I–XXX" and 7 "Digital Artwork I–VII" entries
- * carry placeholder titles and rotating generic descriptions. Identify the
- * 10–15 genuinely worth showing and give those real titles; see
- * docs/content-gaps.md §3.4.
+ * Titles and descriptions describe what is visible. Characters are named only
+ * where unmistakable, and labelled fan art; source artists are named for
+ * studies when known.
+ * TODO: Josh to replace working titles with his own where he has them, and
+ * trim the Sketchbook to the drawings genuinely worth showing
+ * (docs/content-gaps.md §3.4).
  *
  * @type {ArtworkItem[]}
  */
@@ -289,7 +291,7 @@ export const artworks = [
     // Latest character work — the strongest pieces for a comic portfolio review.
     // TODO: Confirm the software and year for these five pieces.
     { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration', featured: true },
-    { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration' },
     { id: 63, src: '/images/artwork/1000006079.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration' },
     { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration' },
@@ -301,7 +303,7 @@ export const artworks = [
     // Drawings on paper from the September 2026 intake. Only records marked
     // 'approved' in ./artwork-review.json belong here; see that file for the
     // drafts still awaiting a decision.
-    { id: 67, src: '/images/artwork/smoke.jpeg', title: 'Smoke', category: 'figure', description: 'Black-and-white drawing of a figure in a jacket and wide trousers, head tilted back, breathing out a large stylised cloud of smoke' },
+    { id: 67, src: '/images/artwork/smoke.jpeg', title: 'Smoke', category: 'figure', description: 'Black-and-white drawing of a figure in a jacket and wide trousers, head tilted back, breathing out a large stylised cloud of smoke', featured: true },
     // Development and composition sketches: shown first on Sketchbook so the
     // process is visible. 68 and 70 are kept separate until Josh confirms
     // whether they are the same character.
@@ -330,52 +332,52 @@ export const artworks = [
     { id: 4, src: '/images/artwork/Selfportrait4.jpeg', title: 'Self Portrait IV', category: 'self-portraits', description: 'Expressive self portrait capturing mood and character' },
 
     // Star Wars Fan Art
-    { id: 5, src: '/images/artwork/Star Wars1.jpeg', title: 'Star Wars I', category: 'fan-art', description: 'Character illustration inspired by the Star Wars universe' },
-    { id: 6, src: '/images/artwork/Star Wars2.jpeg', title: 'Star Wars II', category: 'fan-art', description: 'Exploring character design and dynamic poses' },
-    { id: 7, src: '/images/artwork/Star Wars3.jpeg', title: 'Star Wars III', category: 'fan-art', description: 'Detailed character study with attention to costume and form' },
-    { id: 8, src: '/images/artwork/Star Wars4.jpeg', title: 'Star Wars IV', category: 'fan-art', description: 'Fan art exploring iconic imagery and composition' },
-    { id: 9, src: '/images/artwork/Star Wars5.jpeg', title: 'Star Wars V', category: 'fan-art', description: 'Character design showcasing illustration technique' },
+    { id: 5, src: '/images/artwork/Star Wars1.jpeg', title: 'Mandalorian Helmet', category: 'fan-art', description: 'Colour Star Wars fan art of a Mandalorian helmet and armour, split by a diagonal slash' },
+    { id: 6, src: '/images/artwork/Star Wars2.jpeg', title: 'General Grievous', category: 'fan-art', description: 'Colour Star Wars fan art of General Grievous with his cape spread wide' },
+    { id: 7, src: '/images/artwork/Star Wars3.jpeg', title: 'Hooded Alien', category: 'fan-art', description: 'Colour Star Wars fan art of a green-skinned alien with red eyes in a red hood' },
+    { id: 8, src: '/images/artwork/Star Wars4.jpeg', title: 'Clone Trooper Helmet', category: 'fan-art', description: 'Shaded Star Wars fan art of a clone trooper helmet' },
+    { id: 9, src: '/images/artwork/Star Wars5.jpeg', title: 'Armoured Alien', category: 'fan-art', description: 'Colour Star Wars fan art of a blue-armoured alien figure with arms spread' },
 
     // View & Viewpoint
-    { id: 10, src: '/images/artwork/View and viewpoint1.jpeg', title: 'View & Viewpoint I', category: 'viewpoint', description: 'Perspective study exploring depth and spatial composition' },
-    { id: 11, src: '/images/artwork/View and viewpoint2.jpeg', title: 'View & Viewpoint II', category: 'viewpoint', description: 'Observational drawing focusing on architectural perspective', featured: true },
-    { id: 12, src: '/images/artwork/View and viewpoint3.jpeg', title: 'View & Viewpoint III', category: 'viewpoint', description: 'Landscape composition and spatial awareness' },
-    { id: 13, src: '/images/artwork/View and viewpoint4.jpeg', title: 'View & Viewpoint IV', category: 'viewpoint', description: 'Study of environment and viewpoint' },
-    { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'View & Viewpoint V', category: 'viewpoint', description: 'Perspective and compositional exploration' },
+    { id: 10, src: '/images/artwork/View and viewpoint1.jpeg', title: 'Sony Camcorder', category: 'viewpoint', description: 'Observational drawing of a Sony camcorder, with the label picked out in gold' },
+    { id: 11, src: '/images/artwork/View and viewpoint2.jpeg', title: 'Rangefinder Camera', category: 'viewpoint', description: 'Observational drawing of a FED rangefinder camera', featured: true },
+    { id: 12, src: '/images/artwork/View and viewpoint3.jpeg', title: 'Reflecting Sphere', category: 'viewpoint', description: 'Perspective study of a figure and room reflected in a sphere held in a hand, after M. C. Escher’s Hand with Reflecting Sphere' },
+    { id: 13, src: '/images/artwork/View and viewpoint4.jpeg', title: 'View Through a Ring', category: 'viewpoint', description: 'Perspective study of a room seen past a large ring, with red perspective lines' },
+    { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'Eye Study', category: 'viewpoint', description: 'Study of an eye, half of it rendered in tone' },
 
     // Music (now merged with Street)
 
     // Street
 
     // Photoshoot
-    { id: 22, src: '/images/artwork/Photoshoot1.jpeg', title: 'Photoshoot I', category: 'photoshoot', description: 'Figure drawing from photographic reference' },
-    { id: 23, src: '/images/artwork/Photoshoot2.jpeg', title: 'Photoshoot II', category: 'photoshoot', description: 'Study of pose and form from reference' },
+    { id: 22, src: '/images/artwork/Photoshoot1.jpeg', title: 'Two Seated Figures', category: 'photoshoot', description: 'Colour figure drawing from photographic reference: two seated figures in streetwear, faces left blank' },
+    { id: 23, src: '/images/artwork/Photoshoot2.jpeg', title: 'Camera Operator', category: 'photoshoot', description: 'Colour figure drawing from photographic reference: a figure in a red hoodie beside a camera operator in camouflage' },
 
     // Sketchbook & Studies
-    { id: 25, src: '/images/artwork/IMG_1080.jpeg', title: 'Sketchbook Study II', category: 'sketchbook', description: 'Exploratory sketches and mark-making' },
-    { id: 28, src: '/images/artwork/IMG_1098.jpeg', title: 'Sketchbook Study V', category: 'sketchbook', description: 'Tonal study and rendering' },
-    { id: 29, src: '/images/artwork/IMG_1099.jpeg', title: 'Sketchbook Study VI', category: 'sketchbook', description: 'Composition and form exploration' },
-    { id: 30, src: '/images/artwork/IMG_1102.jpeg', title: 'Sketchbook Study VII', category: 'sketchbook', description: 'Life drawing session' },
-    { id: 31, src: '/images/artwork/IMG_1105.jpeg', title: 'Sketchbook Study VIII', category: 'sketchbook', description: 'Quick gesture and proportion study' },
-    { id: 32, src: '/images/artwork/IMG_1106.jpeg', title: 'Sketchbook Study IX', category: 'sketchbook', description: 'Detailed observational drawing' },
-    { id: 33, src: '/images/artwork/IMG_1107.jpeg', title: 'Sketchbook Study X', category: 'sketchbook', description: 'Exploratory mark-making and form' },
-    { id: 35, src: '/images/artwork/IMG_1110.jpeg', title: 'Sketchbook Study XII', category: 'sketchbook', description: 'Study of light and shadow' },
-    { id: 36, src: '/images/artwork/IMG_1111.jpeg', title: 'Sketchbook Study XIII', category: 'sketchbook', description: 'Drawing from observation' },
-    { id: 37, src: '/images/artwork/IMG_1112.jpeg', title: 'Sketchbook Study XIV', category: 'sketchbook', description: 'Composition study' },
-    { id: 38, src: '/images/artwork/IMG_1113.jpeg', title: 'Sketchbook Study XV', category: 'sketchbook', description: 'Exploratory drawing' },
-    { id: 39, src: '/images/artwork/IMG_1114.jpeg', title: 'Sketchbook Study XVI', category: 'sketchbook', description: 'Detail and texture study' },
-    { id: 40, src: '/images/artwork/IMG_1115.jpeg', title: 'Sketchbook Study XVII', category: 'sketchbook', description: 'Figure and form exploration' },
-    { id: 42, src: '/images/artwork/IMG_2041.jpeg', title: 'Sketchbook Study XIX', category: 'sketchbook', description: 'Life drawing and tonal work' },
-    { id: 43, src: '/images/artwork/IMG_2042.jpeg', title: 'Sketchbook Study XX', category: 'sketchbook', description: 'Mark-making and expression' },
-    { id: 44, src: '/images/artwork/IMG_2043.jpeg', title: 'Sketchbook Study XXI', category: 'sketchbook', description: 'Compositional exploration' },
-    { id: 45, src: '/images/artwork/IMG_2044.jpeg', title: 'Sketchbook Study XXII', category: 'sketchbook', description: 'Tonal range and rendering' },
-    { id: 46, src: '/images/artwork/IMG_2045.jpeg', title: 'Sketchbook Study XXIII', category: 'sketchbook', description: 'Observational detail study' },
-    { id: 47, src: '/images/artwork/IMG_2046.jpeg', title: 'Sketchbook Study XXIV', category: 'sketchbook', description: 'Drawing development' },
-    { id: 49, src: '/images/artwork/IMG_2247.jpeg', title: 'Sketchbook Study XXVI', category: 'sketchbook', description: 'Study of form and space' },
-    { id: 51, src: '/images/artwork/IMG_1138.jpeg', title: 'Sketchbook Study XXVIII', category: 'sketchbook', description: 'Exploratory sketching and technique' },
-    { id: 52, src: '/images/artwork/IMG_1139.jpeg', title: 'Sketchbook Study XXIX', category: 'sketchbook', description: 'Observational drawing practice' },
-    { id: 53, src: '/images/artwork/IMG_1140.jpeg', title: 'Sketchbook Study XXX', category: 'sketchbook', description: 'Study of form and detail' },
-    { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Character Sketch', category: 'sketchbook', description: 'Illustration in marker and ink' },
+    { id: 25, src: '/images/artwork/IMG_1080.jpeg', title: 'Money Skull', category: 'sketchbook', description: 'Line drawing of a skull with dollar-sign eyes over banknotes, lettered MONEY' },
+    { id: 28, src: '/images/artwork/IMG_1098.jpeg', title: 'Tonal Portrait', category: 'sketchbook', description: 'Heavily shaded portrait study with strong contrast' },
+    { id: 29, src: '/images/artwork/IMG_1099.jpeg', title: 'Portrait with Red Lips', category: 'sketchbook', description: 'Shaded portrait of a woman with long dark hair and red lips' },
+    { id: 30, src: '/images/artwork/IMG_1102.jpeg', title: 'Faces in Shadow', category: 'sketchbook', description: 'Group of faces drawn in high-contrast black and white' },
+    { id: 31, src: '/images/artwork/IMG_1105.jpeg', title: 'Smoking Portrait', category: 'sketchbook', description: 'Shaded portrait of a man with a cigarette' },
+    { id: 32, src: '/images/artwork/IMG_1106.jpeg', title: 'Face in the Dark', category: 'sketchbook', description: 'High-contrast drawing of a face emerging from solid black' },
+    { id: 33, src: '/images/artwork/IMG_1107.jpeg', title: 'Skull in a Helmet', category: 'sketchbook', description: 'Black-and-white drawing of a skull wearing a written-on military helmet' },
+    { id: 35, src: '/images/artwork/IMG_1110.jpeg', title: 'Gunslinger', category: 'sketchbook', description: 'Black-and-white drawing of a figure in a wide-brimmed hat and long coat' },
+    { id: 36, src: '/images/artwork/IMG_1111.jpeg', title: 'Soldier', category: 'sketchbook', description: 'Black-and-white drawing of a soldier in a helmet and gear' },
+    { id: 37, src: '/images/artwork/IMG_1112.jpeg', title: 'Grinning Face', category: 'sketchbook', description: 'High-contrast black-and-white drawing of a grinning face' },
+    { id: 38, src: '/images/artwork/IMG_1113.jpeg', title: 'Wolverine', category: 'sketchbook', description: 'Black-and-white fan art of Wolverine with his claws raised' },
+    { id: 39, src: '/images/artwork/IMG_1114.jpeg', title: 'Man in Sunglasses', category: 'sketchbook', description: 'Black-and-white drawing of a man in sunglasses and a long coat' },
+    { id: 40, src: '/images/artwork/IMG_1115.jpeg', title: 'Hellboy', category: 'sketchbook', description: 'Black-and-white fan art of Hellboy' },
+    { id: 42, src: '/images/artwork/IMG_2041.jpeg', title: 'Rainbow Hillside', category: 'sketchbook', description: 'Colour drawing of two figures on a green hill beneath a tree and a rainbow' },
+    { id: 43, src: '/images/artwork/IMG_2042.jpeg', title: 'Long-Haired Figure', category: 'sketchbook', description: 'Shaded drawing of a long-haired figure with a cigarette' },
+    { id: 44, src: '/images/artwork/IMG_2043.jpeg', title: 'Pig Mask', category: 'sketchbook', description: 'Line drawing of a figure in a pig mask, smoking, at an electronic music machine' },
+    { id: 45, src: '/images/artwork/IMG_2044.jpeg', title: 'Fire Escape', category: 'sketchbook', description: 'Shaded drawing of an apartment building with a fire escape and a hand-lettered caption' },
+    { id: 46, src: '/images/artwork/IMG_2045.jpeg', title: 'Man in the Rain', category: 'sketchbook', description: 'Shaded drawing of a bald man in a suit with a mark on his forehead, between umbrellas in the rain' },
+    // IMG_2046.jpeg (formerly id 47) is a second photo of id 46; one card per drawing.
+    { id: 49, src: '/images/artwork/IMG_2247.jpeg', title: 'Graffiti Lettering', category: 'sketchbook', description: 'Blue bubble-letter graffiti piece' },
+    { id: 51, src: '/images/artwork/IMG_1138.jpeg', title: 'Stairway', category: 'sketchbook', description: 'Perspective sketch of figures on a stairway in front of a building' },
+    { id: 52, src: '/images/artwork/IMG_1139.jpeg', title: 'Skateboarder', category: 'sketchbook', description: 'Shaded drawing of a skateboarder mid-trick, dated 29 August 2024, with handwritten notes' },
+    { id: 53, src: '/images/artwork/IMG_1140.jpeg', title: 'Cluttered Room', category: 'sketchbook', description: 'Line drawing of a room interior crowded with shelves and equipment' },
+    { id: 54, src: '/images/artwork/IMG_1146.jpeg', title: 'Seated Figure from Below', category: 'sketchbook', description: 'Character drawing in marker and ink of a seated figure seen from below' },
 ];
 
 /**

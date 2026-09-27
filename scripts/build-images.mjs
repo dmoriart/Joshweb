@@ -138,7 +138,7 @@ async function processPassthrough(sourcePath, relative) {
 }
 
 /**
- * Extracts a poster frame from a video.
+ * Extracts a poster frame from a video or animated GIF.
  *
  * Without one a <video preload="metadata"> renders as a black rectangle until
  * it starts playing, which is what visitors on reduced-motion settings — and
@@ -216,7 +216,8 @@ async function main() {
                 processed += 1;
             } else if (PASSTHROUGH.has(extension)) {
                 written += await processPassthrough(sourcePath, relative);
-                if (extension === '.mp4' || extension === '.webm') {
+                // GIFs get a still too, shown when motion is paused.
+                if (['.mp4', '.webm', '.gif'].includes(extension)) {
                     written += await buildVideoPoster(sourcePath, relative);
                 }
                 processed += 1;
