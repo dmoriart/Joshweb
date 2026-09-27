@@ -8,6 +8,7 @@ const meta = routes.find((route) => route.path === '/sketchbook');
 
 const CATEGORIES = [
     { key: 'all', label: 'All' },
+    { key: 'development', label: 'Development' },
     { key: 'sketchbook', label: 'Studies' },
     { key: 'self-portraits', label: 'Self Portraits' },
     { key: 'viewpoint', label: 'View & Viewpoint' },
