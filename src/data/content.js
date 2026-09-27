@@ -309,6 +309,21 @@ export const artworks = [
     { id: 69, src: '/images/artwork/airborne-figure-sketch.jpeg', title: 'Airborne Figure (Development)', category: 'development', description: "Development sketch of an airborne figure aiming a weapon, with handwritten notes including 'Star Wars inspired'" },
     { id: 70, src: '/images/artwork/rooftop-confrontation-study.jpeg', title: 'Rooftop Confrontation (Composition Study)', category: 'development', description: 'Composition study of a fantasy confrontation on a rooftop, with a wide, detailed background' },
 
+    // Rest of the September 2026 intake, published as captured while better
+    // scans are made (01 and 02 are held for rescanning). Titles are working
+    // titles; 81's orientation is as photographed, still to be confirmed.
+    { id: 71, src: '/images/artwork/creature-and-caped-figure.jpeg', title: 'Looming Creature', category: 'sketchbook', description: 'Heavily hatched drawing of a large creature looming over a caped figure' },
+    { id: 72, src: '/images/artwork/leaping-combat.jpeg', title: 'Leaping Attack', category: 'figure', description: 'Drawing of two figures in combat, one leaping down on the other along a strong diagonal, with a red accent' },
+    { id: 73, src: '/images/artwork/explosion-ensemble.jpeg', title: 'Beneath the Explosion', category: 'figure', description: 'Drawing of a group of figures in action beneath a large billowing explosion' },
+    { id: 74, src: '/images/artwork/judge-dredd.jpeg', title: 'Judge Dredd', category: 'fan-art', description: 'Black-and-white fan art of Judge Dredd aiming a pistol at the viewer' },
+    { id: 75, src: '/images/artwork/staff-raised.jpeg', title: 'Staff Raised', category: 'fan-art', description: 'Fan art of an armoured creature raising a staff overhead with both hands' },
+    { id: 76, src: '/images/artwork/construction-grid.jpeg', title: 'Construction Grid', category: 'development', description: 'Crouching figure with arms raised, drawn over a red construction grid' },
+    { id: 77, src: '/images/artwork/pose-sheets.jpeg', title: 'Pose Sheets', category: 'development', description: 'Two overlapping sheets of character pose drawings' },
+    { id: 78, src: '/images/artwork/cyclops.jpeg', title: 'Facing the Cyclops', category: 'development', description: 'Composition sketch of a small armed figure facing a giant cyclops, with perspective guide lines' },
+    { id: 79, src: '/images/artwork/winged-figure-landscape.jpeg', title: 'Winged Figure in a Landscape', category: 'sketchbook', description: 'Drawing of a winged figure in the foreground and a distant armoured figure in a wide landscape' },
+    { id: 80, src: '/images/artwork/eye-beams.jpeg', title: 'Eye Beams', category: 'sketchbook', description: 'Drawing of a caped, muscular figure firing beams upward from the eyes' },
+    { id: 81, src: '/images/artwork/falling-figure.jpeg', title: 'Falling Figure', category: 'sketchbook', description: 'Foreshortened drawing of an armoured figure falling towards the viewer' },
+
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range', featured: true },
     { id: 2, src: '/images/artwork/Selfportrait2.jpeg', title: 'Self Portrait II', category: 'self-portraits', description: 'Study in proportion and expression' },

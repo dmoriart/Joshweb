@@ -10,7 +10,7 @@ const CATEGORIES = [
     { key: 'all', label: 'All' },
     { key: 'fan-art', label: 'Character & Fan Art' },
     { key: 'digital', label: 'Digital Illustration' },
-    { key: 'figure', label: 'Figure Drawing' },
+    { key: 'figure', label: 'Figure & Action' },
 ];
 
 const items = artworks.filter((artwork) =>
