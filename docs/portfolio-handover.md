@@ -8,7 +8,7 @@ Covers Prompts 3–6 of [portfolio-review.md](portfolio-review.md). Prompts 1–
 
 | Area | Change |
 |---|---|
-| New drawings | All 20 supplied photos recorded in `src/data/artwork-review.json`. **Smoke** (07) is published under Drawing & Comic Art → Figure Drawing, since Josh's authorship is confirmed. The other 19 are drafts, archived sources or excluded, and none of them reach the site. |
+| New drawings | All 20 supplied photos recorded in `src/data/artwork-review.json`. **Smoke** (07) is published under Drawing & Comic Art → Figure Drawing, since Josh's authorship is confirmed. Development sketches 08 and 12 and composition study 15 were approved afterwards and lead the Sketchbook under "Development". The rest are drafts, archived sources or excluded, and none of them reach the site. |
 | Intake tooling | `npm run prepare-incoming` makes a public master only for approved records, plus a private contact sheet at `portfolio-incoming/review/index.html`. |
 | Clean-Up | Both pairs are hidden from Animation until Josh confirms he redrew the lines by hand (`processConfirmed` in `content.js`). "Clean-up" is also removed from the Animation page title, the About focus list and the site's structured data. The images and captions are kept. |
 | Animation titles | "2D movement test", "Character movement study", "Short animation experiment" and "Animation Test 1" now have descriptive titles and captions based on what each clip shows, and "Jump to Light Speed" is labelled as an animated comic panel. Clip lengths and frame counts were measured from the files. "Art Project 8" is unchanged because its content couldn't be identified reliably. |
@@ -132,8 +132,9 @@ reel shown on the home page and at the top of Film (use it on one entry only);
 7. **19 orientation:** which way up is intended.
 8. **Clean-Up process:** did he redraw the lines by hand? If yes, set
    `processConfirmed: true` on each pair and the section returns.
-9. **Drafts to approve:** 08, 12 and 15 are ready as process/sketchbook work.
-   Are 08 and 12 the same character? Which of 03, 04, 06, 10, 11, 14 and 19
+9. **Drafts:** 08, 12 and 15 were approved and published to Sketchbook →
+   Development on 27 September 2026. Are 08 and 12 the same character (if so,
+   they can be grouped as one project)? Which of 03, 04, 06, 10, 11, 14 and 19
    will be recaptured?
 10. **Course details and CV:** course, college and year for About; whether the
     June 2026 CV is current.

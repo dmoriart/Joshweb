@@ -23,7 +23,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Appears to be a corrected version of 05. How it was corrected is unknown.",
-      "blockers": ["Confirm this corrected image is faithful to the drawing (compare with 05), or supply a fresh capture"]
+      "blockers": [
+        "Confirm this corrected image is faithful to the drawing (compare with 05), or supply a fresh capture"
+      ]
     },
     {
       "id": "deadpool-wolverine",
@@ -41,7 +43,9 @@
       "classification": "fan-art",
       "attribution": null,
       "processingNotes": "Corrected version of 18. Flatter and brighter than the original photograph; the process is unknown.",
-      "blockers": ["Confirm fidelity to the original drawing, or supply a fresh scan with ordinary tonal correction"]
+      "blockers": [
+        "Confirm fidelity to the original drawing, or supply a fresh scan with ordinary tonal correction"
+      ]
     },
     {
       "id": "creature-and-caped-figure",
@@ -59,7 +63,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Recapture without page hardware and background"]
+      "blockers": [
+        "Recapture without page hardware and background"
+      ]
     },
     {
       "id": "leaping-combat",
@@ -77,7 +83,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Keep the red accent in any recapture.",
-      "blockers": ["Recapture in even light"]
+      "blockers": [
+        "Recapture in even light"
+      ]
     },
     {
       "id": "sci-fi-squad-source",
@@ -113,7 +121,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Show the full composition; no square crop.",
-      "blockers": ["Recapture in even light"]
+      "blockers": [
+        "Recapture in even light"
+      ]
     },
     {
       "id": "smoke",
@@ -141,8 +151,9 @@
       "workingTitle": "Armoured swordsman (development sketch)",
       "workingTitleApproved": false,
       "section": "sketchbook",
-      "decision": "Include as process",
-      "status": "draft",
+      "decision": "Include as process; approved 27 September 2026",
+      "status": "approved",
+      "publicSrc": "/images/artwork/armoured-swordsman-sketch.jpeg",
       "group": null,
       "alt": "Pencil development sketch of an armoured figure standing with a sword, with handwritten notes about proportions and armour.",
       "medium": null,
@@ -150,7 +161,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Keep the annotations. Describe as a development sketch, not a model sheet.",
-      "blockers": ["Approve for publication", "Confirm whether it belongs to the same character/project as 12"]
+      "blockers": [
+        "Confirm whether it belongs to the same character/project as 12"
+      ]
     },
     {
       "id": "construction-grid",
@@ -168,7 +181,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Do not invent later stages.",
-      "blockers": ["Include only with genuine related development to show"]
+      "blockers": [
+        "Include only with genuine related development to show"
+      ]
     },
     {
       "id": "pose-sheets",
@@ -186,7 +201,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Photograph each sheet separately"]
+      "blockers": [
+        "Photograph each sheet separately"
+      ]
     },
     {
       "id": "winged-figure-landscape",
@@ -204,7 +221,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Recapture without page edges"]
+      "blockers": [
+        "Recapture without page edges"
+      ]
     },
     {
       "id": "airborne-figure-notes",
@@ -213,8 +232,9 @@
       "workingTitle": "Airborne figure (development sketch)",
       "workingTitleApproved": false,
       "section": "sketchbook",
-      "decision": "Include as process",
-      "status": "draft",
+      "decision": "Include as process; approved 27 September 2026",
+      "status": "approved",
+      "publicSrc": "/images/artwork/airborne-figure-sketch.jpeg",
       "group": null,
       "alt": "Pencil development sketch of an airborne figure aiming a weapon, with handwritten notes including 'Star Wars inspired'.",
       "medium": null,
@@ -222,7 +242,9 @@
       "classification": null,
       "attribution": "Visible note: 'Star Wars inspired'",
       "processingNotes": "Keep the note visible; do not call the design wholly original.",
-      "blockers": ["Approve for publication", "Confirm whether it belongs to the same character/project as 08"]
+      "blockers": [
+        "Confirm whether it belongs to the same character/project as 08"
+      ]
     },
     {
       "id": "cyclops",
@@ -240,7 +262,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Use only as part of real composition development"]
+      "blockers": [
+        "Use only as part of real composition development"
+      ]
     },
     {
       "id": "judge-dredd",
@@ -258,7 +282,10 @@
       "classification": "fan-art",
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Recapture the complete sheet without adjacent marks", "Confirm fan art or study after a named source artist"]
+      "blockers": [
+        "Recapture the complete sheet without adjacent marks",
+        "Confirm fan art or study after a named source artist"
+      ]
     },
     {
       "id": "rooftop-confrontation",
@@ -267,8 +294,9 @@
       "workingTitle": "Rooftop confrontation",
       "workingTitleApproved": false,
       "section": "sketchbook",
-      "decision": "Include as composition process",
-      "status": "draft",
+      "decision": "Include as composition process; approved 27 September 2026",
+      "status": "approved",
+      "publicSrc": "/images/artwork/rooftop-confrontation-study.jpeg",
       "group": null,
       "alt": "Pencil drawing of a fantasy confrontation on a rooftop with a wide, detailed background.",
       "medium": null,
@@ -276,7 +304,7 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Show full-width with a short explanation rather than as a small thumbnail.",
-      "blockers": ["Approve for publication"]
+      "blockers": []
     },
     {
       "id": "eye-beams",
@@ -294,7 +322,9 @@
       "classification": null,
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Behind the first selection; approve only if wanted"]
+      "blockers": [
+        "Behind the first selection; approve only if wanted"
+      ]
     },
     {
       "id": "staff-raised",
@@ -312,7 +342,9 @@
       "classification": "fan-art",
       "attribution": null,
       "processingNotes": null,
-      "blockers": ["Confirm character/source"]
+      "blockers": [
+        "Confirm character/source"
+      ]
     },
     {
       "id": "deadpool-wolverine-source",
@@ -348,7 +380,10 @@
       "classification": null,
       "attribution": null,
       "processingNotes": "Orientation unresolved: do not rotate. Photograph is dark.",
-      "blockers": ["Josh to confirm the intended orientation", "Better capture"]
+      "blockers": [
+        "Josh to confirm the intended orientation",
+        "Better capture"
+      ]
     },
     {
       "id": "smoke-social",

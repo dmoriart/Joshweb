@@ -302,6 +302,12 @@ export const artworks = [
     // 'approved' in ./artwork-review.json belong here; see that file for the
     // drafts still awaiting a decision.
     { id: 67, src: '/images/artwork/smoke.jpeg', title: 'Smoke', category: 'figure', description: 'Black-and-white drawing of a figure in a jacket and wide trousers, head tilted back, breathing out a large stylised cloud of smoke' },
+    // Development and composition sketches: shown first on Sketchbook so the
+    // process is visible. 68 and 70 are kept separate until Josh confirms
+    // whether they are the same character.
+    { id: 68, src: '/images/artwork/armoured-swordsman-sketch.jpeg', title: 'Armoured Swordsman (Development)', category: 'development', description: 'Development sketch of an armoured figure standing with a sword, with handwritten notes about proportions and armour' },
+    { id: 69, src: '/images/artwork/airborne-figure-sketch.jpeg', title: 'Airborne Figure (Development)', category: 'development', description: "Development sketch of an airborne figure aiming a weapon, with handwritten notes including 'Star Wars inspired'" },
+    { id: 70, src: '/images/artwork/rooftop-confrontation-study.jpeg', title: 'Rooftop Confrontation (Composition Study)', category: 'development', description: 'Composition study of a fantasy confrontation on a rooftop, with a wide, detailed background' },
 
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range', featured: true },
