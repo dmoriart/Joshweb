@@ -33,9 +33,9 @@ export const routes = [
         path: '/animation',
         id: 'animation',
         label: 'Animation',
-        title: '2D Animation | Josh Moriarty',
+        title: '2D Animation & Clean-Up | Josh Moriarty',
         description:
-            'Hand-drawn 2D animation loops, action tests and animated comic panels by Josh Moriarty.',
+            'Hand-drawn 2D animation loops, action tests, animated comic panels and clean-up work by Josh Moriarty.',
     },
     {
         // The URL stays /comic-art so existing links keep working; only the
@@ -78,7 +78,7 @@ export const routes = [
         label: 'About',
         title: 'About | Josh Moriarty',
         description:
-            'Josh Moriarty is an Irish animation student who also draws and makes films, working across 2D animation, comic art and cinematic storytelling.',
+            'Josh Moriarty is an Irish animation student at Stillorgan College who also draws and makes films, working across 2D animation, comic art and cinematic storytelling.',
     },
     {
         path: '/contact',

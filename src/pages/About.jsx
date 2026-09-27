@@ -10,6 +10,7 @@ const meta = routes.find((route) => route.path === '/about');
 
 const INTERESTS = [
     '2D animation',
+    'Animation clean-up',
     'Character design',
     'Storyboarding',
     'Comic illustration',
@@ -19,9 +20,8 @@ const INTERESTS = [
 ];
 
 /*
- * TODO: Josh is confirmed as an animation student. Add the course, college
- * and year only once he confirms them — they are deliberately absent rather
- * than guessed. See docs/portfolio-review.md §2 (priority 5).
+ * Confirmed 27 September 2026: studying animation at Stillorgan College.
+ * TODO: Add the exact course name and year only once Josh confirms them.
  */
 
 function About() {
@@ -34,8 +34,8 @@ function About() {
                 <div className="jm-about">
                     <div className="jm-about__body">
                         <p className="jm-about__lead">
-                            Josh Moriarty is an Irish animation student who also draws and
-                            makes films. He explores character, movement and storytelling
+                            Josh Moriarty is an Irish animation student at Stillorgan
+                            College who also draws and makes films. He explores character, movement and storytelling
                             through 2D animation, drawing and film.
                         </p>
                         <p>
@@ -52,7 +52,7 @@ function About() {
                             <dt>Based in</dt>
                             <dd>Ireland</dd>
                             <dt>Studying</dt>
-                            <dd>Animation</dd>
+                            <dd>Animation, Stillorgan College</dd>
                             <dt>Working in</dt>
                             <dd>2D animation, drawing and comic art, film</dd>
                             <dt>Available for</dt>
