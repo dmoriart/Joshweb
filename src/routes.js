@@ -25,15 +25,25 @@ export const routes = [
         path: '/',
         id: 'home',
         label: 'Home',
-        title: 'Josh Moriarty | Comic Artist, 2D Animator and Filmmaker',
+        title: 'Josh Moriarty | Animation Student, Artist and Filmmaker',
         description:
-            'Portfolio of Irish comic artist, 2D animator and filmmaker Josh Moriarty, featuring illustration, sequential art, animation and film work.',
+            'Portfolio of Josh Moriarty, an Irish animation student, artist and filmmaker exploring character, movement and storytelling through 2D animation, drawing and film.',
     },
     {
+        path: '/animation',
+        id: 'animation',
+        label: 'Animation',
+        title: '2D Animation & Clean-Up | Josh Moriarty',
+        description:
+            'Hand-drawn 2D animation tests, movement studies and clean-up work by Josh Moriarty.',
+    },
+    {
+        // The URL stays /comic-art so existing links keep working; only the
+        // label widened to cover drawing generally.
         path: '/comic-art',
         id: 'comic-art',
-        label: 'Comic Art',
-        title: 'Comic Art & Character Design | Josh Moriarty',
+        label: 'Drawing & Comic Art',
+        title: 'Drawing & Comic Art | Josh Moriarty',
         description:
             'Character illustration, comic-style artwork and line work by Irish artist Josh Moriarty.',
     },
@@ -47,12 +57,12 @@ export const routes = [
         available: () => sequences.length > 0,
     },
     {
-        path: '/animation',
-        id: 'animation',
-        label: 'Animation',
-        title: '2D Animation & Clean-Up | Josh Moriarty',
+        path: '/sketchbook',
+        id: 'sketchbook',
+        label: 'Sketchbook',
+        title: 'Sketchbook & Studies | Josh Moriarty',
         description:
-            'Hand-drawn 2D animation tests, movement studies and clean-up work by Josh Moriarty.',
+            'Observational drawing, figure studies, perspective work and sketchbook pages by Josh Moriarty.',
     },
     {
         path: '/film',
@@ -63,20 +73,12 @@ export const routes = [
             'Live music, fashion and brand films shot on DV tape by Josh Moriarty, with photography from the same shoots.',
     },
     {
-        path: '/sketchbook',
-        id: 'sketchbook',
-        label: 'Sketchbook',
-        title: 'Sketchbook & Studies | Josh Moriarty',
-        description:
-            'Observational drawing, figure studies, perspective work and sketchbook pages by Josh Moriarty.',
-    },
-    {
         path: '/about',
         id: 'about',
         label: 'About',
         title: 'About | Josh Moriarty',
         description:
-            'Josh Moriarty is an emerging Irish artist, animator and filmmaker working in comic art, character-driven animation and cinematic storytelling.',
+            'Josh Moriarty is an Irish animation student who also draws and makes films, working across 2D animation, comic art and cinematic storytelling.',
     },
     {
         path: '/contact',
@@ -84,7 +86,7 @@ export const routes = [
         label: 'Contact',
         title: 'Contact | Josh Moriarty',
         description:
-            'Get in touch with Josh Moriarty about illustration, animation, comic work and collaborative projects.',
+            'Get in touch with Josh Moriarty about animation, drawing, film and collaborative projects.',
     },
 ];
 

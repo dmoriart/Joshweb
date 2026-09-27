@@ -29,7 +29,7 @@ function Layout() {
                     <div>
                         <p className="jm-footer__name">Josh Moriarty</p>
                         <p className="jm-footer__role">
-                            Comic Artist · 2D Animator · Filmmaker
+                            Animation student · Artist · Filmmaker
                         </p>
                     </div>
                     <div className="jm-footer__links">

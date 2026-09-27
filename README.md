@@ -1,6 +1,6 @@
 # joshmoriartyfilms.ie
 
-Portfolio site for Josh Moriarty — comic artist, 2D animator and filmmaker.
+Portfolio site for Josh Moriarty — animation student, artist and filmmaker.
 
 React 19 + Vite, deployed on Netlify.
 

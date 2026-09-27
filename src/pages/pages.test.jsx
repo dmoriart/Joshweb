@@ -84,26 +84,33 @@ describe('home page', () => {
             screen.getByRole('heading', { level: 1, name: 'Josh Moriarty' })
         ).toBeInTheDocument();
         // The role line appears in the hero and again in the footer.
-        ['Comic Artist', '2D Animator', 'Filmmaker'].forEach((role) => {
+        ['Animation student', 'Artist', 'Filmmaker'].forEach((role) => {
             expect(screen.getAllByText(new RegExp(role)).length).toBeGreaterThan(0);
         });
         expect(
             screen.getByText(
-                /I create dynamic comic art, 2D animation and cinematic visual storytelling/
+                /I explore character, movement and storytelling through 2D animation, drawing and film/
             )
         ).toBeInTheDocument();
     });
 
-    it('offers both primary calls to action', () => {
+    it('leads with animation, then drawing and film', () => {
         renderPage('/', Home);
-        expect(screen.getByRole('link', { name: 'View Portfolio' })).toHaveAttribute(
+        const primary = screen.getByRole('link', { name: 'View animation' });
+        expect(primary).toHaveAttribute('href', '/animation');
+        expect(primary).toHaveClass('jm-button--primary');
+        expect(screen.getByRole('link', { name: 'Explore drawings' })).toHaveAttribute(
             'href',
             '/comic-art'
         );
-        expect(screen.getByRole('link', { name: 'Watch Animation' })).toHaveAttribute(
+        expect(screen.getByRole('link', { name: 'Watch film' })).toHaveAttribute(
             'href',
-            '/animation'
+            '/film'
         );
+
+        // Animation is the first section after the hero.
+        const sections = screen.getAllByRole('heading', { level: 2 });
+        expect(sections[0]).toHaveTextContent('Animation');
     });
 });
 

@@ -81,6 +81,48 @@
 
 /* ---- Kit ---- */
 
+.jm-kit-disclosure summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--jm-space-2) var(--jm-space-4);
+  padding-block: var(--jm-space-4);
+  border-block: 1px solid var(--jm-border);
+  cursor: pointer;
+  list-style: none;
+}
+
+.jm-kit-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom marker so the open/closed state is visible without the browser's
+   default triangle, which renders inconsistently beside a heading. */
+.jm-kit-disclosure summary::before {
+  content: '+';
+  width: 1ch;
+  font-weight: 700;
+  color: var(--jm-accent);
+}
+
+.jm-kit-disclosure[open] summary::before {
+  content: '−';
+}
+
+.jm-kit-disclosure summary h2 {
+  display: inline;
+  font-size: var(--jm-text-lg);
+}
+
+.jm-kit-disclosure__hint {
+  font-size: var(--jm-text-sm);
+  color: var(--jm-text-muted);
+}
+
+.jm-kit-disclosure .jm-kit {
+  margin-top: var(--jm-space-5);
+}
+
 .jm-kit {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
