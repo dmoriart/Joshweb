@@ -94,6 +94,12 @@
   aspect-ratio: 3 / 2;
 }
 
+/* PAL DV frames are 5:4 inside black side bars; a 5:4 tile crops the bars
+   off in the grid while the viewer still shows the whole frame. */
+.jm-photo[data-orientation='still'] {
+  aspect-ratio: 5 / 4;
+}
+
 /* No translate on hover — see the note in Gallery.css. */
 .jm-photo:hover,
 .jm-photo:focus-visible {

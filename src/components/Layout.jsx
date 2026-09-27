@@ -4,12 +4,20 @@ import SiteNav from './SiteNav';
 import { CV_PATH, EMAIL, SOCIAL_LINKS } from '../routes';
 import './Layout.css';
 
-/** Client-side navigation does not reset scroll on its own. */
+/**
+ * Client-side navigation does not reset scroll on its own. A link with a hash
+ * (e.g. /film#photography) lands on that section instead of the top.
+ */
 function useScrollToTopOnRouteChange() {
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-    }, [pathname]);
+        const target = hash && document.getElementById(hash.slice(1));
+        if (target) {
+            target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+    }, [pathname, hash]);
 }
 
 function Layout() {

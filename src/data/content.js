@@ -415,55 +415,72 @@ export const cleanups = [
     },
 ];
 
+/**
+ * Photographs and film stills, shown on the Film page and (where `featured`)
+ * on the home page.
+ *
+ * `kind: 'still'` marks frames taken from video rather than photographs. The
+ * DJ and Lockout images are all 1920×1080 with a 1353-pixel-wide picture
+ * between black side bars — a 720×576 PAL DV frame (the Sony PD170's format)
+ * placed on a 1080p timeline — and carry no camera metadata, unlike the
+ * photographs. Descriptions say only what is visible.
+ *
+ * TODO: Confirm which DJ sets the stills come from, so they can sit with the
+ * corresponding project.
+ */
 export const photography = [
     {
         id: 'brand',
-        title: 'Clothing Brand Campaign',
+        kind: 'photo',
+        title: 'Clothing Brand Shoot',
         orientation: 'portrait',
-        description: 'Commercial fashion photography focusing on urban aesthetics and texture.',
+        description: 'Photographs from the clothing brand shoot in Dublin.',
         images: [
-            { id: 'b1', src: '/images/photography/brand1.jpeg', title: 'Urban Texture', description: 'Collection Lead' },
-            { id: 'b2', src: '/images/photography/brand2.jpeg', title: 'Detail Shot', description: 'Fabric detail' },
-            { id: 'b3', src: '/images/photography/brand3.jpeg', title: 'Street Style', description: 'Location shoot' },
-            { id: 'b4', src: '/images/photography/brand4.jpeg', title: 'Motion', description: 'Dynamic movement' },
-            { id: 'b5', src: '/images/photography/brand5.jpeg', title: 'Portrait', description: 'Model closeup' },
-            { id: 'b6', src: '/images/photography/brand6.jpeg', title: 'Atmosphere', description: 'Wide context' },
-            { id: 'b7', src: '/images/photography/brand7.jpeg', title: 'Editorial', description: 'Campaign shot' },
-            { id: 'b8', src: '/images/photography/brand8.jpeg', title: 'Styling', description: 'Creative direction' }
-        ]
-    },
-    {
-        id: 'dj',
-        title: 'DJ Sessions',
-        orientation: 'landscape',
-        description: 'Capturing the energy and technical precision of underground club culture.',
-        images: [
-            { id: 'd1', src: '/images/photography/DJ1.jpg', title: 'Focus', description: 'In the mix' },
-            { id: 'd2', src: '/images/photography/dj2.jpg', title: 'Control', description: 'Tactile interaction' },
-            { id: 'd3', src: '/images/photography/DJ3.jpg', title: 'Atmosphere', description: 'Club lighting' },
-            { id: 'd4', src: '/images/photography/DJ4.jpg', title: 'Connection', description: 'Crowd interaction' },
-            { id: 'd5', src: '/images/photography/DJ5.jpg', title: 'Intensity', description: 'Peak moment' },
-            { id: 'd6', src: '/images/photography/DJ6.jpg', title: 'Technique', description: 'Hands on decks' }
+            { id: 'b1', src: '/images/photography/brand1.jpeg', title: 'Skate Jump', description: 'Skateboarder in a red top mid-jump by the river, two friends watching', featured: true },
+            { id: 'b2', src: '/images/photography/brand2.jpeg', title: 'Fur Hood', description: 'Portrait of a young man in a fur-trimmed hood by the water' },
+            { id: 'b3', src: '/images/photography/brand3.jpeg', title: 'Line-Up', description: 'Three friends standing side by side on the riverside walk' },
+            { id: 'b4', src: '/images/photography/brand4.jpeg', title: 'Between Shots', description: 'The group and their bags on a brick path beside the river' },
+            { id: 'b5', src: '/images/photography/brand5.jpeg', title: 'Red Hat', description: 'Portrait in a red patterned hat and red hoodie, hands behind the head', featured: true },
+            { id: 'b6', src: '/images/photography/brand6.jpeg', title: 'Skate Jump II', description: 'Wider shot of the skateboarder mid-jump' },
+            { id: 'b7', src: '/images/photography/brand7.jpeg', title: 'Filming', description: 'Two people filming with handheld camcorders beside an office block' },
+            { id: 'b8', src: '/images/photography/brand8.jpeg', title: 'Camera Raised', description: 'A man smiling as he holds a camcorder up overhead' }
         ]
     },
     {
         id: 'aurora',
+        kind: 'photo',
         title: 'Aurora Borealis',
         orientation: 'landscape',
-        description: 'Long exposure astrophotography capturing natural phenomena.',
+        description: 'Night photographs of the northern lights over rooftops.',
         images: [
-            { id: 'a1', src: '/images/photography/aurora1.jpeg', title: 'Northern Lights I', description: 'Wide sky capture' },
-            { id: 'a2', src: '/images/photography/aurora2.jpeg', title: 'Northern Lights II', description: 'Vibrant colors' },
-            { id: 'a3', src: '/images/photography/aurora3.jpeg', title: 'Northern Lights III', description: 'Night sky' }
+            { id: 'a1', src: '/images/photography/aurora1.jpeg', title: 'Northern Lights I', description: 'A faint green aurora over town lights at night' },
+            { id: 'a2', src: '/images/photography/aurora2.jpeg', title: 'Northern Lights II', description: 'Green aurora arching over houses' },
+            { id: 'a3', src: '/images/photography/aurora3.jpeg', title: 'Northern Lights III', description: 'Aurora above a house roof and bare branches' }
+        ]
+    },
+    {
+        id: 'dj',
+        kind: 'still',
+        title: 'DJ Sets',
+        orientation: 'still',
+        description: 'Frames from the DV footage of the DJ sets.',
+        images: [
+            { id: 'd1', src: '/images/photography/DJ1.jpg', title: 'At the Decks', description: 'DJ at the decks under blue light' },
+            { id: 'd2', src: '/images/photography/dj2.jpg', title: 'Hands Up', description: 'DJ with an arm raised in front of a projection screen' },
+            { id: 'd3', src: '/images/photography/DJ3.jpg', title: 'Dancer', description: 'Dancer in the crowd under pink and purple light' },
+            { id: 'd4', src: '/images/photography/DJ4.jpg', title: 'Silhouette', description: 'Performer silhouetted against diagonal purple light', featured: true },
+            { id: 'd5', src: '/images/photography/DJ5.jpg', title: 'In the Crowd', description: 'Raised arm in the crowd, DJ booth behind in blue light' },
+            { id: 'd6', src: '/images/photography/DJ6.jpg', title: 'Booth', description: 'DJ silhouetted against a bright projection screen' }
         ]
     },
     {
         id: 'live',
-        title: 'Live Performance',
-        orientation: 'landscape',
-        description: 'Raw energy of live music performance.',
+        kind: 'still',
+        title: 'Lockout at Sound House',
+        orientation: 'still',
+        description: 'A frame from the DV footage of Lockout live at Sound House.',
         images: [
-            { id: 'l1', src: '/images/photography/lockout.jpg', title: 'Lockout Live', description: 'Performance intensity' }
+            { id: 'l1', src: '/images/photography/lockout.jpg', title: 'Lockout Live', description: 'Lockout on stage under white stage lights' }
         ]
     }
 ];

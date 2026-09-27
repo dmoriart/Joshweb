@@ -28,5 +28,7 @@ if (!window.matchMedia) {
 window.HTMLMediaElement.prototype.play = () => Promise.resolve();
 window.HTMLMediaElement.prototype.pause = () => { };
 
-// Layout scrolls to top on navigation; jsdom has no scroll implementation.
+// Layout scrolls to top (or to a #hash target) on navigation; jsdom has no
+// scroll implementation.
 window.scrollTo = () => { };
+window.Element.prototype.scrollIntoView = () => { };
