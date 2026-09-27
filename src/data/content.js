@@ -86,6 +86,10 @@ export const works = [
         category: 'Reel',
         // TODO: Confirm the exact role and the list of pieces included.
         role: 'Editor',
+        // Home page film preview. Provisional: it was the site's lead reel
+        // before moving to Film, and no other selection has been made yet.
+        // TODO: Confirm with Josh which film should represent him on the home page.
+        featured: true,
     },
     {
         title: 'DEMO REEL 2026',
@@ -252,7 +256,10 @@ export const animations = [
  * Every still piece on the site.
  *
  * `featured: true` promotes a piece to the home page. Keep that list short —
- * five or six pieces at most, or it stops being a selection.
+ * five is what the home grid lays out cleanly (lead tile + four), and more
+ * stops reading as a selection. Keep some observational work in it alongside
+ * the finished illustration, so the home page shows range rather than only
+ * fan art (docs/portfolio-review.md §2).
  *
  * TODO: The 30 "Sketchbook Study I–XXX" and 7 "Digital Artwork I–VII" entries
  * carry placeholder titles and rotating generic descriptions. Identify the
@@ -267,15 +274,15 @@ export const artworks = [
     { id: 66, src: '/images/artwork/1000005511.png', title: 'Guardians', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 62, src: '/images/artwork/1000005510.png', title: 'Masked Mercenary', category: 'fan-art', description: 'Digital character illustration', featured: true },
     { id: 63, src: '/images/artwork/1000006079.png', title: 'Moon Knight', category: 'fan-art', description: 'Digital character illustration', featured: true },
-    { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration', featured: true },
-    { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration', featured: true },
+    { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration' },
+    { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration' },
 
     // Digital Artwork — tools confirmed from the existing descriptions.
     { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
     { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
 
     // Self Portraits
-    { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range' },
+    { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range', featured: true },
     { id: 2, src: '/images/artwork/Selfportrait2.jpeg', title: 'Self Portrait II', category: 'self-portraits', description: 'Study in proportion and expression' },
     { id: 4, src: '/images/artwork/Selfportrait4.jpeg', title: 'Self Portrait IV', category: 'self-portraits', description: 'Expressive self portrait capturing mood and character' },
 
@@ -288,7 +295,7 @@ export const artworks = [
 
     // View & Viewpoint
     { id: 10, src: '/images/artwork/View and viewpoint1.jpeg', title: 'View & Viewpoint I', category: 'viewpoint', description: 'Perspective study exploring depth and spatial composition' },
-    { id: 11, src: '/images/artwork/View and viewpoint2.jpeg', title: 'View & Viewpoint II', category: 'viewpoint', description: 'Observational drawing focusing on architectural perspective' },
+    { id: 11, src: '/images/artwork/View and viewpoint2.jpeg', title: 'View & Viewpoint II', category: 'viewpoint', description: 'Observational drawing focusing on architectural perspective', featured: true },
     { id: 12, src: '/images/artwork/View and viewpoint3.jpeg', title: 'View & Viewpoint III', category: 'viewpoint', description: 'Landscape composition and spatial awareness' },
     { id: 13, src: '/images/artwork/View and viewpoint4.jpeg', title: 'View & Viewpoint IV', category: 'viewpoint', description: 'Study of environment and viewpoint' },
     { id: 14, src: '/images/artwork/View and viewpoint5.jpeg', title: 'View & Viewpoint V', category: 'viewpoint', description: 'Perspective and compositional exploration' },

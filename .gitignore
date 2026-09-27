@@ -34,3 +34,7 @@ __pycache__/
 # build, so the web-ready derivatives are never committed — only the
 # originals in media/ are tracked.
 public/images/
+
+# Private source photographs for the portfolio review (docs/portfolio-review.md).
+# Originals stay local: never committed, never copied into public/ or dist/.
+portfolio-incoming/

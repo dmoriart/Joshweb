@@ -28,7 +28,7 @@ function ComicArt() {
         <>
             <PageMeta title={meta.title} description={meta.description} path="/comic-art" />
             <div className="jm-container jm-page">
-                <PageHeader eyebrow="Portfolio" title="Comic Art">
+                <PageHeader eyebrow="Portfolio" title="Drawing & Comic Art">
                     Character illustration and comic-style line work — figures, costume,
                     pose and expression, drawn digitally and in the sketchbook.
                 </PageHeader>

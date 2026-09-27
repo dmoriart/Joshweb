@@ -6,7 +6,8 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: min(86vh, 760px);
+  /* Compact: the animation section should start near the fold. */
+  min-height: min(72vh, 640px);
   overflow: hidden;
   border-bottom: 1px solid var(--jm-border);
 }
@@ -75,11 +76,6 @@
   gap: var(--jm-space-3);
 }
 
-.jm-hero__about {
-  display: inline-block;
-  margin-top: var(--jm-space-5);
-}
-
 /* ---- Featured work ---- */
 
 .jm-featured {
@@ -145,7 +141,13 @@
   margin-top: var(--jm-space-6);
 }
 
-/* ---- Reel ---- */
+.jm-home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jm-space-3);
+}
+
+/* ---- Film ---- */
 
 .jm-home-reel {
   max-width: 900px;

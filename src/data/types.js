@@ -75,6 +75,7 @@
  * @property {string}  [technicalDetails]
  * @property {string}  [criticalAnalysis]
  * @property {string}  [outcome]
+ * @property {boolean} [featured]   The single film previewed on the home page.
  */
 
 /**

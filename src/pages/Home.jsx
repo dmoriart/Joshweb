@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import PageMeta from '../components/PageMeta';
 import ResponsiveImage from '../components/ResponsiveImage';
 import MotionClipGrid from '../components/MotionClipGrid';
+import VideoEmbed from '../components/VideoEmbed';
 import Lightbox from '../components/Lightbox';
-import { artworks, sequences } from '../data/content';
+import { artworks, sequences, works } from '../data/content';
 import { routes } from '../routes';
 import { useState } from 'react';
 import './Home.css';
@@ -13,6 +14,7 @@ const meta = routes.find((route) => route.path === '/');
 const featured = artworks.filter((artwork) => artwork.featured);
 // The strongest single piece carries the hero.
 const heroPiece = featured[0];
+const featuredFilm = works.find((work) => work.featured);
 
 function Home() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -40,36 +42,56 @@ function Home() {
                 <div className="jm-container jm-hero__content">
                     <h1 className="jm-hero__name">Josh Moriarty</h1>
                     <p className="jm-hero__roles">
-                        Comic Artist <span aria-hidden="true">·</span> 2D Animator{' '}
+                        Animation student <span aria-hidden="true">·</span> Artist{' '}
                         <span aria-hidden="true">·</span> Filmmaker
                     </p>
                     <p className="jm-hero__line">
-                        I create dynamic comic art, 2D animation and cinematic visual
-                        storytelling.
+                        I explore character, movement and storytelling through 2D
+                        animation, drawing and film.
                     </p>
 
+                    {/* Animation leads; drawing and film follow. Not "Watch
+                        animation reel": there is no animation-only reel yet. */}
                     <div className="jm-hero__actions">
-                        <Link className="jm-button jm-button--primary" to="/comic-art">
-                            View Portfolio
+                        <Link className="jm-button jm-button--primary" to="/animation">
+                            View animation
                         </Link>
-                        {/* Not "Watch Animation Reel": the Creative Reel moved
-                            to Film, so there is no animation-only reel to
-                            promise. Restore the wording once one exists. */}
-                        <Link className="jm-button jm-button--secondary" to="/animation">
-                            Watch Animation
+                        <Link className="jm-button jm-button--secondary" to="/comic-art">
+                            Explore drawings
+                        </Link>
+                        <Link className="jm-button jm-button--quiet" to="/film">
+                            Watch film
                         </Link>
                     </div>
-                    <Link className="jm-button jm-button--quiet jm-hero__about" to="/about">
-                        About Josh
-                    </Link>
                 </div>
             </section>
 
             <div className="jm-container">
+                {/* Animation comes straight after the hero: it is what Josh
+                    is studying. Drawn loops, not the Creative Reel, which opens
+                    on live-action and sits under Film. */}
+                <section className="jm-section" aria-labelledby="animation-heading">
+                    <div className="jm-section__header">
+                        <h2 id="animation-heading">Animation</h2>
+                        <p>Hand-drawn movement, timing and character work.</p>
+                    </div>
+
+                    <div className="jm-home-clips">
+                        <MotionClipGrid featuredOnly />
+                    </div>
+
+                    <Link className="jm-button jm-button--secondary jm-section__cta" to="/animation">
+                        See all animation
+                    </Link>
+                </section>
+
                 <section className="jm-section" aria-labelledby="featured-heading">
                     <div className="jm-section__header">
-                        <h2 id="featured-heading">Featured Work</h2>
-                        <p>Recent character illustration and line work.</p>
+                        <h2 id="featured-heading">Drawing</h2>
+                        <p>
+                            Finished character illustration alongside observational
+                            studies from the sketchbook.
+                        </p>
                     </div>
 
                     <div className="jm-featured">
@@ -91,9 +113,14 @@ function Home() {
                         ))}
                     </div>
 
-                    <Link className="jm-button jm-button--secondary jm-section__cta" to="/comic-art">
-                        See all comic art
-                    </Link>
+                    <div className="jm-section__cta jm-home-links">
+                        <Link className="jm-button jm-button--secondary" to="/comic-art">
+                            See all drawings
+                        </Link>
+                        <Link className="jm-button jm-button--quiet" to="/sketchbook">
+                            Open the sketchbook
+                        </Link>
+                    </div>
                 </section>
 
                 {/* Rendered only when real sequences exist — an empty section
@@ -116,31 +143,38 @@ function Home() {
                     </section>
                 )}
 
-                {/* Leads on drawn movement rather than the Creative Reel, which
-                    opens on live-action and now sits under Film. */}
-                <section className="jm-section" aria-labelledby="animation-heading">
-                    <div className="jm-section__header">
-                        <h2 id="animation-heading">Animation</h2>
-                        <p>Hand-drawn movement, timing and character work.</p>
-                    </div>
+                {featuredFilm && (
+                    <section className="jm-section" aria-labelledby="film-heading">
+                        <div className="jm-section__header">
+                            <h2 id="film-heading">Film</h2>
+                            <p>
+                                I also shoot and edit live music and fashion work on a
+                                Sony PD170.
+                            </p>
+                        </div>
 
-                    <div className="jm-home-clips">
-                        <MotionClipGrid featuredOnly />
-                    </div>
+                        <div className="jm-home-reel">
+                            <VideoEmbed
+                                url={featuredFilm.url}
+                                title={featuredFilm.title}
+                                caption={featuredFilm.description}
+                            />
+                        </div>
 
-                    <Link className="jm-button jm-button--secondary jm-section__cta" to="/animation">
-                        See all animation
-                    </Link>
-                </section>
+                        <Link className="jm-button jm-button--secondary jm-section__cta" to="/film">
+                            See all film
+                        </Link>
+                    </section>
+                )}
 
                 <section className="jm-section jm-home-about" aria-labelledby="about-heading">
                     <div>
                         <h2 id="about-heading">About</h2>
                         <p>
-                            I'm an emerging Irish artist, animator and filmmaker working
-                            across comic art, character-driven animation and cinematic
-                            storytelling. My work combines bold composition, expressive
-                            movement and influences from comics, film and games.
+                            I'm an Irish animation student who also draws and makes
+                            films. My work draws on comics, film and games, and shooting
+                            and editing film feeds back into how I frame and pace a
+                            drawn sequence.
                         </p>
                         <Link className="jm-button jm-button--secondary" to="/about">
                             More about Josh
@@ -158,7 +192,7 @@ function Home() {
                     <h2 id="contact-heading">Available for work</h2>
                     <p>
                         Open to internships, junior projects and collaborative work in
-                        comics, animation and film.
+                        animation, drawing and film.
                     </p>
                     <Link className="jm-button jm-button--primary" to="/contact">
                         Get in touch
