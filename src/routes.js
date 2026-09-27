@@ -33,9 +33,9 @@ export const routes = [
         path: '/animation',
         id: 'animation',
         label: 'Animation',
-        title: '2D Animation & Clean-Up | Josh Moriarty',
+        title: '2D Animation | Josh Moriarty',
         description:
-            'Hand-drawn 2D animation tests, movement studies and clean-up work by Josh Moriarty.',
+            'Hand-drawn 2D animation loops, action tests and animated comic panels by Josh Moriarty.',
     },
     {
         // The URL stays /comic-art so existing links keep working; only the

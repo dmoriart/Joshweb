@@ -35,6 +35,12 @@ export const filmGroups = [
 /**
  * Film and video projects.
  *
+ * `featured` is the reel that leads Film (and the home page); `selected`
+ * marks the few projects shown with it before everything else. The current
+ * selection is provisional — the first main cut from each group, never an
+ * alternate edit.
+ * TODO: Confirm the reel and the selected projects with Josh.
+ *
  * TODO: Verify every `role` below with Josh. Several of these appear to be
  * solo shoots, and "Director of Photography" on a one-person handheld gig
  * reads as inflated to an industry reviewer — "Camera and edit" is stronger
@@ -46,6 +52,7 @@ export const works = [
     {
         title: 'CLOTHING BRAND PHOTOSHOOT',
         url: 'https://youtu.be/HpGS_WcvOBM',
+        selected: true,
         type: 'djs',
         group: 'fashion',
         venue: 'Dublin',
@@ -110,6 +117,7 @@ export const works = [
     {
         title: 'DJ ORTEGA',
         url: 'https://youtu.be/mo90B3F9Lkk',
+        selected: true,
         type: 'djs',
         group: 'music',
         venue: 'Wigwam',
@@ -142,6 +150,7 @@ export const works = [
     {
         title: 'LOCKOUT AT SOUND HOUSE',
         url: 'https://youtu.be/GabbIXxuWKU',
+        selected: true,
         type: 'bands',
         group: 'music',
         venue: 'Sound House',
@@ -177,10 +186,12 @@ export const works = [
  * Short, self-hosted 2D movement loops, rendered inline as muted autoplay
  * loops (videos) or as a GIF — the fastest way to show movement to a reviewer.
  *
- * TODO: Confirm duration, software and frame timing (1s or 2s) for each clip.
- * TODO: Confirm whether each is original work or a college/self-directed exercise.
- * TODO: Supply a poster frame per clip so nothing loads as a black rectangle.
- * TODO: Replace the placeholder titles with the real names of these pieces.
+ * Titles and captions describe what is visible in each clip; `meta` holds
+ * measurements read from the files. Nothing here states intent or software.
+ *
+ * TODO: Confirm software and whether each is original work or a
+ * college/self-directed exercise. Replace the descriptive titles with Josh's
+ * own names for these pieces if they have them.
  *
  * @type {AnimationItem[]}
  */
@@ -189,24 +200,27 @@ export const motionClips = [
         id: 'res',
         type: 'video',
         src: '/images/animation/res.mp4',
-        title: '2D movement test',
-        caption: 'Exploring timing, pose changes and motion.',
+        title: 'Hooded Figure in the Rain',
+        caption: 'Star Wars fan animation: a hooded figure walks with clone troopers through rain, ending on an explosion.',
+        meta: '3.2 s loop',
         featured: true,
     },
     {
         id: 'oct',
         type: 'video',
         src: '/images/animation/oct.mp4',
-        title: 'Character movement study',
-        caption: 'Focused on rhythm, spacing and gesture.',
+        title: 'Leap onto the Droid',
+        caption: 'Star Wars fan animation: a figure leaps up and lands on top of a three-legged combat droid.',
+        meta: '3.3 s loop',
         featured: true,
     },
     {
         id: 'anim16',
         type: 'gif',
         src: '/images/animation/Animation16.gif',
-        title: 'Short animation experiment',
-        caption: 'Independent test using frame-by-frame movement.',
+        title: 'Action Test with Smear Frame',
+        caption: 'Frame-by-frame action test that uses a smear frame for the fastest move.',
+        meta: '26 frames at 12 fps',
     },
 ];
 
@@ -215,6 +229,8 @@ export const motionClips = [
  *
  * TODO: Confirm duration for both pieces.
  * TODO: Confirm whether each is original work or a college exercise.
+ * TODO: "Art Project 8" keeps its placeholder title: the content cannot be
+ * identified reliably enough from outside to give it an accurate one.
  *
  * @type {AnimationItem[]}
  */
@@ -222,9 +238,10 @@ export const animations = [
     {
         id: 2,
         type: 'youtube',
-        title: 'Animation Test 1',
+        title: 'Jump to Light Speed',
         url: 'https://youtu.be/amqhi52QMLY',
-        description: 'Animated comic book panel using drawing tablet.',
+        // An animated comic panel, not full character animation.
+        description: 'Animated comic panel: a transport ship makes the jump to light speed beneath a caption box. Drawn on a tablet.',
         year: '2026',
         category: 'Test',
         tools: 'Autodesk Sketchbook, XP-Pen Artist 15.6',
@@ -277,9 +294,14 @@ export const artworks = [
     { id: 64, src: '/images/artwork/1000005515.png', title: 'Sith Lord', category: 'fan-art', description: 'Digital character illustration' },
     { id: 65, src: '/images/artwork/1000005520.png', title: 'Descent', category: 'fan-art', description: 'Digital character illustration' },
 
-    // Digital Artwork — tools confirmed from the existing descriptions.
-    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Digital Artwork I', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
-    { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Digital Artwork VII', category: 'digital', description: 'Done with XPPen Magic Drawing Pad and sketchbook' },
+    // Digital illustration — tools confirmed from the original descriptions.
+    { id: 55, src: '/images/artwork/25b9fafb-b8ed-463e-b5f2-46c2ae4c2366.png', title: 'Gold Mask', category: 'digital', description: 'Digital portrait of a figure in an ornate gold mask and a red hood', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
+    { id: 61, src: '/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png', title: 'Invincible', category: 'fan-art', description: 'Digital fan art of Invincible, in profile', tools: 'XPPen Magic Drawing Pad, Autodesk Sketchbook' },
+
+    // Drawings on paper from the September 2026 intake. Only records marked
+    // 'approved' in ./artwork-review.json belong here; see that file for the
+    // drafts still awaiting a decision.
+    { id: 67, src: '/images/artwork/smoke.jpeg', title: 'Smoke', category: 'figure', description: 'Black-and-white drawing of a figure in a jacket and wide trousers, head tilted back, breathing out a large stylised cloud of smoke' },
 
     // Self Portraits
     { id: 1, src: '/images/artwork/Selfportrait1.jpeg', title: 'Self Portrait I', category: 'self-portraits', description: 'Observational self portrait exploring likeness and tonal range', featured: true },
@@ -339,8 +361,12 @@ export const artworks = [
  * Clean-up before-and-after pairs. Each entry runs rough original → cleaned up.
  * Drop new photos into /public/images/cleanup/ and set each image's `src`.
  *
- * TODO: Confirm the software used for each clean-up.
- * TODO: Confirm the year of each.
+ * `processConfirmed` gates each pair on the Animation page. Both are held
+ * (docs/portfolio-review.md §2, priority 3): they are only shown as clean-up
+ * once Josh confirms he redrew the lines by hand. If they turn out to be
+ * something else, describe the actual process instead.
+ *
+ * TODO: Confirm how each clean-up was made, the software, and the year.
  * TODO: Confirm whether the source rough was Josh's own drawing or supplied.
  *
  * @type {CleanupItem[]}
@@ -348,6 +374,7 @@ export const artworks = [
 export const cleanups = [
     {
         id: 1,
+        processConfirmed: false,
         caption: 'Self-directed clean-up exercise: a rough original drawing refined into clean, consistent line work while preserving the character pose and readability.',
         images: [
             { label: 'Original', src: '/images/cleanup/clean1.png' },
@@ -356,6 +383,7 @@ export const cleanups = [
     },
     {
         id: 2,
+        processConfirmed: false,
         caption: 'Further clean-up study showing the same refinement from rough drawing to tidied line work.',
         images: [
             { label: 'Original', src: '/images/cleanup/Screenshot_20260614-210212.png' },

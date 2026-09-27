@@ -10,12 +10,18 @@ import './Film.css';
 
 const meta = routes.find((route) => route.path === '/film');
 
+// One reel and a few projects lead; everything else follows, grouped.
+// Alternate edits stay out of the first view.
+const reel = works.find((work) => work.featured);
+const selectedWorks = works.filter((work) => work.selected);
+const isLead = (work) => work.featured || work.selected;
+
 /** Only groups that actually contain work get a heading. */
 const populatedGroups = filmGroups
     .filter((group) => group.key !== 'all')
     .map((group) => ({
         ...group,
-        items: works.filter((work) => work.group === group.key),
+        items: works.filter((work) => work.group === group.key && !isLead(work)),
     }))
     .filter((group) => group.items.length > 0);
 
@@ -70,6 +76,23 @@ function Film() {
                     Live music, fashion and brand work shot on a Sony PD170 and cut on
                     Premiere. Josh's exact role is stated on every piece.
                 </PageHeader>
+
+                <section aria-labelledby="film-selected">
+                    <div className="jm-section__header">
+                        <h2 id="film-selected">Selected Work</h2>
+                        <p>A reel and three projects to start with. Everything else follows.</p>
+                    </div>
+                    {reel && (
+                        <div className="jm-film-reel">
+                            <FilmCard work={reel} />
+                        </div>
+                    )}
+                    <div className="jm-film-grid">
+                        {selectedWorks.map((work) => (
+                            <FilmCard key={work.url} work={work} />
+                        ))}
+                    </div>
+                </section>
 
                 {populatedGroups.map((group) => (
                     <section

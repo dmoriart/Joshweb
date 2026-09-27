@@ -54,6 +54,7 @@
  * @property {number}  id
  * @property {string}  caption
  * @property {Array<{label: string, src: string}>} images  Ordered rough → clean.
+ * @property {boolean} processConfirmed  Josh has confirmed the lines were redrawn by hand. Unconfirmed pairs are not shown.
  * @property {string}  [tools]
  * @property {string}  [year]
  */
@@ -75,7 +76,8 @@
  * @property {string}  [technicalDetails]
  * @property {string}  [criticalAnalysis]
  * @property {string}  [outcome]
- * @property {boolean} [featured]   The single film previewed on the home page.
+ * @property {boolean} [featured]   The reel that leads Film and the home page.
+ * @property {boolean} [selected]   Shown with the reel before the rest of the work.
  */
 
 /**

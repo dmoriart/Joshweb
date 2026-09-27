@@ -10,6 +10,7 @@ const CATEGORIES = [
     { key: 'all', label: 'All' },
     { key: 'fan-art', label: 'Character & Fan Art' },
     { key: 'digital', label: 'Digital Illustration' },
+    { key: 'figure', label: 'Figure Drawing' },
 ];
 
 const items = artworks.filter((artwork) =>
@@ -30,7 +31,7 @@ function ComicArt() {
             <div className="jm-container jm-page">
                 <PageHeader eyebrow="Portfolio" title="Drawing & Comic Art">
                     Character illustration and comic-style line work — figures, costume,
-                    pose and expression, drawn digitally and in the sketchbook.
+                    pose and expression, drawn digitally and on paper.
                 </PageHeader>
 
                 <ArtworkGallery

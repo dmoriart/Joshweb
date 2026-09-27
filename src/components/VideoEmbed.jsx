@@ -41,9 +41,18 @@ function VideoEmbed({ url, title, caption, poster }) {
                             loading="lazy"
                             decoding="async"
                             /* maxresdefault only exists for videos uploaded at
-                               720p+; fall back rather than show a broken image. */
+                               720p+. When it is missing YouTube may answer with
+                               a 404, or with a 120×90 grey placeholder that
+                               loads "successfully" — fall back on either. */
                             onError={(event) => {
                                 event.currentTarget.src = getYouTubeThumbnail(url);
+                            }}
+                            onLoad={(event) => {
+                                const img = event.currentTarget;
+                                const fallback = getYouTubeThumbnail(url);
+                                if (img.naturalWidth <= 120 && img.src !== fallback) {
+                                    img.src = fallback;
+                                }
                             }}
                         />
                         <span className="jm-video__play" aria-hidden="true">

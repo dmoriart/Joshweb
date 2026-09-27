@@ -13,6 +13,7 @@ import {
     works,
 } from './content';
 import manifest from './image-manifest.json';
+import artworkReview from './artwork-review.json';
 
 const MEDIA_DIR = join(process.cwd(), 'media');
 
@@ -138,5 +139,34 @@ describe('content integrity', () => {
         renderedStrings.forEach((text) => {
             expect(text).not.toMatch(/TODO/i);
         });
+    });
+});
+
+describe('artwork review manifest', () => {
+    const { records } = artworkReview;
+    const approved = records.filter((record) => record.status === 'approved');
+    const publishedSrcs = new Set(artworks.map((item) => item.src));
+
+    it('publishes every approved record, and has a source file for it', () => {
+        approved.forEach((record) => {
+            expect(record.publicSrc, `${record.reviewId} needs a publicSrc`).toBeTruthy();
+            expect(resolves(record.publicSrc)).toBe(true);
+            expect(publishedSrcs.has(record.publicSrc)).toBe(true);
+        });
+    });
+
+    // Drafts, archived sources and exclusions must never reach the site.
+    it('publishes nothing that is not approved', () => {
+        records
+            .filter((record) => record.status !== 'approved')
+            .forEach((record) => {
+                expect(record.publicSrc, `${record.reviewId} is ${record.status}`).toBeUndefined();
+            });
+    });
+
+    // Alternate captures of one drawing must not become separate gallery cards.
+    it('approves at most one record per duplicate group', () => {
+        const groups = approved.map((record) => record.group).filter(Boolean);
+        expect(new Set(groups).size).toBe(groups.length);
     });
 });
