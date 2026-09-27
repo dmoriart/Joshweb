@@ -93,6 +93,8 @@ main:focus {
 .jm-button--quiet {
   min-height: 0;
   padding: 0;
+  /* Also used on <button>, which would otherwise keep the UA background. */
+  background: transparent;
   color: var(--jm-text-muted);
   text-decoration: underline;
   text-underline-offset: 4px;

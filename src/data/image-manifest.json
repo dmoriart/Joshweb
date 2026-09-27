@@ -465,6 +465,32 @@
       480
     ]
   },
+  "/images/artwork/construction-grid.jpeg": {
+    "src": "/images/artwork/construction-grid.webp",
+    "width": 1276,
+    "height": 1645,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/artwork/creature-and-caped-figure.jpeg": {
+    "src": "/images/artwork/creature-and-caped-figure.webp",
+    "width": 952,
+    "height": 1134,
+    "widths": [
+      480
+    ]
+  },
+  "/images/artwork/cyclops.jpeg": {
+    "src": "/images/artwork/cyclops.webp",
+    "width": 1197,
+    "height": 1162,
+    "widths": [
+      480,
+      960
+    ]
+  },
   "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.png": {
     "src": "/images/artwork/de75bddc-dc52-445b-be0e-5714c0692112.webp",
     "width": 1392,
@@ -472,6 +498,64 @@
     "widths": [
       480,
       960
+    ]
+  },
+  "/images/artwork/explosion-ensemble.jpeg": {
+    "src": "/images/artwork/explosion-ensemble.webp",
+    "width": 1450,
+    "height": 1156,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/eye-beams.jpeg": {
+    "src": "/images/artwork/eye-beams.webp",
+    "width": 1509,
+    "height": 1726,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/falling-figure.jpeg": {
+    "src": "/images/artwork/falling-figure.webp",
+    "width": 1087,
+    "height": 789,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/artwork/judge-dredd.jpeg": {
+    "src": "/images/artwork/judge-dredd.webp",
+    "width": 1034,
+    "height": 1824,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/artwork/leaping-combat.jpeg": {
+    "src": "/images/artwork/leaping-combat.webp",
+    "width": 1470,
+    "height": 1120,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/pose-sheets.jpeg": {
+    "src": "/images/artwork/pose-sheets.webp",
+    "width": 1536,
+    "height": 1381,
+    "widths": [
+      480,
+      960,
+      1440
     ]
   },
   "/images/artwork/rooftop-confrontation-study.jpeg": {
@@ -487,6 +571,25 @@
     "src": "/images/artwork/smoke.webp",
     "width": 1536,
     "height": 2048,
+    "widths": [
+      480,
+      960,
+      1440
+    ]
+  },
+  "/images/artwork/staff-raised.jpeg": {
+    "src": "/images/artwork/staff-raised.webp",
+    "width": 984,
+    "height": 1497,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/artwork/winged-figure-landscape.jpeg": {
+    "src": "/images/artwork/winged-figure-landscape.webp",
+    "width": 1506,
+    "height": 1413,
     "widths": [
       480,
       960,

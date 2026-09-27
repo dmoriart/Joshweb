@@ -8,7 +8,10 @@ Covers Prompts 3–6 of [portfolio-review.md](portfolio-review.md). Prompts 1–
 
 | Area | Change |
 |---|---|
-| New drawings | All 20 supplied photos recorded in `src/data/artwork-review.json`. **Smoke** (07) is published under Drawing & Comic Art → Figure Drawing, since Josh's authorship is confirmed. Development sketches 08 and 12 and composition study 15 were approved afterwards and lead the Sketchbook under "Development". The rest are drafts, archived sources or excluded, and none of them reach the site. |
+| New drawings | All 20 supplied photos recorded in `src/data/artwork-review.json`. **Smoke** (07) is published under Drawing & Comic Art → Figure Drawing, since Josh's authorship is confirmed. Development sketches 08 and 12 and composition study 15 were approved afterwards and lead the Sketchbook under "Development". The rest were then published as captured, pending better scans. Held back: 01 and 02 (to be rescanned) and the duplicate captures 05, 18 and 20. |
+| Artwork titles (all) | The 35 remaining placeholder titles ("Sketchbook Study I–XXX", "Star Wars I–V" and so on) now describe what is visible. Characters are named only where unmistakable, and labelled fan art; the reflecting-sphere study credits M. C. Escher. A duplicate photo of one drawing (IMG_2046) no longer shows as a second card. |
+| Pause motion | The looping clips have a Pause motion / Play motion toggle, and start paused for visitors who prefer reduced motion. GIFs swap to a generated still when paused. |
+| Home drawings | Smoke replaces Masked Mercenary, which is still on Drawing & Comic Art. |
 | Intake tooling | `npm run prepare-incoming` makes a public master only for approved records, plus a private contact sheet at `portfolio-incoming/review/index.html`. |
 | Clean-Up | Both pairs are hidden from Animation until Josh confirms he redrew the lines by hand (`processConfirmed` in `content.js`). "Clean-up" is also removed from the Animation page title, the About focus list and the site's structured data. The images and captions are kept. |
 | Animation titles | "2D movement test", "Character movement study", "Short animation experiment" and "Animation Test 1" now have descriptive titles and captions based on what each clip shows, and "Jump to Light Speed" is labelled as an animated comic panel. Clip lengths and frame counts were measured from the files. "Art Project 8" is unchanged because its content couldn't be identified reliably. |
@@ -120,21 +123,21 @@ reel shown on the home page and at the top of Film (use it on one entry only);
 2. **Film:** confirm Creative Reel as the lead reel and Clothing Brand
    Photoshoot, DJ Ortega and Lockout as the selected projects. Confirm the
    Creative Reel role ("Editor").
-3. **Home drawings:** confirm Guardians, Moon Knight, Masked Mercenary, Self
-   Portrait I and View & Viewpoint II, and whether Smoke should replace one of them.
+3. **Home drawings:** confirm Guardians, Moon Knight, Smoke, Self Portrait I
+   and Rangefinder Camera.
 4. **Artwork credits:** character/source for 14 (Judge Dredd) and 17; whether
    Gold Mask depicts an existing character; whether Smoke is an original figure
    or drawn from a reference.
 5. **@j.cormacart:** is this Josh's account? Smoke is published from the
    unwatermarked photo (07), and the watermarked one (20) is excluded either way.
-6. **Corrected-image fidelity:** are 01 and 02 faithful to the drawings (compared
-   with 05 and 18), or can he supply fresh scans?
+6. **Rescans:** fresh scans of 01 and 02, which are held until then. Better
+   captures of the drawings published as photographed (03, 04, 06, 10, 11, 14,
+   16, 17, 19) can replace their files in `portfolio-incoming/`; run
+   `npm run prepare-incoming` again.
 7. **19 orientation:** which way up is intended.
 8. **Clean-Up process:** did he redraw the lines by hand? If yes, set
    `processConfirmed: true` on each pair and the section returns.
-9. **Drafts:** 08, 12 and 15 were approved and published to Sketchbook →
-   Development on 27 September 2026. Are 08 and 12 the same character (if so,
-   they can be grouped as one project)? Which of 03, 04, 06, 10, 11, 14 and 19
-   will be recaptured?
+9. **08 and 12:** are they the same character? If so, they can be grouped as
+   one project. Also: his own titles for any of the working titles.
 10. **Course details and CV:** course, college and year for About; whether the
     June 2026 CV is current.

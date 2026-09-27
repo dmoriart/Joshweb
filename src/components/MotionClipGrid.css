@@ -1,5 +1,11 @@
 /* Self-hosted 2D movement loops. */
 
+.jm-clips__toggle {
+  /* Full touch target while keeping the quiet link look. */
+  min-height: 44px;
+  margin-bottom: var(--jm-space-2);
+}
+
 .jm-clips {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
