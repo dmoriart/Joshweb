@@ -13,7 +13,8 @@ Covers Prompts 3–6 of [portfolio-review.md](portfolio-review.md). Prompts 1–
 | Pause motion | The looping clips have a Pause motion / Play motion toggle, and start paused for visitors who prefer reduced motion. GIFs swap to a generated still when paused. |
 | Home drawings | Smoke replaces Masked Mercenary, which is still on Drawing & Comic Art. |
 | Intake tooling | `npm run prepare-incoming` makes a public master only for approved records, plus a private contact sheet at `portfolio-incoming/review/index.html`. |
-| Clean-Up | Both pairs are hidden from Animation until Josh confirms he redrew the lines by hand (`processConfirmed` in `content.js`). "Clean-up" is also removed from the Animation page title, the About focus list and the site's structured data. The images and captions are kept. |
+| Clean-Up | Hidden while the process was unconfirmed, then restored on 27 September 2026 once Josh confirmed he redrew the lines by hand (`processConfirmed` in `content.js`; a new pair starts unconfirmed). |
+| About | Now says he studies animation at Stillorgan College (confirmed 27 September 2026). The course name and year are still to be added. |
 | Animation titles | "2D movement test", "Character movement study", "Short animation experiment" and "Animation Test 1" now have descriptive titles and captions based on what each clip shows, and "Jump to Light Speed" is labelled as an animated comic panel. Clip lengths and frame counts were measured from the files. "Art Project 8" is unchanged because its content couldn't be identified reliably. |
 | Artwork titles | "Digital Artwork I" → **Gold Mask**; "Digital Artwork VII" → **Invincible** (labelled fan art). |
 | Film | A new **Selected Work** section leads the page: the reel plus three projects, with no alternate edits. Everything else follows in its groups. All credits are unchanged, including both "Stick n Poke - Soundhouse" entries. |
@@ -135,9 +136,9 @@ reel shown on the home page and at the top of Film (use it on one entry only);
    16, 17, 19) can replace their files in `portfolio-incoming/`; run
    `npm run prepare-incoming` again.
 7. **19 orientation:** which way up is intended.
-8. **Clean-Up process:** did he redraw the lines by hand? If yes, set
-   `processConfirmed: true` on each pair and the section returns.
+8. **Clean-Up details:** software and year for each pair (hand redrawing is
+   confirmed).
 9. **08 and 12:** are they the same character? If so, they can be grouped as
    one project. Also: his own titles for any of the working titles.
-10. **Course details and CV:** course, college and year for About; whether the
-    June 2026 CV is current.
+10. **Course details and CV:** exact course name and year at Stillorgan College;
+    whether the June 2026 CV is current.

@@ -171,8 +171,8 @@ function Home() {
                     <div>
                         <h2 id="about-heading">About</h2>
                         <p>
-                            I'm an Irish animation student who also draws and makes
-                            films. My work draws on comics, film and games, and shooting
+                            I'm an Irish animation student at Stillorgan College who
+                            also draws and makes films. My work draws on comics, film and games, and shooting
                             and editing film feeds back into how I frame and pace a
                             drawn sequence.
                         </p>

@@ -384,12 +384,12 @@ export const artworks = [
  * Clean-up before-and-after pairs. Each entry runs rough original → cleaned up.
  * Drop new photos into /public/images/cleanup/ and set each image's `src`.
  *
- * `processConfirmed` gates each pair on the Animation page. Both are held
- * (docs/portfolio-review.md §2, priority 3): they are only shown as clean-up
- * once Josh confirms he redrew the lines by hand. If they turn out to be
- * something else, describe the actual process instead.
+ * `processConfirmed` gates each pair on the Animation page: a pair is only
+ * shown as clean-up once Josh has confirmed he redrew the lines by hand
+ * (docs/portfolio-review.md §2, priority 3). Confirmed for both pairs on
+ * 27 September 2026. A new pair starts unconfirmed.
  *
- * TODO: Confirm how each clean-up was made, the software, and the year.
+ * TODO: Confirm the software and year for each clean-up.
  * TODO: Confirm whether the source rough was Josh's own drawing or supplied.
  *
  * @type {CleanupItem[]}
@@ -397,7 +397,7 @@ export const artworks = [
 export const cleanups = [
     {
         id: 1,
-        processConfirmed: false,
+        processConfirmed: true,
         caption: 'Self-directed clean-up exercise: a rough original drawing refined into clean, consistent line work while preserving the character pose and readability.',
         images: [
             { label: 'Original', src: '/images/cleanup/clean1.png' },
@@ -406,7 +406,7 @@ export const cleanups = [
     },
     {
         id: 2,
-        processConfirmed: false,
+        processConfirmed: true,
         caption: 'Further clean-up study showing the same refinement from rough drawing to tidied line work.',
         images: [
             { label: 'Original', src: '/images/cleanup/Screenshot_20260614-210212.png' },

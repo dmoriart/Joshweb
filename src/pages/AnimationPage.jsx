@@ -20,7 +20,8 @@ function AnimationPage() {
             <div className="jm-container jm-page">
                 <PageHeader eyebrow="Portfolio" title="2D Animation">
                     Hand-drawn movement loops and longer animated pieces, drawn frame by
-                    frame on a tablet.
+                    frame on a tablet, plus clean-up work showing a rough drawing redrawn
+                    into consistent line work.
                 </PageHeader>
 
                 {/* Drawn work first. The Creative Reel used to open this page,
