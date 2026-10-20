@@ -196,6 +196,17 @@ export const works = [
  * @type {AnimationItem[]}
  */
 export const motionClips = [
+    // Josh's latest piece (October 2026), so it leads the page. Re-encoded
+    // from a 19 MB original to 1440 px wide; the original is not committed.
+    {
+        id: 'brute-duel',
+        type: 'video',
+        src: '/images/animation/brute-duel.mp4',
+        title: 'Duel with the Chained Brute',
+        caption: 'Fight sequence mixing finished frames with rough drawings: a helmeted swordsman faces a chained brute, the two clash in a burst of energy, and he ends standing with his sword planted in the ground.',
+        meta: '9 s loop',
+        featured: true,
+    },
     {
         id: 'res',
         type: 'video',
