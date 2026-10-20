@@ -36,6 +36,7 @@ const execFile = promisify(execFileCallback);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE_DIR = path.join(ROOT, 'media');
 const OUTPUT_DIR = path.join(ROOT, 'public', 'images');
+const POSTER_DIR = path.join(SOURCE_DIR, 'posters');
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'image-manifest.json');
 
 /**
@@ -138,20 +139,41 @@ async function processPassthrough(sourcePath, relative) {
 }
 
 /**
- * Extracts a poster frame from a video or animated GIF.
+ * Writes the poster frame for a video or animated GIF.
  *
  * Without one a <video preload="metadata"> renders as a black rectangle until
  * it starts playing, which is what visitors on reduced-motion settings — and
  * anyone whose autoplay is blocked — would otherwise see.
  *
- * Skipped silently when ffmpeg is unavailable: a missing poster degrades to
- * the previous behaviour rather than failing the build.
+ * The Netlify build image has no ffmpeg, so posters are committed under
+ * `media/posters/` and copied from there. ffmpeg is only the fallback for a
+ * clip that has no committed poster yet; if that fails too, the build warns
+ * rather than fails, and the clip shows a black frame until it plays.
  */
 async function buildVideoPoster(sourcePath, relative) {
     const parsed = path.parse(relative);
-    const output = path.join(OUTPUT_DIR, parsed.dir, `${parsed.name}-poster.webp`);
-    if (!(await isStale(sourcePath, output))) return 0;
+    const posterName = path.join(parsed.dir, `${parsed.name}-poster.webp`);
+    const output = path.join(OUTPUT_DIR, posterName);
+    const committed = path.join(POSTER_DIR, posterName);
 
+    if (existsSync(committed)) {
+        if (!(await isStale(committed, output))) return 0;
+        await copyFile(committed, output);
+        return 1;
+    }
+
+    if (!(await isStale(sourcePath, output))) return 0;
+    const written = await extractPoster(sourcePath, output);
+    if (!written) {
+        console.warn(
+            `⚠ No poster for ${relative}: commit one at media/posters/${posterName}`
+        );
+    }
+    return written;
+}
+
+/** Decodes a frame with ffmpeg. Returns 0 when ffmpeg is unavailable. */
+async function extractPoster(sourcePath, output) {
     try {
         // ffmpeg decodes the frame; sharp encodes it. Going through sharp
         // rather than asking ffmpeg for WebP directly avoids depending on
