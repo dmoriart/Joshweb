@@ -51,6 +51,20 @@ describe('media paths', () => {
     });
 });
 
+describe('motion clip posters', () => {
+    // The Netlify build has no ffmpeg, so a poster that is not committed is
+    // simply missing on the live site — the clip shows a black frame.
+    it.each(motionClips.filter((clip) => !clip.poster))(
+        '$id has a committed poster in media/posters/',
+        (clip) => {
+            const poster = clip.src
+                .replace(/^\/images\//, '')
+                .replace(/\.\w+$/, '-poster.webp');
+            expect(existsSync(join(MEDIA_DIR, 'posters', poster))).toBe(true);
+        }
+    );
+});
+
 describe('artworks', () => {
     it('has a unique id per piece', () => {
         const ids = artworks.map((item) => item.id);

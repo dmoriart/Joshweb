@@ -8,9 +8,9 @@ React 19 + Vite, deployed on Netlify.
 
 ## Local setup
 
-Requires **Node 20.11** or later (matching the Netlify build) and **ffmpeg** if
-you want poster frames generated for the self-hosted video clips. Without
-ffmpeg the build still succeeds; the clips just fall back to no poster.
+Requires **Node 20.11** or later (matching the Netlify build). **ffmpeg** is
+only needed to make a poster frame for a newly added clip — see "Adding a
+video" below.
 
 ```bash
 git clone https://github.com/dmoriart/Joshweb.git
@@ -103,6 +103,11 @@ see the `SequenceItem` typedef in `src/data/types.js` for the shape, and
 Add to `animations` (hosted on YouTube) or `motionClips` (self-hosted, in
 `media/animation/`). Any YouTube URL shape works — `youtu.be/`, `watch?v=`,
 `shorts/` or `embed/`.
+
+Self-hosted clips need a committed poster frame, because the Netlify build has
+no ffmpeg. After adding a clip, run `npm run build-images` locally (with ffmpeg
+installed) and copy the new `public/images/animation/<name>-poster.webp` into
+`media/posters/animation/`. `npm test` fails until it is there.
 
 ### The one rule
 
